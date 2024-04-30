@@ -1,0 +1,16 @@
+PODS:
+  - EasyPay (0.1.0)
+
+DEPENDENCIES:
+  - EasyPay (from `../`)
+
+EXTERNAL SOURCES:
+  EasyPay:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  EasyPay: 956e442fe43ea62bba79cb27f453167828bba2be
+
+PODFILE CHECKSUM: 5735bab25b4f963da60871d642c7d0dd6e968965
+
+COCOAPODS: 1.12.1

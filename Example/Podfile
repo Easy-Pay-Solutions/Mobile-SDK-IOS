@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '13.0'
+
+target 'EasyPay_Example' do
+  pod 'EasyPay', :path => '../'
+
+  target 'EasyPay_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

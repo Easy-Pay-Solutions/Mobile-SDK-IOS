@@ -1,0 +1,6 @@
+framework module EasyPay {
+  umbrella header "EasyPay-umbrella.h"
+
+  export *
+  module * { export * }
+}

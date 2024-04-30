@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CreditCardManualTableViewCell" rowHeight="427" id="KGk-i7-Jjw" customClass="CreditCardManualTableViewCell" customModule="EasyPay_Example" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="491" height="427"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="491" height="427"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" text="Credit Card Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zig-h9-X57">
+                        <rect key="frame" x="16" y="16" width="459" height="27"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="257" text="Merchant ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tbl-Xv-Fta">
+                        <rect key="frame" x="16" y="57" width="459" height="21"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Merchant ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sqa-oL-Nw9">
+                        <rect key="frame" x="16" y="86" width="459" height="34"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="34" id="rH5-aK-flk"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
+                        <connections>
+                            <action selector="textFieldEditingChanged:" destination="KGk-i7-Jjw" eventType="editingChanged" id="S0V-HI-gCS"/>
+                            <outlet property="delegate" destination="-1" id="b6L-cU-yrR"/>
+                        </connections>
+                    </textField>
+                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Credit Card Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7db-7v-mC0" customClass="SecureTextField" customModule="EasyPay">
+                        <rect key="frame" x="16" y="163" width="459" height="34"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="34" id="ZhA-bA-l4x"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="one-time-code"/>
+                        <connections>
+                            <action selector="secureTextFieldEditingChanged:" destination="KGk-i7-Jjw" eventType="editingChanged" id="IjZ-qi-2SN"/>
+                            <outlet property="delegate" destination="-1" id="9iN-Qb-OMr"/>
+                        </connections>
+                    </textField>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Credit Card Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lwc-yv-j9l">
+                        <rect key="frame" x="16" y="128" width="459" height="27"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Exp Month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFP-oR-nkd">
+                        <rect key="frame" x="16" y="205" width="459" height="21"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Exp Month" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1PB-jC-PFh">
+                        <rect key="frame" x="16" y="234" width="459" height="34"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="34" id="JQm-ow-yLp"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                        <connections>
+                            <action selector="textFieldEditingChanged:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="Xlu-2w-5TG"/>
+                            <outlet property="delegate" destination="-1" id="9cF-UU-esT"/>
+                        </connections>
+                    </textField>
+                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Exp Year" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JLY-jL-8xG">
+                        <rect key="frame" x="16" y="305" width="459" height="34"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="34" id="5jx-LZ-IUg"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" textContentType="organization-title"/>
+                        <connections>
+                            <action selector="textFieldEditingChanged:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="y9e-2q-vlp"/>
+                            <outlet property="delegate" destination="-1" id="Yi9-qh-f1H"/>
+                        </connections>
+                    </textField>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" text="Exp Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHr-ho-8jI">
+                        <rect key="frame" x="16" y="276" width="459" height="21"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="CVV" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cLx-QY-PP4">
+                        <rect key="frame" x="16" y="376" width="459" height="34"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="34" id="sVj-VV-zpu"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" textContentType="url"/>
+                        <connections>
+                            <action selector="textFieldEditingChanged:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="woO-3W-bAp"/>
+                            <outlet property="delegate" destination="-1" id="Kbp-lj-lJf"/>
+                        </connections>
+                    </textField>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="CVV" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tK-mr-pR0">
+                        <rect key="frame" x="16" y="347" width="459" height="21"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M9X-zO-aBW">
+                        <rect key="frame" x="0.0" y="426" width="491" height="1"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="sAh-YQ-ILw"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="zig-h9-X57" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="2nC-wi-eDe"/>
+                    <constraint firstItem="lwc-yv-j9l" firstAttribute="top" secondItem="Sqa-oL-Nw9" secondAttribute="bottom" constant="8" id="3NI-9o-mvl"/>
+                    <constraint firstItem="Tbl-Xv-Fta" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="4XS-ce-WgX"/>
+                    <constraint firstAttribute="trailing" secondItem="zig-h9-X57" secondAttribute="trailing" constant="16" id="4ah-Om-Pbs"/>
+                    <constraint firstItem="lwc-yv-j9l" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="7zn-hR-iy8"/>
+                    <constraint firstAttribute="bottom" secondItem="M9X-zO-aBW" secondAttribute="bottom" id="AOB-a3-ypp"/>
+                    <constraint firstAttribute="trailing" secondItem="TFP-oR-nkd" secondAttribute="trailing" constant="16" id="AZu-5a-dbd"/>
+                    <constraint firstAttribute="trailing" secondItem="7db-7v-mC0" secondAttribute="trailing" constant="16" id="C2Z-0d-5dl"/>
+                    <constraint firstAttribute="trailing" secondItem="1PB-jC-PFh" secondAttribute="trailing" constant="16" id="I0G-FZ-aze"/>
+                    <constraint firstAttribute="trailing" secondItem="JLY-jL-8xG" secondAttribute="trailing" constant="16" id="Iyb-jE-vFz"/>
+                    <constraint firstItem="cLx-QY-PP4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="LfX-uQ-5Iq"/>
+                    <constraint firstAttribute="trailing" secondItem="lwc-yv-j9l" secondAttribute="trailing" constant="16" id="O3h-CH-6eX"/>
+                    <constraint firstItem="sHr-ho-8jI" firstAttribute="top" secondItem="1PB-jC-PFh" secondAttribute="bottom" constant="8" id="OMu-A8-UhS"/>
+                    <constraint firstItem="JLY-jL-8xG" firstAttribute="top" secondItem="sHr-ho-8jI" secondAttribute="bottom" constant="8" id="QOd-FC-fG0"/>
+                    <constraint firstItem="TFP-oR-nkd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="QkP-Bv-zeK"/>
+                    <constraint firstItem="1PB-jC-PFh" firstAttribute="top" secondItem="TFP-oR-nkd" secondAttribute="bottom" constant="8" id="QxM-82-YSN"/>
+                    <constraint firstItem="Sqa-oL-Nw9" firstAttribute="top" secondItem="Tbl-Xv-Fta" secondAttribute="bottom" constant="8" id="RwY-sB-Fnc"/>
+                    <constraint firstAttribute="trailing" secondItem="1tK-mr-pR0" secondAttribute="trailing" constant="16" id="Tfc-kp-Ifi"/>
+                    <constraint firstItem="1PB-jC-PFh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="W7u-O9-uSF"/>
+                    <constraint firstAttribute="trailing" secondItem="M9X-zO-aBW" secondAttribute="trailing" id="ZSh-ZR-pmf"/>
+                    <constraint firstItem="1tK-mr-pR0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="bLo-Z6-9A3"/>
+                    <constraint firstAttribute="trailing" secondItem="Sqa-oL-Nw9" secondAttribute="trailing" constant="16" id="eJU-Jn-90M"/>
+                    <constraint firstAttribute="trailing" secondItem="sHr-ho-8jI" secondAttribute="trailing" constant="16" id="g8k-dZ-Ay7"/>
+                    <constraint firstItem="1tK-mr-pR0" firstAttribute="top" secondItem="JLY-jL-8xG" secondAttribute="bottom" constant="8" id="hRN-5x-uJK"/>
+                    <constraint firstItem="zig-h9-X57" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="hXP-HK-x38"/>
+                    <constraint firstAttribute="trailing" secondItem="cLx-QY-PP4" secondAttribute="trailing" constant="16" id="iLH-r0-fT4"/>
+                    <constraint firstItem="M9X-zO-aBW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="jMU-Bj-A9b"/>
+                    <constraint firstItem="Sqa-oL-Nw9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="jtm-aC-zch"/>
+                    <constraint firstItem="sHr-ho-8jI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="m3E-WU-4B8"/>
+                    <constraint firstItem="JLY-jL-8xG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="nLt-4b-5aT"/>
+                    <constraint firstItem="TFP-oR-nkd" firstAttribute="top" secondItem="7db-7v-mC0" secondAttribute="bottom" constant="8" id="nRS-hI-xkk"/>
+                    <constraint firstAttribute="trailing" secondItem="Tbl-Xv-Fta" secondAttribute="trailing" constant="16" id="nU2-H6-I6G"/>
+                    <constraint firstItem="M9X-zO-aBW" firstAttribute="top" secondItem="cLx-QY-PP4" secondAttribute="bottom" constant="16" id="ptZ-li-NT0"/>
+                    <constraint firstItem="Tbl-Xv-Fta" firstAttribute="top" secondItem="zig-h9-X57" secondAttribute="bottom" constant="14" id="rY3-Rc-GCk"/>
+                    <constraint firstItem="7db-7v-mC0" firstAttribute="top" secondItem="lwc-yv-j9l" secondAttribute="bottom" constant="8" id="t0T-ba-aCA"/>
+                    <constraint firstItem="cLx-QY-PP4" firstAttribute="top" secondItem="1tK-mr-pR0" secondAttribute="bottom" constant="8" id="vDR-7z-Xge"/>
+                    <constraint firstItem="7db-7v-mC0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="zqA-JN-wPb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="creditCardNumberTextField" destination="7db-7v-mC0" id="zJf-Tc-iqN"/>
+                <outlet property="cvvTextField" destination="cLx-QY-PP4" id="J9W-7Q-P7c"/>
+                <outlet property="expMonthTextField" destination="1PB-jC-PFh" id="TFU-61-1jb"/>
+                <outlet property="expYearTextField" destination="JLY-jL-8xG" id="F39-PL-Ei9"/>
+                <outlet property="merchantIdTextField" destination="Sqa-oL-Nw9" id="DJk-zF-W1R"/>
+            </connections>
+            <point key="canvasLocation" x="69.465648854961827" y="-4.5774647887323949"/>
+        </tableViewCell>
+    </objects>
+</document>

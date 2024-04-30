@@ -1,0 +1,895 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2F2CC7E0F09D3F3A2F0B5877 /* Pods_EasyPay_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8169BB602431D4ECA9C7291E /* Pods_EasyPay_Example.framework */; };
+		42E7F5E37F03BF6C3A48DAD5 /* Pods_EasyPay_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F1F844F282FFBD30000670 /* Pods_EasyPay_Tests.framework */; };
+		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
+		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
+		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
+		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
+		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
+		607FACEC1AFB9204008FA782 /* RsaEncryptionDecryptionTests.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* RsaEncryptionDecryptionTests.swift.swift */; };
+		8438716D2BBD7E6D002DB029 /* AddAnnualConsentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8438716C2BBD7E6D002DB029 /* AddAnnualConsentViewModel.swift */; };
+		843CC6E52BB084310059BE3C /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CC6E42BB084310059BE3C /* LoadingIndicator.swift */; };
+		844294222B95E13500D7C7E8 /* SessionKeyEncryptionUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844294212B95E13500D7C7E8 /* SessionKeyEncryptionUtilsTests.swift */; };
+		84456B552BA3466C00D7C33F /* DownloadCertificateEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84456B532BA3460D00D7C33F /* DownloadCertificateEndpointTests.swift */; };
+		845DA00A2B99D94F0022192B /* CardSaleManualEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845DA0092B99D94F0022192B /* CardSaleManualEndpointTests.swift */; };
+		84667FB72BC41659000BA9DC /* ListAnnualConsentEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84667FB62BC41659000BA9DC /* ListAnnualConsentEndpointTests.swift */; };
+		84667FB92BC42B1A000BA9DC /* TxApprovedFunctionOkApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84667FB82BC42B1A000BA9DC /* TxApprovedFunctionOkApiClientTests.swift */; };
+		84667FBB2BC433F6000BA9DC /* NoInternetConnectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84667FBA2BC433F6000BA9DC /* NoInternetConnectionTests.swift */; };
+		8486CE6E2B9F0A9400722C96 /* SubmitButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486CE6C2B9F0A9400722C96 /* SubmitButtonTableViewCell.swift */; };
+		8486CE6F2B9F0A9400722C96 /* SubmitButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8486CE6D2B9F0A9400722C96 /* SubmitButtonTableViewCell.xib */; };
+		848789C42BC3D30F00ED7239 /* CancelAnnualConsentEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848789C32BC3D30F00ED7239 /* CancelAnnualConsentEndpointTests.swift */; };
+		848789C62BC3E93D00ED7239 /* AddAnnualConsentEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848789C52BC3E93D00ED7239 /* AddAnnualConsentEndpointTests.swift */; };
+		848789C92BC4141300ED7239 /* ChargeAnnualConsentEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848789C82BC4141300ED7239 /* ChargeAnnualConsentEndpointTests.swift */; };
+		84A09F802BB6C29A00BC9AF3 /* MainManualConsentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A09F7E2BB6C29A00BC9AF3 /* MainManualConsentViewController.swift */; };
+		84A09F812BB6C29A00BC9AF3 /* MainManualConsentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A09F7F2BB6C29A00BC9AF3 /* MainManualConsentViewController.xib */; };
+		84A09F842BB6C5F500BC9AF3 /* CardDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A09F822BB6C5F500BC9AF3 /* CardDetailsTableViewCell.swift */; };
+		84A09F852BB6C5F500BC9AF3 /* CardDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A09F832BB6C5F500BC9AF3 /* CardDetailsTableViewCell.xib */; };
+		84A09F872BB6DE5400BC9AF3 /* MainManualConsentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A09F862BB6DE5400BC9AF3 /* MainManualConsentViewModel.swift */; };
+		84A09F8B2BB7017100BC9AF3 /* AddAnnualConsentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A09F892BB7017100BC9AF3 /* AddAnnualConsentViewController.swift */; };
+		84A09F8C2BB7017100BC9AF3 /* AddAnnualConsentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A09F8A2BB7017100BC9AF3 /* AddAnnualConsentViewController.xib */; };
+		84A09F902BB7076600BC9AF3 /* AnnualCardInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A09F8E2BB7076600BC9AF3 /* AnnualCardInfoTableViewCell.swift */; };
+		84A09F912BB7076600BC9AF3 /* AnnualCardInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A09F8F2BB7076600BC9AF3 /* AnnualCardInfoTableViewCell.xib */; };
+		84A09F942BB70A4E00BC9AF3 /* ConsentCreatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A09F922BB70A4E00BC9AF3 /* ConsentCreatorTableViewCell.swift */; };
+		84A09F952BB70A4E00BC9AF3 /* ConsentCreatorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A09F932BB70A4E00BC9AF3 /* ConsentCreatorTableViewCell.xib */; };
+		84B86D222B96567C00A8F8C5 /* AmountsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B86D202B96567C00A8F8C5 /* AmountsTableViewCell.swift */; };
+		84B86D232B96567C00A8F8C5 /* AmountsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B86D212B96567C00A8F8C5 /* AmountsTableViewCell.xib */; };
+		84B86D272B968C0100A8F8C5 /* PurchItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B86D252B968C0100A8F8C5 /* PurchItemsTableViewCell.swift */; };
+		84B86D282B968C0100A8F8C5 /* PurchItemsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B86D262B968C0100A8F8C5 /* PurchItemsTableViewCell.xib */; };
+		84D3A9A52B95C06200DAFE29 /* CardBillingAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D3A9A32B95C06200DAFE29 /* CardBillingAddressTableViewCell.swift */; };
+		84D3A9A62B95C06200DAFE29 /* CardBillingAddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D3A9A42B95C06200DAFE29 /* CardBillingAddressTableViewCell.xib */; };
+		84DA2C002BA0767000B240CE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DA2BFF2BA0767000B240CE /* BaseViewController.swift */; };
+		84F5E94D2B91E552009EFA58 /* CreditCardSaleManualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5E94B2B91E552009EFA58 /* CreditCardSaleManualViewController.swift */; };
+		84F5E94E2B91E552009EFA58 /* CreditCardSaleManualViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F5E94C2B91E552009EFA58 /* CreditCardSaleManualViewController.xib */; };
+		84F5E9532B91EEEC009EFA58 /* AccountHolderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5E9512B91EEEC009EFA58 /* AccountHolderTableViewCell.swift */; };
+		84F5E9542B91EEEC009EFA58 /* AccountHolderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F5E9522B91EEEC009EFA58 /* AccountHolderTableViewCell.xib */; };
+		84F5E9562B91F66E009EFA58 /* CrediCardSaleManualViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5E9552B91F66E009EFA58 /* CrediCardSaleManualViewModel.swift */; };
+		84F5E9592B9212DE009EFA58 /* CreditCardManualTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5E9572B9212DE009EFA58 /* CreditCardManualTableViewCell.swift */; };
+		84F5E95A2B9212DE009EFA58 /* CreditCardManualTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F5E9582B9212DE009EFA58 /* CreditCardManualTableViewCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		607FACE61AFB9204008FA782 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
+			remoteInfo = EasyPay;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		13032899BDE45B6F770B07D6 /* EasyPay.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = EasyPay.podspec; path = ../EasyPay.podspec; sourceTree = "<group>"; };
+		225DDF2B9F218324B1DFA30B /* Pods-EasyPay_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyPay_Example.release.xcconfig"; path = "Target Support Files/Pods-EasyPay_Example/Pods-EasyPay_Example.release.xcconfig"; sourceTree = "<group>"; };
+		24F1F844F282FFBD30000670 /* Pods_EasyPay_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyPay_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4862CF7F078CD3B1D7B2BE83 /* Pods-EasyPay_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyPay_Tests.release.xcconfig"; path = "Target Support Files/Pods-EasyPay_Tests/Pods-EasyPay_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		607FACD01AFB9204008FA782 /* EasyPay_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyPay_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		607FACE51AFB9204008FA782 /* EasyPay_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyPay_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		607FACEB1AFB9204008FA782 /* RsaEncryptionDecryptionTests.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RsaEncryptionDecryptionTests.swift.swift; sourceTree = "<group>"; };
+		8169BB602431D4ECA9C7291E /* Pods_EasyPay_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyPay_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8438716C2BBD7E6D002DB029 /* AddAnnualConsentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnualConsentViewModel.swift; sourceTree = "<group>"; };
+		843CC6E42BB084310059BE3C /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
+		844294212B95E13500D7C7E8 /* SessionKeyEncryptionUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionKeyEncryptionUtilsTests.swift; sourceTree = "<group>"; };
+		84456B532BA3460D00D7C33F /* DownloadCertificateEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadCertificateEndpointTests.swift; sourceTree = "<group>"; };
+		845DA0092B99D94F0022192B /* CardSaleManualEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSaleManualEndpointTests.swift; sourceTree = "<group>"; };
+		84667FB62BC41659000BA9DC /* ListAnnualConsentEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAnnualConsentEndpointTests.swift; sourceTree = "<group>"; };
+		84667FB82BC42B1A000BA9DC /* TxApprovedFunctionOkApiClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TxApprovedFunctionOkApiClientTests.swift; sourceTree = "<group>"; };
+		84667FBA2BC433F6000BA9DC /* NoInternetConnectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoInternetConnectionTests.swift; sourceTree = "<group>"; };
+		8486CE6C2B9F0A9400722C96 /* SubmitButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButtonTableViewCell.swift; sourceTree = "<group>"; };
+		8486CE6D2B9F0A9400722C96 /* SubmitButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubmitButtonTableViewCell.xib; sourceTree = "<group>"; };
+		848789C32BC3D30F00ED7239 /* CancelAnnualConsentEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelAnnualConsentEndpointTests.swift; sourceTree = "<group>"; };
+		848789C52BC3E93D00ED7239 /* AddAnnualConsentEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnualConsentEndpointTests.swift; sourceTree = "<group>"; };
+		848789C82BC4141300ED7239 /* ChargeAnnualConsentEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeAnnualConsentEndpointTests.swift; sourceTree = "<group>"; };
+		84A09F7E2BB6C29A00BC9AF3 /* MainManualConsentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainManualConsentViewController.swift; sourceTree = "<group>"; };
+		84A09F7F2BB6C29A00BC9AF3 /* MainManualConsentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainManualConsentViewController.xib; sourceTree = "<group>"; };
+		84A09F822BB6C5F500BC9AF3 /* CardDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		84A09F832BB6C5F500BC9AF3 /* CardDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardDetailsTableViewCell.xib; sourceTree = "<group>"; };
+		84A09F862BB6DE5400BC9AF3 /* MainManualConsentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainManualConsentViewModel.swift; sourceTree = "<group>"; };
+		84A09F892BB7017100BC9AF3 /* AddAnnualConsentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnualConsentViewController.swift; sourceTree = "<group>"; };
+		84A09F8A2BB7017100BC9AF3 /* AddAnnualConsentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddAnnualConsentViewController.xib; sourceTree = "<group>"; };
+		84A09F8E2BB7076600BC9AF3 /* AnnualCardInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnualCardInfoTableViewCell.swift; sourceTree = "<group>"; };
+		84A09F8F2BB7076600BC9AF3 /* AnnualCardInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnnualCardInfoTableViewCell.xib; sourceTree = "<group>"; };
+		84A09F922BB70A4E00BC9AF3 /* ConsentCreatorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentCreatorTableViewCell.swift; sourceTree = "<group>"; };
+		84A09F932BB70A4E00BC9AF3 /* ConsentCreatorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConsentCreatorTableViewCell.xib; sourceTree = "<group>"; };
+		84B86D202B96567C00A8F8C5 /* AmountsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountsTableViewCell.swift; sourceTree = "<group>"; };
+		84B86D212B96567C00A8F8C5 /* AmountsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AmountsTableViewCell.xib; sourceTree = "<group>"; };
+		84B86D252B968C0100A8F8C5 /* PurchItemsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchItemsTableViewCell.swift; sourceTree = "<group>"; };
+		84B86D262B968C0100A8F8C5 /* PurchItemsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PurchItemsTableViewCell.xib; sourceTree = "<group>"; };
+		84D3A9A32B95C06200DAFE29 /* CardBillingAddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBillingAddressTableViewCell.swift; sourceTree = "<group>"; };
+		84D3A9A42B95C06200DAFE29 /* CardBillingAddressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardBillingAddressTableViewCell.xib; sourceTree = "<group>"; };
+		84DA2BFF2BA0767000B240CE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		84F5E94B2B91E552009EFA58 /* CreditCardSaleManualViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardSaleManualViewController.swift; sourceTree = "<group>"; };
+		84F5E94C2B91E552009EFA58 /* CreditCardSaleManualViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreditCardSaleManualViewController.xib; sourceTree = "<group>"; };
+		84F5E9512B91EEEC009EFA58 /* AccountHolderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHolderTableViewCell.swift; sourceTree = "<group>"; };
+		84F5E9522B91EEEC009EFA58 /* AccountHolderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountHolderTableViewCell.xib; sourceTree = "<group>"; };
+		84F5E9552B91F66E009EFA58 /* CrediCardSaleManualViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrediCardSaleManualViewModel.swift; sourceTree = "<group>"; };
+		84F5E9572B9212DE009EFA58 /* CreditCardManualTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardManualTableViewCell.swift; sourceTree = "<group>"; };
+		84F5E9582B9212DE009EFA58 /* CreditCardManualTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreditCardManualTableViewCell.xib; sourceTree = "<group>"; };
+		E7F0EA3C07CCCE5FAB8777D8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		EDE9E4BBAD91CCD2F9E594A4 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		F30CD65FCCE45273B295915B /* Pods-EasyPay_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyPay_Tests.debug.xcconfig"; path = "Target Support Files/Pods-EasyPay_Tests/Pods-EasyPay_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		F87C5FB7FBA6FCD77AD4C69C /* Pods-EasyPay_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyPay_Example.debug.xcconfig"; path = "Target Support Files/Pods-EasyPay_Example/Pods-EasyPay_Example.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		607FACCD1AFB9204008FA782 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F2CC7E0F09D3F3A2F0B5877 /* Pods_EasyPay_Example.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		607FACE21AFB9204008FA782 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42E7F5E37F03BF6C3A48DAD5 /* Pods_EasyPay_Tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		607FACC71AFB9204008FA782 = {
+			isa = PBXGroup;
+			children = (
+				607FACF51AFB993E008FA782 /* Podspec Metadata */,
+				607FACD21AFB9204008FA782 /* Example for EasyPay */,
+				607FACE81AFB9204008FA782 /* Tests */,
+				607FACD11AFB9204008FA782 /* Products */,
+				6F4709DEB01FFF2BC960122D /* Pods */,
+				62BA44DAC7F3119EDE92E405 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		607FACD11AFB9204008FA782 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				607FACD01AFB9204008FA782 /* EasyPay_Example.app */,
+				607FACE51AFB9204008FA782 /* EasyPay_Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		607FACD21AFB9204008FA782 /* Example for EasyPay */ = {
+			isa = PBXGroup;
+			children = (
+				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
+				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				607FACD91AFB9204008FA782 /* Main.storyboard */,
+				607FACDC1AFB9204008FA782 /* Images.xcassets */,
+				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+				607FACD31AFB9204008FA782 /* Supporting Files */,
+			);
+			name = "Example for EasyPay";
+			path = EasyPay;
+			sourceTree = "<group>";
+		};
+		607FACD31AFB9204008FA782 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				84A09F7D2BB6C16900BC9AF3 /* AnnualConsent */,
+				84DA2BFE2BA0766600B240CE /* Helpers */,
+				8460D22F2B970C0500AFFCFC /* CreditCardSaleManual */,
+				607FACD41AFB9204008FA782 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		607FACE81AFB9204008FA782 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				845DA0092B99D94F0022192B /* CardSaleManualEndpointTests.swift */,
+				84456B532BA3460D00D7C33F /* DownloadCertificateEndpointTests.swift */,
+				607FACEB1AFB9204008FA782 /* RsaEncryptionDecryptionTests.swift.swift */,
+				844294212B95E13500D7C7E8 /* SessionKeyEncryptionUtilsTests.swift */,
+				848789C32BC3D30F00ED7239 /* CancelAnnualConsentEndpointTests.swift */,
+				848789C82BC4141300ED7239 /* ChargeAnnualConsentEndpointTests.swift */,
+				848789C52BC3E93D00ED7239 /* AddAnnualConsentEndpointTests.swift */,
+				84667FB82BC42B1A000BA9DC /* TxApprovedFunctionOkApiClientTests.swift */,
+				84667FBA2BC433F6000BA9DC /* NoInternetConnectionTests.swift */,
+				84667FB62BC41659000BA9DC /* ListAnnualConsentEndpointTests.swift */,
+				607FACE91AFB9204008FA782 /* Supporting Files */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		607FACE91AFB9204008FA782 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				607FACEA1AFB9204008FA782 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				13032899BDE45B6F770B07D6 /* EasyPay.podspec */,
+				EDE9E4BBAD91CCD2F9E594A4 /* README.md */,
+				E7F0EA3C07CCCE5FAB8777D8 /* LICENSE */,
+			);
+			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		62BA44DAC7F3119EDE92E405 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8169BB602431D4ECA9C7291E /* Pods_EasyPay_Example.framework */,
+				24F1F844F282FFBD30000670 /* Pods_EasyPay_Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6F4709DEB01FFF2BC960122D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F87C5FB7FBA6FCD77AD4C69C /* Pods-EasyPay_Example.debug.xcconfig */,
+				225DDF2B9F218324B1DFA30B /* Pods-EasyPay_Example.release.xcconfig */,
+				F30CD65FCCE45273B295915B /* Pods-EasyPay_Tests.debug.xcconfig */,
+				4862CF7F078CD3B1D7B2BE83 /* Pods-EasyPay_Tests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8460D22F2B970C0500AFFCFC /* CreditCardSaleManual */ = {
+			isa = PBXGroup;
+			children = (
+				84F5E94C2B91E552009EFA58 /* CreditCardSaleManualViewController.xib */,
+				84F5E94B2B91E552009EFA58 /* CreditCardSaleManualViewController.swift */,
+				84F5E9552B91F66E009EFA58 /* CrediCardSaleManualViewModel.swift */,
+				84D3A99F2B95BFF200DAFE29 /* Cells */,
+			);
+			name = CreditCardSaleManual;
+			sourceTree = "<group>";
+		};
+		8486CE702B9F0A9800722C96 /* SubmitButton */ = {
+			isa = PBXGroup;
+			children = (
+				8486CE6C2B9F0A9400722C96 /* SubmitButtonTableViewCell.swift */,
+				8486CE6D2B9F0A9400722C96 /* SubmitButtonTableViewCell.xib */,
+			);
+			name = SubmitButton;
+			sourceTree = "<group>";
+		};
+		84A09F7D2BB6C16900BC9AF3 /* AnnualConsent */ = {
+			isa = PBXGroup;
+			children = (
+				84A09F8D2BB7074500BC9AF3 /* Cells */,
+				84A09F882BB7014D00BC9AF3 /* AddAnnualConsent */,
+				84A09F7E2BB6C29A00BC9AF3 /* MainManualConsentViewController.swift */,
+				84A09F862BB6DE5400BC9AF3 /* MainManualConsentViewModel.swift */,
+				84A09F7F2BB6C29A00BC9AF3 /* MainManualConsentViewController.xib */,
+				84A09F822BB6C5F500BC9AF3 /* CardDetailsTableViewCell.swift */,
+				84A09F832BB6C5F500BC9AF3 /* CardDetailsTableViewCell.xib */,
+			);
+			name = AnnualConsent;
+			sourceTree = "<group>";
+		};
+		84A09F882BB7014D00BC9AF3 /* AddAnnualConsent */ = {
+			isa = PBXGroup;
+			children = (
+				84A09F892BB7017100BC9AF3 /* AddAnnualConsentViewController.swift */,
+				84A09F8A2BB7017100BC9AF3 /* AddAnnualConsentViewController.xib */,
+				8438716C2BBD7E6D002DB029 /* AddAnnualConsentViewModel.swift */,
+			);
+			name = AddAnnualConsent;
+			sourceTree = "<group>";
+		};
+		84A09F8D2BB7074500BC9AF3 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				84A09F8E2BB7076600BC9AF3 /* AnnualCardInfoTableViewCell.swift */,
+				84A09F8F2BB7076600BC9AF3 /* AnnualCardInfoTableViewCell.xib */,
+				84A09F922BB70A4E00BC9AF3 /* ConsentCreatorTableViewCell.swift */,
+				84A09F932BB70A4E00BC9AF3 /* ConsentCreatorTableViewCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		84B86D1F2B96564600A8F8C5 /* AmountsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				84B86D202B96567C00A8F8C5 /* AmountsTableViewCell.swift */,
+				84B86D212B96567C00A8F8C5 /* AmountsTableViewCell.xib */,
+			);
+			name = AmountsTableViewCell;
+			sourceTree = "<group>";
+		};
+		84B86D242B968BE800A8F8C5 /* PurchItems */ = {
+			isa = PBXGroup;
+			children = (
+				84B86D252B968C0100A8F8C5 /* PurchItemsTableViewCell.swift */,
+				84B86D262B968C0100A8F8C5 /* PurchItemsTableViewCell.xib */,
+			);
+			name = PurchItems;
+			sourceTree = "<group>";
+		};
+		84D3A99F2B95BFF200DAFE29 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8486CE702B9F0A9800722C96 /* SubmitButton */,
+				84B86D242B968BE800A8F8C5 /* PurchItems */,
+				84B86D1F2B96564600A8F8C5 /* AmountsTableViewCell */,
+				84D3A9A22B95C04B00DAFE29 /* BillingAddress */,
+				84D3A9A12B95C03200DAFE29 /* AccountHolder */,
+				84D3A9A02B95C02100DAFE29 /* CreditCardManual */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		84D3A9A02B95C02100DAFE29 /* CreditCardManual */ = {
+			isa = PBXGroup;
+			children = (
+				84F5E9572B9212DE009EFA58 /* CreditCardManualTableViewCell.swift */,
+				84F5E9582B9212DE009EFA58 /* CreditCardManualTableViewCell.xib */,
+			);
+			name = CreditCardManual;
+			sourceTree = "<group>";
+		};
+		84D3A9A12B95C03200DAFE29 /* AccountHolder */ = {
+			isa = PBXGroup;
+			children = (
+				84F5E9512B91EEEC009EFA58 /* AccountHolderTableViewCell.swift */,
+				84F5E9522B91EEEC009EFA58 /* AccountHolderTableViewCell.xib */,
+			);
+			name = AccountHolder;
+			sourceTree = "<group>";
+		};
+		84D3A9A22B95C04B00DAFE29 /* BillingAddress */ = {
+			isa = PBXGroup;
+			children = (
+				84D3A9A32B95C06200DAFE29 /* CardBillingAddressTableViewCell.swift */,
+				84D3A9A42B95C06200DAFE29 /* CardBillingAddressTableViewCell.xib */,
+			);
+			name = BillingAddress;
+			sourceTree = "<group>";
+		};
+		84DA2BFE2BA0766600B240CE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				84DA2BFF2BA0767000B240CE /* BaseViewController.swift */,
+				843CC6E42BB084310059BE3C /* LoadingIndicator.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		607FACCF1AFB9204008FA782 /* EasyPay_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "EasyPay_Example" */;
+			buildPhases = (
+				2A3D18890BF9D3590F4E1979 /* [CP] Check Pods Manifest.lock */,
+				607FACCC1AFB9204008FA782 /* Sources */,
+				607FACCD1AFB9204008FA782 /* Frameworks */,
+				607FACCE1AFB9204008FA782 /* Resources */,
+				A015360AA72DA4632C18F5D1 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EasyPay_Example;
+			productName = EasyPay;
+			productReference = 607FACD01AFB9204008FA782 /* EasyPay_Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+		607FACE41AFB9204008FA782 /* EasyPay_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "EasyPay_Tests" */;
+			buildPhases = (
+				173020CF7DCE71AAA1080B43 /* [CP] Check Pods Manifest.lock */,
+				607FACE11AFB9204008FA782 /* Sources */,
+				607FACE21AFB9204008FA782 /* Frameworks */,
+				607FACE31AFB9204008FA782 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				607FACE71AFB9204008FA782 /* PBXTargetDependency */,
+			);
+			name = EasyPay_Tests;
+			productName = Tests;
+			productReference = 607FACE51AFB9204008FA782 /* EasyPay_Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		607FACC81AFB9204008FA782 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 1520;
+				ORGANIZATIONNAME = CocoaPods;
+				TargetAttributes = {
+					607FACCF1AFB9204008FA782 = {
+						CreatedOnToolsVersion = 6.3.1;
+						LastSwiftMigration = 1520;
+					};
+					607FACE41AFB9204008FA782 = {
+						CreatedOnToolsVersion = 6.3.1;
+						LastSwiftMigration = 1520;
+						TestTargetID = 607FACCF1AFB9204008FA782;
+					};
+				};
+			};
+			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "EasyPay" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				en,
+				Base,
+			);
+			mainGroup = 607FACC71AFB9204008FA782;
+			productRefGroup = 607FACD11AFB9204008FA782 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				607FACCF1AFB9204008FA782 /* EasyPay_Example */,
+				607FACE41AFB9204008FA782 /* EasyPay_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		607FACCE1AFB9204008FA782 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84F5E95A2B9212DE009EFA58 /* CreditCardManualTableViewCell.xib in Resources */,
+				84A09F952BB70A4E00BC9AF3 /* ConsentCreatorTableViewCell.xib in Resources */,
+				8486CE6F2B9F0A9400722C96 /* SubmitButtonTableViewCell.xib in Resources */,
+				84D3A9A62B95C06200DAFE29 /* CardBillingAddressTableViewCell.xib in Resources */,
+				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				84A09F912BB7076600BC9AF3 /* AnnualCardInfoTableViewCell.xib in Resources */,
+				84A09F852BB6C5F500BC9AF3 /* CardDetailsTableViewCell.xib in Resources */,
+				84B86D232B96567C00A8F8C5 /* AmountsTableViewCell.xib in Resources */,
+				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				84F5E94E2B91E552009EFA58 /* CreditCardSaleManualViewController.xib in Resources */,
+				84A09F8C2BB7017100BC9AF3 /* AddAnnualConsentViewController.xib in Resources */,
+				84A09F812BB6C29A00BC9AF3 /* MainManualConsentViewController.xib in Resources */,
+				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+				84B86D282B968C0100A8F8C5 /* PurchItemsTableViewCell.xib in Resources */,
+				84F5E9542B91EEEC009EFA58 /* AccountHolderTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		607FACE31AFB9204008FA782 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		173020CF7DCE71AAA1080B43 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EasyPay_Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2A3D18890BF9D3590F4E1979 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EasyPay_Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A015360AA72DA4632C18F5D1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EasyPay_Example/Pods-EasyPay_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/EasyPay/EasyPay.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EasyPay.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EasyPay_Example/Pods-EasyPay_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		607FACCC1AFB9204008FA782 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84A09F8B2BB7017100BC9AF3 /* AddAnnualConsentViewController.swift in Sources */,
+				84A09F872BB6DE5400BC9AF3 /* MainManualConsentViewModel.swift in Sources */,
+				843CC6E52BB084310059BE3C /* LoadingIndicator.swift in Sources */,
+				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				84B86D272B968C0100A8F8C5 /* PurchItemsTableViewCell.swift in Sources */,
+				84DA2C002BA0767000B240CE /* BaseViewController.swift in Sources */,
+				84F5E9562B91F66E009EFA58 /* CrediCardSaleManualViewModel.swift in Sources */,
+				84A09F802BB6C29A00BC9AF3 /* MainManualConsentViewController.swift in Sources */,
+				8486CE6E2B9F0A9400722C96 /* SubmitButtonTableViewCell.swift in Sources */,
+				84A09F942BB70A4E00BC9AF3 /* ConsentCreatorTableViewCell.swift in Sources */,
+				84F5E94D2B91E552009EFA58 /* CreditCardSaleManualViewController.swift in Sources */,
+				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				8438716D2BBD7E6D002DB029 /* AddAnnualConsentViewModel.swift in Sources */,
+				84A09F902BB7076600BC9AF3 /* AnnualCardInfoTableViewCell.swift in Sources */,
+				84D3A9A52B95C06200DAFE29 /* CardBillingAddressTableViewCell.swift in Sources */,
+				84F5E9532B91EEEC009EFA58 /* AccountHolderTableViewCell.swift in Sources */,
+				84F5E9592B9212DE009EFA58 /* CreditCardManualTableViewCell.swift in Sources */,
+				84A09F842BB6C5F500BC9AF3 /* CardDetailsTableViewCell.swift in Sources */,
+				84B86D222B96567C00A8F8C5 /* AmountsTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		607FACE11AFB9204008FA782 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84667FB72BC41659000BA9DC /* ListAnnualConsentEndpointTests.swift in Sources */,
+				848789C42BC3D30F00ED7239 /* CancelAnnualConsentEndpointTests.swift in Sources */,
+				84667FB92BC42B1A000BA9DC /* TxApprovedFunctionOkApiClientTests.swift in Sources */,
+				84667FBB2BC433F6000BA9DC /* NoInternetConnectionTests.swift in Sources */,
+				848789C92BC4141300ED7239 /* ChargeAnnualConsentEndpointTests.swift in Sources */,
+				84456B552BA3466C00D7C33F /* DownloadCertificateEndpointTests.swift in Sources */,
+				607FACEC1AFB9204008FA782 /* RsaEncryptionDecryptionTests.swift.swift in Sources */,
+				845DA00A2B99D94F0022192B /* CardSaleManualEndpointTests.swift in Sources */,
+				848789C62BC3E93D00ED7239 /* AddAnnualConsentEndpointTests.swift in Sources */,
+				844294222B95E13500D7C7E8 /* SessionKeyEncryptionUtilsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		607FACE71AFB9204008FA782 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 607FACCF1AFB9204008FA782 /* EasyPay_Example */;
+			targetProxy = 607FACE61AFB9204008FA782 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		607FACD91AFB9204008FA782 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				607FACDA1AFB9204008FA782 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				607FACDF1AFB9204008FA782 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		607FACED1AFB9204008FA782 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				"EXCLUDED_ARCHS[sdk=*]" = "";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				UNIT_TESTING = YES;
+			};
+			name = Debug;
+		};
+		607FACEE1AFB9204008FA782 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				"EXCLUDED_ARCHS[sdk=*]" = "";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				UNIT_TESTING = NO;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		607FACF01AFB9204008FA782 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F87C5FB7FBA6FCD77AD4C69C /* Pods-EasyPay_Example.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = LUV5M8R3MG;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/**",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/EasyPay\"",
+				);
+				INFOPLIST_FILE = EasyPay/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MODULE_NAME = ExampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = "com.cocoapods.demo.EasyPay-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Bitrise iOS ad-hoc - (com.cocoapods.demo.EasyPay-Example)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		607FACF11AFB9204008FA782 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 225DDF2B9F218324B1DFA30B /* Pods-EasyPay_Example.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = LUV5M8R3MG;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/EasyPay\"",
+					"$(SRCROOT)/**",
+				);
+				INFOPLIST_FILE = EasyPay/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MODULE_NAME = ExampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = "com.cocoapods.demo.EasyPay-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Bitrise iOS ad-hoc - (com.cocoapods.demo.EasyPay-Example)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		607FACF31AFB9204008FA782 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F30CD65FCCE45273B295915B /* Pods-EasyPay_Tests.debug.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = LUV5M8R3MG;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EasyPay_Example.app/EasyPay_Example";
+			};
+			name = Debug;
+		};
+		607FACF41AFB9204008FA782 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4862CF7F078CD3B1D7B2BE83 /* Pods-EasyPay_Tests.release.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = LUV5M8R3MG;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EasyPay_Example.app/EasyPay_Example";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "EasyPay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				607FACED1AFB9204008FA782 /* Debug */,
+				607FACEE1AFB9204008FA782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "EasyPay_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				607FACF01AFB9204008FA782 /* Debug */,
+				607FACF11AFB9204008FA782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "EasyPay_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				607FACF31AFB9204008FA782 /* Debug */,
+				607FACF41AFB9204008FA782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 607FACC81AFB9204008FA782 /* Project object */;
+}
