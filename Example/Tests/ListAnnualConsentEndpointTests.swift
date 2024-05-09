@@ -6,7 +6,8 @@ class ListAnnualConsentEndpointTests: XCTestCase {
     
     override class func setUp() {
         EasyPay.shared.configureSecrets(apiKey: "",
-                                        hmacSecret: "")
+                                        hmacSecret: "", 
+                                        sentryKey: "")
         sleep(3) // Additional time for certificate downloading
     }
     

@@ -2,10 +2,20 @@
 
 # Easy Pay iOS SDK
 
-Easy Pay library offers access to the Easy Pay API for seamless integration with iOS applications.
+Easy Pay library offers an access to the Easy Pay API for seamless integration with iOS applications.
 
 [General Easy Pay Developer Documentation](https://easypaysoftware.com/en/home)
 
+## Installation
+
+1. Setup with Swift Package Manager 
+```
+.package(url: "https://github.com/Easy-Pay-Solutions/Mobile-SDK-IOS.git", from: "1.0.0")
+```
+2. Setup with Cocoapods
+```
+pod 'EasyPay'
+```
 ## Requirements
 
 * Xcode 15 or above
@@ -13,28 +23,18 @@ Easy Pay library offers access to the Easy Pay API for seamless integration with
 
 ## Get started
 
-1. Prerequisties - obtain from Easy Pay HMAC secret and API key
+1. Prerequisites - obtained from Easy Pay HMAC secret and API key and optionally Sentry key
 
 2. Configure Easy Pay class for example in your Payment Module or in AppDelegate (didFinishLaunchingWithOptions)
 
 ```
 EasyPay.shared.configureSecrets(apiKey: "YOURAPIKEY",
-                                hmacSecret: "YOURHMACSECRET")
+                                hmacSecret: "YOURHMACSECRET",
+                                sentryKey: "YOURSENTRYKEY")
  ```
-3. Please mind that during Easy Pay initilization the process of downloading certificate is starting. Proceeding with any call before downloading has finished will result in error (RsaCertificateError.failedToLoadCertificateData). You can check the status of downloading by accessing following enum:
+3. Please keep in mind that during the Easy Pay initialization, the process of downloading the certificate is starting. Proceeding with any call before downloading has finished will result in an error (RsaCertificateError.failedToLoadCertificateData). You can check the status of downloading by accessing the following enum:
 ```
 EasyPay.shared.certificateStatus
-```
-
-## Installation
-
-1. Setup with Swift Package Manager 
-```
-.package(url: "https://github.com/Easy-Pay-Solutions/Mobile-SDK-IOS.git", from: "0.1.0")
-```
-2. Setup with Cocoapods
-```
-pod 'EasyPay'
 ```
 ## Public methods in EasyPay class
 
@@ -48,7 +48,7 @@ EasyPay.shared.loadCertificate(_ completion: @escaping (Result<Data, Error>) -> 
 ## Public methods in ApiClient in EasyPay 
 ### 1. Charge Credit Card - CreditCardSale_Manual [Easy Pay API Documentation](https://easypaypi.com/APIDocsDev/).
 
-Processes a credit card cardsale when the credit card details are entered manually. Details include the card number, expiration date, CVV, card holder name and address.
+This method processes a credit card cardsale when the credit card details are entered manually. Details include the card number, expiration date, CVV, card holder name and address.
 ```
 EasyPay.apiClient.chargeCreditCard(request: CardSaleManualRequest,
                                    completion: @escaping (Result<CreditCardSaleResponse, Error>) -> Void)
@@ -71,7 +71,7 @@ EasyPay.apiClient.chargeCreditCard(request: CardSaleManualRequest,
 
 ### 2. List Annual Consents - ConsentAnnual_Query [Easy Pay API Documentation](https://easypaypi.com/APIDocsDev/).
 
-A query that returns annual consent details. Depending upon the query sent, a single consent or muliple consents may be returned.
+A query that returns annual consent details. Depending on the query sent, a single consent or multiple consents may be returned.
 ```
 EasyPay.apiClient.listAnnualConsents(request: ConsentAnnualListingRequest,
                                      completion: @escaping (Result<ListingConsentAnnualResponse, Error>) -> Void)
@@ -151,15 +151,15 @@ EasyPay.apiClient.processPaymentAnnualConsent(request: ProcessPaymentAnnualReque
 
 ## SecureTextField
 
-SDK contains component called SecureTextField prepared to ensure safe input of number of credit card details. It is a subclass of UITextField which enables freedom of styling as needed.
+The SDK contains a component called SecureTextField which ensures a safe input of numbers for credit card details. It is a subclass of UITextField which enables freedom of styling as needed.
 
-Setting up requires configuring certificate once it was downloaded to encrypt credit card data.
+Setting up requires configuring the certificate once it was downloaded to encrypt credit card data.
 
 ```
 nameOfYourTextField.setupConfig(EasyPay.shared.config)
 ```
 
-To receive encrypted card string required to send to the API you can use following method:
+To receive the encrypted card string required to send to the API, you can use the following method:
 
 ```
 nameOfYourTextField.encryptCardData()
@@ -167,7 +167,7 @@ nameOfYourTextField.encryptCardData()
 
 ## How to properly consume the API response
 
-It is critical that the response is consumed in the intended order and format. Clients who deviate from this can experience unwanted behavior.
+The response must be consumed in the intended order and format. Clients who deviate from this can experience unwanted behavior.
 ```
 if response.data.errorMessage != "" && response.data.errorCode != 0 {
     //This indicates an error which was handled on the EasyPay servers, consume the ErrCode and the ErrMsg 
@@ -178,7 +178,7 @@ if response.data.errorMessage != "" && response.data.errorCode != 0 {
    //Transaction has been approved, display the TXID,  and approval code (also in TXNCODE)  
 }
 ```
-For all other calls you will consume the response the same. If there is No TxApproved flag, then you can omit the last evaluation.
+For all other calls you will consume the response in the same way. If there is No TxApproved flag, then you can omit the last evaluation.
 
 ## Possible Errors
 
@@ -186,7 +186,7 @@ For all other calls you will consume the response the same. If there is No TxApp
 
 | Error name  | Suggested solution |
 | ------------- |:-------------:|
-| failedToLoadCertificateData      | Check certificate status, wait until is being downloaded before proceeding with calls, try to download it again manually     |
+| failedToLoadCertificateData      | Check certificate status, wait until the full download before proceeding with calls, try to download it again manually     |
 | failedToCreateCertificate      | Contact Easy Pay     |
 | failedToExtractPublicKey      | Contact Easy Pay     |
 
@@ -194,13 +194,13 @@ For all other calls you will consume the response the same. If there is No TxApp
 
 | Error name  | Suggested solution |
 | ------------- |:-------------:|
-| missingSessionKeyOrExpired      | Check if you have provided correct api key and hmacSecret, contact with Easy Pay to receive updated secrets |
+| missingSessionKeyOrExpired      | Check if you have provided the correct api key and hmacSecret, contact Easy Pay to receive updated secrets |
 
 ### NetworkingError
 
 | Error name  | Suggested solution |
 | ------------- |:-------------:|
-| unsuccesfullRequest      | Check HTTP status code |
+| unsuccesfulRequest      | Check HTTP status code |
 | noDataReceived      | Data from backend was empty, contact Easy Pay  |
 | dataDecodingFailure      | Data from backend was not decoded properly, contact with Easy Pay |
 | invalidCertificatePathURL    | Contact Easy Pay  |

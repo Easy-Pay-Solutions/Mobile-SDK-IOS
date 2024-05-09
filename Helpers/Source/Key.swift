@@ -8,6 +8,7 @@
 
 import Foundation
 import Security
+import Sentry
 // Taken from: https:github.com/TakeScoop/SwiftyRSA
 public protocol Key: AnyObject {
     
@@ -46,7 +47,9 @@ public extension Key {
     /// - Throws: SwiftyRSAError
     init(base64Encoded base64String: String) throws {
         guard let data = Data(base64Encoded: base64String, options: [.ignoreUnknownCharacters]) else {
-            throw SwiftyRSAError.invalidBase64String
+            let error = SwiftyRSAError.invalidBase64String
+            SentrySDK.capture(error: error)
+            throw error
         }
         try self.init(data: data)
     }
@@ -68,7 +71,9 @@ public extension Key {
     /// - Throws: SwiftyRSAError
     init(pemNamed pemName: String, in bundle: Bundle = Bundle.main) throws {
         guard let path = bundle.path(forResource: pemName, ofType: "pem") else {
-            throw SwiftyRSAError.pemFileNotFound(name: pemName)
+            let error = SwiftyRSAError.pemFileNotFound(name: pemName)
+            SentrySDK.capture(error: error)
+            throw error
         }
         let keyString = try String(contentsOf: URL(fileURLWithPath: path), encoding: .utf8)
         try self.init(pemEncoded: keyString)
@@ -82,7 +87,9 @@ public extension Key {
     /// - Throws: SwiftyRSAError
     init(derNamed derName: String, in bundle: Bundle = Bundle.main) throws {
         guard let path = bundle.path(forResource: derName, ofType: "der") else {
-            throw SwiftyRSAError.derFileNotFound(name: derName)
+            let error = SwiftyRSAError.derFileNotFound(name: derName)
+            SentrySDK.capture(error: error)
+            throw error
         }
         let data = try Data(contentsOf: URL(fileURLWithPath: path))
         try self.init(data: data)

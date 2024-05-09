@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Sentry
 // Taken from: https:github.com/TakeScoop/SwiftyRSA
 /// Encoding/Decoding lengths as octets
 private extension NSInteger {
@@ -96,7 +97,9 @@ public extension Data {
         do {
             node = try Asn1Parser.parse(data: self)
         } catch {
-            throw SwiftyRSAError.asn1ParsingFailed
+            let error = SwiftyRSAError.asn1ParsingFailed
+            SentrySDK.capture(error: error)
+            throw error
         }
         
         // Ensure the raw data is an ASN1 sequence
@@ -141,7 +144,9 @@ public extension Data {
         do {
             node = try Asn1Parser.parse(data: self)
         } catch {
-            throw SwiftyRSAError.asn1ParsingFailed
+            let error = SwiftyRSAError.asn1ParsingFailed
+            SentrySDK.capture(error: error)
+            throw error
         }
         
         // Ensure the raw data is an ASN1 sequence

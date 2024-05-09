@@ -9,6 +9,7 @@
 
 import Foundation
 import Security
+import Sentry
 // Taken from: https:github.com/TakeScoop/SwiftyRSA
 public typealias Padding = SecPadding
 
@@ -20,7 +21,9 @@ public enum SwiftyRSA {
         }
         
         guard lines.count != 0 else {
-            throw SwiftyRSAError.pemDoesNotContainKey
+            let error = SwiftyRSAError.pemDoesNotContainKey
+            SentrySDK.capture(error: error)
+            throw error
         }
         
         return lines.joined(separator: "")
@@ -74,7 +77,9 @@ public enum SwiftyRSA {
             var error: Unmanaged<CFError>?
             let data = SecKeyCopyExternalRepresentation(reference, &error)
             guard let unwrappedData = data as Data? else {
-                throw SwiftyRSAError.keyRepresentationFailed(error: error?.takeRetainedValue())
+                let error = SwiftyRSAError.keyRepresentationFailed(error: error?.takeRetainedValue())
+                SentrySDK.capture(error: error)
+                throw error
             }
             return unwrappedData
         
@@ -93,7 +98,9 @@ public enum SwiftyRSA {
             var data: AnyObject?
             let addStatus = SecItemAdd(addParams as CFDictionary, &data)
             guard let unwrappedData = data as? Data else {
-                throw SwiftyRSAError.keyAddFailed(status: addStatus)
+                let error = SwiftyRSAError.keyAddFailed(status: addStatus)
+                SentrySDK.capture(error: error)
+                throw error
             }
             
             let deleteParams: [CFString: Any] = [
@@ -122,7 +129,9 @@ public enum SwiftyRSA {
     static func generateRSAKeyPair(sizeInBits size: Int, applyUnitTestWorkaround: Bool = false) throws -> (privateKey: PrivateKey, publicKey: PublicKey) {
       
         guard let tagData = UUID().uuidString.data(using: .utf8) else {
-            throw SwiftyRSAError.stringToDataConversionFailed
+            let error = SwiftyRSAError.stringToDataConversionFailed
+            SentrySDK.capture(error: error)
+            throw error
         }
         
         // @hack Don't store permanently when running unit tests, otherwise we'll get a key creation error (NSOSStatusErrorDomain -50)
@@ -142,7 +151,9 @@ public enum SwiftyRSA {
         var error: Unmanaged<CFError>?
         guard let privKey = SecKeyCreateRandomKey(attributes as CFDictionary, &error),
             let pubKey = SecKeyCopyPublicKey(privKey) else {
-            throw SwiftyRSAError.keyGenerationFailed(error: error?.takeRetainedValue())
+            let error = SwiftyRSAError.keyGenerationFailed(error: error?.takeRetainedValue())
+            SentrySDK.capture(error: error)
+            throw error
         }
         let privateKey = try PrivateKey(reference: privKey)
         let publicKey = try PublicKey(reference: pubKey)
@@ -155,7 +166,9 @@ public enum SwiftyRSA {
         let keyData = keyData
         
         guard let tagData = tag.data(using: .utf8) else {
-            throw SwiftyRSAError.tagEncodingFailed
+            let error = SwiftyRSAError.tagEncodingFailed
+            SentrySDK.capture(error: error)
+            throw error
         }
         
         let keyClass = isPublic ? kSecAttrKeyClassPublic : kSecAttrKeyClassPrivate
@@ -173,7 +186,9 @@ public enum SwiftyRSA {
             
             var error: Unmanaged<CFError>?
             guard let key = SecKeyCreateWithData(keyData as CFData, keyDict as CFDictionary, &error) else {
-                throw SwiftyRSAError.keyCreateFailed(error: error?.takeRetainedValue())
+                let error = SwiftyRSAError.keyCreateFailed(error: error?.takeRetainedValue())
+                SentrySDK.capture(error: error)
+                throw error
             }
             return key
             
@@ -194,7 +209,9 @@ public enum SwiftyRSA {
             
             let addStatus = SecItemAdd(keyAddDict as CFDictionary, persistKey)
             guard addStatus == errSecSuccess || addStatus == errSecDuplicateItem else {
-                throw SwiftyRSAError.keyAddFailed(status: addStatus)
+                let error = SwiftyRSAError.keyAddFailed(status: addStatus)
+                SentrySDK.capture(error: error)
+                throw error
             }
             
             let keyCopyDict: [CFString: Any] = [
@@ -211,7 +228,9 @@ public enum SwiftyRSA {
             let copyStatus = SecItemCopyMatching(keyCopyDict as CFDictionary, &keyRef)
             
             guard let unwrappedKeyRef = keyRef else {
-                throw SwiftyRSAError.keyCopyFailed(status: copyStatus)
+                let error = SwiftyRSAError.keyCopyFailed(status: copyStatus)
+                SentrySDK.capture(error: error)
+                throw error
             }
             
             return unwrappedKeyRef as! SecKey // swiftlint:disable:this force_cast
@@ -251,12 +270,16 @@ public enum SwiftyRSA {
         do {
             node = try Asn1Parser.parse(data: keyData)
         } catch {
-            throw SwiftyRSAError.asn1ParsingFailed
+            let error = SwiftyRSAError.asn1ParsingFailed
+            SentrySDK.capture(error: error)
+            throw error
         }
         
         // Ensure the raw data is an ASN1 sequence
         guard case .sequence(let nodes) = node else {
-            throw SwiftyRSAError.invalidAsn1RootNode
+            let error = SwiftyRSAError.invalidAsn1RootNode
+            SentrySDK.capture(error: error)
+            throw error
         }
         
         // Detect whether the sequence only has integers, in which case it's a headerless key
@@ -282,8 +305,10 @@ public enum SwiftyRSA {
             return data
         }
         
+        let error = SwiftyRSAError.invalidAsn1Structure
+        SentrySDK.capture(error: error)
         // Unable to extract bit/octet string or raw integer sequence
-        throw SwiftyRSAError.invalidAsn1Structure
+        throw error
     }
     
     /**
@@ -312,7 +337,9 @@ public enum SwiftyRSA {
         } else if try keyData.hasX509Header() {
             return keyData
         } else { // invalideHeader
-            throw SwiftyRSAError.x509CertificateFailed
+            let error = SwiftyRSAError.x509CertificateFailed
+            SentrySDK.capture(error: error)
+            throw error
         }
     }
     

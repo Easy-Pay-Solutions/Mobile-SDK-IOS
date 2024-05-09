@@ -1,5 +1,6 @@
 
 import UIKit
+import Sentry
 
 public enum SecureTextFieldError: Error {
     case setupConfigError
@@ -26,7 +27,9 @@ public class SecureTextField: UITextField {
                 }
             }
         } else {
-            throw SecureTextFieldError.setupConfigError
+            let error = SecureTextFieldError.setupConfigError
+            SentrySDK.capture(error: error)
+            throw error
         }
         return nil
     }

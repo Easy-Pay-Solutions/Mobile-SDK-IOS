@@ -71,6 +71,7 @@
 		84A3D32E2BB1D2F80090C20F /* ProcessPaymentAnnualResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A3D32C2BB1D2F80090C20F /* ProcessPaymentAnnualResponse.swift */; };
 		84A3D3302BB1D3340090C20F /* ProcessPaymentAnnualResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A3D32F2BB1D3340090C20F /* ProcessPaymentAnnualResponseModel.swift */; };
 		84A3D3312BB1D3340090C20F /* ProcessPaymentAnnualResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A3D32F2BB1D3340090C20F /* ProcessPaymentAnnualResponseModel.swift */; };
+		84AA75A72BEA2D98008045B9 /* Sentry-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 84AA75A62BEA2D98008045B9 /* Sentry-Dynamic */; };
 		84BC8DD42BA9862300C6732E /* CreateConsentAnnual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BC8DD12BA9862300C6732E /* CreateConsentAnnual.swift */; };
 		84BC8DD52BA9862300C6732E /* CreateConsentAnnualManualRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BC8DD22BA9862300C6732E /* CreateConsentAnnualManualRequestModel.swift */; };
 		84BC8DD62BA9862300C6732E /* CreateConsentAnnualResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BC8DD32BA9862300C6732E /* CreateConsentAnnualResponseModel.swift */; };
@@ -254,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F55D2B7CB232639CF035B946985A8AD8 /* Foundation.framework in Frameworks */,
+				84AA75A72BEA2D98008045B9 /* Sentry-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -647,6 +649,9 @@
 			dependencies = (
 			);
 			name = EasyPay;
+			packageProductDependencies = (
+				84AA75A62BEA2D98008045B9 /* Sentry-Dynamic */,
+			);
 			productName = EasyPay;
 			productReference = 185E1A184C13CF1D98CFE865E44FDE21 /* EasyPay.framework */;
 			productType = "com.apple.product-type.framework";
@@ -720,6 +725,9 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			packageReferences = (
+				84AA75A52BEA2D98008045B9 /* XCRemoteSwiftPackageReference "sentry-cocoa" */,
+			);
 			productRefGroup = 184C14D106A9597904BD84132C1E38CC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1392,6 +1400,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		84AA75A52BEA2D98008045B9 /* XCRemoteSwiftPackageReference "sentry-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/getsentry/sentry-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.25.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		84AA75A62BEA2D98008045B9 /* Sentry-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84AA75A52BEA2D98008045B9 /* XCRemoteSwiftPackageReference "sentry-cocoa" */;
+			productName = "Sentry-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 }

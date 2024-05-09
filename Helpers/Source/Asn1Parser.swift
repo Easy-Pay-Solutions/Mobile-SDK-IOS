@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Sentry
 // Taken from: https:github.com/TakeScoop/SwiftyRSA
 /// Simple data scanner that consumes bytes from a raw data and keeps an updated position.
 private class Scanner {
@@ -42,7 +43,9 @@ private class Scanner {
         }
         
         guard index + length <= data.count else {
-            throw ScannerError.outOfBounds
+            let error = ScannerError.outOfBounds
+            SentrySDK.capture(error: error)
+            throw error
         }
         
         let subdata = data.subdata(in: index..<index + length)
@@ -199,8 +202,9 @@ enum Asn1Parser {
             let data = try scanner.consume(length: length)
             return .octetString(data: data)
         }
-        
-        throw ParserError.invalidType(value: firstByte)
+        let error = ParserError.invalidType(value: firstByte)
+        SentrySDK.capture(error: error)
+        throw error
     }
     
     /// Parses an ASN1 sequence and returns its child nodes

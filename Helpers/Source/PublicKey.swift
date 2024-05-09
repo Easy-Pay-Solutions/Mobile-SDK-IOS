@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Sentry
 // Taken from: https:github.com/TakeScoop/SwiftyRSA
 public class PublicKey: Key {
     
@@ -39,7 +40,9 @@ public class PublicKey: Key {
     public required init(reference: SecKey) throws {
         
         guard SwiftyRSA.isValidKeyReference(reference, forClass: kSecAttrKeyClassPublic) else {
-            throw SwiftyRSAError.notAPublicKey
+            let error = SwiftyRSAError.notAPublicKey
+            SentrySDK.capture(error: error)
+            throw error
         }
         
         self.reference = reference

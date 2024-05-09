@@ -1,5 +1,6 @@
 
 import Foundation
+import Sentry
 
 public final class EasyPay {
     private var mApiClient: ApiClient
@@ -12,12 +13,12 @@ public final class EasyPay {
         mApiClient
     }
     private init() {
-        self.config = Config(apiKey: "", hmacToken: "")
+        self.config = Config(apiKey: "", hmacToken: "", sentryKey: "")
         self.mApiClient = ApiClient(configuration: config)
     }
     
-    public func configureSecrets(apiKey: String, hmacSecret: String) {
-        self.config = Config(apiKey: apiKey, hmacToken: hmacSecret)
+    public func configureSecrets(apiKey: String, hmacSecret: String, sentryKey: String?) {
+        self.config = Config(apiKey: apiKey, hmacToken: hmacSecret, sentryKey: sentryKey)
         self.mApiClient = ApiClient(configuration: config)
         mApiClient.downloadManuallyCertificate { result in
             switch result {
@@ -26,6 +27,13 @@ public final class EasyPay {
                 self.setupThumbprint(self.mApiClient.thumbprint(for: data))
             default:
                 break
+            }
+        }
+        if let sentryKey {
+            SentrySDK.start { options in
+                options.dsn = sentryKey
+                options.enableCaptureFailedRequests = true
+                options.debug = false
             }
         }
     }

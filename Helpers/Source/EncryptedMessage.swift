@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Sentry
 // Taken from: https:github.com/TakeScoop/SwiftyRSA
 public class EncryptedMessage: Message {
     
@@ -45,7 +46,9 @@ public class EncryptedMessage: Message {
             
             let status = SecKeyDecrypt(key.reference, padding, chunkData, idxEnd-idx, &decryptedDataBuffer, &decryptedDataLength)
             guard status == noErr else {
-                throw SwiftyRSAError.chunkDecryptFailed(index: idx)
+                let error = SwiftyRSAError.chunkDecryptFailed(index: idx)
+                SentrySDK.capture(error: error)
+                throw error
             }
             
             decryptedDataBytes += [UInt8](decryptedDataBuffer[0..<decryptedDataLength])

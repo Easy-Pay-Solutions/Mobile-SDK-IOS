@@ -5,7 +5,8 @@ import Security
 class CardSaleManualEndpointTests: XCTestCase {
     let api = ApiClient(configuration: Config(
         apiKey: "",
-        hmacToken: ""))
+        hmacToken: "", 
+        sentryKey: ""))
     
     lazy var request = CardSaleManualRequest(transactionRequest: prepareTestDataForCreditCardManual())
     let successExpectation = XCTestExpectation(description: "Request was successfull")

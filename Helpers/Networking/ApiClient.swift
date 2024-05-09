@@ -1,5 +1,6 @@
 
 import Foundation
+import Sentry
 
 public enum CertificateStatus {
     case success
@@ -31,6 +32,7 @@ public final class ApiClient {
             case .success(let response):
                 completion(.success(response))
             case .failure(let error):
+                SentrySDK.capture(error: error)
                 completion(.failure(error))
             }
         }
@@ -44,6 +46,7 @@ public final class ApiClient {
             case .success(let response):
                 completion(.success(response))
             case .failure(let error):
+                SentrySDK.capture(error: error)
                 completion(.failure(error))
             }
         }
@@ -57,6 +60,7 @@ public final class ApiClient {
             case .success(let response):
                 completion(.success(response))
             case .failure(let error):
+                SentrySDK.capture(error: error)
                 completion(.failure(error))
             }
         }
@@ -70,6 +74,7 @@ public final class ApiClient {
             case .success(let response):
                 completion(.success(response))
             case .failure(let error):
+                SentrySDK.capture(error: error)
                 completion(.failure(error))
             }
         }
@@ -83,6 +88,7 @@ public final class ApiClient {
             case .success(let response):
                 completion(.success(response))
             case .failure(let error):
+                SentrySDK.capture(error: error)
                 completion(.failure(error))
             }
         }
@@ -120,18 +126,23 @@ public final class ApiClient {
         
         let task = session.dataTask(with: dataRequest) { (data, response, error) in
             if let error = error {
+                SentrySDK.capture(error: error)
                 completion(.failure(error))
                 return
             }
             
             guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
                 let statusCode = (response as? HTTPURLResponse)?.statusCode ?? -1
-                completion(.failure(NetworkingError.unsuccesfulRequest(statusCode: String(statusCode))))
+                let error = NetworkingError.unsuccesfulRequest(statusCode: String(statusCode))
+                SentrySDK.capture(error: error)
+                completion(.failure(error))
                 return
             }
             
             guard let data = data else {
-                completion(.failure(NetworkingError.noDataReceived))
+                let error = NetworkingError.noDataReceived
+                SentrySDK.capture(error: error)
+                completion(.failure(error))
                 return
             }
             
@@ -145,7 +156,9 @@ public final class ApiClient {
                 completion(.success(decodedResponse))
                 return
             } catch {
-                completion(.failure(NetworkingError.dataDecodingFailure))
+                let error = NetworkingError.dataDecodingFailure
+                SentrySDK.capture(error: error)
+                completion(.failure(error))
                 return
             }
         }
@@ -155,7 +168,9 @@ public final class ApiClient {
     
     public func downloadCertificate(completion: @escaping (Data?, Error?) -> Void) {
         guard ValidatorUtils.isValidUrl(certificateString), let certificateUrl = URL(string: certificateString) else {
-            completion(nil, NetworkingError.invalidCertificatePathURL)
+            let error = NetworkingError.invalidCertificatePathURL
+            SentrySDK.capture(error: error)
+            completion(nil, error)
             return
         }
         let task = session.dataTask(with: certificateUrl) { data, response, error in

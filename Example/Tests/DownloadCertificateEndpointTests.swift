@@ -5,7 +5,8 @@ import Security
 class DownloadCertificateEndpointTests: XCTestCase {
     let api = ApiClient(configuration: Config(
         apiKey: "",
-        hmacToken: ""))
+        hmacToken: "", 
+        sentryKey: ""))
     
     let successExpectation = XCTestExpectation(description: "Download succeded")
     let failExpectation = XCTestExpectation(description: "Download failed")

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Sentry
 // Taken from: https:github.com/TakeScoop/SwiftyRSA
 public protocol Message {
     var data: Data { get }
@@ -28,7 +29,9 @@ public extension Message {
     /// - Throws: SwiftyRSAError
     init(base64Encoded base64String: String) throws {
         guard let data = Data(base64Encoded: base64String) else {
-            throw SwiftyRSAError.invalidBase64String
+            let error = SwiftyRSAError.invalidBase64String
+            SentrySDK.capture(error: error)
+            throw error
         }
         self.init(data: data)
     }

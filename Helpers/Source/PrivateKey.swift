@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Sentry
 // Taken from: https:github.com/TakeScoop/SwiftyRSA
 public class PrivateKey: Key {
     
@@ -37,7 +38,9 @@ public class PrivateKey: Key {
     public required init(reference: SecKey) throws {
         
         guard SwiftyRSA.isValidKeyReference(reference, forClass: kSecAttrKeyClassPrivate) else {
-            throw SwiftyRSAError.notAPrivateKey
+            let error = SwiftyRSAError.notAPrivateKey
+            SentrySDK.capture(error: error)
+            throw error
         }
         
         self.reference = reference

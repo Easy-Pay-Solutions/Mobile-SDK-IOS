@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Sentry
 // Taken from: https:github.com/TakeScoop/SwiftyRSA
 public class ClearMessage: Message {
     
@@ -28,7 +29,9 @@ public class ClearMessage: Message {
     /// - Throws: SwiftyRSAError
     public convenience init(string: String, using encoding: String.Encoding) throws {
         guard let data = string.data(using: encoding) else {
-            throw SwiftyRSAError.stringToDataConversionFailed
+            let error = SwiftyRSAError.stringToDataConversionFailed
+            SentrySDK.capture(error: error)
+            throw error
         }
         self.init(data: data)
     }
@@ -41,7 +44,9 @@ public class ClearMessage: Message {
     /// - Throws: SwiftyRSAError
     public func string(encoding: String.Encoding) throws -> String {
         guard let str = String(data: data, encoding: encoding) else {
-            throw SwiftyRSAError.dataToStringConversionFailed
+            let error = SwiftyRSAError.dataToStringConversionFailed
+            SentrySDK.capture(error: error)
+            throw error
         }
         return str
     }
@@ -83,7 +88,9 @@ public class ClearMessage: Message {
             let status = SecKeyEncrypt(key.reference, padding, chunkData, chunkData.count, &encryptedDataBuffer, &encryptedDataLength)
             
             guard status == noErr else {
-                throw SwiftyRSAError.chunkEncryptFailed(index: idx)
+                let error = SwiftyRSAError.chunkEncryptFailed(index: idx)
+                SentrySDK.capture(error: error)
+                throw error
             }
             
             encryptedDataBytes += encryptedDataBuffer
@@ -111,7 +118,9 @@ public class ClearMessage: Message {
         let maxChunkSize = blockSize - 11
         
         guard digest.count <= maxChunkSize else {
-            throw SwiftyRSAError.invalidDigestSize(digestSize: digest.count, maxChunkSize: maxChunkSize)
+            let error = SwiftyRSAError.invalidDigestSize(digestSize: digest.count, maxChunkSize: maxChunkSize)
+            SentrySDK.capture(error: error)
+            throw error
         }
         
         var digestBytes = [UInt8](repeating: 0, count: digest.count)
@@ -123,7 +132,9 @@ public class ClearMessage: Message {
         let status = SecKeyRawSign(key.reference, digestType.padding, digestBytes, digestBytes.count, &signatureBytes, &signatureDataLength)
         
         guard status == noErr else {
-            throw SwiftyRSAError.signatureCreateFailed(status: status)
+            let error = SwiftyRSAError.signatureCreateFailed(status: status)
+            SentrySDK.capture(error: error)
+            throw error
         }
         
         let signatureData = Data(bytes: signatureBytes, count: signatureBytes.count)
@@ -154,7 +165,9 @@ public class ClearMessage: Message {
         } else if status == -9809 {
             return false
         } else {
-            throw SwiftyRSAError.signatureVerifyFailed(status: status)
+            let error = SwiftyRSAError.signatureVerifyFailed(status: status)
+            SentrySDK.capture(error: error)
+            throw error
         }
     }
     

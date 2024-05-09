@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Sentry
 // Taken from: https:github.com/TakeScoop/SwiftyRSA
 public class Signature {
     
@@ -44,7 +45,9 @@ public class Signature {
     /// - Throws: SwiftyRSAError
     public convenience init(base64Encoded base64String: String) throws {
         guard let data = Data(base64Encoded: base64String) else {
-            throw SwiftyRSAError.invalidBase64String
+            let error = SwiftyRSAError.invalidBase64String
+            SentrySDK.capture(error: error)
+            throw error
         }
         self.init(data: data)
     }

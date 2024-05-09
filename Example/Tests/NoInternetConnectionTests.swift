@@ -5,7 +5,8 @@ import XCTest
 class NoInternetConnectionTests: XCTestCase {
     private let api = MockNoConnectionApiClient(configuration: Config(
         apiKey: "",
-        hmacToken: ""))
+        hmacToken: "", 
+        sentryKey: ""))
     
     lazy var request = CancelConsentAnnualRequest(cancelConsentAnnualRequest: CancelConsentAnnualManualRequestModel(consentId: 1))
     let failExpectation = XCTestExpectation(description: "Request was not successful")
