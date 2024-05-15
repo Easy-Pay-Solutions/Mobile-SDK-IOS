@@ -75,7 +75,6 @@ public struct CreateConsentAnnualManualRequestModel: Codable {
        
         if let endCustomer {
             endCustomerConverted = [
-            "EndCustomer": [
                 "Firstname": endCustomer.firstName as Any,
                 "Lastname": endCustomer.lastName as Any,
                 "Company": endCustomer.company as Any,
@@ -91,7 +90,6 @@ public struct CreateConsentAnnualManualRequestModel: Codable {
                 ],
                 "Email": endCustomer.email as Any,
                 "Phone": endCustomer.phone as Any
-                ]
             ]
         } else {
             endCustomerConverted = [:]
