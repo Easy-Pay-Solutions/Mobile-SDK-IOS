@@ -13,6 +13,7 @@
 		6EEA9B2F878CBD48A4E45E05 /* Pods_EasyPay_EasyPayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F16BDFFB85E4A5685D892CB /* Pods_EasyPay_EasyPayTests.framework */; };
 		7AACE84A10E1CE1BD19A24BFC42544F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		7B2EC503225432474F4F649C /* Pods_Pods_EasyPay_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C4BBBA794BFA222E9C2F157 /* Pods_Pods_EasyPay_Tests.framework */; };
+		8429501B2BF615AC00F7EEBB /* SecureTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8429501A2BF615AC00F7EEBB /* SecureTextField.swift */; };
 		8432E8D62BCE7BA6008B37AF /* CreateConsentAnnualValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432E8D52BCE7BA6008B37AF /* CreateConsentAnnualValidationError.swift */; };
 		8432E8D72BCE7BA6008B37AF /* CreateConsentAnnualValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432E8D52BCE7BA6008B37AF /* CreateConsentAnnualValidationError.swift */; };
 		8432E8D82BCE7BA6008B37AF /* CreateConsentAnnualValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432E8D52BCE7BA6008B37AF /* CreateConsentAnnualValidationError.swift */; };
@@ -38,7 +39,6 @@
 		845DA0102B99FE3C0022192B /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845DA00F2B99FE3C0022192B /* Validator.swift */; };
 		845DA0132B99FE590022192B /* ValidatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845DA0122B99FE590022192B /* ValidatorFactory.swift */; };
 		845DA0172B99FE6F0022192B /* CardSaleManualValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845DA0152B99FE6F0022192B /* CardSaleManualValidator.swift */; };
-		845DA01A2B9A0F500022192B /* SecureTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845DA0192B9A0F500022192B /* SecureTextField.swift */; };
 		8460D2312B974C8700AFFCFC /* CardSaleManualRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845B79232B8C76490098E846 /* CardSaleManualRequest.swift */; };
 		8460D2342B9764B400AFFCFC /* CardSaleManualResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8460D2332B9764B400AFFCFC /* CardSaleManualResponse.swift */; };
 		8460D2362B9764BF00AFFCFC /* CardSaleManualResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8460D2352B9764BF00AFFCFC /* CardSaleManualResponseModel.swift */; };
@@ -112,7 +112,6 @@
 		98E7995E2BA4B36D00061660 /* SwiftyRSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E7994F2BA4B36D00061660 /* SwiftyRSA.swift */; };
 		98E7995F2BA4B36D00061660 /* SwiftyRSA+ObjC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E799502BA4B36D00061660 /* SwiftyRSA+ObjC.swift */; };
 		98E799602BA4B36D00061660 /* SwiftyRSAError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E799512BA4B36D00061660 /* SwiftyRSAError.swift */; };
-		98E799632BA4B64600061660 /* SecureTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845DA0192B9A0F500022192B /* SecureTextField.swift */; };
 		98E799642BA4B64800061660 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2D43A2B8F32AC00A3F157 /* Config.swift */; };
 		98E799652BA4B65100061660 /* EncryptionUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2D4382B8E41C900A3F157 /* EncryptionUtils.swift */; };
 		98E799662BA4B65900061660 /* PublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E799442BA4B36D00061660 /* PublicKey.swift */; };
@@ -189,6 +188,7 @@
 		7ACCCADDA9BA7DBC84F994B3 /* Pods-Pods-EasyPay_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pods-EasyPay_Example.debug.xcconfig"; path = "Target Support Files/Pods-Pods-EasyPay_Example/Pods-Pods-EasyPay_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		7AF7D5994C7A2D4E066B47B755970A5D /* Pods-EasyPay_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EasyPay_Example-frameworks.sh"; sourceTree = "<group>"; };
 		7C4BBBA794BFA222E9C2F157 /* Pods_Pods_EasyPay_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pods_EasyPay_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8429501A2BF615AC00F7EEBB /* SecureTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureTextField.swift; sourceTree = "<group>"; };
 		8432E8D52BCE7BA6008B37AF /* CreateConsentAnnualValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateConsentAnnualValidationError.swift; sourceTree = "<group>"; };
 		843CC6D72BB03C480059BE3C /* EasyPay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyPay.swift; sourceTree = "<group>"; };
 		843CC6DB2BB03C700059BE3C /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
@@ -201,7 +201,6 @@
 		845DA00F2B99FE3C0022192B /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		845DA0122B99FE590022192B /* ValidatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorFactory.swift; sourceTree = "<group>"; };
 		845DA0152B99FE6F0022192B /* CardSaleManualValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSaleManualValidator.swift; sourceTree = "<group>"; };
-		845DA0192B9A0F500022192B /* SecureTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureTextField.swift; sourceTree = "<group>"; };
 		8460D2332B9764B400AFFCFC /* CardSaleManualResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSaleManualResponse.swift; sourceTree = "<group>"; };
 		8460D2352B9764BF00AFFCFC /* CardSaleManualResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSaleManualResponseModel.swift; sourceTree = "<group>"; };
 		8460E4412BCD72D400974FE5 /* CreateConsentAnnualValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateConsentAnnualValidator.swift; sourceTree = "<group>"; };
@@ -316,7 +315,6 @@
 				774E9EFB934F725E20414516 /* Pods-Pods-EasyPay_Tests.debug.xcconfig */,
 				734C94883F5437F3EDE9D29C /* Pods-Pods-EasyPay_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -391,6 +389,14 @@
 			path = "Target Support Files/Pods-EasyPay_Tests";
 			sourceTree = "<group>";
 		};
+		842950192BF6156800F7EEBB /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				8429501A2BF615AC00F7EEBB /* SecureTextField.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
 		843CC6DA2BB03C660059BE3C /* Errors */ = {
 			isa = PBXGroup;
 			children = (
@@ -461,15 +467,6 @@
 			path = Validators;
 			sourceTree = "<group>";
 		};
-		845DA0182B9A08910022192B /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				845DA0192B9A0F500022192B /* SecureTextField.swift */,
-			);
-			name = UI;
-			path = ../UI;
-			sourceTree = "<group>";
-		};
 		8460D2322B9764A900AFFCFC /* Responses */ = {
 			isa = PBXGroup;
 			children = (
@@ -526,7 +523,7 @@
 		84D337A22B86254300E60137 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				845DA0182B9A08910022192B /* UI */,
+				842950192BF6156800F7EEBB /* Design */,
 				98E799432BA4B36D00061660 /* Source */,
 				84456B4C2BA2E3AB00D7C33F /* Utilities */,
 				8486CE742B9F526A00722C96 /* Errors */,
@@ -756,7 +753,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "_Pods" */;
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -919,6 +916,7 @@
 				98E7995F2BA4B36D00061660 /* SwiftyRSA+ObjC.swift in Sources */,
 				F0A55A783D551CE2BFB35431E7D5665B /* EasyPay-dummy.m in Sources */,
 				84D337A82B86264100E60137 /* StringUtils.swift in Sources */,
+				8429501B2BF615AC00F7EEBB /* SecureTextField.swift in Sources */,
 				848748472BB417EE00199D6D /* ConsentAnnualListingResponseModel.swift in Sources */,
 				8460D2342B9764B400AFFCFC /* CardSaleManualResponse.swift in Sources */,
 				8460E4422BCD72D400974FE5 /* CreateConsentAnnualValidator.swift in Sources */,
@@ -949,7 +947,6 @@
 				84BC8DD62BA9862300C6732E /* CreateConsentAnnualResponseModel.swift in Sources */,
 				84D2D43D2B8F5C2500A3F157 /* BaseResponse.swift in Sources */,
 				98E799562BA4B36D00061660 /* ClearMessage.swift in Sources */,
-				845DA01A2B9A0F500022192B /* SecureTextField.swift in Sources */,
 				84D2D4392B8E41C900A3F157 /* EncryptionUtils.swift in Sources */,
 				843CC6E22BB03CAA0059BE3C /* RsaCertificateError.swift in Sources */,
 				84A3D32D2BB1D2F80090C20F /* ProcessPaymentAnnualResponse.swift in Sources */,
@@ -1021,7 +1018,6 @@
 				848748342BB30E2B00199D6D /* CancelConsentAnnualRequest.swift in Sources */,
 				98E799692BA4B65D00061660 /* EncryptedMessage.swift in Sources */,
 				845DA0172B99FE6F0022192B /* CardSaleManualValidator.swift in Sources */,
-				98E799632BA4B64600061660 /* SecureTextField.swift in Sources */,
 				8432E8D72BCE7BA6008B37AF /* CreateConsentAnnualValidationError.swift in Sources */,
 				98E799642BA4B64800061660 /* Config.swift in Sources */,
 				98E7996A2BA4B65D00061660 /* ClearMessage.swift in Sources */,
@@ -1493,7 +1489,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "_Pods" */ = {
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D299434AB35E7FD6F7921C8EF24742FF /* Debug */,
