@@ -22,6 +22,8 @@ dependencies: [
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "EasyPay"),
+	    dependencies: ["Sentry"]),
+
         .testTarget(
             name: "EasyPay_Tests",
             dependencies: ["EasyPay"]),
