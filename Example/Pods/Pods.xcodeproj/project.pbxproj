@@ -13,120 +13,64 @@
 		6EEA9B2F878CBD48A4E45E05 /* Pods_EasyPay_EasyPayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F16BDFFB85E4A5685D892CB /* Pods_EasyPay_EasyPayTests.framework */; };
 		7AACE84A10E1CE1BD19A24BFC42544F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		7B2EC503225432474F4F649C /* Pods_Pods_EasyPay_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C4BBBA794BFA222E9C2F157 /* Pods_Pods_EasyPay_Tests.framework */; };
-		8429501B2BF615AC00F7EEBB /* SecureTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8429501A2BF615AC00F7EEBB /* SecureTextField.swift */; };
-		8432E8D62BCE7BA6008B37AF /* CreateConsentAnnualValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432E8D52BCE7BA6008B37AF /* CreateConsentAnnualValidationError.swift */; };
-		8432E8D72BCE7BA6008B37AF /* CreateConsentAnnualValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432E8D52BCE7BA6008B37AF /* CreateConsentAnnualValidationError.swift */; };
-		8432E8D82BCE7BA6008B37AF /* CreateConsentAnnualValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432E8D52BCE7BA6008B37AF /* CreateConsentAnnualValidationError.swift */; };
-		843AECE72BC5674000E79BF3 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84456B4D2BA2E3CE00D7C33F /* Data+Extensions.swift */; };
-		843AECE82BC5675D00E79BF3 /* CreditCardInfoValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486CE752B9F527A00722C96 /* CreditCardInfoValidationError.swift */; };
-		843AECE92BC5685200E79BF3 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845B791F2B88B64E0098E846 /* BaseRequest.swift */; };
-		843AECEA2BC5686000E79BF3 /* CardSaleManualValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845DA0152B99FE6F0022192B /* CardSaleManualValidator.swift */; };
-		843AECEB2BC5687D00E79BF3 /* CardSaleManualRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845B79232B8C76490098E846 /* CardSaleManualRequest.swift */; };
-		843CC6D82BB03C480059BE3C /* EasyPay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CC6D72BB03C480059BE3C /* EasyPay.swift */; };
-		843CC6D92BB03C480059BE3C /* EasyPay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CC6D72BB03C480059BE3C /* EasyPay.swift */; };
-		843CC6DC2BB03C700059BE3C /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CC6DB2BB03C700059BE3C /* NetworkingError.swift */; };
-		843CC6DD2BB03C700059BE3C /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CC6DB2BB03C700059BE3C /* NetworkingError.swift */; };
-		843CC6DF2BB03C940059BE3C /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CC6DE2BB03C940059BE3C /* AuthenticationError.swift */; };
-		843CC6E02BB03C940059BE3C /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CC6DE2BB03C940059BE3C /* AuthenticationError.swift */; };
-		843CC6E22BB03CAA0059BE3C /* RsaCertificateError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CC6E12BB03CAA0059BE3C /* RsaCertificateError.swift */; };
-		843CC6E32BB03CAA0059BE3C /* RsaCertificateError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CC6E12BB03CAA0059BE3C /* RsaCertificateError.swift */; };
-		844294242B95E16B00D7C7E8 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6EC312B86149800182440 /* ApiClient.swift */; };
-		844294252B95E17B00D7C7E8 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D337A52B86259C00E60137 /* Version.swift */; };
-		844294272B95E18E00D7C7E8 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845B791F2B88B64E0098E846 /* BaseRequest.swift */; };
-		84456B4F2BA2E3CE00D7C33F /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84456B4D2BA2E3CE00D7C33F /* Data+Extensions.swift */; };
-		845DA0052B99D3100022192B /* ValidatorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845DA0042B99D3100022192B /* ValidatorUtils.swift */; };
-		845DA0062B99D3100022192B /* ValidatorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845DA0042B99D3100022192B /* ValidatorUtils.swift */; };
-		845DA0102B99FE3C0022192B /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845DA00F2B99FE3C0022192B /* Validator.swift */; };
-		845DA0132B99FE590022192B /* ValidatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845DA0122B99FE590022192B /* ValidatorFactory.swift */; };
-		845DA0172B99FE6F0022192B /* CardSaleManualValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845DA0152B99FE6F0022192B /* CardSaleManualValidator.swift */; };
-		8460D2312B974C8700AFFCFC /* CardSaleManualRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845B79232B8C76490098E846 /* CardSaleManualRequest.swift */; };
-		8460D2342B9764B400AFFCFC /* CardSaleManualResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8460D2332B9764B400AFFCFC /* CardSaleManualResponse.swift */; };
-		8460D2362B9764BF00AFFCFC /* CardSaleManualResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8460D2352B9764BF00AFFCFC /* CardSaleManualResponseModel.swift */; };
-		8460D2372B97772000AFFCFC /* CardSaleManualResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8460D2352B9764BF00AFFCFC /* CardSaleManualResponseModel.swift */; };
-		8460D2382B977A2900AFFCFC /* CardSaleManualResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8460D2332B9764B400AFFCFC /* CardSaleManualResponse.swift */; };
-		8460D23D2B98A56B00AFFCFC /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D337A72B86264100E60137 /* StringUtils.swift */; };
-		8460E4422BCD72D400974FE5 /* CreateConsentAnnualValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8460E4412BCD72D400974FE5 /* CreateConsentAnnualValidator.swift */; };
-		8460E4432BCD72D400974FE5 /* CreateConsentAnnualValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8460E4412BCD72D400974FE5 /* CreateConsentAnnualValidator.swift */; };
-		8486CE772B9F527A00722C96 /* CreditCardInfoValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486CE752B9F527A00722C96 /* CreditCardInfoValidationError.swift */; };
-		8486CE782B9F527A00722C96 /* CreditCardInfoValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486CE752B9F527A00722C96 /* CreditCardInfoValidationError.swift */; };
-		848748332BB30E2B00199D6D /* CancelConsentAnnualRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848748322BB30E2B00199D6D /* CancelConsentAnnualRequest.swift */; };
-		848748342BB30E2B00199D6D /* CancelConsentAnnualRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848748322BB30E2B00199D6D /* CancelConsentAnnualRequest.swift */; };
-		848748362BB30E9800199D6D /* CancelConsentAnnualManualRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848748352BB30E9800199D6D /* CancelConsentAnnualManualRequestModel.swift */; };
-		848748372BB30E9800199D6D /* CancelConsentAnnualManualRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848748352BB30E9800199D6D /* CancelConsentAnnualManualRequestModel.swift */; };
-		848748392BB310FA00199D6D /* CancelConsentAnnualResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848748382BB310FA00199D6D /* CancelConsentAnnualResponse.swift */; };
-		8487483A2BB310FA00199D6D /* CancelConsentAnnualResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848748382BB310FA00199D6D /* CancelConsentAnnualResponse.swift */; };
-		8487483E2BB3119000199D6D /* CancelConsentAnnualResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487483D2BB3119000199D6D /* CancelConsentAnnualResponseModel.swift */; };
-		8487483F2BB3119000199D6D /* CancelConsentAnnualResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487483D2BB3119000199D6D /* CancelConsentAnnualResponseModel.swift */; };
-		848748412BB410BB00199D6D /* ConsentAnnualListingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848748402BB410BB00199D6D /* ConsentAnnualListingRequest.swift */; };
-		848748422BB410BB00199D6D /* ConsentAnnualListingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848748402BB410BB00199D6D /* ConsentAnnualListingRequest.swift */; };
-		848748442BB4143A00199D6D /* ConsentAnnualListingRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848748432BB4143A00199D6D /* ConsentAnnualListingRequestModel.swift */; };
-		848748452BB4143A00199D6D /* ConsentAnnualListingRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848748432BB4143A00199D6D /* ConsentAnnualListingRequestModel.swift */; };
-		848748472BB417EE00199D6D /* ConsentAnnualListingResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848748462BB417EE00199D6D /* ConsentAnnualListingResponseModel.swift */; };
-		848748482BB417EE00199D6D /* ConsentAnnualListingResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848748462BB417EE00199D6D /* ConsentAnnualListingResponseModel.swift */; };
-		8487484A2BB41C4C00199D6D /* ListingConsentAnnualResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848748492BB41C4C00199D6D /* ListingConsentAnnualResponse.swift */; };
-		8487484B2BB41C4C00199D6D /* ListingConsentAnnualResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848748492BB41C4C00199D6D /* ListingConsentAnnualResponse.swift */; };
-		8487484D2BB4382700199D6D /* AnnualQueryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487484C2BB4382700199D6D /* AnnualQueryHelper.swift */; };
-		8487484E2BB4382700199D6D /* AnnualQueryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487484C2BB4382700199D6D /* AnnualQueryHelper.swift */; };
-		84A3D3272BB1CFA20090C20F /* ProcessPaymentAnnualRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A3D3262BB1CFA20090C20F /* ProcessPaymentAnnualRequest.swift */; };
-		84A3D3282BB1CFA20090C20F /* ProcessPaymentAnnualRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A3D3262BB1CFA20090C20F /* ProcessPaymentAnnualRequest.swift */; };
-		84A3D32A2BB1D1160090C20F /* ProcessPaymentAnnualRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A3D3292BB1D1160090C20F /* ProcessPaymentAnnualRequestModel.swift */; };
-		84A3D32B2BB1D1160090C20F /* ProcessPaymentAnnualRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A3D3292BB1D1160090C20F /* ProcessPaymentAnnualRequestModel.swift */; };
-		84A3D32D2BB1D2F80090C20F /* ProcessPaymentAnnualResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A3D32C2BB1D2F80090C20F /* ProcessPaymentAnnualResponse.swift */; };
-		84A3D32E2BB1D2F80090C20F /* ProcessPaymentAnnualResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A3D32C2BB1D2F80090C20F /* ProcessPaymentAnnualResponse.swift */; };
-		84A3D3302BB1D3340090C20F /* ProcessPaymentAnnualResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A3D32F2BB1D3340090C20F /* ProcessPaymentAnnualResponseModel.swift */; };
-		84A3D3312BB1D3340090C20F /* ProcessPaymentAnnualResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A3D32F2BB1D3340090C20F /* ProcessPaymentAnnualResponseModel.swift */; };
-		84BC8DD42BA9862300C6732E /* CreateConsentAnnual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BC8DD12BA9862300C6732E /* CreateConsentAnnual.swift */; };
-		84BC8DD52BA9862300C6732E /* CreateConsentAnnualManualRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BC8DD22BA9862300C6732E /* CreateConsentAnnualManualRequestModel.swift */; };
-		84BC8DD62BA9862300C6732E /* CreateConsentAnnualResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BC8DD32BA9862300C6732E /* CreateConsentAnnualResponseModel.swift */; };
-		84BC8DD82BA98B6D00C6732E /* CreateConsentAnnualRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BC8DD72BA98B6D00C6732E /* CreateConsentAnnualRequest.swift */; };
-		84BC8DD92BA996FA00C6732E /* CreateConsentAnnualRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BC8DD72BA98B6D00C6732E /* CreateConsentAnnualRequest.swift */; };
-		84BC8DDA2BA9970500C6732E /* CreateConsentAnnualManualRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BC8DD22BA9862300C6732E /* CreateConsentAnnualManualRequestModel.swift */; };
-		84BC8DDB2BA9970B00C6732E /* CreateConsentAnnual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BC8DD12BA9862300C6732E /* CreateConsentAnnual.swift */; };
-		84BC8DDC2BA9971100C6732E /* CreateConsentAnnualResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BC8DD32BA9862300C6732E /* CreateConsentAnnualResponseModel.swift */; };
-		84BC8DDE2BA99A4500C6732E /* CreateConsentAnnualResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BC8DDD2BA99A4500C6732E /* CreateConsentAnnualResponse.swift */; };
-		84BC8DDF2BA99B9700C6732E /* CreateConsentAnnualResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BC8DDD2BA99A4500C6732E /* CreateConsentAnnualResponse.swift */; };
-		84BF42EF2BA1C16300DEF1C7 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845DA00F2B99FE3C0022192B /* Validator.swift */; };
-		84BF42F12BA1C18500DEF1C7 /* ValidatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845DA0122B99FE590022192B /* ValidatorFactory.swift */; };
-		84D2D4392B8E41C900A3F157 /* EncryptionUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2D4382B8E41C900A3F157 /* EncryptionUtils.swift */; };
-		84D2D43B2B8F32AC00A3F157 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2D43A2B8F32AC00A3F157 /* Config.swift */; };
-		84D2D43D2B8F5C2500A3F157 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2D43C2B8F5C2500A3F157 /* BaseResponse.swift */; };
+		8420FCA32BF772F10025884C /* SecureTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC5E2BF772F10025884C /* SecureTextField.swift */; };
+		8420FCA42BF772F10025884C /* AnnualQueryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC602BF772F10025884C /* AnnualQueryHelper.swift */; };
+		8420FCA52BF772F10025884C /* CreateConsentAnnualResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC622BF772F10025884C /* CreateConsentAnnualResponseModel.swift */; };
+		8420FCA62BF772F10025884C /* CreateConsentAnnualManualRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC632BF772F10025884C /* CreateConsentAnnualManualRequestModel.swift */; };
+		8420FCA72BF772F10025884C /* CreateConsentAnnual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC642BF772F10025884C /* CreateConsentAnnual.swift */; };
+		8420FCA82BF772F10025884C /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC652BF772F10025884C /* ApiClient.swift */; };
+		8420FCA92BF772F10025884C /* CreateConsentAnnualResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC672BF772F10025884C /* CreateConsentAnnualResponse.swift */; };
+		8420FCAA2BF772F10025884C /* CardSaleManualResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC682BF772F10025884C /* CardSaleManualResponse.swift */; };
+		8420FCAB2BF772F10025884C /* ProcessPaymentAnnualResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC692BF772F10025884C /* ProcessPaymentAnnualResponse.swift */; };
+		8420FCAC2BF772F10025884C /* ListingConsentAnnualResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC6A2BF772F10025884C /* ListingConsentAnnualResponse.swift */; };
+		8420FCAD2BF772F10025884C /* CancelConsentAnnualResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC6B2BF772F10025884C /* CancelConsentAnnualResponse.swift */; };
+		8420FCAE2BF772F10025884C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC6C2BF772F10025884C /* Config.swift */; };
+		8420FCAF2BF772F10025884C /* ProcessPaymentAnnualResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC6F2BF772F10025884C /* ProcessPaymentAnnualResponseModel.swift */; };
+		8420FCB02BF772F10025884C /* ConsentAnnualListingResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC702BF772F10025884C /* ConsentAnnualListingResponseModel.swift */; };
+		8420FCB12BF772F10025884C /* CardSaleManualResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC712BF772F10025884C /* CardSaleManualResponseModel.swift */; };
+		8420FCB22BF772F10025884C /* CancelConsentAnnualResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC722BF772F10025884C /* CancelConsentAnnualResponseModel.swift */; };
+		8420FCB32BF772F10025884C /* CreditCardSaleManualModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC742BF772F10025884C /* CreditCardSaleManualModel.swift */; };
+		8420FCB42BF772F10025884C /* ProcessPaymentAnnualRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC752BF772F10025884C /* ProcessPaymentAnnualRequestModel.swift */; };
+		8420FCB52BF772F10025884C /* CancelConsentAnnualManualRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC762BF772F10025884C /* CancelConsentAnnualManualRequestModel.swift */; };
+		8420FCB62BF772F10025884C /* ConsentAnnualListingRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC772BF772F10025884C /* ConsentAnnualListingRequestModel.swift */; };
+		8420FCB72BF772F10025884C /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC792BF772F10025884C /* BaseRequest.swift */; };
+		8420FCB82BF772F10025884C /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC7A2BF772F10025884C /* BaseResponse.swift */; };
+		8420FCB92BF772F10025884C /* CardSaleManualRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC7C2BF772F10025884C /* CardSaleManualRequest.swift */; };
+		8420FCBA2BF772F10025884C /* CreateConsentAnnualRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC7D2BF772F10025884C /* CreateConsentAnnualRequest.swift */; };
+		8420FCBB2BF772F10025884C /* ProcessPaymentAnnualRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC7E2BF772F10025884C /* ProcessPaymentAnnualRequest.swift */; };
+		8420FCBC2BF772F10025884C /* CancelConsentAnnualRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC7F2BF772F10025884C /* CancelConsentAnnualRequest.swift */; };
+		8420FCBD2BF772F10025884C /* ConsentAnnualListingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC802BF772F10025884C /* ConsentAnnualListingRequest.swift */; };
+		8420FCBE2BF772F10025884C /* EasyPay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC812BF772F10025884C /* EasyPay.swift */; };
+		8420FCBF2BF772F10025884C /* RsaCertificateError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC832BF772F10025884C /* RsaCertificateError.swift */; };
+		8420FCC02BF772F10025884C /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC842BF772F10025884C /* NetworkingError.swift */; };
+		8420FCC12BF772F10025884C /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC852BF772F10025884C /* AuthenticationError.swift */; };
+		8420FCC22BF772F10025884C /* PublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC872BF772F10025884C /* PublicKey.swift */; };
+		8420FCC32BF772F10025884C /* Data+SHA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC882BF772F10025884C /* Data+SHA.swift */; };
+		8420FCC42BF772F10025884C /* EncryptedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC892BF772F10025884C /* EncryptedMessage.swift */; };
+		8420FCC52BF772F10025884C /* ClearMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC8A2BF772F10025884C /* ClearMessage.swift */; };
+		8420FCC62BF772F10025884C /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC8B2BF772F10025884C /* Message.swift */; };
+		8420FCC72BF772F10025884C /* Asn1Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC8C2BF772F10025884C /* Asn1Parser.swift */; };
+		8420FCC82BF772F10025884C /* X509Certificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC8D2BF772F10025884C /* X509Certificate.swift */; };
+		8420FCC92BF772F10025884C /* Signature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC8E2BF772F10025884C /* Signature.swift */; };
+		8420FCCA2BF772F10025884C /* PrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC8F2BF772F10025884C /* PrivateKey.swift */; };
+		8420FCCB2BF772F10025884C /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC902BF772F10025884C /* Key.swift */; };
+		8420FCCC2BF772F10025884C /* SwiftyRSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC912BF772F10025884C /* SwiftyRSA.swift */; };
+		8420FCCD2BF772F10025884C /* SwiftyRSA+ObjC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC922BF772F10025884C /* SwiftyRSA+ObjC.swift */; };
+		8420FCCE2BF772F10025884C /* SwiftyRSAError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC932BF772F10025884C /* SwiftyRSAError.swift */; };
+		8420FCCF2BF772F10025884C /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC942BF772F10025884C /* Version.swift */; };
+		8420FCD02BF772F10025884C /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC962BF772F10025884C /* StringUtils.swift */; };
+		8420FCD12BF772F10025884C /* ValidatorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC972BF772F10025884C /* ValidatorUtils.swift */; };
+		8420FCD22BF772F10025884C /* EncryptionUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC982BF772F10025884C /* EncryptionUtils.swift */; };
+		8420FCD32BF772F10025884C /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC992BF772F10025884C /* Data+Extensions.swift */; };
+		8420FCD42BF772F10025884C /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC9B2BF772F10025884C /* Validator.swift */; };
+		8420FCD52BF772F10025884C /* CreateConsentAnnualValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC9C2BF772F10025884C /* CreateConsentAnnualValidator.swift */; };
+		8420FCD62BF772F10025884C /* ValidatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC9D2BF772F10025884C /* ValidatorFactory.swift */; };
+		8420FCD72BF772F10025884C /* CardSaleManualValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FC9E2BF772F10025884C /* CardSaleManualValidator.swift */; };
+		8420FCD82BF772F10025884C /* CreateConsentAnnualValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FCA02BF772F10025884C /* CreateConsentAnnualValidationError.swift */; };
+		8420FCD92BF772F10025884C /* CreditCardInfoValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FCA12BF772F10025884C /* CreditCardInfoValidationError.swift */; };
+		8420FCDA2BF772F10025884C /* CertificatePinning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420FCA22BF772F10025884C /* CertificatePinning.swift */; };
 		84D2D4462B909CE800A3F157 /* EasyPay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 185E1A184C13CF1D98CFE865E44FDE21 /* EasyPay.framework */; };
-		84D337A42B86255E00E60137 /* CertificatePinning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D337A32B86255E00E60137 /* CertificatePinning.swift */; };
-		84D337A62B86259C00E60137 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D337A52B86259C00E60137 /* Version.swift */; };
-		84D337A82B86264100E60137 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D337A72B86264100E60137 /* StringUtils.swift */; };
-		84D662082B971868006594A7 /* CreditCardSaleManualModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D662072B971868006594A7 /* CreditCardSaleManualModel.swift */; };
-		84D662092B97186D006594A7 /* CreditCardSaleManualModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D662072B971868006594A7 /* CreditCardSaleManualModel.swift */; };
-		84DA2C012BA0922C00B240CE /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2D43C2B8F5C2500A3F157 /* BaseResponse.swift */; };
-		84E6EC322B86149800182440 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6EC312B86149800182440 /* ApiClient.swift */; };
 		8E5680C6678E7A5322958720A9A83919 /* Pods-EasyPay_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 480CEAA3AE589B5C2AF3F5A52E1DAE55 /* Pods-EasyPay_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		98E799532BA4B36D00061660 /* PublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E799442BA4B36D00061660 /* PublicKey.swift */; };
-		98E799542BA4B36D00061660 /* Data+SHA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E799452BA4B36D00061660 /* Data+SHA.swift */; };
-		98E799552BA4B36D00061660 /* EncryptedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E799462BA4B36D00061660 /* EncryptedMessage.swift */; };
-		98E799562BA4B36D00061660 /* ClearMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E799472BA4B36D00061660 /* ClearMessage.swift */; };
-		98E799572BA4B36D00061660 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E799482BA4B36D00061660 /* Message.swift */; };
-		98E799582BA4B36D00061660 /* Asn1Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E799492BA4B36D00061660 /* Asn1Parser.swift */; };
-		98E799592BA4B36D00061660 /* X509Certificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E7994A2BA4B36D00061660 /* X509Certificate.swift */; };
-		98E7995A2BA4B36D00061660 /* Signature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E7994B2BA4B36D00061660 /* Signature.swift */; };
-		98E7995B2BA4B36D00061660 /* PrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E7994C2BA4B36D00061660 /* PrivateKey.swift */; };
-		98E7995C2BA4B36D00061660 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E7994D2BA4B36D00061660 /* Key.swift */; };
-		98E7995E2BA4B36D00061660 /* SwiftyRSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E7994F2BA4B36D00061660 /* SwiftyRSA.swift */; };
-		98E7995F2BA4B36D00061660 /* SwiftyRSA+ObjC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E799502BA4B36D00061660 /* SwiftyRSA+ObjC.swift */; };
-		98E799602BA4B36D00061660 /* SwiftyRSAError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E799512BA4B36D00061660 /* SwiftyRSAError.swift */; };
-		98E799642BA4B64800061660 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2D43A2B8F32AC00A3F157 /* Config.swift */; };
-		98E799652BA4B65100061660 /* EncryptionUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2D4382B8E41C900A3F157 /* EncryptionUtils.swift */; };
-		98E799662BA4B65900061660 /* PublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E799442BA4B36D00061660 /* PublicKey.swift */; };
-		98E799672BA4B65D00061660 /* X509Certificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E7994A2BA4B36D00061660 /* X509Certificate.swift */; };
-		98E799682BA4B65D00061660 /* SwiftyRSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E7994F2BA4B36D00061660 /* SwiftyRSA.swift */; };
-		98E799692BA4B65D00061660 /* EncryptedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E799462BA4B36D00061660 /* EncryptedMessage.swift */; };
-		98E7996A2BA4B65D00061660 /* ClearMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E799472BA4B36D00061660 /* ClearMessage.swift */; };
-		98E7996B2BA4B65D00061660 /* PrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E7994C2BA4B36D00061660 /* PrivateKey.swift */; };
-		98E7996C2BA4B65D00061660 /* SwiftyRSAError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E799512BA4B36D00061660 /* SwiftyRSAError.swift */; };
-		98E7996D2BA4B65D00061660 /* Data+SHA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E799452BA4B36D00061660 /* Data+SHA.swift */; };
-		98E7996E2BA4B65D00061660 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E799482BA4B36D00061660 /* Message.swift */; };
-		98E7996F2BA4B65D00061660 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E7994D2BA4B36D00061660 /* Key.swift */; };
-		98E799702BA4B65D00061660 /* Signature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E7994B2BA4B36D00061660 /* Signature.swift */; };
-		98E799712BA4B65D00061660 /* Asn1Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E799492BA4B36D00061660 /* Asn1Parser.swift */; };
-		98E799722BA4B65D00061660 /* SwiftyRSA+ObjC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E799502BA4B36D00061660 /* SwiftyRSA+ObjC.swift */; };
 		9E2AA98DFE0D0FBC213B1C243086371B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		C7A96AC36782B1E55D496EDF3243C623 /* EasyPay-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 972263994C2F20A159B3ED7416EAE61B /* EasyPay-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB196BC67774BB74C7EE65FB074C1B8C /* Pods-EasyPay_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4A83DB7EE67CDC9E7C913AB83C5F65 /* Pods-EasyPay_Example-dummy.m */; };
@@ -188,67 +132,67 @@
 		7ACCCADDA9BA7DBC84F994B3 /* Pods-Pods-EasyPay_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pods-EasyPay_Example.debug.xcconfig"; path = "Target Support Files/Pods-Pods-EasyPay_Example/Pods-Pods-EasyPay_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		7AF7D5994C7A2D4E066B47B755970A5D /* Pods-EasyPay_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EasyPay_Example-frameworks.sh"; sourceTree = "<group>"; };
 		7C4BBBA794BFA222E9C2F157 /* Pods_Pods_EasyPay_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pods_EasyPay_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8429501A2BF615AC00F7EEBB /* SecureTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureTextField.swift; sourceTree = "<group>"; };
-		8432E8D52BCE7BA6008B37AF /* CreateConsentAnnualValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateConsentAnnualValidationError.swift; sourceTree = "<group>"; };
-		843CC6D72BB03C480059BE3C /* EasyPay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyPay.swift; sourceTree = "<group>"; };
-		843CC6DB2BB03C700059BE3C /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
-		843CC6DE2BB03C940059BE3C /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
-		843CC6E12BB03CAA0059BE3C /* RsaCertificateError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RsaCertificateError.swift; sourceTree = "<group>"; };
-		84456B4D2BA2E3CE00D7C33F /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
-		845B791F2B88B64E0098E846 /* BaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
-		845B79232B8C76490098E846 /* CardSaleManualRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSaleManualRequest.swift; sourceTree = "<group>"; };
-		845DA0042B99D3100022192B /* ValidatorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorUtils.swift; sourceTree = "<group>"; };
-		845DA00F2B99FE3C0022192B /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
-		845DA0122B99FE590022192B /* ValidatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorFactory.swift; sourceTree = "<group>"; };
-		845DA0152B99FE6F0022192B /* CardSaleManualValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSaleManualValidator.swift; sourceTree = "<group>"; };
-		8460D2332B9764B400AFFCFC /* CardSaleManualResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSaleManualResponse.swift; sourceTree = "<group>"; };
-		8460D2352B9764BF00AFFCFC /* CardSaleManualResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSaleManualResponseModel.swift; sourceTree = "<group>"; };
-		8460E4412BCD72D400974FE5 /* CreateConsentAnnualValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateConsentAnnualValidator.swift; sourceTree = "<group>"; };
-		8486CE752B9F527A00722C96 /* CreditCardInfoValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardInfoValidationError.swift; sourceTree = "<group>"; };
-		848748322BB30E2B00199D6D /* CancelConsentAnnualRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelConsentAnnualRequest.swift; sourceTree = "<group>"; };
-		848748352BB30E9800199D6D /* CancelConsentAnnualManualRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelConsentAnnualManualRequestModel.swift; sourceTree = "<group>"; };
-		848748382BB310FA00199D6D /* CancelConsentAnnualResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelConsentAnnualResponse.swift; sourceTree = "<group>"; };
-		8487483D2BB3119000199D6D /* CancelConsentAnnualResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelConsentAnnualResponseModel.swift; sourceTree = "<group>"; };
-		848748402BB410BB00199D6D /* ConsentAnnualListingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentAnnualListingRequest.swift; sourceTree = "<group>"; };
-		848748432BB4143A00199D6D /* ConsentAnnualListingRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentAnnualListingRequestModel.swift; sourceTree = "<group>"; };
-		848748462BB417EE00199D6D /* ConsentAnnualListingResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentAnnualListingResponseModel.swift; sourceTree = "<group>"; };
-		848748492BB41C4C00199D6D /* ListingConsentAnnualResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingConsentAnnualResponse.swift; sourceTree = "<group>"; };
-		8487484C2BB4382700199D6D /* AnnualQueryHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnualQueryHelper.swift; sourceTree = "<group>"; };
-		84A3D3262BB1CFA20090C20F /* ProcessPaymentAnnualRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessPaymentAnnualRequest.swift; sourceTree = "<group>"; };
-		84A3D3292BB1D1160090C20F /* ProcessPaymentAnnualRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessPaymentAnnualRequestModel.swift; sourceTree = "<group>"; };
-		84A3D32C2BB1D2F80090C20F /* ProcessPaymentAnnualResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessPaymentAnnualResponse.swift; sourceTree = "<group>"; };
-		84A3D32F2BB1D3340090C20F /* ProcessPaymentAnnualResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessPaymentAnnualResponseModel.swift; sourceTree = "<group>"; };
-		84BC8DD12BA9862300C6732E /* CreateConsentAnnual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateConsentAnnual.swift; sourceTree = "<group>"; };
-		84BC8DD22BA9862300C6732E /* CreateConsentAnnualManualRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateConsentAnnualManualRequestModel.swift; sourceTree = "<group>"; };
-		84BC8DD32BA9862300C6732E /* CreateConsentAnnualResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateConsentAnnualResponseModel.swift; sourceTree = "<group>"; };
-		84BC8DD72BA98B6D00C6732E /* CreateConsentAnnualRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateConsentAnnualRequest.swift; sourceTree = "<group>"; };
-		84BC8DDD2BA99A4500C6732E /* CreateConsentAnnualResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateConsentAnnualResponse.swift; sourceTree = "<group>"; };
-		84D2D4382B8E41C900A3F157 /* EncryptionUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionUtils.swift; sourceTree = "<group>"; };
-		84D2D43A2B8F32AC00A3F157 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		84D2D43C2B8F5C2500A3F157 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
+		8420FC5E2BF772F10025884C /* SecureTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureTextField.swift; sourceTree = "<group>"; };
+		8420FC602BF772F10025884C /* AnnualQueryHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnualQueryHelper.swift; sourceTree = "<group>"; };
+		8420FC622BF772F10025884C /* CreateConsentAnnualResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateConsentAnnualResponseModel.swift; sourceTree = "<group>"; };
+		8420FC632BF772F10025884C /* CreateConsentAnnualManualRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateConsentAnnualManualRequestModel.swift; sourceTree = "<group>"; };
+		8420FC642BF772F10025884C /* CreateConsentAnnual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateConsentAnnual.swift; sourceTree = "<group>"; };
+		8420FC652BF772F10025884C /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		8420FC672BF772F10025884C /* CreateConsentAnnualResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateConsentAnnualResponse.swift; sourceTree = "<group>"; };
+		8420FC682BF772F10025884C /* CardSaleManualResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardSaleManualResponse.swift; sourceTree = "<group>"; };
+		8420FC692BF772F10025884C /* ProcessPaymentAnnualResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessPaymentAnnualResponse.swift; sourceTree = "<group>"; };
+		8420FC6A2BF772F10025884C /* ListingConsentAnnualResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingConsentAnnualResponse.swift; sourceTree = "<group>"; };
+		8420FC6B2BF772F10025884C /* CancelConsentAnnualResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelConsentAnnualResponse.swift; sourceTree = "<group>"; };
+		8420FC6C2BF772F10025884C /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		8420FC6F2BF772F10025884C /* ProcessPaymentAnnualResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessPaymentAnnualResponseModel.swift; sourceTree = "<group>"; };
+		8420FC702BF772F10025884C /* ConsentAnnualListingResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentAnnualListingResponseModel.swift; sourceTree = "<group>"; };
+		8420FC712BF772F10025884C /* CardSaleManualResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardSaleManualResponseModel.swift; sourceTree = "<group>"; };
+		8420FC722BF772F10025884C /* CancelConsentAnnualResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelConsentAnnualResponseModel.swift; sourceTree = "<group>"; };
+		8420FC742BF772F10025884C /* CreditCardSaleManualModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardSaleManualModel.swift; sourceTree = "<group>"; };
+		8420FC752BF772F10025884C /* ProcessPaymentAnnualRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessPaymentAnnualRequestModel.swift; sourceTree = "<group>"; };
+		8420FC762BF772F10025884C /* CancelConsentAnnualManualRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelConsentAnnualManualRequestModel.swift; sourceTree = "<group>"; };
+		8420FC772BF772F10025884C /* ConsentAnnualListingRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentAnnualListingRequestModel.swift; sourceTree = "<group>"; };
+		8420FC792BF772F10025884C /* BaseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
+		8420FC7A2BF772F10025884C /* BaseResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
+		8420FC7C2BF772F10025884C /* CardSaleManualRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardSaleManualRequest.swift; sourceTree = "<group>"; };
+		8420FC7D2BF772F10025884C /* CreateConsentAnnualRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateConsentAnnualRequest.swift; sourceTree = "<group>"; };
+		8420FC7E2BF772F10025884C /* ProcessPaymentAnnualRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessPaymentAnnualRequest.swift; sourceTree = "<group>"; };
+		8420FC7F2BF772F10025884C /* CancelConsentAnnualRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelConsentAnnualRequest.swift; sourceTree = "<group>"; };
+		8420FC802BF772F10025884C /* ConsentAnnualListingRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentAnnualListingRequest.swift; sourceTree = "<group>"; };
+		8420FC812BF772F10025884C /* EasyPay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyPay.swift; sourceTree = "<group>"; };
+		8420FC832BF772F10025884C /* RsaCertificateError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RsaCertificateError.swift; sourceTree = "<group>"; };
+		8420FC842BF772F10025884C /* NetworkingError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
+		8420FC852BF772F10025884C /* AuthenticationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
+		8420FC872BF772F10025884C /* PublicKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicKey.swift; sourceTree = "<group>"; };
+		8420FC882BF772F10025884C /* Data+SHA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+SHA.swift"; sourceTree = "<group>"; };
+		8420FC892BF772F10025884C /* EncryptedMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncryptedMessage.swift; sourceTree = "<group>"; };
+		8420FC8A2BF772F10025884C /* ClearMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearMessage.swift; sourceTree = "<group>"; };
+		8420FC8B2BF772F10025884C /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		8420FC8C2BF772F10025884C /* Asn1Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asn1Parser.swift; sourceTree = "<group>"; };
+		8420FC8D2BF772F10025884C /* X509Certificate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = X509Certificate.swift; sourceTree = "<group>"; };
+		8420FC8E2BF772F10025884C /* Signature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signature.swift; sourceTree = "<group>"; };
+		8420FC8F2BF772F10025884C /* PrivateKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateKey.swift; sourceTree = "<group>"; };
+		8420FC902BF772F10025884C /* Key.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
+		8420FC912BF772F10025884C /* SwiftyRSA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyRSA.swift; sourceTree = "<group>"; };
+		8420FC922BF772F10025884C /* SwiftyRSA+ObjC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwiftyRSA+ObjC.swift"; sourceTree = "<group>"; };
+		8420FC932BF772F10025884C /* SwiftyRSAError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyRSAError.swift; sourceTree = "<group>"; };
+		8420FC942BF772F10025884C /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
+		8420FC962BF772F10025884C /* StringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
+		8420FC972BF772F10025884C /* ValidatorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatorUtils.swift; sourceTree = "<group>"; };
+		8420FC982BF772F10025884C /* EncryptionUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncryptionUtils.swift; sourceTree = "<group>"; };
+		8420FC992BF772F10025884C /* Data+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
+		8420FC9B2BF772F10025884C /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		8420FC9C2BF772F10025884C /* CreateConsentAnnualValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateConsentAnnualValidator.swift; sourceTree = "<group>"; };
+		8420FC9D2BF772F10025884C /* ValidatorFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatorFactory.swift; sourceTree = "<group>"; };
+		8420FC9E2BF772F10025884C /* CardSaleManualValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardSaleManualValidator.swift; sourceTree = "<group>"; };
+		8420FCA02BF772F10025884C /* CreateConsentAnnualValidationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateConsentAnnualValidationError.swift; sourceTree = "<group>"; };
+		8420FCA12BF772F10025884C /* CreditCardInfoValidationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardInfoValidationError.swift; sourceTree = "<group>"; };
+		8420FCA22BF772F10025884C /* CertificatePinning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificatePinning.swift; sourceTree = "<group>"; };
 		84D2D4422B909CE800A3F157 /* EasyPayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyPayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		84D337A32B86255E00E60137 /* CertificatePinning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificatePinning.swift; sourceTree = "<group>"; };
-		84D337A52B86259C00E60137 /* Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
-		84D337A72B86264100E60137 /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
-		84D662072B971868006594A7 /* CreditCardSaleManualModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardSaleManualModel.swift; sourceTree = "<group>"; };
-		84E6EC312B86149800182440 /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		8A4A83DB7EE67CDC9E7C913AB83C5F65 /* Pods-EasyPay_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EasyPay_Example-dummy.m"; sourceTree = "<group>"; };
 		8B15B66D7B4850B4B4EC1E6099C7B82B /* Pods-EasyPay_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EasyPay_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		9109962DFCCAD4DE3D39BA52AC0DE497 /* Pods-EasyPay_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-EasyPay_Tests.modulemap"; sourceTree = "<group>"; };
 		972263994C2F20A159B3ED7416EAE61B /* EasyPay-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EasyPay-umbrella.h"; sourceTree = "<group>"; };
-		98E799442BA4B36D00061660 /* PublicKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicKey.swift; sourceTree = "<group>"; };
-		98E799452BA4B36D00061660 /* Data+SHA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+SHA.swift"; sourceTree = "<group>"; };
-		98E799462BA4B36D00061660 /* EncryptedMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncryptedMessage.swift; sourceTree = "<group>"; };
-		98E799472BA4B36D00061660 /* ClearMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearMessage.swift; sourceTree = "<group>"; };
-		98E799482BA4B36D00061660 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		98E799492BA4B36D00061660 /* Asn1Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asn1Parser.swift; sourceTree = "<group>"; };
-		98E7994A2BA4B36D00061660 /* X509Certificate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = X509Certificate.swift; sourceTree = "<group>"; };
-		98E7994B2BA4B36D00061660 /* Signature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signature.swift; sourceTree = "<group>"; };
-		98E7994C2BA4B36D00061660 /* PrivateKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateKey.swift; sourceTree = "<group>"; };
-		98E7994D2BA4B36D00061660 /* Key.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
-		98E7994F2BA4B36D00061660 /* SwiftyRSA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyRSA.swift; sourceTree = "<group>"; };
-		98E799502BA4B36D00061660 /* SwiftyRSA+ObjC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwiftyRSA+ObjC.swift"; sourceTree = "<group>"; };
-		98E799512BA4B36D00061660 /* SwiftyRSAError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyRSAError.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9D99D5046EC4FB83554C470826B2B314 /* Pods_EasyPay_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyPay_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1538332A5934666556F2C1C8B04F252 /* EasyPay-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EasyPay-prefix.pch"; sourceTree = "<group>"; };
@@ -365,7 +309,7 @@
 		755658553F3BD46A0317695D96A9CA09 /* EasyPay */ = {
 			isa = PBXGroup;
 			children = (
-				84D337A22B86254300E60137 /* Helpers */,
+				8420FC5A2BF772F10025884C /* Sources */,
 				D6836219FF2EA100984075FD1C940E7B /* Pod */,
 				9BFF767904E3671C29755412C7D772AE /* Support Files */,
 			);
@@ -389,179 +333,187 @@
 			path = "Target Support Files/Pods-EasyPay_Tests";
 			sourceTree = "<group>";
 		};
-		842950192BF6156800F7EEBB /* Design */ = {
+		8420FC5A2BF772F10025884C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				8429501A2BF615AC00F7EEBB /* SecureTextField.swift */,
+				8420FC5B2BF772F10025884C /* EasyPay */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		8420FC5B2BF772F10025884C /* EasyPay */ = {
+			isa = PBXGroup;
+			children = (
+				8420FC5D2BF772F10025884C /* Design */,
+				8420FC5F2BF772F10025884C /* Networking */,
+				8420FC862BF772F10025884C /* Source */,
+				8420FC942BF772F10025884C /* Version.swift */,
+				8420FC952BF772F10025884C /* Utilities */,
+				8420FC9A2BF772F10025884C /* Validators */,
+				8420FC9F2BF772F10025884C /* Errors */,
+				8420FCA22BF772F10025884C /* CertificatePinning.swift */,
+			);
+			path = EasyPay;
+			sourceTree = "<group>";
+		};
+		8420FC5D2BF772F10025884C /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				8420FC5E2BF772F10025884C /* SecureTextField.swift */,
 			);
 			path = Design;
 			sourceTree = "<group>";
 		};
-		843CC6DA2BB03C660059BE3C /* Errors */ = {
+		8420FC5F2BF772F10025884C /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				843CC6DB2BB03C700059BE3C /* NetworkingError.swift */,
-				843CC6DE2BB03C940059BE3C /* AuthenticationError.swift */,
-				843CC6E12BB03CAA0059BE3C /* RsaCertificateError.swift */,
-			);
-			path = Errors;
-			sourceTree = "<group>";
-		};
-		84456B4C2BA2E3AB00D7C33F /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				845DA0042B99D3100022192B /* ValidatorUtils.swift */,
-				84D2D4382B8E41C900A3F157 /* EncryptionUtils.swift */,
-				84D337A72B86264100E60137 /* StringUtils.swift */,
-				84456B4D2BA2E3CE00D7C33F /* Data+Extensions.swift */,
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
-		84456B502BA2E61A00D7C33F /* BaseProtocols */ = {
-			isa = PBXGroup;
-			children = (
-				84D2D43C2B8F5C2500A3F157 /* BaseResponse.swift */,
-				845B791F2B88B64E0098E846 /* BaseRequest.swift */,
-			);
-			path = BaseProtocols;
-			sourceTree = "<group>";
-		};
-		845B79212B8C76320098E846 /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				8487484C2BB4382700199D6D /* AnnualQueryHelper.swift */,
-				843CC6DA2BB03C660059BE3C /* Errors */,
-				84BC8DD02BA9861A00C6732E /* Create Consent Annual Manual */,
-				84456B502BA2E61A00D7C33F /* BaseProtocols */,
-				8460D2322B9764A900AFFCFC /* Responses */,
-				84D662062B971857006594A7 /* Models */,
-				845B79222B8C76400098E846 /* Requests */,
-				84E6EC312B86149800182440 /* ApiClient.swift */,
-				84D2D43A2B8F32AC00A3F157 /* Config.swift */,
-				843CC6D72BB03C480059BE3C /* EasyPay.swift */,
+				8420FC602BF772F10025884C /* AnnualQueryHelper.swift */,
+				8420FC652BF772F10025884C /* ApiClient.swift */,
+				8420FC6C2BF772F10025884C /* Config.swift */,
+				8420FC812BF772F10025884C /* EasyPay.swift */,
+				8420FC782BF772F10025884C /* BaseProtocols */,
+				8420FC612BF772F10025884C /* Create Consent Annual Manual */,
+				8420FC822BF772F10025884C /* Errors */,
+				8420FC6D2BF772F10025884C /* Models */,
+				8420FC7B2BF772F10025884C /* Requests */,
+				8420FC662BF772F10025884C /* Responses */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		845B79222B8C76400098E846 /* Requests */ = {
+		8420FC612BF772F10025884C /* Create Consent Annual Manual */ = {
 			isa = PBXGroup;
 			children = (
-				845B79232B8C76490098E846 /* CardSaleManualRequest.swift */,
-				84BC8DD72BA98B6D00C6732E /* CreateConsentAnnualRequest.swift */,
-				84A3D3262BB1CFA20090C20F /* ProcessPaymentAnnualRequest.swift */,
-				848748322BB30E2B00199D6D /* CancelConsentAnnualRequest.swift */,
-				848748402BB410BB00199D6D /* ConsentAnnualListingRequest.swift */,
-			);
-			path = Requests;
-			sourceTree = "<group>";
-		};
-		845DA00E2B99FE2C0022192B /* Validators */ = {
-			isa = PBXGroup;
-			children = (
-				845DA00F2B99FE3C0022192B /* Validator.swift */,
-				845DA0122B99FE590022192B /* ValidatorFactory.swift */,
-				845DA0152B99FE6F0022192B /* CardSaleManualValidator.swift */,
-				8460E4412BCD72D400974FE5 /* CreateConsentAnnualValidator.swift */,
-			);
-			path = Validators;
-			sourceTree = "<group>";
-		};
-		8460D2322B9764A900AFFCFC /* Responses */ = {
-			isa = PBXGroup;
-			children = (
-				8460D2332B9764B400AFFCFC /* CardSaleManualResponse.swift */,
-				84BC8DDD2BA99A4500C6732E /* CreateConsentAnnualResponse.swift */,
-				848748492BB41C4C00199D6D /* ListingConsentAnnualResponse.swift */,
-				84A3D32C2BB1D2F80090C20F /* ProcessPaymentAnnualResponse.swift */,
-				848748382BB310FA00199D6D /* CancelConsentAnnualResponse.swift */,
-			);
-			path = Responses;
-			sourceTree = "<group>";
-		};
-		8486CE742B9F526A00722C96 /* Errors */ = {
-			isa = PBXGroup;
-			children = (
-				8486CE752B9F527A00722C96 /* CreditCardInfoValidationError.swift */,
-				8432E8D52BCE7BA6008B37AF /* CreateConsentAnnualValidationError.swift */,
-			);
-			path = Errors;
-			sourceTree = "<group>";
-		};
-		8487483B2BB3116900199D6D /* Requests */ = {
-			isa = PBXGroup;
-			children = (
-				84D662072B971868006594A7 /* CreditCardSaleManualModel.swift */,
-				848748352BB30E9800199D6D /* CancelConsentAnnualManualRequestModel.swift */,
-				84A3D3292BB1D1160090C20F /* ProcessPaymentAnnualRequestModel.swift */,
-				848748432BB4143A00199D6D /* ConsentAnnualListingRequestModel.swift */,
-			);
-			path = Requests;
-			sourceTree = "<group>";
-		};
-		8487483C2BB3116D00199D6D /* Responses */ = {
-			isa = PBXGroup;
-			children = (
-				8460D2352B9764BF00AFFCFC /* CardSaleManualResponseModel.swift */,
-				84A3D32F2BB1D3340090C20F /* ProcessPaymentAnnualResponseModel.swift */,
-				8487483D2BB3119000199D6D /* CancelConsentAnnualResponseModel.swift */,
-				848748462BB417EE00199D6D /* ConsentAnnualListingResponseModel.swift */,
-			);
-			path = Responses;
-			sourceTree = "<group>";
-		};
-		84BC8DD02BA9861A00C6732E /* Create Consent Annual Manual */ = {
-			isa = PBXGroup;
-			children = (
-				84BC8DD22BA9862300C6732E /* CreateConsentAnnualManualRequestModel.swift */,
-				84BC8DD12BA9862300C6732E /* CreateConsentAnnual.swift */,
-				84BC8DD32BA9862300C6732E /* CreateConsentAnnualResponseModel.swift */,
+				8420FC622BF772F10025884C /* CreateConsentAnnualResponseModel.swift */,
+				8420FC632BF772F10025884C /* CreateConsentAnnualManualRequestModel.swift */,
+				8420FC642BF772F10025884C /* CreateConsentAnnual.swift */,
 			);
 			path = "Create Consent Annual Manual";
 			sourceTree = "<group>";
 		};
-		84D337A22B86254300E60137 /* Helpers */ = {
+		8420FC662BF772F10025884C /* Responses */ = {
 			isa = PBXGroup;
 			children = (
-				842950192BF6156800F7EEBB /* Design */,
-				98E799432BA4B36D00061660 /* Source */,
-				84456B4C2BA2E3AB00D7C33F /* Utilities */,
-				8486CE742B9F526A00722C96 /* Errors */,
-				845DA00E2B99FE2C0022192B /* Validators */,
-				845B79212B8C76320098E846 /* Networking */,
-				84D337A32B86255E00E60137 /* CertificatePinning.swift */,
-				84D337A52B86259C00E60137 /* Version.swift */,
+				8420FC672BF772F10025884C /* CreateConsentAnnualResponse.swift */,
+				8420FC682BF772F10025884C /* CardSaleManualResponse.swift */,
+				8420FC692BF772F10025884C /* ProcessPaymentAnnualResponse.swift */,
+				8420FC6A2BF772F10025884C /* ListingConsentAnnualResponse.swift */,
+				8420FC6B2BF772F10025884C /* CancelConsentAnnualResponse.swift */,
 			);
-			path = Helpers;
+			path = Responses;
 			sourceTree = "<group>";
 		};
-		84D662062B971857006594A7 /* Models */ = {
+		8420FC6D2BF772F10025884C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8487483C2BB3116D00199D6D /* Responses */,
-				8487483B2BB3116900199D6D /* Requests */,
+				8420FC6E2BF772F10025884C /* Responses */,
+				8420FC732BF772F10025884C /* Requests */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		98E799432BA4B36D00061660 /* Source */ = {
+		8420FC6E2BF772F10025884C /* Responses */ = {
 			isa = PBXGroup;
 			children = (
-				98E799442BA4B36D00061660 /* PublicKey.swift */,
-				98E799452BA4B36D00061660 /* Data+SHA.swift */,
-				98E799462BA4B36D00061660 /* EncryptedMessage.swift */,
-				98E799472BA4B36D00061660 /* ClearMessage.swift */,
-				98E799482BA4B36D00061660 /* Message.swift */,
-				98E799492BA4B36D00061660 /* Asn1Parser.swift */,
-				98E7994A2BA4B36D00061660 /* X509Certificate.swift */,
-				98E7994B2BA4B36D00061660 /* Signature.swift */,
-				98E7994C2BA4B36D00061660 /* PrivateKey.swift */,
-				98E7994D2BA4B36D00061660 /* Key.swift */,
-				98E7994F2BA4B36D00061660 /* SwiftyRSA.swift */,
-				98E799502BA4B36D00061660 /* SwiftyRSA+ObjC.swift */,
-				98E799512BA4B36D00061660 /* SwiftyRSAError.swift */,
+				8420FC6F2BF772F10025884C /* ProcessPaymentAnnualResponseModel.swift */,
+				8420FC702BF772F10025884C /* ConsentAnnualListingResponseModel.swift */,
+				8420FC712BF772F10025884C /* CardSaleManualResponseModel.swift */,
+				8420FC722BF772F10025884C /* CancelConsentAnnualResponseModel.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		8420FC732BF772F10025884C /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				8420FC742BF772F10025884C /* CreditCardSaleManualModel.swift */,
+				8420FC752BF772F10025884C /* ProcessPaymentAnnualRequestModel.swift */,
+				8420FC762BF772F10025884C /* CancelConsentAnnualManualRequestModel.swift */,
+				8420FC772BF772F10025884C /* ConsentAnnualListingRequestModel.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		8420FC782BF772F10025884C /* BaseProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				8420FC792BF772F10025884C /* BaseRequest.swift */,
+				8420FC7A2BF772F10025884C /* BaseResponse.swift */,
+			);
+			path = BaseProtocols;
+			sourceTree = "<group>";
+		};
+		8420FC7B2BF772F10025884C /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				8420FC7C2BF772F10025884C /* CardSaleManualRequest.swift */,
+				8420FC7D2BF772F10025884C /* CreateConsentAnnualRequest.swift */,
+				8420FC7E2BF772F10025884C /* ProcessPaymentAnnualRequest.swift */,
+				8420FC7F2BF772F10025884C /* CancelConsentAnnualRequest.swift */,
+				8420FC802BF772F10025884C /* ConsentAnnualListingRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		8420FC822BF772F10025884C /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				8420FC832BF772F10025884C /* RsaCertificateError.swift */,
+				8420FC842BF772F10025884C /* NetworkingError.swift */,
+				8420FC852BF772F10025884C /* AuthenticationError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		8420FC862BF772F10025884C /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				8420FC872BF772F10025884C /* PublicKey.swift */,
+				8420FC882BF772F10025884C /* Data+SHA.swift */,
+				8420FC892BF772F10025884C /* EncryptedMessage.swift */,
+				8420FC8A2BF772F10025884C /* ClearMessage.swift */,
+				8420FC8B2BF772F10025884C /* Message.swift */,
+				8420FC8C2BF772F10025884C /* Asn1Parser.swift */,
+				8420FC8D2BF772F10025884C /* X509Certificate.swift */,
+				8420FC8E2BF772F10025884C /* Signature.swift */,
+				8420FC8F2BF772F10025884C /* PrivateKey.swift */,
+				8420FC902BF772F10025884C /* Key.swift */,
+				8420FC912BF772F10025884C /* SwiftyRSA.swift */,
+				8420FC922BF772F10025884C /* SwiftyRSA+ObjC.swift */,
+				8420FC932BF772F10025884C /* SwiftyRSAError.swift */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		8420FC952BF772F10025884C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8420FC962BF772F10025884C /* StringUtils.swift */,
+				8420FC972BF772F10025884C /* ValidatorUtils.swift */,
+				8420FC982BF772F10025884C /* EncryptionUtils.swift */,
+				8420FC992BF772F10025884C /* Data+Extensions.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		8420FC9A2BF772F10025884C /* Validators */ = {
+			isa = PBXGroup;
+			children = (
+				8420FC9B2BF772F10025884C /* Validator.swift */,
+				8420FC9C2BF772F10025884C /* CreateConsentAnnualValidator.swift */,
+				8420FC9D2BF772F10025884C /* ValidatorFactory.swift */,
+				8420FC9E2BF772F10025884C /* CardSaleManualValidator.swift */,
+			);
+			path = Validators;
+			sourceTree = "<group>";
+		};
+		8420FC9F2BF772F10025884C /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				8420FCA02BF772F10025884C /* CreateConsentAnnualValidationError.swift */,
+				8420FCA12BF772F10025884C /* CreditCardInfoValidationError.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 		9BFF767904E3671C29755412C7D772AE /* Support Files */ = {
@@ -901,63 +853,63 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				843AECEB2BC5687D00E79BF3 /* CardSaleManualRequest.swift in Sources */,
-				843AECEA2BC5686000E79BF3 /* CardSaleManualValidator.swift in Sources */,
-				843AECE92BC5685200E79BF3 /* BaseRequest.swift in Sources */,
-				843AECE82BC5675D00E79BF3 /* CreditCardInfoValidationError.swift in Sources */,
-				843AECE72BC5674000E79BF3 /* Data+Extensions.swift in Sources */,
-				8432E8D62BCE7BA6008B37AF /* CreateConsentAnnualValidationError.swift in Sources */,
-				845DA0102B99FE3C0022192B /* Validator.swift in Sources */,
-				845DA0052B99D3100022192B /* ValidatorUtils.swift in Sources */,
-				843CC6D82BB03C480059BE3C /* EasyPay.swift in Sources */,
-				98E799592BA4B36D00061660 /* X509Certificate.swift in Sources */,
-				84BC8DD42BA9862300C6732E /* CreateConsentAnnual.swift in Sources */,
-				84D662082B971868006594A7 /* CreditCardSaleManualModel.swift in Sources */,
-				98E7995F2BA4B36D00061660 /* SwiftyRSA+ObjC.swift in Sources */,
+				8420FCA92BF772F10025884C /* CreateConsentAnnualResponse.swift in Sources */,
+				8420FCB52BF772F10025884C /* CancelConsentAnnualManualRequestModel.swift in Sources */,
+				8420FCBC2BF772F10025884C /* CancelConsentAnnualRequest.swift in Sources */,
+				8420FCB32BF772F10025884C /* CreditCardSaleManualModel.swift in Sources */,
+				8420FCC22BF772F10025884C /* PublicKey.swift in Sources */,
+				8420FCCC2BF772F10025884C /* SwiftyRSA.swift in Sources */,
+				8420FCD12BF772F10025884C /* ValidatorUtils.swift in Sources */,
+				8420FCCF2BF772F10025884C /* Version.swift in Sources */,
+				8420FCA82BF772F10025884C /* ApiClient.swift in Sources */,
+				8420FCD32BF772F10025884C /* Data+Extensions.swift in Sources */,
+				8420FCAF2BF772F10025884C /* ProcessPaymentAnnualResponseModel.swift in Sources */,
+				8420FCCE2BF772F10025884C /* SwiftyRSAError.swift in Sources */,
+				8420FCD92BF772F10025884C /* CreditCardInfoValidationError.swift in Sources */,
+				8420FCAD2BF772F10025884C /* CancelConsentAnnualResponse.swift in Sources */,
+				8420FCB72BF772F10025884C /* BaseRequest.swift in Sources */,
+				8420FCAC2BF772F10025884C /* ListingConsentAnnualResponse.swift in Sources */,
+				8420FCB42BF772F10025884C /* ProcessPaymentAnnualRequestModel.swift in Sources */,
+				8420FCD52BF772F10025884C /* CreateConsentAnnualValidator.swift in Sources */,
+				8420FCCD2BF772F10025884C /* SwiftyRSA+ObjC.swift in Sources */,
+				8420FCBA2BF772F10025884C /* CreateConsentAnnualRequest.swift in Sources */,
+				8420FCA42BF772F10025884C /* AnnualQueryHelper.swift in Sources */,
+				8420FCA32BF772F10025884C /* SecureTextField.swift in Sources */,
+				8420FCC82BF772F10025884C /* X509Certificate.swift in Sources */,
+				8420FCD22BF772F10025884C /* EncryptionUtils.swift in Sources */,
+				8420FCAE2BF772F10025884C /* Config.swift in Sources */,
+				8420FCDA2BF772F10025884C /* CertificatePinning.swift in Sources */,
+				8420FCAB2BF772F10025884C /* ProcessPaymentAnnualResponse.swift in Sources */,
+				8420FCA52BF772F10025884C /* CreateConsentAnnualResponseModel.swift in Sources */,
+				8420FCC52BF772F10025884C /* ClearMessage.swift in Sources */,
+				8420FCD72BF772F10025884C /* CardSaleManualValidator.swift in Sources */,
+				8420FCBD2BF772F10025884C /* ConsentAnnualListingRequest.swift in Sources */,
+				8420FCB22BF772F10025884C /* CancelConsentAnnualResponseModel.swift in Sources */,
 				F0A55A783D551CE2BFB35431E7D5665B /* EasyPay-dummy.m in Sources */,
-				84D337A82B86264100E60137 /* StringUtils.swift in Sources */,
-				8429501B2BF615AC00F7EEBB /* SecureTextField.swift in Sources */,
-				848748472BB417EE00199D6D /* ConsentAnnualListingResponseModel.swift in Sources */,
-				8460D2342B9764B400AFFCFC /* CardSaleManualResponse.swift in Sources */,
-				8460E4422BCD72D400974FE5 /* CreateConsentAnnualValidator.swift in Sources */,
-				98E799542BA4B36D00061660 /* Data+SHA.swift in Sources */,
-				98E799572BA4B36D00061660 /* Message.swift in Sources */,
-				84BC8DD52BA9862300C6732E /* CreateConsentAnnualManualRequestModel.swift in Sources */,
-				845DA0132B99FE590022192B /* ValidatorFactory.swift in Sources */,
-				8487484D2BB4382700199D6D /* AnnualQueryHelper.swift in Sources */,
-				843CC6DF2BB03C940059BE3C /* AuthenticationError.swift in Sources */,
-				98E799532BA4B36D00061660 /* PublicKey.swift in Sources */,
-				848748412BB410BB00199D6D /* ConsentAnnualListingRequest.swift in Sources */,
-				98E7995C2BA4B36D00061660 /* Key.swift in Sources */,
-				84D2D43B2B8F32AC00A3F157 /* Config.swift in Sources */,
-				98E799602BA4B36D00061660 /* SwiftyRSAError.swift in Sources */,
-				843CC6DC2BB03C700059BE3C /* NetworkingError.swift in Sources */,
-				98E799552BA4B36D00061660 /* EncryptedMessage.swift in Sources */,
-				8487483E2BB3119000199D6D /* CancelConsentAnnualResponseModel.swift in Sources */,
-				98E7995A2BA4B36D00061660 /* Signature.swift in Sources */,
-				848748362BB30E9800199D6D /* CancelConsentAnnualManualRequestModel.swift in Sources */,
-				98E799582BA4B36D00061660 /* Asn1Parser.swift in Sources */,
-				98E7995E2BA4B36D00061660 /* SwiftyRSA.swift in Sources */,
-				84BC8DD82BA98B6D00C6732E /* CreateConsentAnnualRequest.swift in Sources */,
-				84BC8DDE2BA99A4500C6732E /* CreateConsentAnnualResponse.swift in Sources */,
-				84A3D3272BB1CFA20090C20F /* ProcessPaymentAnnualRequest.swift in Sources */,
-				848748392BB310FA00199D6D /* CancelConsentAnnualResponse.swift in Sources */,
-				84A3D32A2BB1D1160090C20F /* ProcessPaymentAnnualRequestModel.swift in Sources */,
-				8487484A2BB41C4C00199D6D /* ListingConsentAnnualResponse.swift in Sources */,
-				84BC8DD62BA9862300C6732E /* CreateConsentAnnualResponseModel.swift in Sources */,
-				84D2D43D2B8F5C2500A3F157 /* BaseResponse.swift in Sources */,
-				98E799562BA4B36D00061660 /* ClearMessage.swift in Sources */,
-				84D2D4392B8E41C900A3F157 /* EncryptionUtils.swift in Sources */,
-				843CC6E22BB03CAA0059BE3C /* RsaCertificateError.swift in Sources */,
-				84A3D32D2BB1D2F80090C20F /* ProcessPaymentAnnualResponse.swift in Sources */,
-				84A3D3302BB1D3340090C20F /* ProcessPaymentAnnualResponseModel.swift in Sources */,
-				848748332BB30E2B00199D6D /* CancelConsentAnnualRequest.swift in Sources */,
-				8460D2362B9764BF00AFFCFC /* CardSaleManualResponseModel.swift in Sources */,
-				84D337A42B86255E00E60137 /* CertificatePinning.swift in Sources */,
-				84D337A62B86259C00E60137 /* Version.swift in Sources */,
-				84E6EC322B86149800182440 /* ApiClient.swift in Sources */,
-				848748442BB4143A00199D6D /* ConsentAnnualListingRequestModel.swift in Sources */,
-				98E7995B2BA4B36D00061660 /* PrivateKey.swift in Sources */,
+				8420FCC72BF772F10025884C /* Asn1Parser.swift in Sources */,
+				8420FCCA2BF772F10025884C /* PrivateKey.swift in Sources */,
+				8420FCBB2BF772F10025884C /* ProcessPaymentAnnualRequest.swift in Sources */,
+				8420FCB12BF772F10025884C /* CardSaleManualResponseModel.swift in Sources */,
+				8420FCC02BF772F10025884C /* NetworkingError.swift in Sources */,
+				8420FCAA2BF772F10025884C /* CardSaleManualResponse.swift in Sources */,
+				8420FCB02BF772F10025884C /* ConsentAnnualListingResponseModel.swift in Sources */,
+				8420FCD82BF772F10025884C /* CreateConsentAnnualValidationError.swift in Sources */,
+				8420FCC92BF772F10025884C /* Signature.swift in Sources */,
+				8420FCC42BF772F10025884C /* EncryptedMessage.swift in Sources */,
+				8420FCBF2BF772F10025884C /* RsaCertificateError.swift in Sources */,
+				8420FCD62BF772F10025884C /* ValidatorFactory.swift in Sources */,
+				8420FCC62BF772F10025884C /* Message.swift in Sources */,
+				8420FCC32BF772F10025884C /* Data+SHA.swift in Sources */,
+				8420FCA62BF772F10025884C /* CreateConsentAnnualManualRequestModel.swift in Sources */,
+				8420FCCB2BF772F10025884C /* Key.swift in Sources */,
+				8420FCB92BF772F10025884C /* CardSaleManualRequest.swift in Sources */,
+				8420FCB62BF772F10025884C /* ConsentAnnualListingRequestModel.swift in Sources */,
+				8420FCA72BF772F10025884C /* CreateConsentAnnual.swift in Sources */,
+				8420FCD42BF772F10025884C /* Validator.swift in Sources */,
+				8420FCB82BF772F10025884C /* BaseResponse.swift in Sources */,
+				8420FCC12BF772F10025884C /* AuthenticationError.swift in Sources */,
+				8420FCBE2BF772F10025884C /* EasyPay.swift in Sources */,
+				8420FCD02BF772F10025884C /* StringUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -965,9 +917,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8486CE782B9F527A00722C96 /* CreditCardInfoValidationError.swift in Sources */,
 				2C237AEF262808B8634FC9DAB9F0EC4E /* Pods-EasyPay_Tests-dummy.m in Sources */,
-				8432E8D82BCE7BA6008B37AF /* CreateConsentAnnualValidationError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -982,61 +932,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8487484B2BB41C4C00199D6D /* ListingConsentAnnualResponse.swift in Sources */,
-				98E7996F2BA4B65D00061660 /* Key.swift in Sources */,
-				848748452BB4143A00199D6D /* ConsentAnnualListingRequestModel.swift in Sources */,
-				84456B4F2BA2E3CE00D7C33F /* Data+Extensions.swift in Sources */,
-				98E7996C2BA4B65D00061660 /* SwiftyRSAError.swift in Sources */,
-				98E7996D2BA4B65D00061660 /* Data+SHA.swift in Sources */,
-				8460E4432BCD72D400974FE5 /* CreateConsentAnnualValidator.swift in Sources */,
-				98E799722BA4B65D00061660 /* SwiftyRSA+ObjC.swift in Sources */,
-				8460D23D2B98A56B00AFFCFC /* StringUtils.swift in Sources */,
-				98E799652BA4B65100061660 /* EncryptionUtils.swift in Sources */,
-				8487484E2BB4382700199D6D /* AnnualQueryHelper.swift in Sources */,
 				DB196BC67774BB74C7EE65FB074C1B8C /* Pods-EasyPay_Example-dummy.m in Sources */,
-				84BC8DDA2BA9970500C6732E /* CreateConsentAnnualManualRequestModel.swift in Sources */,
-				84A3D3312BB1D3340090C20F /* ProcessPaymentAnnualResponseModel.swift in Sources */,
-				84D662092B97186D006594A7 /* CreditCardSaleManualModel.swift in Sources */,
-				844294272B95E18E00D7C7E8 /* BaseRequest.swift in Sources */,
-				98E799682BA4B65D00061660 /* SwiftyRSA.swift in Sources */,
-				84A3D32E2BB1D2F80090C20F /* ProcessPaymentAnnualResponse.swift in Sources */,
-				8487483A2BB310FA00199D6D /* CancelConsentAnnualResponse.swift in Sources */,
-				84BC8DDF2BA99B9700C6732E /* CreateConsentAnnualResponse.swift in Sources */,
-				8460D2312B974C8700AFFCFC /* CardSaleManualRequest.swift in Sources */,
-				84DA2C012BA0922C00B240CE /* BaseResponse.swift in Sources */,
-				98E7996B2BA4B65D00061660 /* PrivateKey.swift in Sources */,
-				98E799672BA4B65D00061660 /* X509Certificate.swift in Sources */,
-				84A3D3282BB1CFA20090C20F /* ProcessPaymentAnnualRequest.swift in Sources */,
-				98E799712BA4B65D00061660 /* Asn1Parser.swift in Sources */,
-				98E7996E2BA4B65D00061660 /* Message.swift in Sources */,
-				8460D2382B977A2900AFFCFC /* CardSaleManualResponse.swift in Sources */,
-				848748422BB410BB00199D6D /* ConsentAnnualListingRequest.swift in Sources */,
-				845DA0062B99D3100022192B /* ValidatorUtils.swift in Sources */,
-				98E799662BA4B65900061660 /* PublicKey.swift in Sources */,
-				98E799702BA4B65D00061660 /* Signature.swift in Sources */,
-				848748482BB417EE00199D6D /* ConsentAnnualListingResponseModel.swift in Sources */,
-				848748342BB30E2B00199D6D /* CancelConsentAnnualRequest.swift in Sources */,
-				98E799692BA4B65D00061660 /* EncryptedMessage.swift in Sources */,
-				845DA0172B99FE6F0022192B /* CardSaleManualValidator.swift in Sources */,
-				8432E8D72BCE7BA6008B37AF /* CreateConsentAnnualValidationError.swift in Sources */,
-				98E799642BA4B64800061660 /* Config.swift in Sources */,
-				98E7996A2BA4B65D00061660 /* ClearMessage.swift in Sources */,
-				84BF42EF2BA1C16300DEF1C7 /* Validator.swift in Sources */,
-				843CC6DD2BB03C700059BE3C /* NetworkingError.swift in Sources */,
-				84BC8DDC2BA9971100C6732E /* CreateConsentAnnualResponseModel.swift in Sources */,
-				84BC8DD92BA996FA00C6732E /* CreateConsentAnnualRequest.swift in Sources */,
-				84BF42F12BA1C18500DEF1C7 /* ValidatorFactory.swift in Sources */,
-				84BC8DDB2BA9970B00C6732E /* CreateConsentAnnual.swift in Sources */,
-				843CC6E32BB03CAA0059BE3C /* RsaCertificateError.swift in Sources */,
-				848748372BB30E9800199D6D /* CancelConsentAnnualManualRequestModel.swift in Sources */,
-				844294252B95E17B00D7C7E8 /* Version.swift in Sources */,
-				8487483F2BB3119000199D6D /* CancelConsentAnnualResponseModel.swift in Sources */,
-				843CC6D92BB03C480059BE3C /* EasyPay.swift in Sources */,
-				8460D2372B97772000AFFCFC /* CardSaleManualResponseModel.swift in Sources */,
-				844294242B95E16B00D7C7E8 /* ApiClient.swift in Sources */,
-				843CC6E02BB03C940059BE3C /* AuthenticationError.swift in Sources */,
-				8486CE772B9F527A00722C96 /* CreditCardInfoValidationError.swift in Sources */,
-				84A3D32B2BB1D1160090C20F /* ProcessPaymentAnnualRequestModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1282,6 +1178,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6111633655EDCCD8AB4C135F /* Pods-EasyPay-EasyPayTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
@@ -1311,6 +1208,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EF2FD078AF41AAEFF071767A /* Pods-EasyPay-EasyPayTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
