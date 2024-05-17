@@ -5,28 +5,27 @@ import PackageDescription
 
 let package = Package(
     name: "EasyPay",
-  platforms: [
-    .iOS(.v13)
-  ],
+    platforms: [
+        .iOS(.v13)
+    ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "EasyPay",
             targets: ["EasyPay"]),
     ],
-dependencies: [
+    dependencies: [
         .package(url: "https://github.com/getsentry/sentry-cocoa", from: "8.25.2")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "EasyPay"),
-	    dependencies: ["Sentry"]),
-
+            name: "EasyPay",
+            dependencies: [.product(name: "Sentry", package: "sentry-cocoa")]),
         .testTarget(
             name: "EasyPay_Tests",
             dependencies: ["EasyPay"]),
     ],
-	swiftLanguageVersions: [.v5]
+    swiftLanguageVersions: [.v5]
 )
