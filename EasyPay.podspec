@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'EasyPay'
-  s.version          = '0.9.5'
+  s.version          = '0.9.6'
   s.summary          = 'Mobile iOS SDK for Easy Pay'
 
 # This description is used to generate tags and improve search results.
