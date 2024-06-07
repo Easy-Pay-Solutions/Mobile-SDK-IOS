@@ -33,9 +33,13 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'Sources/**/*'
   
-  # s.resource_bundles = {
-  #   'EasyPay' => ['EasyPay/Assets/*.png']
-  # }
+  s.resource_bundles = {
+    'EasyPay' => [
+        'Resources/EasyPayAssets.xcassets',
+        'Resources/*.xib',
+        'Resources/Fonts/*.ttf',
+        ]
+  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'

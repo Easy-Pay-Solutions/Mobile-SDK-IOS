@@ -17,6 +17,7 @@ public struct Config {
         self.apiKey = apiKey
         self.hmacSecret = hmacToken
         self.sentryKey = sentryKey
+        FontsConfig.loadFonts()
     }
     
     mutating func configureCertificate(encryptionUtils: EncryptionUtils, certificateData: Data) {
