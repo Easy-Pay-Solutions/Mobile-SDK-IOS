@@ -52,23 +52,34 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4x-Qf-LjT">
-                                <rect key="frame" x="51" y="316" width="273" height="35"/>
+                                <rect key="frame" x="10" y="316" width="355.5" height="35"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Manage Payments Widget Demo"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Manage Payments Widget Demo (Payment)"/>
                                 <connections>
                                     <action selector="managePaymentsWidgetButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="3QG-BS-bOU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HDj-SN-DZ6">
+                                <rect key="frame" x="20" y="473" width="335" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Manage Payments Widget Demo (Selection)"/>
+                                <connections>
+                                    <action selector="managePaymentsSelectionWidgetButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="geN-SK-x8d"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="N11-sb-TFw" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="0CS-fa-UZa"/>
+                            <constraint firstItem="HDj-SN-DZ6" firstAttribute="top" secondItem="xaB-hX-Xp7" secondAttribute="bottom" constant="20" id="30U-DS-i77"/>
                             <constraint firstItem="jdb-dg-8ce" firstAttribute="top" secondItem="c4x-Qf-LjT" secondAttribute="bottom" constant="16" id="3G8-pL-4wx"/>
                             <constraint firstItem="c4x-Qf-LjT" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="6BP-pP-duY"/>
                             <constraint firstAttribute="trailing" secondItem="jdb-dg-8ce" secondAttribute="trailing" constant="16" id="B1O-Fz-rTa"/>
+                            <constraint firstItem="HDj-SN-DZ6" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="HSS-gp-IpQ"/>
                             <constraint firstItem="xaB-hX-Xp7" firstAttribute="top" secondItem="jdb-dg-8ce" secondAttribute="bottom" constant="16" id="HXA-DU-P08"/>
                             <constraint firstItem="c4x-Qf-LjT" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="IHE-FY-onx"/>
                             <constraint firstItem="EYl-na-WQw" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="15" id="JSj-j6-75x"/>
+                            <constraint firstAttribute="trailing" secondItem="HDj-SN-DZ6" secondAttribute="trailing" constant="20" id="ZJL-QV-oge"/>
                             <constraint firstItem="jdb-dg-8ce" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="enS-F4-MQn"/>
                             <constraint firstAttribute="trailing" secondItem="xaB-hX-Xp7" secondAttribute="trailing" constant="16" id="id3-Ib-Qmy"/>
                             <constraint firstAttribute="trailing" secondItem="N11-sb-TFw" secondAttribute="trailing" constant="16" id="rR1-UX-J9T"/>

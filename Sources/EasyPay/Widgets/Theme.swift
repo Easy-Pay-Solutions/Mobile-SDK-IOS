@@ -29,16 +29,24 @@ public struct Theme {
         static let textButton: UIColor = {
             UIColor.color(named:  "textButton", inBundleWithIdentifier: bundleId)
         }()
+        static let confirmationGreenContainer: UIColor = {
+            UIColor.color(named:  "confirmationGreenContainer", inBundleWithIdentifier: bundleId)
+        }()
+        static let errorRedContainer: UIColor = {
+            UIColor.color(named:  "errorRedContainer", inBundleWithIdentifier: bundleId)
+        }()
     }
 
     public struct Image {
         static let plusIcon: UIImage? = UIImage.image(named: "plusIcon", inBundleWithIdentifier: bundleId)
         static let creditCardFilled: UIImage? = UIImage.image(named: "creditCardFilled", inBundleWithIdentifier: bundleId)
-
+        static let xCircleFilled: UIImage? = UIImage.image(named: "xCircleFilled", inBundleWithIdentifier: bundleId)
+        static let checkCircleFilled: UIImage? = UIImage.image(named: "checkCircleFilled", inBundleWithIdentifier: bundleId)
     }
     
     public struct Font {
         static let body3Action: UIFont = UIFont(name: "Inter-SemiBold", size: 14.0) ?? UIFont.systemFont(ofSize: 14.0, weight: .semibold)
+        static let body3Regular: UIFont = UIFont(name: "Inter-Regular", size: 14.0) ?? UIFont.systemFont(ofSize: 14.0, weight: .regular)
     }
 }
 

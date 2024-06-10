@@ -30,7 +30,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction private func managePaymentsWidgetButtonTapped(_ sender: UIButton) {
-        let slideVC = CardSelectionViewController(merchantId: "1", selectionDelegate: self)
+        let slideVC = CardSelectionViewController(merchantId: "1", amount: "9.86", paymentDelegate: self, preselectedCardId: 3374)
+        self.present(slideVC, animated: true, completion: nil)
+    }
+    
+    @IBAction private func managePaymentsSelectionWidgetButtonTapped(_ sender: UIButton) {
+        let slideVC = CardSelectionViewController(merchantId: "1", selectionDelegate: self, preselectedCardId: nil)
         self.present(slideVC, animated: true, completion: nil)
     }
     
@@ -78,5 +83,6 @@ extension ViewController: UIViewControllerTransitioningDelegate {
 }
 
 extension ViewController: CardSelectiontDelegate {
+    func didDeleteCard(consentId: Int, success: Bool) {}
     func didSelectCard(consentId: String) {}
 }
