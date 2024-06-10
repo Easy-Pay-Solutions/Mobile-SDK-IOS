@@ -35,6 +35,12 @@ public struct Theme {
         static let errorRedContainer: UIColor = {
             UIColor.color(named:  "errorRedContainer", inBundleWithIdentifier: bundleId)
         }()
+        static let confirmationGreen: UIColor = {
+            UIColor.color(named:  "confirmationGreen", inBundleWithIdentifier: bundleId)
+        }()
+        static let errorSurface: UIColor = {
+            UIColor.color(named:  "errorSurface", inBundleWithIdentifier: bundleId)
+        }()
     }
 
     public struct Image {

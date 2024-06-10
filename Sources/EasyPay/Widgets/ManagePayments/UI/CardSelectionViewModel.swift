@@ -77,4 +77,25 @@ public class CardSelectionViewModel {
             }
         }
     }
+    
+    func chargeAnnualConsent(consentId: Int,
+                             _ completion: @escaping (Result<ProcessPaymentAnnualResponse, Error>) -> Void) {
+        let convertedProcessAmount = convertDecimalFormatting(amount)
+        let request = ProcessPaymentAnnualRequest(processPaymentAnnualRequest: ProcessPaymentAnnualRequestModel(consentId: consentId, processAmount: convertedProcessAmount))
+        EasyPay.shared.apiClient.processPaymentAnnualConsent(request: request) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let response):
+                    completion(.success(response))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+        }
+    }
+    
+    private func convertDecimalFormatting(_ string: String?) -> String {
+        guard let string = string else { return "0.0" }
+        return string.replacingOccurrences(of: ",", with: ".")
+    }
 }

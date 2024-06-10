@@ -15,4 +15,6 @@ public struct Localization {
     static let deleteCardMessgae = "Are you sure you want to delete the selected credit card? If you confirm, it will be permanently deleted. Don't worry, you can always add a new one later."
     static let cancel = "Cancel"
     static let delete = "Delete"
+    static let unableToProcessPaymentError = "We are unable to process your payment. Please contact your financial institution or use another card."
+    static let easyPayApiError = "Oops, we're experiencing some technical difficulties at the moment. Please try again later."
 }

@@ -126,7 +126,7 @@
                         <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We are unable to process your payment. Please contact your financial institution or use another card." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2mJ-Tw-JjS">
                             <rect key="frame" x="0.0" y="43.5" width="667" height="0.0"/>
                             <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="14"/>
-                            <color key="textColor" name="errorRed"/>
+                            <color key="textColor" name="errorSurface"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41J-Tp-MVA">
@@ -215,7 +215,7 @@
         <namedColor name="confirmationGreen">
             <color red="0.16470588235294117" green="0.7803921568627451" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
-        <namedColor name="errorRed">
+        <namedColor name="errorSurface">
             <color red="0.70196078431372544" green="0.14901960784313725" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="textButton">

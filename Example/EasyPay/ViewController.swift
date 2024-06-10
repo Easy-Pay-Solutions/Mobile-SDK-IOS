@@ -82,7 +82,8 @@ extension ViewController: UIViewControllerTransitioningDelegate {
     }
 }
 
-extension ViewController: CardSelectiontDelegate {
+extension ViewController: CardSelectiontDelegate, CardPaymentDelegate {
+    func didPayWithCard(consentId: Int, success: Bool) {}
     func didDeleteCard(consentId: Int, success: Bool) {}
     func didSelectCard(consentId: String) {}
 }

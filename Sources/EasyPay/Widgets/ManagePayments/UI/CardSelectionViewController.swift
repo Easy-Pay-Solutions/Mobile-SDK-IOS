@@ -1,5 +1,6 @@
 
 import UIKit
+import EasyPay
 
 public enum ManageCardState {
     case selection
@@ -12,7 +13,7 @@ public protocol CardSelectiontDelegate: AnyObject {
 }
 
 public protocol CardPaymentDelegate: AnyObject {
-    func didPayWithCard(consentId: String)
+    func didPayWithCard(consentId: Int, success: Bool)
     func didDeleteCard(consentId: Int, success: Bool)
 }
 
@@ -146,8 +147,12 @@ public class CardSelectionViewController: BaseViewController {
     }
     
     @IBAction private func closeButtonTapped(_ sender: UIButton) {
-        self.presentedViewController?.dismiss(animated: true, completion: nil)
+        closeWidget()
+    }
+    
+    private func closeWidget() {
         self.dismiss(animated: true, completion: nil)
+        self.presentedViewController?.dismiss(animated: true, completion: nil)
     }
     
     @IBAction private func deleteCardButtonTapped(_ sender: UIButton) {
@@ -163,50 +168,106 @@ public class CardSelectionViewController: BaseViewController {
                 switch result {
                 case .success(_):
                     s.isLoading = true
-
-                    s.viewModel.state == .selection
-                    ? s.selectionDelegate?.didDeleteCard(consentId: selectedCard, success: true)
-                    : s.paymentDelegate?.didDeleteCard(consentId: selectedCard, success: true)
-                    
+                    s.notifyDeleteDelegate(success: true, selectedCard: selectedCard)
                     s.viewModel.downloadAnnualConsents() { [weak self] result in
-                        guard let s = self else { return }
                         s.isLoading = false
+                        guard let s = self else { return }
                         switch result {
                         case .success(_):
-                            s.collectionView.reloadData()
-                            s.viewModel.selectedIndex = -1
-                            if let presentationController = s.presentationController as? PresentationController {
-                                presentationController.updatePresentedViewHeight(s.calculateDecreasedHeight())
-                                s.cardStackView.isHidden = true
-                                s.cardActionsStackView.isHidden = true
-                                s.collectionView.layoutIfNeeded()
-                            }
-                            s.viewModel.state == .selection
-                            ? s.selectionDelegate?.didDeleteCard(consentId: selectedCard, success: false)
-                            : s.paymentDelegate?.didDeleteCard(consentId: selectedCard, success: false)
-                            
-                            s.showToast(message: Localization.selectedCardDeleted, controller: s, success: true, action: nil, hideAutomaticallyDelay: 3.0, shouldBeMovedHigher: false)
+                            s.reloadAfterSuccessDeletingCard()
                         case .failure(let error):
                             s.showAlert(title: Localization.error, message: error.localizedDescription)
                         }
                     }
-                case .failure(let failure):
-                    s.isLoading = false
-                    s.viewModel.state == .selection
-                    ? s.selectionDelegate?.didDeleteCard(consentId: selectedCard, success: false)
-                    : s.paymentDelegate?.didDeleteCard(consentId: selectedCard, success: false)
-                    s.showToast(message: Localization.errorDeletingCard, controller: s, success: false, action: nil, hideAutomaticallyDelay: 3.0)
+                case .failure(_):
+                    s.showErrorDeletingCard(selectedCard: selectedCard)
                 }
             }
         })
     }
+    
+    private func reloadAfterSuccessDeletingCard() {
+        collectionView.reloadData()
+        viewModel.selectedIndex = -1
+        if let presentationController = presentationController as? PresentationController {
+            presentationController.updatePresentedViewHeight(calculateDecreasedHeight())
+            cardStackView.isHidden = true
+            cardActionsStackView.isHidden = true
+            collectionView.layoutIfNeeded()
+        }
+        showToast(message: Localization.selectedCardDeleted, controller: self, success: true, action: nil, hideAutomaticallyDelay: 3.0, shouldBeMovedHigher: false)
+    }
+    
+    private func showErrorDeletingCard(selectedCard: Int) {
+        isLoading = false
+        notifyDeleteDelegate(success: false, selectedCard: selectedCard)
+        showToast(message: Localization.errorDeletingCard, controller: self, success: false, action: nil, hideAutomaticallyDelay: 3.0)
+    }
+    
+    private func notifyDeleteDelegate(success: Bool, selectedCard: Int) {
+        viewModel.state == .selection
+        ? selectionDelegate?.didDeleteCard(consentId: selectedCard, success: success)
+        : paymentDelegate?.didDeleteCard(consentId: selectedCard, success: success)
+    }
+    
+    private func showPayButtonError(_ yes: Bool, declineError: Bool = false) {
+        payButton.backgroundColor = yes
+        ? Theme.Color.errorRedContainer
+        : Theme.Color.confirmationGreen
+        let titleColor = yes
+        ? Theme.Color.errorRed
+        : UIColor.white
+        errorLabel.text = declineError
+        ? Localization.unableToProcessPaymentError
+        : Localization.easyPayApiError
+        errorLabel.isHidden = !yes
+        payButton.isEnabled = !yes
+        payButton.setTitleColor(titleColor, for: .normal)
+        if let presentationController = self.presentationController as? PresentationController {
+            self.view.setNeedsLayout()
+            self.view.layoutIfNeeded()
+            presentationController.updatePresentedViewHeight(calculateIncreasedHeight())
+            print(calculateIncreasedHeight())
+        }
+    }
 
     @IBAction private func payButtonTapped(_ sender: UIButton) {
-        self.showYesNoAlert(title: Localization.deleteThisCard,
-                            message: Localization.deleteCardMessgae,
-                            yesMessage: Localization.delete,
-                            noMessage: Localization.cancel,
-                            yesHandler: { [weak self] _ in print("Pay button tapped")})
+        chargeConsentAnnual()
+    }
+    
+    private func paymentSuccesRespondeHandler(response: ProcessPaymentAnnualResponse, selectedCard: Int) {
+        if response.data.errorMessage != "" && response.data.errorCode != 0 {
+            showPayButtonError(true)
+            notifyPayDelegate(success: false, selectedCard: selectedCard)
+        } else if response.data.functionOk == true && response.data.txApproved == false {
+            showPayButtonError(true, declineError: true)
+            notifyPayDelegate(success: false, selectedCard: selectedCard)
+        } else {
+            notifyPayDelegate(success: true, selectedCard: selectedCard)
+            closeWidget()
+        }
+    }
+    
+    private func chargeConsentAnnual() {
+        guard let selectedCard = self.viewModel.selectedCardConsentId() else { return }
+
+        self.viewModel.chargeAnnualConsent(consentId: selectedCard) { [weak self] result in
+            guard let s = self else { return }
+            s.isLoading = true
+            switch result {
+            case .success(let response):
+                s.isLoading = false
+                s.paymentSuccesRespondeHandler(response: response, selectedCard: selectedCard)
+            case .failure(_):
+                s.isLoading = false
+                s.notifyPayDelegate(success: false, selectedCard: selectedCard)
+                s.showPayButtonError(true)
+            }
+        }
+    }
+    
+    private func notifyPayDelegate(success: Bool, selectedCard: Int) {
+        paymentDelegate?.didPayWithCard(consentId: selectedCard, success: success)
     }
 }
 
@@ -245,6 +306,8 @@ extension CardSelectionViewController: UICollectionViewDelegate, UICollectionVie
     }
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        showPayButtonError(false)
+        
         if indexPath.row == 0 {
             viewModel.selectedIndex = -1
             self.showAlert(title: "Add a card", message: "Feature is coming soon")
