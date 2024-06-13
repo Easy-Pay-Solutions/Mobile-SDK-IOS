@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2F2CC7E0F09D3F3A2F0B5877 /* Pods_EasyPay_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8169BB602431D4ECA9C7291E /* Pods_EasyPay_Example.framework */; };
+		3F7C39752C1B106900EDE67C /* ManagePaymentsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7C39742C1B106900EDE67C /* ManagePaymentsUITests.swift */; };
 		42E7F5E37F03BF6C3A48DAD5 /* Pods_EasyPay_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F1F844F282FFBD30000670 /* Pods_EasyPay_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -55,6 +56,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3F7C396F2C1B103500EDE67C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
+			remoteInfo = EasyPay_Example;
+		};
 		607FACE61AFB9204008FA782 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
@@ -68,6 +76,8 @@
 		13032899BDE45B6F770B07D6 /* EasyPay.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = EasyPay.podspec; path = ../EasyPay.podspec; sourceTree = "<group>"; };
 		225DDF2B9F218324B1DFA30B /* Pods-EasyPay_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyPay_Example.release.xcconfig"; path = "Target Support Files/Pods-EasyPay_Example/Pods-EasyPay_Example.release.xcconfig"; sourceTree = "<group>"; };
 		24F1F844F282FFBD30000670 /* Pods_EasyPay_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyPay_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F7C39692C1B103500EDE67C /* EasyPay_UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyPay_UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F7C39742C1B106900EDE67C /* ManagePaymentsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePaymentsUITests.swift; sourceTree = "<group>"; };
 		4862CF7F078CD3B1D7B2BE83 /* Pods-EasyPay_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyPay_Tests.release.xcconfig"; path = "Target Support Files/Pods-EasyPay_Tests/Pods-EasyPay_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* EasyPay_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyPay_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -125,6 +135,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3F7C39662C1B103500EDE67C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		607FACCD1AFB9204008FA782 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -144,12 +161,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F7C396A2C1B103500EDE67C /* UITests */ = {
+			isa = PBXGroup;
+			children = (
+				3F7C39742C1B106900EDE67C /* ManagePaymentsUITests.swift */,
+			);
+			path = UITests;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for EasyPay */,
 				607FACE81AFB9204008FA782 /* Tests */,
+				3F7C396A2C1B103500EDE67C /* UITests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				6F4709DEB01FFF2BC960122D /* Pods */,
 				62BA44DAC7F3119EDE92E405 /* Frameworks */,
@@ -161,6 +187,7 @@
 			children = (
 				607FACD01AFB9204008FA782 /* EasyPay_Example.app */,
 				607FACE51AFB9204008FA782 /* EasyPay_Tests.xctest */,
+				3F7C39692C1B103500EDE67C /* EasyPay_UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -371,6 +398,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3F7C39682C1B103500EDE67C /* EasyPay_UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F7C39732C1B103500EDE67C /* Build configuration list for PBXNativeTarget "EasyPay_UITests" */;
+			buildPhases = (
+				3F7C39652C1B103500EDE67C /* Sources */,
+				3F7C39662C1B103500EDE67C /* Frameworks */,
+				3F7C39672C1B103500EDE67C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F7C39702C1B103500EDE67C /* PBXTargetDependency */,
+			);
+			name = EasyPay_UITests;
+			productName = EasyPay_UITests;
+			productReference = 3F7C39692C1B103500EDE67C /* EasyPay_UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		607FACCF1AFB9204008FA782 /* EasyPay_Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "EasyPay_Example" */;
@@ -416,10 +461,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1520;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
+					3F7C39682C1B103500EDE67C = {
+						CreatedOnToolsVersion = 15.0.1;
+						LastSwiftMigration = 1500;
+						TestTargetID = 607FACCF1AFB9204008FA782;
+					};
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						LastSwiftMigration = 1520;
@@ -447,11 +497,19 @@
 			targets = (
 				607FACCF1AFB9204008FA782 /* EasyPay_Example */,
 				607FACE41AFB9204008FA782 /* EasyPay_Tests */,
+				3F7C39682C1B103500EDE67C /* EasyPay_UITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3F7C39672C1B103500EDE67C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		607FACCE1AFB9204008FA782 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -550,6 +608,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3F7C39652C1B103500EDE67C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F7C39752C1B106900EDE67C /* ManagePaymentsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		607FACCC1AFB9204008FA782 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -596,6 +662,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		3F7C39702C1B103500EDE67C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 607FACCF1AFB9204008FA782 /* EasyPay_Example */;
+			targetProxy = 3F7C396F2C1B103500EDE67C /* PBXContainerItemProxy */;
+		};
 		607FACE71AFB9204008FA782 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 607FACCF1AFB9204008FA782 /* EasyPay_Example */;
@@ -623,6 +694,68 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3F7C39712C1B103500EDE67C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = LUV5M8R3MG;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.EasyPay-UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EasyPay_Example;
+			};
+			name = Debug;
+		};
+		3F7C39722C1B103500EDE67C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LUV5M8R3MG;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.EasyPay-UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EasyPay_Example;
+			};
+			name = Release;
+		};
 		607FACED1AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -862,6 +995,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3F7C39732C1B103500EDE67C /* Build configuration list for PBXNativeTarget "EasyPay_UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F7C39712C1B103500EDE67C /* Debug */,
+				3F7C39722C1B103500EDE67C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "EasyPay" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
