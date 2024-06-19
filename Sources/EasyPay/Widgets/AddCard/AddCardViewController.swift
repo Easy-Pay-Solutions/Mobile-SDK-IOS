@@ -121,7 +121,7 @@ extension AddCardViewController: UITableViewDelegate, UITableViewDataSource {
         
         if index == .cardHolderErrorHint && viewModel.cardholerErrorShown {
             return isIpad ? shorterMessage : longerMessage
-        } else if index == .cardHolderErrorHint && viewModel.cardholerErrorShown {
+        } else if index == .cardHolderErrorHint && viewModel.shouldShowCardholderHint() && viewModel.cardholerHintShown {
             return shorterMessage
         } else if index == .cardHolderErrorHint {
             return 0
