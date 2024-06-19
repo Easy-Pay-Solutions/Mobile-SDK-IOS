@@ -52,6 +52,7 @@ public class AddCardViewModel {
     func canEnableButton() -> Bool {
         return isCardNumberCorrect() &&
         !isCardNumberEmptyNilWhitespace() &&
+        !isCardholerNameEmptyNilWhitespace() &&
         isCardholerNameCorrect() &&
         !isCardNumberEmptyNilWhitespace() &&
         !isMonthYearEmptyNilWhitespace() &&
