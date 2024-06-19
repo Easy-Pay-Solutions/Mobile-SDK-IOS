@@ -417,11 +417,12 @@ extension AddCardViewController: PayActionsDelegate, CloseButtonDelegate, Single
                 let consentId = success.data.consentId
                 self.payingSavingDelegate?.didSaveCard(consentId: success.data.consentId, success: true)
                 self.payAfterSaving(consentId: consentId)
+                self.updateTableView()
             case .failure(_):
                 self.showErrorPaySaveButton(true, text: Localization.technicalDifficultiesError)
                 self.viewModel.saveCardErrorShown = true
-                self.updateTableView()
                 self.payingSavingDelegate?.didSaveCard(consentId: nil, success: false)
+                self.updateTableView()
             }
         }
     }
@@ -433,6 +434,7 @@ extension AddCardViewController: PayActionsDelegate, CloseButtonDelegate, Single
             switch result {
             case .success(let success):
                 self.paymentSuccesRespondeHandler(response: success, selectedCard: consentId)
+                self.updateTableView()
             case .failure(_):
                 self.payingSavingDelegate?.didPayWithCard(consentId: consentId, success: false)
                 self.showErrorPaySaveButton(true, text: Localization.technicalDifficultiesError)
@@ -448,6 +450,7 @@ extension AddCardViewController: PayActionsDelegate, CloseButtonDelegate, Single
             switch result {
             case .success(let success):
                 self.paymentOnlyRespondeHandler(response: success)
+                self.updateTableView()
             case .failure(_):
                 self.payingSavingDelegate?.didPayWithCard(consentId: nil, success: false)
                 self.showErrorPaySaveButton(true, text: Localization.technicalDifficultiesError)
@@ -536,7 +539,6 @@ extension AddCardViewController {
     
     private func showError(field: AddCardTableRow, text: String) {
         guard let cell = tableView.cellForRow(at: IndexPath(row: field.rawValue, section: 0)) as? SingleHintErrorTableViewCell else { return }
-        cell.errorLabel.text = text
         cell.errorLabel.text = text
         cell.hintLabel.isHidden = true
         cell.errorLabel.isHidden = false
@@ -754,6 +756,7 @@ extension AddCardViewController: DoublePaymentFieldDelegate {
             viewModel.monthYearErrorShown = false
             cell.setLeftError(false)
         }
+        updateTableView()
     }
     
     func didChangeTextCvc(cell: DoublePaymentTableViewCell, text: String?) {
@@ -774,5 +777,6 @@ extension AddCardViewController: DoublePaymentFieldDelegate {
             viewModel.cvcErrorShown = false
             cell.setRightError(false)
         }
+        updateTableView()
     }
 }
