@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Inter-Regular.ttf">
+            <string>Inter-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AmountWidgetViewController" customModule="EasyPay_Example" customModuleProvider="target">
+            <connections>
+                <outlet property="amountTextField" destination="kPp-qe-5M8" id="95C-24-jxq"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount to charge" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kPp-qe-5M8">
+                    <rect key="frame" x="20" y="340.66666666666669" width="353" height="48"/>
+                    <color key="backgroundColor" name="inputBackground"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="B1l-v4-1BT"/>
+                    </constraints>
+                    <color key="textColor" name="textPrimary"/>
+                    <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Uo-jD-ecU">
+                    <rect key="frame" x="170.66666666666666" y="408.66666666666669" width="51.666666666666657" height="35"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Manage Payments Widget Demo (Selection)"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Pay"/>
+                    <connections>
+                        <action selector="managePaymentsWidgetButtonTapped:" destination="-1" eventType="touchUpInside" id="tLS-DE-Zg2"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FpO-Y1-1Lw">
+                    <rect key="frame" x="20" y="311.66666666666669" width="353" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="4Uo-jD-ecU" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3hX-j0-qtY"/>
+                <constraint firstItem="4Uo-jD-ecU" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="49j-Ln-oAv"/>
+                <constraint firstItem="kPp-qe-5M8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="LuG-Uh-eCp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kPp-qe-5M8" secondAttribute="trailing" constant="20" id="Lyj-o6-Xug"/>
+                <constraint firstItem="FpO-Y1-1Lw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Rbs-t2-Hml"/>
+                <constraint firstItem="4Uo-jD-ecU" firstAttribute="top" secondItem="kPp-qe-5M8" secondAttribute="bottom" constant="20" id="V21-xl-U9o"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FpO-Y1-1Lw" secondAttribute="trailing" constant="20" id="ZDJ-uI-7Jw"/>
+                <constraint firstItem="kPp-qe-5M8" firstAttribute="top" secondItem="FpO-Y1-1Lw" secondAttribute="bottom" constant="8" id="lOM-jh-RpJ"/>
+            </constraints>
+            <point key="canvasLocation" x="131" y="-11"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="inputBackground">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="textPrimary">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

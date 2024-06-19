@@ -41,18 +41,48 @@ public struct Theme {
         static let errorSurface: UIColor = {
             UIColor.color(named:  "errorSurface", inBundleWithIdentifier: bundleId)
         }()
+        static let textSecondary: UIColor = {
+            UIColor.color(named:  "textSecondary", inBundleWithIdentifier: bundleId)
+        }()
+        static let textTertiary: UIColor = {
+            UIColor.color(named:  "textTertiary", inBundleWithIdentifier: bundleId)
+        }()
+        static let textPrimary: UIColor = {
+            UIColor.color(named:  "textPrimary", inBundleWithIdentifier: bundleId)
+        }()
+        static let inputBackground: UIColor = {
+            UIColor.color(named:  "inputBackground", inBundleWithIdentifier: bundleId)
+        }()
+        static let buttonDisabled: UIColor = {
+            UIColor.color(named:  "buttonDisabled", inBundleWithIdentifier: bundleId)
+        }()
+        static let checkboxBackground: UIColor = {
+            UIColor.color(named:  "checkboxBackground", inBundleWithIdentifier: bundleId)
+        }()
+        static let checkboxBorder: UIColor = {
+            UIColor.color(named:  "checkboxBorder", inBundleWithIdentifier: bundleId)
+        }()
     }
 
     public struct Image {
         static let plusIcon: UIImage? = UIImage.image(named: "plusIcon", inBundleWithIdentifier: bundleId)
         static let creditCardFilled: UIImage? = UIImage.image(named: "creditCardFilled", inBundleWithIdentifier: bundleId)
+        static let creditCard: UIImage? = UIImage.image(named: "creditCard", inBundleWithIdentifier: bundleId)
+        static let creditCardError: UIImage? = UIImage.image(named: "creditCardError", inBundleWithIdentifier: bundleId)
         static let xCircleFilled: UIImage? = UIImage.image(named: "xCircleFilled", inBundleWithIdentifier: bundleId)
         static let checkCircleFilled: UIImage? = UIImage.image(named: "checkCircleFilled", inBundleWithIdentifier: bundleId)
+        static let check: UIImage? = UIImage.image(named: "check", inBundleWithIdentifier: bundleId)
+        static let eyeIconError: UIImage? = UIImage.image(named: "eyeIconError", inBundleWithIdentifier: bundleId)
+        static let eyeIcon: UIImage? = UIImage.image(named: "eyeIcon", inBundleWithIdentifier: bundleId)
+        static let eyeIconCrossed: UIImage? = UIImage.image(named: "eyeIconCrossed", inBundleWithIdentifier: bundleId)
+        static let eyeIconCrossedError: UIImage? = UIImage.image(named: "eyeIconCrossedError", inBundleWithIdentifier: bundleId)
     }
     
     public struct Font {
         static let body3Action: UIFont = UIFont(name: "Inter-SemiBold", size: 14.0) ?? UIFont.systemFont(ofSize: 14.0, weight: .semibold)
+        static let body2Regular: UIFont = UIFont(name: "Inter-Regular", size: 16.0) ?? UIFont.systemFont(ofSize: 16.0, weight: .regular)
         static let body3Regular: UIFont = UIFont(name: "Inter-Regular", size: 14.0) ?? UIFont.systemFont(ofSize: 14.0, weight: .regular)
+        static let supportiveText: UIFont = UIFont(name: "Inter-Regular", size: 11.0) ?? UIFont.systemFont(ofSize: 11.0, weight: .regular)
     }
 }
 

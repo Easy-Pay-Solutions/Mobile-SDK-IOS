@@ -345,6 +345,10 @@
 		82F29D576078272C5688F0A990B1BD92 /* SentryProfilingLogging.mm in Sources */ = {isa = PBXBuildFile; fileRef = E30DDD01EC3E29CF64DA361F7827AABB /* SentryProfilingLogging.mm */; };
 		830B193C661AED386674F31085BA3F7B /* SentryTraceHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = AA873ABB2EF228A4A5BDC4C479477EA7 /* SentryTraceHeader.m */; };
 		83880C2B8969394BBF8B184781CC8BC5 /* EasyPay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094645BC0A874ED6BAFC443865B2497 /* EasyPay.swift */; };
+		84094B762C1EC7D500CAD463 /* DoublePaymentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84094B742C1EC7D500CAD463 /* DoublePaymentTableViewCell.swift */; };
+		84094B772C1EC7D500CAD463 /* DoublePaymentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84094B742C1EC7D500CAD463 /* DoublePaymentTableViewCell.swift */; };
+		84094B782C1EC7D500CAD463 /* DoublePaymentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84094B752C1EC7D500CAD463 /* DoublePaymentTableViewCell.xib */; };
+		84094B792C1EC7D500CAD463 /* DoublePaymentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84094B752C1EC7D500CAD463 /* DoublePaymentTableViewCell.xib */; };
 		840E67412C1052A700581EAF /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E67402C1052A700581EAF /* UIView+Extensions.swift */; };
 		840E67632C1060C300581EAF /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E67402C1052A700581EAF /* UIView+Extensions.swift */; };
 		840E67712C10701100581EAF /* CardSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840E67682C10701100581EAF /* CardSelectionViewController.xib */; };
@@ -377,7 +381,45 @@
 		840E67A22C12E8EF00581EAF /* ArrayUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E67A02C12E8EF00581EAF /* ArrayUtils.swift */; };
 		840E67A42C12EC6400581EAF /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E67A32C12EC6400581EAF /* Localization.swift */; };
 		840E67A52C12EC6400581EAF /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E67A32C12EC6400581EAF /* Localization.swift */; };
+		84175FA62C1982B800652B92 /* AddCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84175FA42C1982B800652B92 /* AddCardViewController.xib */; };
+		84175FA82C1982C500652B92 /* AddCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84175FA72C1982C500652B92 /* AddCardViewController.swift */; };
+		84175FA92C1982C500652B92 /* AddCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84175FA72C1982C500652B92 /* AddCardViewController.swift */; };
+		84175FAB2C1984AD00652B92 /* AddCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84175FAA2C1984AD00652B92 /* AddCardViewModel.swift */; };
+		84175FAC2C1984AD00652B92 /* AddCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84175FAA2C1984AD00652B92 /* AddCardViewModel.swift */; };
+		84175FBD2C1984ED00652B92 /* AddCardSectionHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84175FB12C1984EC00652B92 /* AddCardSectionHeaderTableViewCell.swift */; };
+		84175FBE2C1984ED00652B92 /* AddCardSectionHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84175FB12C1984EC00652B92 /* AddCardSectionHeaderTableViewCell.swift */; };
+		84175FC22C1984ED00652B92 /* PayActionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84175FB32C1984EC00652B92 /* PayActionsTableViewCell.xib */; };
+		84175FC62C1984ED00652B92 /* AddCardSectionHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84175FB52C1984EC00652B92 /* AddCardSectionHeaderTableViewCell.xib */; };
+		84175FC92C1984ED00652B92 /* AddCardHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84175FB72C1984ED00652B92 /* AddCardHeaderTableViewCell.swift */; };
+		84175FCA2C1984ED00652B92 /* AddCardHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84175FB72C1984ED00652B92 /* AddCardHeaderTableViewCell.swift */; };
+		84175FCE2C1984ED00652B92 /* AddCardHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84175FB92C1984ED00652B92 /* AddCardHeaderTableViewCell.xib */; };
+		84175FD12C1984ED00652B92 /* PayActionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84175FBB2C1984ED00652B92 /* PayActionsTableViewCell.swift */; };
+		84175FD22C1984ED00652B92 /* PayActionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84175FBB2C1984ED00652B92 /* PayActionsTableViewCell.swift */; };
+		84175FD72C19865C00652B92 /* SinglePaymentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84175FD52C19865C00652B92 /* SinglePaymentTableViewCell.swift */; };
+		84175FD82C19865C00652B92 /* SinglePaymentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84175FD52C19865C00652B92 /* SinglePaymentTableViewCell.swift */; };
+		84175FDA2C19865C00652B92 /* SinglePaymentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84175FD62C19865C00652B92 /* SinglePaymentTableViewCell.xib */; };
+		84175FDC2C198B3A00652B92 /* UIValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84175FDB2C198B3A00652B92 /* UIValidation.swift */; };
+		84175FDD2C198B3A00652B92 /* UIValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84175FDB2C198B3A00652B92 /* UIValidation.swift */; };
+		84175FDF2C198B9600652B92 /* AddAnnualConsentWidgetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84175FDE2C198B9600652B92 /* AddAnnualConsentWidgetModel.swift */; };
+		84175FE02C198B9600652B92 /* AddAnnualConsentWidgetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84175FDE2C198B9600652B92 /* AddAnnualConsentWidgetModel.swift */; };
+		84175FE82C198E7000652B92 /* AddCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84175FA42C1982B800652B92 /* AddCardViewController.xib */; };
+		84175FE92C198E7900652B92 /* AddCardHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84175FB92C1984ED00652B92 /* AddCardHeaderTableViewCell.xib */; };
+		84175FEA2C198E7900652B92 /* AddCardSectionHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84175FB52C1984EC00652B92 /* AddCardSectionHeaderTableViewCell.xib */; };
+		84175FED2C198E7900652B92 /* PayActionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84175FB32C1984EC00652B92 /* PayActionsTableViewCell.xib */; };
+		84175FEF2C198E7900652B92 /* SinglePaymentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84175FD62C19865C00652B92 /* SinglePaymentTableViewCell.xib */; };
 		841BA4785916331C941E78D1722DDB40 /* SentryCoreDataSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AB9AC1003247F8ABE2636638FC487A /* SentryCoreDataSwizzling.m */; };
+		843240B42C1EFD260047675E /* DoubleHintErrorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843240B22C1EFD260047675E /* DoubleHintErrorTableViewCell.swift */; };
+		843240B52C1EFD260047675E /* DoubleHintErrorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843240B22C1EFD260047675E /* DoubleHintErrorTableViewCell.swift */; };
+		843240B62C1EFD260047675E /* DoubleHintErrorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843240B32C1EFD260047675E /* DoubleHintErrorTableViewCell.xib */; };
+		843240B72C1EFD260047675E /* DoubleHintErrorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843240B32C1EFD260047675E /* DoubleHintErrorTableViewCell.xib */; };
+		843240B92C1F11D50047675E /* UIDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843240B82C1F11D50047675E /* UIDevice+Extensions.swift */; };
+		843240BA2C1F11D50047675E /* UIDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843240B82C1F11D50047675E /* UIDevice+Extensions.swift */; };
+		8433D9452C1DE35400DEF166 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433D9442C1DE35400DEF166 /* String+Extensions.swift */; };
+		8433D9462C1DE35400DEF166 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433D9442C1DE35400DEF166 /* String+Extensions.swift */; };
+		847AE3362C1C32A400B44C1E /* SingleHintErrorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847AE3342C1C32A400B44C1E /* SingleHintErrorTableViewCell.swift */; };
+		847AE3372C1C32A400B44C1E /* SingleHintErrorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847AE3342C1C32A400B44C1E /* SingleHintErrorTableViewCell.swift */; };
+		847AE3382C1C32A400B44C1E /* SingleHintErrorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847AE3352C1C32A400B44C1E /* SingleHintErrorTableViewCell.xib */; };
+		847AE3392C1C32A400B44C1E /* SingleHintErrorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847AE3352C1C32A400B44C1E /* SingleHintErrorTableViewCell.xib */; };
 		8496DBD72CEC95990AF8B9E6CD06901C /* SentryHttpDateParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F77C630D09E6D8392D2F89324A26CF4 /* SentryHttpDateParser.m */; };
 		8532226F2ECFA3B896FC5FE3E63E4A37 /* SentryProfileTimeseries.h in Headers */ = {isa = PBXBuildFile; fileRef = E3FEA65EB709736C090E6721CC0DC666 /* SentryProfileTimeseries.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		857DCFCAE7DD2B3E27C342C214060715 /* CertificatePinning.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A6839E08829DBEA6109C7D210742CD /* CertificatePinning.swift */; };
@@ -1100,6 +1142,8 @@
 		8328A8C5DBDA3FCC32EF47F4585E248D /* SentryNSDataTracker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryNSDataTracker.h; path = Sources/Sentry/include/SentryNSDataTracker.h; sourceTree = "<group>"; };
 		835BF264E67926940CB102C30D6FCC5B /* SentryCoreDataTrackingIntegration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryCoreDataTrackingIntegration.h; path = Sources/Sentry/include/SentryCoreDataTrackingIntegration.h; sourceTree = "<group>"; };
 		83BE55A6F9A89FDF86787A32D13D592D /* SentryCrashStackEntryMapper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SentryCrashStackEntryMapper.m; path = Sources/Sentry/SentryCrashStackEntryMapper.m; sourceTree = "<group>"; };
+		84094B742C1EC7D500CAD463 /* DoublePaymentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoublePaymentTableViewCell.swift; sourceTree = "<group>"; };
+		84094B752C1EC7D500CAD463 /* DoublePaymentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoublePaymentTableViewCell.xib; sourceTree = "<group>"; };
 		840E67402C1052A700581EAF /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		840E67682C10701100581EAF /* CardSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardSelectionViewController.xib; sourceTree = "<group>"; };
 		840E67692C10701100581EAF /* ManageCardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageCardCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -1116,7 +1160,26 @@
 		840E679D2C11F6FF00581EAF /* FontsConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsConfig.swift; sourceTree = "<group>"; };
 		840E67A02C12E8EF00581EAF /* ArrayUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayUtils.swift; sourceTree = "<group>"; };
 		840E67A32C12EC6400581EAF /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		84175FA42C1982B800652B92 /* AddCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCardViewController.xib; sourceTree = "<group>"; };
+		84175FA72C1982C500652B92 /* AddCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardViewController.swift; sourceTree = "<group>"; };
+		84175FAA2C1984AD00652B92 /* AddCardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardViewModel.swift; sourceTree = "<group>"; };
+		84175FB12C1984EC00652B92 /* AddCardSectionHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardSectionHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		84175FB32C1984EC00652B92 /* PayActionsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PayActionsTableViewCell.xib; sourceTree = "<group>"; };
+		84175FB52C1984EC00652B92 /* AddCardSectionHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCardSectionHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		84175FB72C1984ED00652B92 /* AddCardHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		84175FB92C1984ED00652B92 /* AddCardHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCardHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		84175FBB2C1984ED00652B92 /* PayActionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayActionsTableViewCell.swift; sourceTree = "<group>"; };
+		84175FD52C19865C00652B92 /* SinglePaymentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePaymentTableViewCell.swift; sourceTree = "<group>"; };
+		84175FD62C19865C00652B92 /* SinglePaymentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SinglePaymentTableViewCell.xib; sourceTree = "<group>"; };
+		84175FDB2C198B3A00652B92 /* UIValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIValidation.swift; sourceTree = "<group>"; };
+		84175FDE2C198B9600652B92 /* AddAnnualConsentWidgetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnualConsentWidgetModel.swift; sourceTree = "<group>"; };
+		843240B22C1EFD260047675E /* DoubleHintErrorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleHintErrorTableViewCell.swift; sourceTree = "<group>"; };
+		843240B32C1EFD260047675E /* DoubleHintErrorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoubleHintErrorTableViewCell.xib; sourceTree = "<group>"; };
+		843240B82C1F11D50047675E /* UIDevice+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extensions.swift"; sourceTree = "<group>"; };
+		8433D9442C1DE35400DEF166 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		846344691A8ACDA18F773FCFFB9AAA76 /* SentrySwizzle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SentrySwizzle.m; path = Sources/Sentry/SentrySwizzle.m; sourceTree = "<group>"; };
+		847AE3342C1C32A400B44C1E /* SingleHintErrorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleHintErrorTableViewCell.swift; sourceTree = "<group>"; };
+		847AE3352C1C32A400B44C1E /* SingleHintErrorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleHintErrorTableViewCell.xib; sourceTree = "<group>"; };
 		84D8E878095725384416F8C609F09F74 /* EncryptionUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EncryptionUtils.swift; sourceTree = "<group>"; };
 		84DFCE8C891B9CF9356DB4210501C078 /* SentryCPU.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryCPU.h; path = Sources/Sentry/include/SentryCPU.h; sourceTree = "<group>"; };
 		8526451D70FD2D7743B3D7643335BC6A /* SentryHttpDateParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryHttpDateParser.h; path = Sources/Sentry/include/SentryHttpDateParser.h; sourceTree = "<group>"; };
@@ -1489,6 +1552,8 @@
 				5F1F4932D3FF12A84281B9B679F8EB00 /* ValidatorUtils.swift */,
 				840E67402C1052A700581EAF /* UIView+Extensions.swift */,
 				840E67A02C12E8EF00581EAF /* ArrayUtils.swift */,
+				8433D9442C1DE35400DEF166 /* String+Extensions.swift */,
+				843240B82C1F11D50047675E /* UIDevice+Extensions.swift */,
 			);
 			name = Utilities;
 			path = Sources/EasyPay/Utilities;
@@ -2288,10 +2353,12 @@
 		840E67642C10701100581EAF /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
+				84175FA32C19829800652B92 /* AddCard */,
 				840E67662C10701100581EAF /* ManagePayments */,
 				840E678D2C10A6C200581EAF /* Theme.swift */,
 				840E67A32C12EC6400581EAF /* Localization.swift */,
 				840E67972C119C7800581EAF /* BaseViewController.swift */,
+				84175FDB2C198B3A00652B92 /* UIValidation.swift */,
 			);
 			name = Widgets;
 			path = Sources/EasyPay/Widgets;
@@ -2327,10 +2394,10 @@
 		840E67852C107EF300581EAF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				84175FB02C1984D800652B92 /* ManagePayments */,
+				84175FAF2C1984CD00652B92 /* AddCard */,
 				840E67902C10AB3C00581EAF /* Fonts */,
-				840E678A2C108F4600581EAF /* ManageCardCollectionViewCell.xib */,
 				840E67862C107F0600581EAF /* EasyPayAssets.xcassets */,
-				840E67682C10701100581EAF /* CardSelectionViewController.xib */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -2342,6 +2409,63 @@
 				840E67922C10AB3C00581EAF /* Inter-SemiBold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		84175FA32C19829800652B92 /* AddCard */ = {
+			isa = PBXGroup;
+			children = (
+				84175FAD2C1984B600652B92 /* Cells */,
+				84175FA72C1982C500652B92 /* AddCardViewController.swift */,
+				84175FAA2C1984AD00652B92 /* AddCardViewModel.swift */,
+				84175FDE2C198B9600652B92 /* AddAnnualConsentWidgetModel.swift */,
+			);
+			path = AddCard;
+			sourceTree = "<group>";
+		};
+		84175FAD2C1984B600652B92 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				84175FB72C1984ED00652B92 /* AddCardHeaderTableViewCell.swift */,
+				84175FB12C1984EC00652B92 /* AddCardSectionHeaderTableViewCell.swift */,
+				843240B22C1EFD260047675E /* DoubleHintErrorTableViewCell.swift */,
+				84094B742C1EC7D500CAD463 /* DoublePaymentTableViewCell.swift */,
+				84175FBB2C1984ED00652B92 /* PayActionsTableViewCell.swift */,
+				847AE3342C1C32A400B44C1E /* SingleHintErrorTableViewCell.swift */,
+				84175FD52C19865C00652B92 /* SinglePaymentTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		84175FAE2C1984C300652B92 /* AddCardCells */ = {
+			isa = PBXGroup;
+			children = (
+				84175FB92C1984ED00652B92 /* AddCardHeaderTableViewCell.xib */,
+				84175FB52C1984EC00652B92 /* AddCardSectionHeaderTableViewCell.xib */,
+				843240B32C1EFD260047675E /* DoubleHintErrorTableViewCell.xib */,
+				84094B752C1EC7D500CAD463 /* DoublePaymentTableViewCell.xib */,
+				84175FB32C1984EC00652B92 /* PayActionsTableViewCell.xib */,
+				847AE3352C1C32A400B44C1E /* SingleHintErrorTableViewCell.xib */,
+				84175FD62C19865C00652B92 /* SinglePaymentTableViewCell.xib */,
+			);
+			path = AddCardCells;
+			sourceTree = "<group>";
+		};
+		84175FAF2C1984CD00652B92 /* AddCard */ = {
+			isa = PBXGroup;
+			children = (
+				84175FA42C1982B800652B92 /* AddCardViewController.xib */,
+				84175FAE2C1984C300652B92 /* AddCardCells */,
+			);
+			path = AddCard;
+			sourceTree = "<group>";
+		};
+		84175FB02C1984D800652B92 /* ManagePayments */ = {
+			isa = PBXGroup;
+			children = (
+				840E67682C10701100581EAF /* CardSelectionViewController.xib */,
+				840E678A2C108F4600581EAF /* ManageCardCollectionViewCell.xib */,
+			);
+			path = ManagePayments;
 			sourceTree = "<group>";
 		};
 		9A4DD9E48612E0175A2DE14B2EC12ECF /* Products */ = {
@@ -2973,10 +3097,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				843240B62C1EFD260047675E /* DoubleHintErrorTableViewCell.xib in Resources */,
+				84175FE92C198E7900652B92 /* AddCardHeaderTableViewCell.xib in Resources */,
+				84175FEA2C198E7900652B92 /* AddCardSectionHeaderTableViewCell.xib in Resources */,
+				84175FED2C198E7900652B92 /* PayActionsTableViewCell.xib in Resources */,
+				84175FEF2C198E7900652B92 /* SinglePaymentTableViewCell.xib in Resources */,
+				84175FE82C198E7000652B92 /* AddCardViewController.xib in Resources */,
+				84094B782C1EC7D500CAD463 /* DoublePaymentTableViewCell.xib in Resources */,
 				840E67712C10701100581EAF /* CardSelectionViewController.xib in Resources */,
 				840E67872C107F0600581EAF /* EasyPayAssets.xcassets in Resources */,
 				840E67932C10AB3C00581EAF /* Inter-Regular.ttf in Resources */,
 				840E67952C10AB3C00581EAF /* Inter-SemiBold.ttf in Resources */,
+				847AE3382C1C32A400B44C1E /* SingleHintErrorTableViewCell.xib in Resources */,
 				840E678B2C108F4600581EAF /* ManageCardCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2985,11 +3117,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				843240B72C1EFD260047675E /* DoubleHintErrorTableViewCell.xib in Resources */,
+				84175FA62C1982B800652B92 /* AddCardViewController.xib in Resources */,
 				840E67722C10701100581EAF /* CardSelectionViewController.xib in Resources */,
 				840E67882C107F0600581EAF /* EasyPayAssets.xcassets in Resources */,
+				84175FDA2C19865C00652B92 /* SinglePaymentTableViewCell.xib in Resources */,
+				84175FCE2C1984ED00652B92 /* AddCardHeaderTableViewCell.xib in Resources */,
+				84094B792C1EC7D500CAD463 /* DoublePaymentTableViewCell.xib in Resources */,
 				840E67942C10AB3C00581EAF /* Inter-Regular.ttf in Resources */,
+				84175FC22C1984ED00652B92 /* PayActionsTableViewCell.xib in Resources */,
 				840E67962C10AB3C00581EAF /* Inter-SemiBold.ttf in Resources */,
 				840E678C2C108F4600581EAF /* ManageCardCollectionViewCell.xib in Resources */,
+				847AE3392C1C32A400B44C1E /* SingleHintErrorTableViewCell.xib in Resources */,
+				84175FC62C1984ED00652B92 /* AddCardSectionHeaderTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3302,6 +3442,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84175FD12C1984ED00652B92 /* PayActionsTableViewCell.swift in Sources */,
 				B63A266074C4347169468CC81AC4586D /* AnnualQueryHelper.swift in Sources */,
 				A5E6052D7072447070CE2836D4C576DF /* ApiClient.swift in Sources */,
 				F2439E75B8B5930E953CA33EABCB8B72 /* Asn1Parser.swift in Sources */,
@@ -3310,6 +3451,7 @@
 				DA06BC867A129ECEF48484F15A78D059 /* BaseResponse.swift in Sources */,
 				840E679E2C11F6FF00581EAF /* FontsConfig.swift in Sources */,
 				DF580EE472452B72FD13CD6239F3AD53 /* CancelConsentAnnualManualRequestModel.swift in Sources */,
+				84175FA82C1982C500652B92 /* AddCardViewController.swift in Sources */,
 				D9E81B527CBC5664AEFFB2F6934881D4 /* CancelConsentAnnualRequest.swift in Sources */,
 				F60B28B8D4FB298A5A69B53D3056802B /* CancelConsentAnnualResponse.swift in Sources */,
 				02FA6E909476FAA99D05D5A9CF4E3F32 /* CancelConsentAnnualResponseModel.swift in Sources */,
@@ -3321,15 +3463,21 @@
 				9E0CF47CB0699A4A60AC1A427545DB29 /* ClearMessage.swift in Sources */,
 				ED8CC09E0DF8A32EADE20447C03B0A27 /* Config.swift in Sources */,
 				840E67A42C12EC6400581EAF /* Localization.swift in Sources */,
+				843240B42C1EFD260047675E /* DoubleHintErrorTableViewCell.swift in Sources */,
 				8138079F39A817909838BB9A5B7C073C /* ConsentAnnualListingRequest.swift in Sources */,
+				84175FC92C1984ED00652B92 /* AddCardHeaderTableViewCell.swift in Sources */,
 				19A867D60BA77DE24F18A2BB6F7137F3 /* ConsentAnnualListingRequestModel.swift in Sources */,
 				840E67752C10701100581EAF /* CardSelectionViewModel.swift in Sources */,
 				B027709647294E3344705DA8EE07DCF3 /* ConsentAnnualListingResponseModel.swift in Sources */,
+				8433D9452C1DE35400DEF166 /* String+Extensions.swift in Sources */,
 				968C91EE9D57914C33BF66F9525D6B53 /* CreateConsentAnnual.swift in Sources */,
+				847AE3362C1C32A400B44C1E /* SingleHintErrorTableViewCell.swift in Sources */,
 				43DB9F5B87EC9B8B47B0C80413B5571D /* CreateConsentAnnualManualRequestModel.swift in Sources */,
+				84094B762C1EC7D500CAD463 /* DoublePaymentTableViewCell.swift in Sources */,
 				7140F280A28491790EE48CB5954DA442 /* CreateConsentAnnualRequest.swift in Sources */,
 				1CE8142727571A31603E0F28BC6EBEE5 /* CreateConsentAnnualResponse.swift in Sources */,
 				840E67732C10701100581EAF /* ManageCardCollectionViewCell.swift in Sources */,
+				843240B92C1F11D50047675E /* UIDevice+Extensions.swift in Sources */,
 				B131D5833C60D5B1CEA3ECB1CF52417E /* CreateConsentAnnualResponseModel.swift in Sources */,
 				840E678E2C10A6C200581EAF /* Theme.swift in Sources */,
 				015BEBCFB8ADA0AF43C47CB8708122D2 /* CreateConsentAnnualValidationError.swift in Sources */,
@@ -3340,12 +3488,15 @@
 				840E67A12C12E8EF00581EAF /* ArrayUtils.swift in Sources */,
 				3BE6CE8780A50B50352F902FD1520091 /* Data+SHA.swift in Sources */,
 				83880C2B8969394BBF8B184781CC8BC5 /* EasyPay.swift in Sources */,
+				84175FBD2C1984ED00652B92 /* AddCardSectionHeaderTableViewCell.swift in Sources */,
 				B2C6284744EB6A2249FC2F9B08706361 /* EasyPay-dummy.m in Sources */,
+				84175FD72C19865C00652B92 /* SinglePaymentTableViewCell.swift in Sources */,
 				AE91EBAC69F6973393846A76D2328B30 /* EncryptedMessage.swift in Sources */,
 				DA3A3FE7F637B247C2FA2DAB875CF164 /* EncryptionUtils.swift in Sources */,
 				840E677B2C10701100581EAF /* PresentationController.swift in Sources */,
 				8825E7972E8A1752911030CBAA7FD73E /* Key.swift in Sources */,
 				0E476F466FF403723C742ABF1473D57A /* ListingConsentAnnualResponse.swift in Sources */,
+				84175FDF2C198B9600652B92 /* AddAnnualConsentWidgetModel.swift in Sources */,
 				E0A5BCF5FF555C5D6E6DE443D1624679 /* Message.swift in Sources */,
 				A02C5B9A9FF8CC5DD6949621B54CEC16 /* NetworkingError.swift in Sources */,
 				0D30AA96B2C0B8F6FC80937F5D7D2B70 /* PrivateKey.swift in Sources */,
@@ -3355,6 +3506,7 @@
 				586F923BC625839DC22DB8B10F8284C9 /* ProcessPaymentAnnualResponse.swift in Sources */,
 				9C2377433180271E4FF3B2BE26F7422B /* ProcessPaymentAnnualResponseModel.swift in Sources */,
 				0C52799CE8146340FD3EECF97567D568 /* PublicKey.swift in Sources */,
+				84175FDC2C198B3A00652B92 /* UIValidation.swift in Sources */,
 				A7D4FC1A4467C72B53986CF84F62B331 /* RsaCertificateError.swift in Sources */,
 				16E9BBB578D8234B60D47E11BA68F297 /* SecureTextField.swift in Sources */,
 				CDCA85BCF8CCA221B3B4C89B2F223C85 /* Signature.swift in Sources */,
@@ -3363,6 +3515,7 @@
 				D3675E32F8D31B8A685A7B755D223B5A /* SwiftyRSA+ObjC.swift in Sources */,
 				71635F7EDB78030E29C0F0E6E81EDA9E /* SwiftyRSAError.swift in Sources */,
 				840E67412C1052A700581EAF /* UIView+Extensions.swift in Sources */,
+				84175FAB2C1984AD00652B92 /* AddCardViewModel.swift in Sources */,
 				AF0829D024CB5CCC778FBDDC6F19FAB1 /* Validator.swift in Sources */,
 				9A886F21DE148A02ADD5867CE33A529B /* ValidatorFactory.swift in Sources */,
 				A97416308D0A51F79792CF515CDE8748 /* ValidatorUtils.swift in Sources */,
@@ -3378,16 +3531,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				840E67742C10701100581EAF /* ManageCardCollectionViewCell.swift in Sources */,
+				84175FD22C1984ED00652B92 /* PayActionsTableViewCell.swift in Sources */,
 				840E679C2C11DA7500581EAF /* ThemeError.swift in Sources */,
 				840E67A52C12EC6400581EAF /* Localization.swift in Sources */,
+				84175FDD2C198B3A00652B92 /* UIValidation.swift in Sources */,
 				840E679F2C11F6FF00581EAF /* FontsConfig.swift in Sources */,
 				840E67632C1060C300581EAF /* UIView+Extensions.swift in Sources */,
 				DB01FAA4C2FF208DDEA3029831177F23 /* Pods-EasyPay_Example-dummy.m in Sources */,
+				84175FCA2C1984ED00652B92 /* AddCardHeaderTableViewCell.swift in Sources */,
+				84175FD82C19865C00652B92 /* SinglePaymentTableViewCell.swift in Sources */,
+				84175FAC2C1984AD00652B92 /* AddCardViewModel.swift in Sources */,
+				84175FA92C1982C500652B92 /* AddCardViewController.swift in Sources */,
 				840E67782C10701100581EAF /* CardSelectionViewController.swift in Sources */,
 				840E67762C10701100581EAF /* CardSelectionViewModel.swift in Sources */,
+				84094B772C1EC7D500CAD463 /* DoublePaymentTableViewCell.swift in Sources */,
+				84175FBE2C1984ED00652B92 /* AddCardSectionHeaderTableViewCell.swift in Sources */,
 				840E67992C119C7800581EAF /* BaseViewController.swift in Sources */,
+				84175FE02C198B9600652B92 /* AddAnnualConsentWidgetModel.swift in Sources */,
 				840E67A22C12E8EF00581EAF /* ArrayUtils.swift in Sources */,
+				843240BA2C1F11D50047675E /* UIDevice+Extensions.swift in Sources */,
+				843240B52C1EFD260047675E /* DoubleHintErrorTableViewCell.swift in Sources */,
 				840E677C2C10701100581EAF /* PresentationController.swift in Sources */,
+				8433D9462C1DE35400DEF166 /* String+Extensions.swift in Sources */,
+				847AE3372C1C32A400B44C1E /* SingleHintErrorTableViewCell.swift in Sources */,
 				840E678F2C10A6C200581EAF /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="ipad7_9" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,6 +24,7 @@
                 <outlet property="cardNumber" destination="rvP-pU-ySe" id="3EL-6j-Qy5"/>
                 <outlet property="cardStackView" destination="fPZ-Ej-LSz" id="GAq-lP-QHi"/>
                 <outlet property="collectionView" destination="WH2-Fp-hgn" id="Cho-zb-AEe"/>
+                <outlet property="collectionViewLoading" destination="8Hp-gK-qby" id="2GX-Vx-V8Q"/>
                 <outlet property="deleteCardButton" destination="a83-na-5vY" id="YdG-yS-ZJC"/>
                 <outlet property="errorLabel" destination="2mJ-Tw-JjS" id="bpe-II-lSV"/>
                 <outlet property="payButton" destination="41J-Tp-MVA" id="y3z-Bl-pYR"/>
@@ -131,8 +132,8 @@
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41J-Tp-MVA">
                             <rect key="frame" x="0.0" y="58" width="544" height="48"/>
-                            <accessibility key="accessibilityConfiguration" identifier="PayButton"/>
                             <color key="backgroundColor" name="confirmationGreen"/>
+                            <accessibility key="accessibilityConfiguration" identifier="PayButton"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="48" id="kdv-ns-xh1"/>
                             </constraints>
@@ -167,6 +168,10 @@
                         <action selector="closeButtonTapped:" destination="-1" eventType="touchUpInside" id="PHh-mu-1RR"/>
                     </connections>
                 </button>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="8Hp-gK-qby">
+                    <rect key="frame" x="0.0" y="91" width="744" height="120"/>
+                    <color key="color" name="technologyBlue2"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="whiteBackground"/>
@@ -179,6 +184,8 @@
                 </constraint>
                 <constraint firstItem="lkg-3A-ov9" firstAttribute="top" secondItem="ZKo-2o-llV" secondAttribute="top" id="4bV-go-291"/>
                 <constraint firstItem="lkg-3A-ov9" firstAttribute="trailing" secondItem="ZKo-2o-llV" secondAttribute="trailing" id="4kg-DK-Wpx"/>
+                <constraint firstItem="8Hp-gK-qby" firstAttribute="bottom" secondItem="WH2-Fp-hgn" secondAttribute="bottom" id="6ek-7u-RSc"/>
+                <constraint firstItem="8Hp-gK-qby" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7Aa-cv-0Wo"/>
                 <constraint firstItem="lkg-3A-ov9" firstAttribute="bottom" secondItem="ZKo-2o-llV" secondAttribute="bottom" id="9Un-VM-6hb"/>
                 <constraint firstItem="lkg-3A-ov9" firstAttribute="leading" secondItem="ZKo-2o-llV" secondAttribute="leading" id="9ls-Do-1rc"/>
                 <constraint firstAttribute="trailing" secondItem="ZKo-2o-llV" secondAttribute="trailing" constant="20" id="Bwg-rL-fBG">
@@ -187,6 +194,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fPZ-Ej-LSz" secondAttribute="trailing" constant="20" id="Gpx-pJ-l5E">
                     <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                 </constraint>
+                <constraint firstItem="8Hp-gK-qby" firstAttribute="top" secondItem="WH2-Fp-hgn" secondAttribute="top" id="Gub-Pb-WIK"/>
                 <constraint firstItem="9aQ-o8-P84" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="IHx-Ma-p1X">
                     <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                 </constraint>
@@ -194,6 +202,7 @@
                 <constraint firstItem="fPZ-Ej-LSz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="NBv-lB-coc">
                     <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                 </constraint>
+                <constraint firstItem="8Hp-gK-qby" firstAttribute="trailing" secondItem="WH2-Fp-hgn" secondAttribute="trailing" id="OAs-hS-7Ad"/>
                 <constraint firstItem="maj-v0-THZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="26" id="bFY-Y1-3Ym"/>
                 <constraint firstItem="WH2-Fp-hgn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="iWv-sl-fDJ">
                     <variation key="heightClass=regular-widthClass=regular" constant="100"/>
@@ -206,7 +215,7 @@
                     <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                 </constraint>
             </constraints>
-            <point key="canvasLocation" x="132" y="-11"/>
+            <point key="canvasLocation" x="131.45161290322579" y="-11.385701676963812"/>
         </view>
     </objects>
     <resources>
@@ -218,6 +227,9 @@
         </namedColor>
         <namedColor name="errorSurface">
             <color red="0.70196078431372544" green="0.14901960784313725" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="technologyBlue2">
+            <color red="0.15686274509803921" green="0.45098039215686275" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="textButton">
             <color red="0.15686274509803921" green="0.45098039215686275" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

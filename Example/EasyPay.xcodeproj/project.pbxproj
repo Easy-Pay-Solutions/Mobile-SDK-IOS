@@ -15,6 +15,8 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* RsaEncryptionDecryptionTests.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* RsaEncryptionDecryptionTests.swift.swift */; };
+		8433D9492C1E2E7B00DEF166 /* AmountWidgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433D9472C1E2E7B00DEF166 /* AmountWidgetViewController.swift */; };
+		8433D94A2C1E2E7B00DEF166 /* AmountWidgetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8433D9482C1E2E7B00DEF166 /* AmountWidgetViewController.xib */; };
 		8438716D2BBD7E6D002DB029 /* AddAnnualConsentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8438716C2BBD7E6D002DB029 /* AddAnnualConsentViewModel.swift */; };
 		843CC6E52BB084310059BE3C /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CC6E42BB084310059BE3C /* LoadingIndicator.swift */; };
 		844294222B95E13500D7C7E8 /* SessionKeyEncryptionUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844294212B95E13500D7C7E8 /* SessionKeyEncryptionUtilsTests.swift */; };
@@ -90,6 +92,8 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* RsaEncryptionDecryptionTests.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RsaEncryptionDecryptionTests.swift.swift; sourceTree = "<group>"; };
 		8169BB602431D4ECA9C7291E /* Pods_EasyPay_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyPay_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8433D9472C1E2E7B00DEF166 /* AmountWidgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountWidgetViewController.swift; sourceTree = "<group>"; };
+		8433D9482C1E2E7B00DEF166 /* AmountWidgetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AmountWidgetViewController.xib; sourceTree = "<group>"; };
 		8438716C2BBD7E6D002DB029 /* AddAnnualConsentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnualConsentViewModel.swift; sourceTree = "<group>"; };
 		843CC6E42BB084310059BE3C /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
 		844294212B95E13500D7C7E8 /* SessionKeyEncryptionUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionKeyEncryptionUtilsTests.swift; sourceTree = "<group>"; };
@@ -209,6 +213,8 @@
 		607FACD31AFB9204008FA782 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8433D9472C1E2E7B00DEF166 /* AmountWidgetViewController.swift */,
+				8433D9482C1E2E7B00DEF166 /* AmountWidgetViewController.xib */,
 				84A09F7D2BB6C16900BC9AF3 /* AnnualConsent */,
 				84DA2BFE2BA0766600B240CE /* Helpers */,
 				8460D22F2B970C0500AFFCFC /* CreditCardSaleManual */,
@@ -525,6 +531,7 @@
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				84F5E94E2B91E552009EFA58 /* CreditCardSaleManualViewController.xib in Resources */,
 				84A09F8C2BB7017100BC9AF3 /* AddAnnualConsentViewController.xib in Resources */,
+				8433D94A2C1E2E7B00DEF166 /* AmountWidgetViewController.xib in Resources */,
 				84A09F812BB6C29A00BC9AF3 /* MainManualConsentViewController.xib in Resources */,
 				84B86D282B968C0100A8F8C5 /* PurchItemsTableViewCell.xib in Resources */,
 				84F5E9542B91EEEC009EFA58 /* AccountHolderTableViewCell.xib in Resources */,
@@ -632,6 +639,7 @@
 				84A09F942BB70A4E00BC9AF3 /* ConsentCreatorTableViewCell.swift in Sources */,
 				84F5E94D2B91E552009EFA58 /* CreditCardSaleManualViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				8433D9492C1E2E7B00DEF166 /* AmountWidgetViewController.swift in Sources */,
 				8438716D2BBD7E6D002DB029 /* AddAnnualConsentViewModel.swift in Sources */,
 				84A09F902BB7076600BC9AF3 /* AnnualCardInfoTableViewCell.swift in Sources */,
 				84D3A9A52B95C06200DAFE29 /* CardBillingAddressTableViewCell.swift in Sources */,

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "eyeShow.png",
+      "filename" : "icon-eye-error.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "eyeShow@2x.png",
+      "filename" : "icon-eye-error@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "eyeShow@3x.png",
+      "filename" : "icon-eye-error@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

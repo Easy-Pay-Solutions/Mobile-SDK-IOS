@@ -2,7 +2,7 @@
 import UIKit
 import EasyPay
 
-class ViewController: UIViewController {
+class ViewController: BaseViewController {
     let verManager = VersionManager()
     
     override func viewDidLoad() {
@@ -30,12 +30,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction private func managePaymentsWidgetButtonTapped(_ sender: UIButton) {
-        let slideVC = CardSelectionViewController(merchantId: "1", amount: "9.86", paymentDelegate: self, preselectedCardId: 3374)
+        let slideVC = AmountWidgetViewController()
         self.present(slideVC, animated: true, completion: nil)
     }
     
     @IBAction private func managePaymentsSelectionWidgetButtonTapped(_ sender: UIButton) {
-        let slideVC = CardSelectionViewController(merchantId: "1", selectionDelegate: self, preselectedCardId: nil)
+        let slideVC = CardSelectionViewController(selectionDelegate: self, preselectedCardId: nil, paymentDetails: AddAnnualConsentWidgetModel(merchantId: "1", limitPerCharge: "1000.0", limitLifetime: "10000.0"))
         self.present(slideVC, animated: true, completion: nil)
     }
     
@@ -83,7 +83,15 @@ extension ViewController: UIViewControllerTransitioningDelegate {
 }
 
 extension ViewController: CardSelectiontDelegate, CardPaymentDelegate {
-    func didPayWithCard(consentId: Int, success: Bool) {}
+    func didSaveCard(consentId: Int?, success: Bool) {}
+    func didPayWithCard(consentId: Int, success: Bool) {
+        if success {
+            self.showAlert(title: "Payment successful",
+                           message: "Paid with consentId: \(consentId)",
+                           actionName: "OK",
+                           handler: nil)
+        }
+    }
     func didDeleteCard(consentId: Int, success: Bool) {}
     func didSelectCard(consentId: String) {}
 }

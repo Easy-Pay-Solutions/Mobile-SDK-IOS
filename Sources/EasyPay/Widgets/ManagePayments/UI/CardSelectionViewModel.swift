@@ -10,16 +10,22 @@ public class CardSelectionViewModel {
     let preselectedCardId: Int?
     var selectedIndex = -1
     var annualConsents: ConsentAnnualListingResponseModel? = nil
+    let paymentDetails: AddAnnualConsentWidgetModel
     
     var isPreselected: Bool {
         return preselectedCardId != nil && findPreselectedCardIndex() != nil
     }
+    
+    var isZeroAnnualConsents: Bool {
+        annualConsents?.consents?.count == 0
+    }
 
-    public init(state: ManageCardState, merchantId: String, amount: String, preselectedCardId: Int?) {
+    public init(state: ManageCardState, amount: String, preselectedCardId: Int?, paymentDetails: AddAnnualConsentWidgetModel) {
         self.state = state
-        self.merchantId = merchantId
+        self.merchantId = paymentDetails.merchantId
         self.amount = amount
         self.preselectedCardId = preselectedCardId
+        self.paymentDetails = paymentDetails
     }
     
     func downloadAnnualConsents(completion: @escaping (Result<ListingConsentAnnualResponse, Error>) -> Void) {

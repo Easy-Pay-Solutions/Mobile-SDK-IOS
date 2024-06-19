@@ -10,11 +10,16 @@ public enum ManageCardState {
 public protocol CardSelectiontDelegate: AnyObject {
     func didSelectCard(consentId: String)
     func didDeleteCard(consentId: Int, success: Bool)
+    func didSaveCard(consentId: Int?, success: Bool)
 }
 
 public protocol CardPaymentDelegate: AnyObject {
     func didPayWithCard(consentId: Int, success: Bool)
     func didDeleteCard(consentId: Int, success: Bool)
+}
+
+protocol InternalClosingDelegate: AnyObject {
+    func shouldCloseScreen()
 }
 
 public class CardSelectionViewController: BaseViewController {
@@ -23,6 +28,7 @@ public class CardSelectionViewController: BaseViewController {
         return .portrait
     }
     
+    @IBOutlet private weak var collectionViewLoading: UIActivityIndicatorView!
     @IBOutlet private weak var sliderLabel: UILabel!
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var cardStackView: UIStackView!
@@ -39,16 +45,16 @@ public class CardSelectionViewController: BaseViewController {
     
     private let vcName = "CardSelectionViewController"
     
-    public init(merchantId: String, amount: String, paymentDelegate: AnyObject, preselectedCardId: Int?) {
-        self.viewModel = CardSelectionViewModel(state: .payment, merchantId: merchantId, amount: amount, preselectedCardId: preselectedCardId)
+    public init(amount: String, paymentDelegate: AnyObject, preselectedCardId: Int?, paymentDetails: AddAnnualConsentWidgetModel) {
+        self.viewModel = CardSelectionViewModel(state: .payment, amount: amount, preselectedCardId: preselectedCardId, paymentDetails: paymentDetails)
         self.paymentDelegate = paymentDelegate as? any CardPaymentDelegate
         super.init(nibName: vcName, bundle: Bundle(identifier: Theme.bundleId))
         self.modalPresentationStyle = .custom
         self.transitioningDelegate = self
     }
     
-    public init(merchantId: String, selectionDelegate: AnyObject, preselectedCardId: Int?) {
-        self.viewModel = CardSelectionViewModel(state: .selection, merchantId: merchantId, amount: "", preselectedCardId: preselectedCardId)
+    public init(selectionDelegate: AnyObject, preselectedCardId: Int?, paymentDetails: AddAnnualConsentWidgetModel) {
+        self.viewModel = CardSelectionViewModel(state: .selection, amount: "", preselectedCardId: preselectedCardId, paymentDetails: paymentDetails)
         self.selectionDelegate = selectionDelegate as? any CardSelectiontDelegate
         super.init(nibName: vcName, bundle: Bundle(identifier: Theme.bundleId))
         self.modalPresentationStyle = .custom
@@ -72,11 +78,11 @@ public class CardSelectionViewController: BaseViewController {
             cardStackView.isHidden = true
             cardActionsStackView.isHidden = true
         }
-        
-        self.isLoading = true
+
+        showLoading(true)
         viewModel.downloadAnnualConsents() { [weak self] result in
             guard let s = self else { return }
-            s.isLoading = false
+            s.showLoading(false)
             switch result {
             case .success(_):
                 s.collectionView.reloadData()
@@ -91,6 +97,10 @@ public class CardSelectionViewController: BaseViewController {
                         s.updateSelectedCard(index: s.viewModel.selectedIndex - 1)
                         s.collectionView.selectItem(at: IndexPath(row: s.viewModel.findCollectionViewIndex(), section: 0), animated: true, scrollPosition: .centeredHorizontally)
                     }
+                }
+                
+                if s.viewModel.isZeroAnnualConsents {
+                    s.presentAddNewCard()
                 }
             case .failure(let error):
                 s.showAlert(title: Localization.error, message: error.localizedDescription)
@@ -162,15 +172,15 @@ public class CardSelectionViewController: BaseViewController {
                             noMessage: Localization.cancel,
                             yesHandler: { [weak self] _ in
             guard let s = self, let selectedCard = s.viewModel.selectedCardConsentId() else { return }
-            s.isLoading = true
+            s.showLoading(true)
             s.viewModel.deleteAnnualConsent(consentId: selectedCard) { [weak self] result in
-                s.isLoading = false
+                s.showLoading(false)
                 switch result {
                 case .success(_):
-                    s.isLoading = true
+                    s.showLoading(true)
                     s.notifyDeleteDelegate(success: true, selectedCard: selectedCard)
                     s.viewModel.downloadAnnualConsents() { [weak self] result in
-                        s.isLoading = false
+                        s.showLoading(false)
                         guard let s = self else { return }
                         switch result {
                         case .success(_):
@@ -199,7 +209,7 @@ public class CardSelectionViewController: BaseViewController {
     }
     
     private func showErrorDeletingCard(selectedCard: Int) {
-        isLoading = false
+        showLoading(false)
         notifyDeleteDelegate(success: false, selectedCard: selectedCard)
         showToast(message: Localization.errorDeletingCard, controller: self, success: false, action: nil, hideAutomaticallyDelay: 3.0)
     }
@@ -227,7 +237,6 @@ public class CardSelectionViewController: BaseViewController {
             self.view.setNeedsLayout()
             self.view.layoutIfNeeded()
             presentationController.updatePresentedViewHeight(calculateIncreasedHeight())
-            print(calculateIncreasedHeight())
         }
     }
 
@@ -253,13 +262,13 @@ public class CardSelectionViewController: BaseViewController {
 
         self.viewModel.chargeAnnualConsent(consentId: selectedCard) { [weak self] result in
             guard let s = self else { return }
-            s.isLoading = true
+            s.showLoading(true)
             switch result {
             case .success(let response):
-                s.isLoading = false
+                s.showLoading(false)
                 s.paymentSuccesRespondeHandler(response: response, selectedCard: selectedCard)
             case .failure(_):
-                s.isLoading = false
+                s.showLoading(false)
                 s.notifyPayDelegate(success: false, selectedCard: selectedCard)
                 s.showPayButtonError(true)
             }
@@ -310,7 +319,7 @@ extension CardSelectionViewController: UICollectionViewDelegate, UICollectionVie
         
         if indexPath.row == 0 {
             viewModel.selectedIndex = -1
-            self.showAlert(title: "Add a card", message: "Feature is coming soon")
+            self.presentAddNewCard()
 
             if let presentationController = self.presentationController as? PresentationController {
                 presentationController.updatePresentedViewHeight(calculateDecreasedHeight())
@@ -346,6 +355,28 @@ extension CardSelectionViewController: UICollectionViewDelegate, UICollectionVie
             cell.applySelection(false)
         }
     }
+    
+    private func presentAddNewCard() {
+        let state: AddCardState = viewModel.state == .selection
+        ? .saveOnly
+        : .payAndSave
+        let vc = AddCardViewController(state: state, amount: viewModel.amount, delegate: self, paymentDetails: viewModel.paymentDetails)
+        vc.closePaymentSheetDelegate = self
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    private func showLoading(_ yes: Bool) {
+        enableButtons(!yes)
+        self.isLoading = yes
+        yes
+        ? collectionViewLoading.startAnimating()
+        : collectionViewLoading.stopAnimating()
+    }
+    
+    private func enableButtons(_ yes: Bool) {
+        payButton.isEnabled = yes
+        deleteCardButton.isEnabled = yes
+    }
 }
 
 extension CardSelectionViewController: UIViewControllerTransitioningDelegate {
@@ -353,3 +384,28 @@ extension CardSelectionViewController: UIViewControllerTransitioningDelegate {
         return PresentationController(presentedViewController: presented, presenting: presenting)
     }
 }
+
+extension CardSelectionViewController: SavingCardDelegate, PayingSavingCardDelegate, InternalClosingDelegate {
+    func shouldCloseScreen() {
+        closeWidget()
+    }
+    
+    public func didOnlySaveCard(consentId: Int?, success: Bool) {
+        selectionDelegate?.didSaveCard(consentId: consentId, success: success)
+        if success {
+            closeWidget()
+            if let consentId {
+                selectionDelegate?.didSelectCard(consentId: String(consentId))
+            }
+        }
+    }
+    
+    public func didPayWithCard(consentId: Int?, success: Bool) {
+        
+    }
+    
+    public func didSaveCard(consentId: Int?, success: Bool) {
+
+    }
+}
+
