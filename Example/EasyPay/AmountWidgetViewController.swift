@@ -23,7 +23,11 @@ class AmountWidgetViewController: BaseViewController {
     }
     
     @IBAction private func managePaymentsWidgetButtonTapped(_ sender: UIButton) {
-        let slideVC = CardSelectionViewController(amount: convertDecimalFormatting(amountTextField.text), paymentDelegate: self, preselectedCardId: 3374, paymentDetails: AddAnnualConsentWidgetModel(merchantId: "1", limitPerCharge: "1000.0", limitLifetime: "10000.0"))
+        let alert = UIAlertController(title: "Amount is invalid", message: "Please provide valid amount to pay", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: {_ in })
+        alert.addAction(action)
+        
+        let slideVC = CardSelectionViewController(amount: convertDecimalFormatting(amountTextField.text), paymentDelegate: self, preselectedCardId: 3374, paymentDetails: AddAnnualConsentWidgetModel(merchantId: "1", limitPerCharge: "1000.0", limitLifetime: "10000.0")) ?? alert
         self.present(slideVC, animated: true, completion: nil)
     }
     

@@ -45,14 +45,20 @@ public class CardSelectionViewController: BaseViewController {
     
     private let vcName = "CardSelectionViewController"
     
-    public init(amount: String, paymentDelegate: AnyObject, preselectedCardId: Int?, paymentDetails: AddAnnualConsentWidgetModel) {
-        self.viewModel = CardSelectionViewModel(state: .payment, amount: amount, preselectedCardId: preselectedCardId, paymentDetails: paymentDetails)
+    public init?(amount: String, paymentDelegate: AnyObject, preselectedCardId: Int?, paymentDetails: AddAnnualConsentWidgetModel) {
+        let viewModel = CardSelectionViewModel(state: .payment, amount: amount, preselectedCardId: preselectedCardId, paymentDetails: paymentDetails)
         self.paymentDelegate = paymentDelegate as? any CardPaymentDelegate
+
+        guard viewModel.isValidCurrency(amount) else {
+            return nil
+        }
+
+        self.viewModel = viewModel
         super.init(nibName: vcName, bundle: Bundle(identifier: Theme.bundleId))
         self.modalPresentationStyle = .custom
         self.transitioningDelegate = self
     }
-    
+
     public init(selectionDelegate: AnyObject, preselectedCardId: Int?, paymentDetails: AddAnnualConsentWidgetModel) {
         self.viewModel = CardSelectionViewModel(state: .selection, amount: "", preselectedCardId: preselectedCardId, paymentDetails: paymentDetails)
         self.selectionDelegate = selectionDelegate as? any CardSelectiontDelegate

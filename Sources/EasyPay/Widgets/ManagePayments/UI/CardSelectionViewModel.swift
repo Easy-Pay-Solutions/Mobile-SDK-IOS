@@ -104,4 +104,12 @@ public class CardSelectionViewModel {
         guard let string = string else { return "0.0" }
         return string.replacingOccurrences(of: ",", with: ".")
     }
+    
+    func isValidCurrency(_ currency: String) -> Bool {
+        if let value = Double(currency) {
+            return value > 0
+        } else {
+            return false
+        }
+    }
 }
