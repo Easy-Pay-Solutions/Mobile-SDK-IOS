@@ -141,7 +141,7 @@ public class CardSelectionViewController: BaseViewController {
         if let consents = viewModel.annualConsents?.consents, consents.indices.contains(index) {
             let consent = consents[index]
             let accountNumber = consent.accountNumber ?? Localization.asterixFourMask
-            cardNumber.text = "\(Localization.asterixThreeFourMask) \(accountNumber)"
+            cardNumber.text = "\(Localization.asterixFourMask) \(accountNumber)"
             
             if let firstName = consent.accountHolderFirstName, !firstName.isEmpty,
                let lastName = consent.accountHolderLastName, !lastName.isEmpty {
