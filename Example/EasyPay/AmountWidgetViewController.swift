@@ -40,24 +40,33 @@ class AmountWidgetViewController: BaseViewController {
 
 extension AmountWidgetViewController: CardSelectiontDelegate, CardPaymentDelegate {
     func didSaveCard(consentId: Int?, success: Bool) {}
-    func didPayWithCard(consentId: Int, success: Bool) {
+    func didPayWithCard(consentId: Int?, success: Bool) {
         if success {
             if let presentedVC = self.presentedViewController {
-                presentedVC.dismiss(animated: false, completion: {
-                    self.showSuccessAlert(consentId: consentId)
-                })
+                if presentedVC is UIAlertController {
+                    presentedVC.dismiss(animated: false) {
+                        self.showSuccessAlert(consentId: consentId)
+                    }
+                } else {
+                    presentedVC.dismiss(animated: true) {
+                        self.showSuccessAlert(consentId: consentId)
+                    }
+                }
             } else {
                 showSuccessAlert(consentId: consentId)
             }
         }
     }
+
+    func showSuccessAlert(consentId: Int?) {
+        let message = consentId != nil
+        ? "Payment successful with consent ID \(String(describing: consentId))"
+        : "Payment was successful"
+        let alert = UIAlertController(title: "Success", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+
     func didDeleteCard(consentId: Int, success: Bool) {}
     func didSelectCard(consentId: String) {}
-    
-    private func showSuccessAlert(consentId: Int) {
-        self.showAlert(title: "Payment successful",
-                       message: "Paid with consentId: \(consentId)",
-                       actionName: "OK",
-                       handler: nil)
-    }
 }

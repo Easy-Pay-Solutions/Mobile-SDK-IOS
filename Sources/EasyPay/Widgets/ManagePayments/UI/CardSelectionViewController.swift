@@ -14,7 +14,7 @@ public protocol CardSelectiontDelegate: AnyObject {
 }
 
 public protocol CardPaymentDelegate: AnyObject {
-    func didPayWithCard(consentId: Int, success: Bool)
+    func didPayWithCard(consentId: Int?, success: Bool)
     func didDeleteCard(consentId: Int, success: Bool)
 }
 
@@ -407,11 +407,11 @@ extension CardSelectionViewController: SavingCardDelegate, PayingSavingCardDeleg
     }
     
     public func didPayWithCard(consentId: Int?, success: Bool) {
-        
+        paymentDelegate?.didPayWithCard(consentId: consentId, success: success)
     }
     
     public func didSaveCard(consentId: Int?, success: Bool) {
-
+        selectionDelegate?.didSaveCard(consentId: consentId, success: success)
     }
 }
 

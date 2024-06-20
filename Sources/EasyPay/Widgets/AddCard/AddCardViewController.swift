@@ -487,9 +487,9 @@ extension AddCardViewController: PayActionsDelegate, CloseButtonDelegate, Single
             payingSavingDelegate?.didPayWithCard(consentId: selectedCard, success: false)
             viewModel.payCardErrorShown = true
         } else {
-            payingSavingDelegate?.didPayWithCard(consentId: selectedCard, success: true)
             close()
             closePaymentSheetDelegate?.shouldCloseScreen()
+            payingSavingDelegate?.didPayWithCard(consentId: selectedCard, success: true)
         }
     }
     
@@ -503,9 +503,9 @@ extension AddCardViewController: PayActionsDelegate, CloseButtonDelegate, Single
             payingSavingDelegate?.didPayWithCard(consentId: nil, success: false)
             viewModel.payCardErrorShown = true
         } else {
-            payingSavingDelegate?.didPayWithCard(consentId: nil, success: true)
             close()
             closePaymentSheetDelegate?.shouldCloseScreen()
+            payingSavingDelegate?.didPayWithCard(consentId: nil, success: true)
         }
     }
 }

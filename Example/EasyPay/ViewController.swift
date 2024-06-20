@@ -84,10 +84,13 @@ extension ViewController: UIViewControllerTransitioningDelegate {
 
 extension ViewController: CardSelectiontDelegate, CardPaymentDelegate {
     func didSaveCard(consentId: Int?, success: Bool) {}
-    func didPayWithCard(consentId: Int, success: Bool) {
+    func didPayWithCard(consentId: Int?, success: Bool) {
         if success {
+            let message = consentId != nil
+            ? "Payment successful with consent ID \(String(describing: consentId))"
+            : "Payment was successful"
             self.showAlert(title: "Payment successful",
-                           message: "Paid with consentId: \(consentId)",
+                           message: message,
                            actionName: "OK",
                            handler: nil)
         }
