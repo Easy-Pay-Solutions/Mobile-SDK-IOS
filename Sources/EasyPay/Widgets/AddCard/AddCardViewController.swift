@@ -480,9 +480,11 @@ extension AddCardViewController: PayActionsDelegate, CloseButtonDelegate, Single
         if response.data.errorMessage != "" && response.data.errorCode != 0 {
             showErrorPaySaveButton(true, text: Localization.technicalDifficultiesError)
             payingSavingDelegate?.didPayWithCard(consentId: selectedCard, success: false)
+            viewModel.payCardErrorShown = true
         } else if response.data.functionOk == true && response.data.txApproved == false {
             showErrorPaySaveButton(true, text: Localization.unableToProcessPaymentError)
             payingSavingDelegate?.didPayWithCard(consentId: selectedCard, success: false)
+            viewModel.payCardErrorShown = true
         } else {
             payingSavingDelegate?.didPayWithCard(consentId: selectedCard, success: true)
             close()
@@ -509,13 +511,14 @@ extension AddCardViewController: PayActionsDelegate, CloseButtonDelegate, Single
 extension AddCardViewController {
     private func hideErrorAfterEditingStarted() {
         if viewModel.saveCardErrorShown {
-            self.showErrorPaySaveButton(false)
+            showErrorPaySaveButton(false)
             viewModel.saveCardErrorShown = false
         } else if viewModel.payCardErrorShown {
-            self.showErrorPaySaveButton(false)
+            showErrorPaySaveButton(false)
             viewModel.payCardErrorShown = false
         }
     }
+    
     private func enablePaySaveButton(_ yes: Bool) {
         guard let cell = tableView.cellForRow(at: IndexPath(row: AddCardTableRow.payButton.rawValue, section: 0)) as? PayActionsTableViewCell else { return }
         cell.enablePayButton(yes)
@@ -524,7 +527,9 @@ extension AddCardViewController {
     
     private func showErrorPaySaveButton(_ yes: Bool, text: String? = nil) {
         guard let cell = tableView.cellForRow(at: IndexPath(row: AddCardTableRow.payButton.rawValue, section: 0)) as? PayActionsTableViewCell else { return }
-        cell.applyError(yes, text: text)
+        UIView.animate(withDuration: 0.3) {
+            cell.applyError(yes, text: text)
+        }
     }
     
     private func showHint(field: AddCardTableRow) {

@@ -62,7 +62,6 @@ class PayActionsTableViewCell: UITableViewCell {
         showCompleteHint(!yes)
         self.contentView.setNeedsLayout()
         self.contentView.layoutIfNeeded()
-
     }
 
     func showCompleteHint(_ yes: Bool) {
