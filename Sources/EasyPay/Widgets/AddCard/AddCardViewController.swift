@@ -515,9 +515,11 @@ extension AddCardViewController {
         if viewModel.saveCardErrorShown {
             showErrorPaySaveButton(false)
             viewModel.saveCardErrorShown = false
+            updateTableView()
         } else if viewModel.payCardErrorShown {
             showErrorPaySaveButton(false)
             viewModel.payCardErrorShown = false
+            updateTableView()
         }
     }
     
