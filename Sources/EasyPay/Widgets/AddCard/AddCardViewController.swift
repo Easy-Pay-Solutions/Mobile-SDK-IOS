@@ -392,6 +392,7 @@ extension AddCardViewController: PayActionsDelegate, CloseButtonDelegate, Single
     }
     
     func didTapCheckbox(_ sender: UIButton) {
+        hideErrorAfterEditingStarted()
         sender.isSelected.toggle()
         viewModel.shouldSaveCard = sender.isSelected
     }
