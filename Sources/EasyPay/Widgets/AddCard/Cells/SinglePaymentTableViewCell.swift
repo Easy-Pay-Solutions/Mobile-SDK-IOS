@@ -50,6 +50,9 @@ class SinglePaymentTableViewCell: UITableViewCell, UITextFieldDelegate {
         textField.backgroundColor = Theme.Color.errorRedContainer
         titleLabel.textColor = Theme.Color.errorRed
         textField.textColor = Theme.Color.errorRed
+        if isSecureTextEntryEnabled {
+            textField.isSecureTextEntry = false
+        }
     }
     
     func setNormalState() {
