@@ -90,6 +90,7 @@ extension ViewController: CardSelectiontDelegate, CardPaymentDelegate {
             ? "Payment successful with consent ID \(String(describing: consentId))"
             : "Payment was successful"
             self.showAlert(title: "Payment successful",
+                           accessibilityIdentifier: "paymentSuccessfulAlert",
                            message: message,
                            actionName: "OK",
                            handler: nil)

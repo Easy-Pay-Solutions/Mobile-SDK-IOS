@@ -64,6 +64,7 @@ extension AmountWidgetViewController: CardSelectiontDelegate, CardPaymentDelegat
         : "Payment was successful"
         let alert = UIAlertController(title: "Success", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        alert.view.accessibilityIdentifier = "paymentSuccessfulAlert"
         self.present(alert, animated: true, completion: nil)
     }
 

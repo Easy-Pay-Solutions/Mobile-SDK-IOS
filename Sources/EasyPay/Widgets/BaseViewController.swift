@@ -18,14 +18,19 @@ public class BaseViewController: UIViewController {
                         message: String,
                         yesMessage: String,
                         noMessage: String,
+                        yesAccessibilityIdentifier: String? = nil,
                         noHandler: ((UIAlertAction) -> Swift.Void)? = nil,
                         yesHandler: ((UIAlertAction) -> Swift.Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: yesMessage,
+        var yesAction = UIAlertAction(title: yesMessage,
                                       style: .default,
-                                      handler: yesHandler))
-        
+                                      handler: yesHandler)
+        if let yesAccessibilityIdentifier {
+            yesAction.accessibilityIdentifier = yesAccessibilityIdentifier
+        }
+        alert.addAction(yesAction)
+
         alert.addAction(UIAlertAction(title: noMessage,
                                       style: .cancel,
                                       handler: noHandler))
@@ -49,6 +54,7 @@ public class BaseViewController: UIViewController {
         toastLabel.text = message
         toastLabel.clipsToBounds  =  true
         toastLabel.numberOfLines = 0
+        toastLabel.accessibilityIdentifier = success ? "successToastMessage" : "failureToastMessage"
 
         toastContainer.addSubview(toastLabel)
         controller.view.addSubview(toastContainer)

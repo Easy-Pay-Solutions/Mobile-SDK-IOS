@@ -17,7 +17,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  EasyPay: 61aa1c7b1596a12681d305a9b7fe6fe378b3dbaa
+  EasyPay: b88b7fa5ce7b7d6bb5da6a47d5a7ab7d7705fd63
   Sentry: 51b056d96914a741f63eca774d118678b1eb05a1
 
 PODFILE CHECKSUM: bf0dcb16da5ec1a0da829dff185db310273eb359

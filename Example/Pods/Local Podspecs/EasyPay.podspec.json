@@ -20,6 +20,13 @@
   },
   "swift_versions": "5.9",
   "source_files": "Sources/**/*",
+  "resource_bundles": {
+    "EasyPay": [
+      "Resources/EasyPayAssets.xcassets",
+      "Resources/*.xib",
+      "Resources/Fonts/*.ttf"
+    ]
+  },
   "dependencies": {
     "Sentry": [
       "~> 8.25.2"

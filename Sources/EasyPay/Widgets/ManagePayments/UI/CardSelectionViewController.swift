@@ -176,6 +176,7 @@ public class CardSelectionViewController: BaseViewController {
                             message: Localization.deleteCardMessgae,
                             yesMessage: Localization.delete,
                             noMessage: Localization.cancel,
+                            yesAccessibilityIdentifier: "deleteAction",
                             yesHandler: { [weak self] _ in
             guard let s = self, let selectedCard = s.viewModel.selectedCardConsentId() else { return }
             s.showLoading(true)

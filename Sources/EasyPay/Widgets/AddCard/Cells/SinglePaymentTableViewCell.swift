@@ -36,6 +36,7 @@ class SinglePaymentTableViewCell: UITableViewCell, UITextFieldDelegate {
         textField.delegate = self
         textField.keyboardType = keyboardType
         titleLabel.text = title
+        titleLabel.accessibilityIdentifier = title
         leftIcon.isHidden = !showCardIcon
         textMaxChar = maxCharLimit
         self.isNumbersOnlyAllowed = isNumbersOnlyAllowed

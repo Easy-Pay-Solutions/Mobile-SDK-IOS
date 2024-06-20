@@ -54,7 +54,9 @@ class DoublePaymentTableViewCell: UITableViewCell, UITextFieldDelegate {
         leftTextField.delegate = self
         rightTextField.delegate = self
         leftTitleLabel.text = leftTitle
+        leftTitleLabel.accessibilityIdentifier = leftTitle
         rightTitleLabel.text = rightTitle
+        rightTitleLabel.accessibilityIdentifier = rightTitle
         leftTextMaxChar = leftMaxCharLimit
         rightTextMaxChar = rightMaxCharLimit
         self.isRightNumbersOnlyAllowed = isRightNumbersOnlyAllowed
