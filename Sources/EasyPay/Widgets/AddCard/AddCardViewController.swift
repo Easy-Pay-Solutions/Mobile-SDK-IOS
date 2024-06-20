@@ -496,9 +496,11 @@ extension AddCardViewController: PayActionsDelegate, CloseButtonDelegate, Single
         if response.data.errorMessage != "" && response.data.errorCode != 0 {
             showErrorPaySaveButton(true, text: Localization.technicalDifficultiesError)
             payingSavingDelegate?.didPayWithCard(consentId: nil, success: false)
+            viewModel.payCardErrorShown = true
         } else if response.data.functionOk == true && response.data.txApproved == false {
             showErrorPaySaveButton(true, text: Localization.unableToProcessPaymentError)
             payingSavingDelegate?.didPayWithCard(consentId: nil, success: false)
+            viewModel.payCardErrorShown = true
         } else {
             payingSavingDelegate?.didPayWithCard(consentId: nil, success: true)
             close()
