@@ -103,7 +103,7 @@ public class AddCardViewModel {
     }
     
     func isAddressCorrect() -> Bool {
-        return UIValidation.isValidAdress(address ?? "")
+        ValidatorUtils.isValidAddress(address ?? "")
     }
     
     func isZipEmptyNilWhitespace() -> Bool {
@@ -111,7 +111,7 @@ public class AddCardViewModel {
     }
     
     func isZipCorrect() -> Bool {
-        return UIValidation.isValidZip(zip ?? "")
+        ValidatorUtils.isValidZipCode(zip ?? "")
     }
     
     func isCvcCorrect() -> Bool {
