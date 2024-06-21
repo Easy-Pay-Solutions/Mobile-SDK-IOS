@@ -21,9 +21,9 @@ class SinglePaymentTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var leftIcon: UIImageView!
     @IBOutlet weak var textField: UITextField!
-    private var isSecureTextEntryEnabled: Bool = false
     private var isErrorState: Bool = false
     private var isNumbersOnlyAllowed: Bool = false
+    private var notMaskedText: String? = nil
     var textMaxChar = 0
     weak var delegate: SinglePaymentFieldDelegate?
 
@@ -31,8 +31,7 @@ class SinglePaymentTableViewCell: UITableViewCell, UITextFieldDelegate {
                    showCardIcon: Bool = false,
                    maxCharLimit: Int,
                    keyboardType: UIKeyboardType = .default,
-                   isNumbersOnlyAllowed: Bool = false,
-                   isSecureTextEntryEnabled: Bool = false) {
+                   isNumbersOnlyAllowed: Bool = false) {
         textField.delegate = self
         textField.keyboardType = keyboardType
         titleLabel.text = title
@@ -40,7 +39,6 @@ class SinglePaymentTableViewCell: UITableViewCell, UITextFieldDelegate {
         leftIcon.isHidden = !showCardIcon
         textMaxChar = maxCharLimit
         self.isNumbersOnlyAllowed = isNumbersOnlyAllowed
-        self.isSecureTextEntryEnabled = isSecureTextEntryEnabled
     }
     
     func setErrorState() {
@@ -51,9 +49,6 @@ class SinglePaymentTableViewCell: UITableViewCell, UITextFieldDelegate {
         textField.backgroundColor = Theme.Color.errorRedContainer
         titleLabel.textColor = Theme.Color.errorRed
         textField.textColor = Theme.Color.errorRed
-        if isSecureTextEntryEnabled {
-            textField.isSecureTextEntry = false
-        }
     }
     
     func setNormalState() {
@@ -80,20 +75,23 @@ class SinglePaymentTableViewCell: UITableViewCell, UITextFieldDelegate {
                                       limit: textMaxChar)
     }
     
-    
+    func applySecureMask(_ text: String?) {
+        textField.showOnlyLastDigits(numberOfVisibleLastDigits: 4)
+    }
+
+    func takeSecureMaskOff() {
+        if let notMaskedText {
+            textField.text = notMaskedText
+        }
+    }
+
     @IBAction private func didStartEditing(_ sender: UITextField) {
         showBorder(true)
-        if isSecureTextEntryEnabled {
-            textField.isSecureTextEntry = false
-        }
         delegate?.didBeginEditing(cell: self, text: sender.text)
     }
     
     @IBAction private func didEndEditing(_ sender: UITextField) {
         showBorder(false)
-        if isSecureTextEntryEnabled {
-            textField.isSecureTextEntry = true
-        }
 
         if StringUtils.isNilOrEmpty(textField.text) {
             showOnlyPlaceholder(true)
@@ -101,20 +99,20 @@ class SinglePaymentTableViewCell: UITableViewCell, UITextFieldDelegate {
         delegate?.didEndEditing(cell: self, text: sender.text)
     }
     
-    
     @IBAction private func textFieldEditingChanged(_ sender: UITextField) {
+        notMaskedText = sender.text
         delegate?.didChangeText(cell: self, text: sender.text)
     }
     
-    @IBAction func clickPlaceholderButtonTapped(_ sender: UIButton) {
+    @IBAction private func clickPlaceholderButtonTapped(_ sender: UIButton) {
         self.showOnlyPlaceholder(false)
         textField.becomeFirstResponder()
     }
-    
-    func showOnlyPlaceholder(_ yes: Bool) {
+
+    private func showOnlyPlaceholder(_ yes: Bool) {
         animatePlaceholder(show: yes)
     }
-    
+
     private func animatePlaceholder(show: Bool) {
         UIView.animate(withDuration: 0.3, animations: {
             self.setTitleLabelToPlaceholder(show)

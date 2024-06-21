@@ -232,8 +232,7 @@ extension AddCardViewController: UITableViewDelegate, UITableViewDataSource {
                        showCardIcon: true, 
                        maxCharLimit: viewModel.cardNumberMaxChar, 
                        keyboardType: .numberPad,
-                       isNumbersOnlyAllowed: true,
-                       isSecureTextEntryEnabled: true)
+                       isNumbersOnlyAllowed: true)
         cell.textField.text = viewModel.cardNumber
         cell.delegate = self
         return cell
@@ -327,6 +326,8 @@ extension AddCardViewController: PayActionsDelegate, CloseButtonDelegate, Single
         switch tag {
         case .cardHolder:
             didBeginEditingValidationCardholder(cell: cell, text: text)
+        case .cardNumber:
+            didBeginEditingValidationCardNumber(cell: cell, text: text)
         case .address:
             didBeginEditingValidationAddress(cell: cell, text: text)
         case .zip:
@@ -652,6 +653,10 @@ extension AddCardViewController {
     
     //MARK: Card number
 
+    private func didBeginEditingValidationCardNumber(cell: SinglePaymentTableViewCell, text: String?) {
+        cell.takeSecureMaskOff()
+    }
+
     private func didEndEditingValidationCardNumber(cell: SinglePaymentTableViewCell, text: String?) {
         if !viewModel.isCardNumberCorrect() && !viewModel.isCardNumberEmptyNilWhitespace() {
             showError(field: .cardNumberError, text: Localization.invalidCardNumber)
@@ -661,6 +666,7 @@ extension AddCardViewController {
             hideError(field: .cardNumberError)
             hideErrorTextField(field: .cardNumber)
             viewModel.cardNumberErrorShown = false
+            cell.applySecureMask(text)
         }
     }
     
