@@ -35,7 +35,7 @@ public class ValidatorUtils {
         return checkRegex(text, regex: RegexPattern.city.rawValue)
     }
     
-    class func isValidZipCode(_ text: String) -> Bool {
+    public class func isValidZipCode(_ text: String) -> Bool {
         return checkRegex(text, regex: RegexPattern.zipCode.rawValue)
     }
     
