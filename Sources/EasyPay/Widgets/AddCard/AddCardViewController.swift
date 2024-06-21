@@ -654,7 +654,8 @@ extension AddCardViewController {
     //MARK: Card number
 
     private func didBeginEditingValidationCardNumber(cell: SinglePaymentTableViewCell, text: String?) {
-        cell.takeSecureMaskOff()
+        let realText = viewModel.applyMaskOnCard(cardNumber: viewModel.cardNumber)
+        cell.takeSecureMaskOff(realText)
     }
 
     private func didEndEditingValidationCardNumber(cell: SinglePaymentTableViewCell, text: String?) {
@@ -666,7 +667,7 @@ extension AddCardViewController {
             hideError(field: .cardNumberError)
             hideErrorTextField(field: .cardNumber)
             viewModel.cardNumberErrorShown = false
-            cell.applySecureMask(text)
+            cell.applySecureMask()
         }
     }
     

@@ -23,7 +23,6 @@ class SinglePaymentTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var textField: UITextField!
     private var isErrorState: Bool = false
     private var isNumbersOnlyAllowed: Bool = false
-    private var notMaskedText: String? = nil
     var textMaxChar = 0
     weak var delegate: SinglePaymentFieldDelegate?
 
@@ -75,14 +74,12 @@ class SinglePaymentTableViewCell: UITableViewCell, UITextFieldDelegate {
                                       limit: textMaxChar)
     }
     
-    func applySecureMask(_ text: String?) {
+    func applySecureMask() {
         textField.showOnlyLastDigits(numberOfVisibleLastDigits: 4)
     }
 
-    func takeSecureMaskOff() {
-        if let notMaskedText {
-            textField.text = notMaskedText
-        }
+    func takeSecureMaskOff(_ realText: String?) {
+        textField.text = realText
     }
 
     @IBAction private func didStartEditing(_ sender: UITextField) {
@@ -100,7 +97,6 @@ class SinglePaymentTableViewCell: UITableViewCell, UITextFieldDelegate {
     }
     
     @IBAction private func textFieldEditingChanged(_ sender: UITextField) {
-        notMaskedText = sender.text
         delegate?.didChangeText(cell: self, text: sender.text)
     }
     
