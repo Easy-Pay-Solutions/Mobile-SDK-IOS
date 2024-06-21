@@ -469,7 +469,7 @@ extension AddCardViewController: PayActionsDelegate, CloseButtonDelegate, Single
                 self.saveOnlyRespondeHandler(response: success)
                 self.updateTableView()
             case .failure(_):
-                self.showErrorPaySaveButton(true, text: Localization.technicalDifficultiesError)
+                self.showErrorPaySaveButton(true, text: Localization.unableToSaveCardDetailsError)
                 self.viewModel.saveCardErrorShown = true
                 self.updateTableView()
                 self.savingDelegate?.didOnlySaveCard(consentId: nil, success: false)
