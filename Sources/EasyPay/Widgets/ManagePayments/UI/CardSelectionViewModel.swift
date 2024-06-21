@@ -15,10 +15,6 @@ public class CardSelectionViewModel {
     var isPreselected: Bool {
         return preselectedCardId != nil && findPreselectedCardIndex() != nil
     }
-    
-    var isZeroAnnualConsents: Bool {
-        annualConsents?.consents?.count == 0
-    }
 
     public init(state: ManageCardState, amount: String, preselectedCardId: Int?, paymentDetails: AddAnnualConsentWidgetModel) {
         self.state = state

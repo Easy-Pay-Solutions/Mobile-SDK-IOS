@@ -104,10 +104,6 @@ public class CardSelectionViewController: BaseViewController {
                         s.collectionView.selectItem(at: IndexPath(row: s.viewModel.findCollectionViewIndex(), section: 0), animated: true, scrollPosition: .centeredHorizontally)
                     }
                 }
-                
-                if s.viewModel.isZeroAnnualConsents {
-                    s.presentAddNewCard()
-                }
             case .failure(let error):
                 s.showAlert(title: Localization.error, message: error.localizedDescription)
             }
