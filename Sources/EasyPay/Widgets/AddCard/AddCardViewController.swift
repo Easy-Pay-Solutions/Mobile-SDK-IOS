@@ -466,8 +466,8 @@ extension AddCardViewController: PayActionsDelegate, CloseButtonDelegate, Single
             self.showLoading(false)
             switch result {
             case .success(let success):
-                self.dismiss(animated: true, completion: nil)
-                self.savingDelegate?.didOnlySaveCard(consentId: success.data.consentId, success: true)
+                self.saveOnlyRespondeHandler(response: success)
+                self.updateTableView()
             case .failure(_):
                 self.showErrorPaySaveButton(true, text: Localization.technicalDifficultiesError)
                 self.viewModel.saveCardErrorShown = true
@@ -506,6 +506,17 @@ extension AddCardViewController: PayActionsDelegate, CloseButtonDelegate, Single
             close()
             closePaymentSheetDelegate?.shouldCloseScreen()
             payingSavingDelegate?.didPayWithCard(consentId: nil, success: true)
+        }
+    }
+    
+    private func saveOnlyRespondeHandler(response: CreateConsentAnnualResponse) {
+        if response.data.errorMessage != "" && response.data.errorCode != 0 {
+            showErrorPaySaveButton(true, text: Localization.unableToSaveCardDetailsError)
+            savingDelegate?.didOnlySaveCard(consentId: nil, success: false)
+            viewModel.saveCardErrorShown = true
+        } else {
+            close()
+            savingDelegate?.didOnlySaveCard(consentId: response.data.consentId, success: true)
         }
     }
 }

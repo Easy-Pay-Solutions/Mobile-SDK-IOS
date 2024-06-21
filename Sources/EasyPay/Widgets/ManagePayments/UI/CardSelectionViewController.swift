@@ -400,7 +400,12 @@ extension CardSelectionViewController: SavingCardDelegate, PayingSavingCardDeleg
     public func didOnlySaveCard(consentId: Int?, success: Bool) {
         selectionDelegate?.didSaveCard(consentId: consentId, success: success)
         if success {
-            closeWidget()
+            if success {
+                self.showToast(message: Localization.cardWasSaved, 
+                               controller: self,
+                               success: true,
+                               action: nil)
+            }
             if let consentId {
                 selectionDelegate?.didSelectCard(consentId: String(consentId))
             }
