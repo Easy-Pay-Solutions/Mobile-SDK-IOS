@@ -403,64 +403,56 @@ extension AddCardViewController: PayActionsDelegate, CloseButtonDelegate, Single
             saveCard()
         } else {
             if viewModel.shouldSaveCard {
-                payCardAndSave()
+                saveCardAndPay()
             } else {
                 payWithoutSaving()
             }
         }
     }
     
-    private func payCardAndSave() {
+    private func payAfterSaving(consentId: Int) {
         showLoading(true)
-        viewModel.chargeCard { [weak self] result in
+        viewModel.chargeAnnualConsent(consentId: consentId) { [weak self] result in
             guard let s = self else { return }
             s.showLoading(false)
             switch result {
             case .success(let success):
-                s.payWithSavingHandler(response: success)
+                s.paymentSuccesRespondeHandler(response: success, selectedCard: consentId)
                 s.updateTableView()
             case .failure(_):
+                s.payingSavingDelegate?.didPayWithCard(consentId: consentId, success: false)
                 s.showErrorPaySaveButton(true, text: Localization.technicalDifficultiesError)
-                s.viewModel.saveCardErrorShown = true
-                s.payingSavingDelegate?.didPayWithCard(consentId: nil, success: false)
                 s.updateTableView()
             }
         }
     }
     
-    func payWithSavingHandler(response: CreditCardSaleResponse) {
-        if response.data.errorMessage != "" && response.data.errorCode != 0 {
-            showErrorPaySaveButton(true, text: Localization.technicalDifficultiesError)
-            payingSavingDelegate?.didPayWithCard(consentId: nil, success: false)
-            viewModel.payCardErrorShown = true
-        } else if response.data.functionOk == true && response.data.txApproved == false {
-            showErrorPaySaveButton(true, text: Localization.unableToProcessPaymentError)
-            payingSavingDelegate?.didPayWithCard(consentId: nil, success: false)
-            viewModel.payCardErrorShown = true
-        } else {
-            payingSavingDelegate?.didPayWithCard(consentId: nil, success: true)
-            saveAfterPaying()
-        }
-    }
-    
-    func saveAfterPaying() {
+    private func saveCardAndPay() {
         showLoading(true)
         viewModel.createAnnualConsent { [weak self] result in
             guard let s = self else { return }
             s.showLoading(false)
             switch result {
             case .success(let success):
-                s.close()
-                s.closePaymentSheetDelegate?.shouldCloseScreen()
-                s.payingSavingDelegate?.didSaveCard(consentId: success.data.consentId, success: true)
-            case .failure(let failure):
-                s.close()
-                s.closePaymentSheetDelegate?.shouldCloseScreen()
+                let consentId = success.data.consentId
+                if success.data.errorMessage != "" && success.data.errorCode != 0 {
+                    s.payingSavingDelegate?.didSaveCard(consentId: nil, success: false)
+                    s.viewModel.saveCardErrorShown = true
+                    s.showErrorPaySaveButton(true, text: Localization.unableToSaveCardDetailsError)
+                } else {
+                    s.payAfterSaving(consentId: consentId)
+                    s.payingSavingDelegate?.didSaveCard(consentId: success.data.consentId, success: true)
+                }
+                s.updateTableView()
+            case .failure(_):
+                s.showErrorPaySaveButton(true, text: Localization.technicalDifficultiesError)
+                s.viewModel.saveCardErrorShown = true
                 s.payingSavingDelegate?.didSaveCard(consentId: nil, success: false)
+                s.updateTableView()
             }
         }
     }
-    
+
     private func payWithoutSaving() {
         showLoading(true)
         viewModel.chargeCard { result in
