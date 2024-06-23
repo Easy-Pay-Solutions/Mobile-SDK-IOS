@@ -400,7 +400,8 @@ extension CardSelectionViewController: SavingCardDelegate, PayingSavingCardDeleg
                 self.showToast(message: Localization.cardWasSaved, 
                                controller: self,
                                success: true,
-                               action: nil)
+                               action: nil,
+                               hideAutomaticallyDelay: 3.0)
             }
             if let consentId {
                 selectionDelegate?.didSelectCard(consentId: String(consentId))
