@@ -544,12 +544,19 @@ extension AddCardViewController {
         if viewModel.saveCardErrorShown {
             showErrorPaySaveButton(false)
             viewModel.saveCardErrorShown = false
+            showCompleteHint(!viewModel.canEnableButton())
             updateTableView()
         } else if viewModel.payCardErrorShown {
             showErrorPaySaveButton(false)
             viewModel.payCardErrorShown = false
+            showCompleteHint(!viewModel.canEnableButton())
             updateTableView()
         }
+    }
+    
+    private func showCompleteHint(_ yes: Bool) {
+        guard let cell = tableView.cellForRow(at: IndexPath(row: AddCardTableRow.payButton.rawValue, section: 0)) as? PayActionsTableViewCell else { return }
+        cell.showCompleteHint(yes)
     }
     
     private func enablePaySaveButton(_ yes: Bool) {
@@ -777,6 +784,8 @@ extension AddCardViewController: DoublePaymentFieldDelegate {
     }
     
     func didEndEditingMonthYear(cell: DoublePaymentTableViewCell, text: String?) {
+        enablePaySaveButton(viewModel.canEnableButton())
+        
         viewModel.monthYear = text
         
         if viewModel.isMonthYearEmptyNilWhitespace() {
@@ -808,6 +817,8 @@ extension AddCardViewController: DoublePaymentFieldDelegate {
     }
     
     func didEndEditingCvc(cell: DoublePaymentTableViewCell, text: String?) {
+        enablePaySaveButton(viewModel.canEnableButton())
+
         viewModel.cvc = text
         
         if !viewModel.isCvcCorrect() && !viewModel.isCvcEmptyNilWhitespace() {
