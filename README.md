@@ -36,6 +36,49 @@ EasyPay.shared.configureSecrets(apiKey: "YOURAPIKEY",
 ```
 EasyPay.shared.certificateStatus
 ```
+## Widgets
+EasyPay's prebuilt payment UI components that allows you to collect credit card information in a secure way and process payments.
+
+### Managing cards
+For managing saved cards without paying following intilizer should be used:
+
+```
+ CardSelectionViewController(selectionDelegate: AnyObject, preselectedCardId: Int?, paymentDetails: AddAnnualConsentWidgetModel)
+```
+PreselectedCardId is optional parameter that allows to mark a card as selected by passing the consentId of this card. If nil or incorrect consentId is passed the selection will be ignored. 
+
+Payment details parameter is used for passing additional payment details not visible for the end user.
+
+If you would like to receive callbacks conform to CardSelectiontDelegate with following methods:
+```
+func didSelectCard(consentId: String) {}
+```
+```
+func didDeleteCard(consentId: Int, success: Bool) {}
+```
+```
+func didSaveCard(consentId: Int?, success: Bool) {}
+```
+### Managing cards and payment
+For managing saved cards and paying following intilizer should be used:
+```
+CardSelectionViewController(amount: String, paymentDelegate: AnyObject, preselectedCardId: Int?, paymentDetails: AddAnnualConsentWidgetModel)
+```
+Amount should be higher than 0 and it is required parameter
+
+PreselectedCardId is optional parameter that allows to mark a card as selected by passing the consentId of this card. If nil or incorrect consentId is passed the selection will be ignored. 
+
+Payment details parameter is used for passing additional payment details not visible for the end user.
+
+If you would like to receive callbacks conform to CardPaymentDelegate with following methods:
+
+```
+func didPayWithCard(consentId: Int?, success: Bool) {}
+```
+```
+func didDeleteCard(consentId: Int, success: Bool) {}
+```
+
 ## Public methods in EasyPay class
 
 ```
