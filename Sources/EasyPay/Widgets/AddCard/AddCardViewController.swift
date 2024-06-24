@@ -465,6 +465,7 @@ extension AddCardViewController: PayActionsDelegate, CloseButtonDelegate, Single
             case .failure(_):
                 self.payingSavingDelegate?.didPayWithCard(consentId: nil, success: false)
                 self.showErrorPaySaveButton(true, text: Localization.technicalDifficultiesError)
+                self.viewModel.payCardErrorShown = true
                 self.updateTableView()
             }
         }
