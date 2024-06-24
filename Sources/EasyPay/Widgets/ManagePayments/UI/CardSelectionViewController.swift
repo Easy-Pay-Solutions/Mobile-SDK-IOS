@@ -396,8 +396,16 @@ extension CardSelectionViewController: SavingCardDelegate, PayingSavingCardDeleg
     public func didOnlySaveCard(consentId: Int?, success: Bool) {
         selectionDelegate?.didSaveCard(consentId: consentId, success: success)
         if success {
-            if success {
-                self.showToast(message: Localization.cardWasSaved, 
+            showLoading(true)
+            viewModel.downloadAnnualConsents { result in
+                self.showLoading(false)
+                switch result {
+                case .success(_):
+                    self.collectionView.reloadData()
+                case .failure(_):
+                    break
+                }
+                self.showToast(message: Localization.cardWasSaved,
                                controller: self,
                                success: true,
                                action: nil,
