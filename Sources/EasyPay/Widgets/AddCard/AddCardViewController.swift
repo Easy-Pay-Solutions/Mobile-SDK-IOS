@@ -399,6 +399,7 @@ extension AddCardViewController: PayActionsDelegate, CloseButtonDelegate, Single
     }
     
     func didTapPay(_ sender: UIButton) {
+        tableView.endEditing(true)
         if viewModel.state == .saveOnly {
             saveCard()
         } else {
