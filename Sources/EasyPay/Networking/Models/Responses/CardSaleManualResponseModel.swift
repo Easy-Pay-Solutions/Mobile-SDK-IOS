@@ -11,9 +11,9 @@ public struct CardSaleManualResponseModel: Codable {
                 isPartialApproval: Bool,
                 requiresVoiceAuth: Bool,
                 responseMessage: String,
-                responseApprovedAmount: Int,
-                responseAuthorizedAmount: Int,
-                responseBalanceAmount: Int,
+                responseApprovedAmount: Double,
+                responseAuthorizedAmount: Double,
+                responseBalanceAmount: Double,
                 txApproved: Bool,
                 txId: Int,
                 txnCode: String) {
@@ -43,9 +43,9 @@ public struct CardSaleManualResponseModel: Codable {
     public let isPartialApproval: Bool
     public let requiresVoiceAuth: Bool
     public let responseMessage: String
-    public let responseApprovedAmount: Int
-    public let responseAuthorizedAmount: Int
-    public let responseBalanceAmount: Int
+    public let responseApprovedAmount: Double
+    public let responseAuthorizedAmount: Double
+    public let responseBalanceAmount: Double
     public let txApproved: Bool
     public let txId: Int
     public let txnCode: String
