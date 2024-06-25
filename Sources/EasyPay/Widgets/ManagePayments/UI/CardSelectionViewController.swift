@@ -393,27 +393,31 @@ extension CardSelectionViewController: SavingCardDelegate, PayingSavingCardDeleg
         closeWidget()
     }
     
+    private func reloadConsents() {
+        showLoading(true)
+        viewModel.downloadAnnualConsents { result in
+            self.showLoading(false)
+            switch result {
+            case .success(_):
+                self.collectionView.reloadData()
+            case .failure(_):
+                break
+            }
+        }
+    }
+    
     public func didOnlySaveCard(consentId: Int?, success: Bool) {
         selectionDelegate?.didSaveCard(consentId: consentId, success: success)
         if success {
-            showLoading(true)
-            viewModel.downloadAnnualConsents { result in
-                self.showLoading(false)
-                switch result {
-                case .success(_):
-                    self.collectionView.reloadData()
-                case .failure(_):
-                    break
-                }
-                self.showToast(message: Localization.cardWasSaved,
-                               controller: self,
-                               success: true,
-                               action: nil,
-                               hideAutomaticallyDelay: 3.0)
-            }
-            if let consentId {
-                selectionDelegate?.didSelectCard(consentId: String(consentId))
-            }
+            reloadConsents()
+            self.showToast(message: Localization.cardWasSaved,
+                           controller: self,
+                           success: true,
+                           action: nil,
+                           hideAutomaticallyDelay: 3.0)
+        }
+        if let consentId {
+            selectionDelegate?.didSelectCard(consentId: String(consentId))
         }
     }
     
@@ -422,6 +426,9 @@ extension CardSelectionViewController: SavingCardDelegate, PayingSavingCardDeleg
     }
     
     public func didSaveCard(consentId: Int?, success: Bool) {
+        if success {
+            reloadConsents()
+        }
         selectionDelegate?.didSaveCard(consentId: consentId, success: success)
     }
 }
