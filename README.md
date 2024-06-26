@@ -40,7 +40,7 @@ EasyPay.shared.certificateStatus
 EasyPay's prebuilt payment UI components that allows you to collect credit card information in a secure way and process payments.
 
 ### Managing cards
-For managing saved cards without paying following intilizer should be used:
+For managing saved cards without paying following initializer should be used:
 
 ```
  CardSelectionViewController(selectionDelegate: AnyObject, preselectedCardId: Int?, paymentDetails: AddAnnualConsentWidgetModel)
@@ -60,7 +60,7 @@ func didDeleteCard(consentId: Int, success: Bool) {}
 func didSaveCard(consentId: Int?, success: Bool) {}
 ```
 ### Managing cards and payment
-For managing saved cards and paying following intilizer should be used:
+For managing saved cards and paying following initializer should be used:
 ```
 CardSelectionViewController(amount: String, paymentDelegate: AnyObject, preselectedCardId: Int?, paymentDetails: AddAnnualConsentWidgetModel)
 ```
