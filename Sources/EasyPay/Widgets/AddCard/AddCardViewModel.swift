@@ -1,6 +1,5 @@
 
 import Foundation
-import EasyPay
 
 public class AddCardViewModel {
     public init(state: AddCardState, amount: String, paymentDetails: AddAnnualConsentWidgetModel) {

@@ -1,6 +1,5 @@
 
 import Foundation
-import EasyPay
 
 public class CardSelectionViewModel {
     

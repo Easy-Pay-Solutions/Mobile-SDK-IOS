@@ -1,6 +1,5 @@
 
 import UIKit
-import EasyPay
 
 protocol SinglePaymentFieldDelegate: AnyObject {
     func didChangeText(cell: SinglePaymentTableViewCell,

@@ -1,6 +1,5 @@
 
 import UIKit
-import EasyPay
 
 protocol DoublePaymentFieldDelegate: AnyObject {
     func didChangeMonthYearText(cell: DoublePaymentTableViewCell,

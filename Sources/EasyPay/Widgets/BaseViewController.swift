@@ -23,7 +23,7 @@ public class BaseViewController: UIViewController {
                         yesHandler: ((UIAlertAction) -> Swift.Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        var yesAction = UIAlertAction(title: yesMessage,
+        let yesAction = UIAlertAction(title: yesMessage,
                                       style: .default,
                                       handler: yesHandler)
         if let yesAccessibilityIdentifier {

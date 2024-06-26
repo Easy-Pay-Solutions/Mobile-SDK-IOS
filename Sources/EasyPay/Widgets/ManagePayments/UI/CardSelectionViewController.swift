@@ -1,6 +1,5 @@
 
 import UIKit
-import EasyPay
 
 public enum ManageCardState {
     case selection
