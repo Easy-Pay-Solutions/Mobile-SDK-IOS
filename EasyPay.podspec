@@ -39,6 +39,7 @@ TODO: Add long description of the pod here.
     'EasyPay' => [
         'Resources/EasyPayAssets.xcassets',
         'Resources/Fonts/*.ttf',
+        'Sources/**/*.xib',
         ]
   }
 
