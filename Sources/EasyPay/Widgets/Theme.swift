@@ -1,81 +1,107 @@
 
-import Foundation
+import UIKit
 
 public struct Theme {
     static let bundleId = "org.cocoapods.EasyPay"
     
+    static func moduleBundle() -> Bundle? {
+#if SWIFT_PACKAGE
+        return Bundle.module
+#else
+        return Bundle(identifier: bundleId)
+#endif
+    }
+    
     public struct Color {
         static let cardLabelColor: UIColor = {
-            UIColor.color(named:  "cardLabelColor", inBundleWithIdentifier: bundleId)
-        }()
+            UIColor(named: "cardLabelColor", in: moduleBundle(), compatibleWith: nil)
+        }() ?? UIColor.black
+        
         static let errorRed: UIColor = {
-            UIColor.color(named:  "errorRed", inBundleWithIdentifier: bundleId)
-        }()
+            UIColor(named: "errorRed", in: moduleBundle(), compatibleWith: nil)
+        }() ?? UIColor.black
+        
         static let cardLabelSelected: UIColor = {
-            UIColor.color(named:  "cardLabelSelected", inBundleWithIdentifier: bundleId)
-        }()
+            UIColor(named: "cardLabelSelected", in: moduleBundle(), compatibleWith: nil)
+        }() ?? UIColor.black
+        
         static let technologyBlue2: UIColor = {
-            UIColor.color(named:  "technologyBlue2", inBundleWithIdentifier: bundleId)
-        }()
+            UIColor(named: "technologyBlue2", in: moduleBundle(), compatibleWith: nil)
+        }() ?? UIColor.black
+        
         static let borderTile: UIColor = {
-            UIColor.color(named:  "borderTile", inBundleWithIdentifier: bundleId)
-        }()
+            UIColor(named: "borderTile", in: moduleBundle(), compatibleWith: nil)
+        }() ?? UIColor.black
+        
         static let technologyBlueBackground: UIColor = {
-            UIColor.color(named:  "technologyBlueBackground", inBundleWithIdentifier: bundleId)
-        }()
+            UIColor(named: "technologyBlueBackground", in: moduleBundle(), compatibleWith: nil)
+        }() ?? UIColor.black
+        
         static let whiteBackground: UIColor = {
-            UIColor.color(named:  "whiteBackground", inBundleWithIdentifier: bundleId)
-        }()
+            UIColor(named: "whiteBackground", in: moduleBundle(), compatibleWith: nil)
+        }() ?? UIColor.black
+        
         static let textButton: UIColor = {
-            UIColor.color(named:  "textButton", inBundleWithIdentifier: bundleId)
-        }()
+            UIColor(named: "textButton", in: moduleBundle(), compatibleWith: nil)
+        }() ?? UIColor.black
+        
         static let confirmationGreenContainer: UIColor = {
-            UIColor.color(named:  "confirmationGreenContainer", inBundleWithIdentifier: bundleId)
-        }()
+            UIColor(named: "confirmationGreenContainer", in: moduleBundle(), compatibleWith: nil)
+        }() ?? UIColor.black
+        
         static let errorRedContainer: UIColor = {
-            UIColor.color(named:  "errorRedContainer", inBundleWithIdentifier: bundleId)
-        }()
+            UIColor(named: "errorRedContainer", in: moduleBundle(), compatibleWith: nil)
+        }() ?? UIColor.black
+        
         static let confirmationGreen: UIColor = {
-            UIColor.color(named:  "confirmationGreen", inBundleWithIdentifier: bundleId)
-        }()
+            UIColor(named: "confirmationGreen", in: moduleBundle(), compatibleWith: nil)
+        }() ?? UIColor.black
+        
         static let errorSurface: UIColor = {
-            UIColor.color(named:  "errorSurface", inBundleWithIdentifier: bundleId)
-        }()
+            UIColor(named: "errorSurface", in: moduleBundle(), compatibleWith: nil)
+        }() ?? UIColor.black
+        
         static let textSecondary: UIColor = {
-            UIColor.color(named:  "textSecondary", inBundleWithIdentifier: bundleId)
-        }()
+            UIColor(named: "textSecondary", in: moduleBundle(), compatibleWith: nil)
+        }() ?? UIColor.black
+        
         static let textTertiary: UIColor = {
-            UIColor.color(named:  "textTertiary", inBundleWithIdentifier: bundleId)
-        }()
+            UIColor(named: "textTertiary", in: moduleBundle(), compatibleWith: nil)
+        }() ?? UIColor.black
+        
         static let textPrimary: UIColor = {
-            UIColor.color(named:  "textPrimary", inBundleWithIdentifier: bundleId)
-        }()
+            UIColor(named: "textPrimary", in: moduleBundle(), compatibleWith: nil)
+        }() ?? UIColor.black
+        
         static let inputBackground: UIColor = {
-            UIColor.color(named:  "inputBackground", inBundleWithIdentifier: bundleId)
-        }()
+            UIColor(named: "inputBackground", in: moduleBundle(), compatibleWith: nil)
+        }() ?? UIColor.black
+        
         static let buttonDisabled: UIColor = {
-            UIColor.color(named:  "buttonDisabled", inBundleWithIdentifier: bundleId)
-        }()
+            UIColor(named: "buttonDisabled", in: moduleBundle(), compatibleWith: nil)
+        }() ?? UIColor.black
+        
         static let checkboxBackground: UIColor = {
-            UIColor.color(named:  "checkboxBackground", inBundleWithIdentifier: bundleId)
-        }()
+            UIColor(named: "checkboxBackground", in: moduleBundle(), compatibleWith: nil)
+        }() ?? UIColor.black
+        
         static let checkboxBorder: UIColor = {
-            UIColor.color(named:  "checkboxBorder", inBundleWithIdentifier: bundleId)
-        }()
+            UIColor(named: "checkboxBorder", in: moduleBundle(), compatibleWith: nil)
+        }() ?? UIColor.black
     }
 
     public struct Image {
-        static let plusIcon: UIImage? = UIImage.image(named: "plusIcon", inBundleWithIdentifier: bundleId)
-        static let creditCardFilled: UIImage? = UIImage.image(named: "creditCardFilled", inBundleWithIdentifier: bundleId)
-        static let creditCard: UIImage? = UIImage.image(named: "creditCard", inBundleWithIdentifier: bundleId)
-        static let creditCardError: UIImage? = UIImage.image(named: "creditCardError", inBundleWithIdentifier: bundleId)
-        static let xCircleFilled: UIImage? = UIImage.image(named: "xCircleFilled", inBundleWithIdentifier: bundleId)
-        static let checkCircleFilled: UIImage? = UIImage.image(named: "checkCircleFilled", inBundleWithIdentifier: bundleId)
-        static let check: UIImage? = UIImage.image(named: "check", inBundleWithIdentifier: bundleId)
-        static let eyeIconError: UIImage? = UIImage.image(named: "eyeIconError", inBundleWithIdentifier: bundleId)
-        static let eyeIcon: UIImage? = UIImage.image(named: "eyeIcon", inBundleWithIdentifier: bundleId)
-        static let eyeIconCrossed: UIImage? = UIImage.image(named: "eyeIconCrossed", inBundleWithIdentifier: bundleId)
-        static let eyeIconCrossedError: UIImage? = UIImage.image(named: "eyeIconCrossedError", inBundleWithIdentifier: bundleId)
+        static let plusIcon: UIImage? = UIImage(named: "plusIcon", in: moduleBundle(), with: nil)
+        static let creditCardFilled: UIImage? = UIImage(named: "creditCardFilled", in: moduleBundle(), with: nil)
+        static let creditCard: UIImage? = UIImage(named: "creditCard", in: moduleBundle(), with: nil)
+        static let creditCardError: UIImage? = UIImage(named: "creditCardError", in: moduleBundle(), with: nil)
+        static let xCircleFilled: UIImage? = UIImage(named: "xCircleFilled", in: moduleBundle(), with: nil)
+        static let checkCircleFilled: UIImage? = UIImage(named: "checkCircleFilled", in: moduleBundle(), with: nil)
+        static let check: UIImage? = UIImage(named: "check", in: moduleBundle(), with: nil)
+        static let eyeIconError: UIImage? = UIImage(named: "eyeIconError", in: moduleBundle(), with: nil)
+        static let eyeIcon: UIImage? = UIImage(named: "eyeIcon", in: moduleBundle(), with: nil)
+        static let eyeIconCrossed: UIImage? = UIImage(named: "eyeIconCrossed", in: moduleBundle(), with: nil)
+        static let eyeIconCrossedError: UIImage? = UIImage(named: "eyeIconCrossedError", in: moduleBundle(), with: nil)
     }
     
     public struct Font {
@@ -83,29 +109,5 @@ public struct Theme {
         static let body2Regular: UIFont = UIFont(name: "Inter-Regular", size: 16.0) ?? UIFont.systemFont(ofSize: 16.0, weight: .regular)
         static let body3Regular: UIFont = UIFont(name: "Inter-Regular", size: 14.0) ?? UIFont.systemFont(ofSize: 14.0, weight: .regular)
         static let supportiveText: UIFont = UIFont(name: "Inter-Regular", size: 11.0) ?? UIFont.systemFont(ofSize: 11.0, weight: .regular)
-    }
-}
-
-extension UIColor {
-    static func color(named name: String, inBundleWithIdentifier identifier: String) -> UIColor {
-        if let bundleURL = Bundle(identifier: identifier),
-           let color = UIColor(named: name, in: bundleURL, compatibleWith: nil) {
-            return color
-        } else {
-            print("Color \(name) not found in bundle with identifier \(identifier)")
-            return .clear // Default fallback color
-        }
-    }
-}
-
-extension UIImage {
-    static func image(named name: String, inBundleWithIdentifier identifier: String) -> UIImage? {
-        if let bundle = Bundle(identifier: identifier),
-           let image = UIImage(named: name, in: bundle, compatibleWith: nil) {
-            return image
-        } else {
-            print("Image \(name) not found in bundle with identifier \(identifier)")
-            return nil // Default fallback image
-        }
     }
 }

@@ -348,22 +348,13 @@
 		830B193C661AED386674F31085BA3F7B /* SentryTraceHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = AA873ABB2EF228A4A5BDC4C479477EA7 /* SentryTraceHeader.m */; };
 		83880C2B8969394BBF8B184781CC8BC5 /* EasyPay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094645BC0A874ED6BAFC443865B2497 /* EasyPay.swift */; };
 		84094B762C1EC7D500CAD463 /* DoublePaymentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84094B742C1EC7D500CAD463 /* DoublePaymentTableViewCell.swift */; };
-		84094B782C1EC7D500CAD463 /* DoublePaymentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84094B752C1EC7D500CAD463 /* DoublePaymentTableViewCell.xib */; };
 		840E67412C1052A700581EAF /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E67402C1052A700581EAF /* UIView+Extensions.swift */; };
 		840E67632C1060C300581EAF /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E67402C1052A700581EAF /* UIView+Extensions.swift */; };
-		840E67712C10701100581EAF /* CardSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840E67682C10701100581EAF /* CardSelectionViewController.xib */; };
 		840E67732C10701100581EAF /* ManageCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E67692C10701100581EAF /* ManageCardCollectionViewCell.swift */; };
 		840E67752C10701100581EAF /* CardSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E676A2C10701100581EAF /* CardSelectionViewModel.swift */; };
 		840E67772C10701100581EAF /* CardSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E676B2C10701100581EAF /* CardSelectionViewController.swift */; };
 		840E677B2C10701100581EAF /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E676E2C10701100581EAF /* PresentationController.swift */; };
-		840E67872C107F0600581EAF /* EasyPayAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 840E67862C107F0600581EAF /* EasyPayAssets.xcassets */; };
-		840E67882C107F0600581EAF /* EasyPayAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 840E67862C107F0600581EAF /* EasyPayAssets.xcassets */; };
-		840E678B2C108F4600581EAF /* ManageCardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 840E678A2C108F4600581EAF /* ManageCardCollectionViewCell.xib */; };
 		840E678E2C10A6C200581EAF /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E678D2C10A6C200581EAF /* Theme.swift */; };
-		840E67932C10AB3C00581EAF /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 840E67912C10AB3C00581EAF /* Inter-Regular.ttf */; };
-		840E67942C10AB3C00581EAF /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 840E67912C10AB3C00581EAF /* Inter-Regular.ttf */; };
-		840E67952C10AB3C00581EAF /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 840E67922C10AB3C00581EAF /* Inter-SemiBold.ttf */; };
-		840E67962C10AB3C00581EAF /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 840E67922C10AB3C00581EAF /* Inter-SemiBold.ttf */; };
 		840E67982C119C7800581EAF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E67972C119C7800581EAF /* BaseViewController.swift */; };
 		840E679B2C11DA7500581EAF /* ThemeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E679A2C11DA7500581EAF /* ThemeError.swift */; };
 		840E679C2C11DA7500581EAF /* ThemeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E679A2C11DA7500581EAF /* ThemeError.swift */; };
@@ -379,21 +370,27 @@
 		84175FD72C19865C00652B92 /* SinglePaymentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84175FD52C19865C00652B92 /* SinglePaymentTableViewCell.swift */; };
 		84175FDC2C198B3A00652B92 /* UIValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84175FDB2C198B3A00652B92 /* UIValidation.swift */; };
 		84175FDF2C198B9600652B92 /* AddAnnualConsentWidgetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84175FDE2C198B9600652B92 /* AddAnnualConsentWidgetModel.swift */; };
-		84175FE82C198E7000652B92 /* AddCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84175FA42C1982B800652B92 /* AddCardViewController.xib */; };
-		84175FE92C198E7900652B92 /* AddCardHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84175FB92C1984ED00652B92 /* AddCardHeaderTableViewCell.xib */; };
-		84175FEA2C198E7900652B92 /* AddCardSectionHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84175FB52C1984EC00652B92 /* AddCardSectionHeaderTableViewCell.xib */; };
-		84175FED2C198E7900652B92 /* PayActionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84175FB32C1984EC00652B92 /* PayActionsTableViewCell.xib */; };
-		84175FEF2C198E7900652B92 /* SinglePaymentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84175FD62C19865C00652B92 /* SinglePaymentTableViewCell.xib */; };
 		841BA4785916331C941E78D1722DDB40 /* SentryCoreDataSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AB9AC1003247F8ABE2636638FC487A /* SentryCoreDataSwizzling.m */; };
 		843240B42C1EFD260047675E /* DoubleHintErrorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843240B22C1EFD260047675E /* DoubleHintErrorTableViewCell.swift */; };
-		843240B62C1EFD260047675E /* DoubleHintErrorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843240B32C1EFD260047675E /* DoubleHintErrorTableViewCell.xib */; };
 		843240B92C1F11D50047675E /* UIDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843240B82C1F11D50047675E /* UIDevice+Extensions.swift */; };
 		843240BA2C1F11D50047675E /* UIDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843240B82C1F11D50047675E /* UIDevice+Extensions.swift */; };
 		8433D9452C1DE35400DEF166 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433D9442C1DE35400DEF166 /* String+Extensions.swift */; };
 		8433D9462C1DE35400DEF166 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433D9442C1DE35400DEF166 /* String+Extensions.swift */; };
 		847AE3362C1C32A400B44C1E /* SingleHintErrorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847AE3342C1C32A400B44C1E /* SingleHintErrorTableViewCell.swift */; };
-		847AE3382C1C32A400B44C1E /* SingleHintErrorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847AE3352C1C32A400B44C1E /* SingleHintErrorTableViewCell.xib */; };
 		8496DBD72CEC95990AF8B9E6CD06901C /* SentryHttpDateParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F77C630D09E6D8392D2F89324A26CF4 /* SentryHttpDateParser.m */; };
+		84CDC7AA2C2C9B35005C5E68 /* EasyPayAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84CDC7982C2C9B35005C5E68 /* EasyPayAssets.xcassets */; };
+		84CDC7AB2C2C9B35005C5E68 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84CDC7992C2C9B35005C5E68 /* Inter-Regular.ttf */; };
+		84CDC7AC2C2C9B35005C5E68 /* SingleHintErrorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CDC79C2C2C9B35005C5E68 /* SingleHintErrorTableViewCell.xib */; };
+		84CDC7AD2C2C9B35005C5E68 /* PayActionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CDC79D2C2C9B35005C5E68 /* PayActionsTableViewCell.xib */; };
+		84CDC7AE2C2C9B35005C5E68 /* SinglePaymentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CDC79E2C2C9B35005C5E68 /* SinglePaymentTableViewCell.xib */; };
+		84CDC7AF2C2C9B35005C5E68 /* AddCardSectionHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CDC79F2C2C9B35005C5E68 /* AddCardSectionHeaderTableViewCell.xib */; };
+		84CDC7B02C2C9B35005C5E68 /* DoublePaymentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CDC7A02C2C9B35005C5E68 /* DoublePaymentTableViewCell.xib */; };
+		84CDC7B12C2C9B35005C5E68 /* AddCardHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CDC7A12C2C9B35005C5E68 /* AddCardHeaderTableViewCell.xib */; };
+		84CDC7B22C2C9B35005C5E68 /* DoubleHintErrorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CDC7A22C2C9B35005C5E68 /* DoubleHintErrorTableViewCell.xib */; };
+		84CDC7B32C2C9B35005C5E68 /* AddCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CDC7A32C2C9B35005C5E68 /* AddCardViewController.xib */; };
+		84CDC7B52C2C9B35005C5E68 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84CDC7A62C2C9B35005C5E68 /* Inter-SemiBold.ttf */; };
+		84CDC7B62C2C9B35005C5E68 /* CardSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CDC7A82C2C9B35005C5E68 /* CardSelectionViewController.xib */; };
+		84CDC7B72C2C9B35005C5E68 /* ManageCardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CDC7A92C2C9B35005C5E68 /* ManageCardCollectionViewCell.xib */; };
 		8532226F2ECFA3B896FC5FE3E63E4A37 /* SentryProfileTimeseries.h in Headers */ = {isa = PBXBuildFile; fileRef = E3FEA65EB709736C090E6721CC0DC666 /* SentryProfileTimeseries.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		857DCFCAE7DD2B3E27C342C214060715 /* CertificatePinning.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A6839E08829DBEA6109C7D210742CD /* CertificatePinning.swift */; };
 		85A8707DF64D382908553E774590C080 /* SentryBacktrace.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA18EA9D349A24700404D4C82B36A77C /* SentryBacktrace.cpp */; };
@@ -1117,43 +1114,43 @@
 		835BF264E67926940CB102C30D6FCC5B /* SentryCoreDataTrackingIntegration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryCoreDataTrackingIntegration.h; path = Sources/Sentry/include/SentryCoreDataTrackingIntegration.h; sourceTree = "<group>"; };
 		83BE55A6F9A89FDF86787A32D13D592D /* SentryCrashStackEntryMapper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SentryCrashStackEntryMapper.m; path = Sources/Sentry/SentryCrashStackEntryMapper.m; sourceTree = "<group>"; };
 		84094B742C1EC7D500CAD463 /* DoublePaymentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoublePaymentTableViewCell.swift; sourceTree = "<group>"; };
-		84094B752C1EC7D500CAD463 /* DoublePaymentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoublePaymentTableViewCell.xib; sourceTree = "<group>"; };
 		840E67402C1052A700581EAF /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
-		840E67682C10701100581EAF /* CardSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardSelectionViewController.xib; sourceTree = "<group>"; };
 		840E67692C10701100581EAF /* ManageCardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageCardCollectionViewCell.swift; sourceTree = "<group>"; };
 		840E676A2C10701100581EAF /* CardSelectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardSelectionViewModel.swift; sourceTree = "<group>"; };
 		840E676B2C10701100581EAF /* CardSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardSelectionViewController.swift; sourceTree = "<group>"; };
 		840E676E2C10701100581EAF /* PresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
-		840E67862C107F0600581EAF /* EasyPayAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = EasyPayAssets.xcassets; sourceTree = "<group>"; };
-		840E678A2C108F4600581EAF /* ManageCardCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManageCardCollectionViewCell.xib; sourceTree = "<group>"; };
 		840E678D2C10A6C200581EAF /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
-		840E67912C10AB3C00581EAF /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
-		840E67922C10AB3C00581EAF /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
 		840E67972C119C7800581EAF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		840E679A2C11DA7500581EAF /* ThemeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeError.swift; sourceTree = "<group>"; };
 		840E679D2C11F6FF00581EAF /* FontsConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsConfig.swift; sourceTree = "<group>"; };
 		840E67A02C12E8EF00581EAF /* ArrayUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayUtils.swift; sourceTree = "<group>"; };
 		840E67A32C12EC6400581EAF /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
-		84175FA42C1982B800652B92 /* AddCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCardViewController.xib; sourceTree = "<group>"; };
 		84175FA72C1982C500652B92 /* AddCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardViewController.swift; sourceTree = "<group>"; };
 		84175FAA2C1984AD00652B92 /* AddCardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardViewModel.swift; sourceTree = "<group>"; };
 		84175FB12C1984EC00652B92 /* AddCardSectionHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardSectionHeaderTableViewCell.swift; sourceTree = "<group>"; };
-		84175FB32C1984EC00652B92 /* PayActionsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PayActionsTableViewCell.xib; sourceTree = "<group>"; };
-		84175FB52C1984EC00652B92 /* AddCardSectionHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCardSectionHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		84175FB72C1984ED00652B92 /* AddCardHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardHeaderTableViewCell.swift; sourceTree = "<group>"; };
-		84175FB92C1984ED00652B92 /* AddCardHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCardHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		84175FBB2C1984ED00652B92 /* PayActionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayActionsTableViewCell.swift; sourceTree = "<group>"; };
 		84175FD52C19865C00652B92 /* SinglePaymentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePaymentTableViewCell.swift; sourceTree = "<group>"; };
-		84175FD62C19865C00652B92 /* SinglePaymentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SinglePaymentTableViewCell.xib; sourceTree = "<group>"; };
 		84175FDB2C198B3A00652B92 /* UIValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIValidation.swift; sourceTree = "<group>"; };
 		84175FDE2C198B9600652B92 /* AddAnnualConsentWidgetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnualConsentWidgetModel.swift; sourceTree = "<group>"; };
 		843240B22C1EFD260047675E /* DoubleHintErrorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleHintErrorTableViewCell.swift; sourceTree = "<group>"; };
-		843240B32C1EFD260047675E /* DoubleHintErrorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoubleHintErrorTableViewCell.xib; sourceTree = "<group>"; };
 		843240B82C1F11D50047675E /* UIDevice+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extensions.swift"; sourceTree = "<group>"; };
 		8433D9442C1DE35400DEF166 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		846344691A8ACDA18F773FCFFB9AAA76 /* SentrySwizzle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SentrySwizzle.m; path = Sources/Sentry/SentrySwizzle.m; sourceTree = "<group>"; };
 		847AE3342C1C32A400B44C1E /* SingleHintErrorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleHintErrorTableViewCell.swift; sourceTree = "<group>"; };
-		847AE3352C1C32A400B44C1E /* SingleHintErrorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleHintErrorTableViewCell.xib; sourceTree = "<group>"; };
+		84CDC7982C2C9B35005C5E68 /* EasyPayAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = EasyPayAssets.xcassets; sourceTree = "<group>"; };
+		84CDC7992C2C9B35005C5E68 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
+		84CDC79C2C2C9B35005C5E68 /* SingleHintErrorTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SingleHintErrorTableViewCell.xib; sourceTree = "<group>"; };
+		84CDC79D2C2C9B35005C5E68 /* PayActionsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PayActionsTableViewCell.xib; sourceTree = "<group>"; };
+		84CDC79E2C2C9B35005C5E68 /* SinglePaymentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SinglePaymentTableViewCell.xib; sourceTree = "<group>"; };
+		84CDC79F2C2C9B35005C5E68 /* AddCardSectionHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCardSectionHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		84CDC7A02C2C9B35005C5E68 /* DoublePaymentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoublePaymentTableViewCell.xib; sourceTree = "<group>"; };
+		84CDC7A12C2C9B35005C5E68 /* AddCardHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCardHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		84CDC7A22C2C9B35005C5E68 /* DoubleHintErrorTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoubleHintErrorTableViewCell.xib; sourceTree = "<group>"; };
+		84CDC7A32C2C9B35005C5E68 /* AddCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCardViewController.xib; sourceTree = "<group>"; };
+		84CDC7A62C2C9B35005C5E68 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
+		84CDC7A82C2C9B35005C5E68 /* CardSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardSelectionViewController.xib; sourceTree = "<group>"; };
+		84CDC7A92C2C9B35005C5E68 /* ManageCardCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManageCardCollectionViewCell.xib; sourceTree = "<group>"; };
 		84D8E878095725384416F8C609F09F74 /* EncryptionUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EncryptionUtils.swift; sourceTree = "<group>"; };
 		84DFCE8C891B9CF9356DB4210501C078 /* SentryCPU.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryCPU.h; path = Sources/Sentry/include/SentryCPU.h; sourceTree = "<group>"; };
 		8526451D70FD2D7743B3D7643335BC6A /* SentryHttpDateParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryHttpDateParser.h; path = Sources/Sentry/include/SentryHttpDateParser.h; sourceTree = "<group>"; };
@@ -2179,10 +2176,8 @@
 		4B2E902DEECD7C1F9F43ACB690099915 /* EasyPay */ = {
 			isa = PBXGroup;
 			children = (
-				840E67852C107EF300581EAF /* Resources */,
-				840E67642C10701100581EAF /* Widgets */,
+				84CDC7972C2C9B35005C5E68 /* Resources */,
 				E5A6839E08829DBEA6109C7D210742CD /* CertificatePinning.swift */,
-				D9E458E66A88A91C01255F2BD56183FF /* Version.swift */,
 				D9497EA1043E804320FE3720E5D6263E /* Design */,
 				C0E30405BDD50E3C989A6512249182DC /* Errors */,
 				7D06339185BD26093FCB6E017B35F1E1 /* Networking */,
@@ -2191,6 +2186,8 @@
 				2B7248E35A9ED4832BA9541882D8100A /* Support Files */,
 				1220E7CC5586883113209C6D0EB3D606 /* Utilities */,
 				E797228842A0E672E7C5D603C45DA061 /* Validators */,
+				D9E458E66A88A91C01255F2BD56183FF /* Version.swift */,
+				840E67642C10701100581EAF /* Widgets */,
 			);
 			name = EasyPay;
 			path = ../..;
@@ -2366,26 +2363,6 @@
 			path = Presentation;
 			sourceTree = "<group>";
 		};
-		840E67852C107EF300581EAF /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				84175FB02C1984D800652B92 /* ManagePayments */,
-				84175FAF2C1984CD00652B92 /* AddCard */,
-				840E67902C10AB3C00581EAF /* Fonts */,
-				840E67862C107F0600581EAF /* EasyPayAssets.xcassets */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		840E67902C10AB3C00581EAF /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				840E67912C10AB3C00581EAF /* Inter-Regular.ttf */,
-				840E67922C10AB3C00581EAF /* Inter-SemiBold.ttf */,
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
 		84175FA32C19829800652B92 /* AddCard */ = {
 			isa = PBXGroup;
 			children = (
@@ -2411,34 +2388,47 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		84175FAE2C1984C300652B92 /* AddCardCells */ = {
+		84CDC7972C2C9B35005C5E68 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				84175FB92C1984ED00652B92 /* AddCardHeaderTableViewCell.xib */,
-				84175FB52C1984EC00652B92 /* AddCardSectionHeaderTableViewCell.xib */,
-				843240B32C1EFD260047675E /* DoubleHintErrorTableViewCell.xib */,
-				84094B752C1EC7D500CAD463 /* DoublePaymentTableViewCell.xib */,
-				84175FB32C1984EC00652B92 /* PayActionsTableViewCell.xib */,
-				847AE3352C1C32A400B44C1E /* SingleHintErrorTableViewCell.xib */,
-				84175FD62C19865C00652B92 /* SinglePaymentTableViewCell.xib */,
+				84CDC7982C2C9B35005C5E68 /* EasyPayAssets.xcassets */,
+				84CDC7992C2C9B35005C5E68 /* Inter-Regular.ttf */,
+				84CDC79A2C2C9B35005C5E68 /* AddCard */,
+				84CDC7A62C2C9B35005C5E68 /* Inter-SemiBold.ttf */,
+				84CDC7A72C2C9B35005C5E68 /* ManagePayments */,
 			);
-			path = AddCardCells;
+			name = Resources;
+			path = Sources/EasyPay/Resources;
 			sourceTree = "<group>";
 		};
-		84175FAF2C1984CD00652B92 /* AddCard */ = {
+		84CDC79A2C2C9B35005C5E68 /* AddCard */ = {
 			isa = PBXGroup;
 			children = (
-				84175FA42C1982B800652B92 /* AddCardViewController.xib */,
-				84175FAE2C1984C300652B92 /* AddCardCells */,
+				84CDC79B2C2C9B35005C5E68 /* AddCardCells */,
+				84CDC7A32C2C9B35005C5E68 /* AddCardViewController.xib */,
 			);
 			path = AddCard;
 			sourceTree = "<group>";
 		};
-		84175FB02C1984D800652B92 /* ManagePayments */ = {
+		84CDC79B2C2C9B35005C5E68 /* AddCardCells */ = {
 			isa = PBXGroup;
 			children = (
-				840E67682C10701100581EAF /* CardSelectionViewController.xib */,
-				840E678A2C108F4600581EAF /* ManageCardCollectionViewCell.xib */,
+				84CDC79C2C2C9B35005C5E68 /* SingleHintErrorTableViewCell.xib */,
+				84CDC79D2C2C9B35005C5E68 /* PayActionsTableViewCell.xib */,
+				84CDC79E2C2C9B35005C5E68 /* SinglePaymentTableViewCell.xib */,
+				84CDC79F2C2C9B35005C5E68 /* AddCardSectionHeaderTableViewCell.xib */,
+				84CDC7A02C2C9B35005C5E68 /* DoublePaymentTableViewCell.xib */,
+				84CDC7A12C2C9B35005C5E68 /* AddCardHeaderTableViewCell.xib */,
+				84CDC7A22C2C9B35005C5E68 /* DoubleHintErrorTableViewCell.xib */,
+			);
+			path = AddCardCells;
+			sourceTree = "<group>";
+		};
+		84CDC7A72C2C9B35005C5E68 /* ManagePayments */ = {
+			isa = PBXGroup;
+			children = (
+				84CDC7A82C2C9B35005C5E68 /* CardSelectionViewController.xib */,
+				84CDC7A92C2C9B35005C5E68 /* ManageCardCollectionViewCell.xib */,
 			);
 			path = ManagePayments;
 			sourceTree = "<group>";
@@ -3072,19 +3062,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				843240B62C1EFD260047675E /* DoubleHintErrorTableViewCell.xib in Resources */,
-				84175FE92C198E7900652B92 /* AddCardHeaderTableViewCell.xib in Resources */,
-				84175FEA2C198E7900652B92 /* AddCardSectionHeaderTableViewCell.xib in Resources */,
-				84175FED2C198E7900652B92 /* PayActionsTableViewCell.xib in Resources */,
-				84175FEF2C198E7900652B92 /* SinglePaymentTableViewCell.xib in Resources */,
-				84175FE82C198E7000652B92 /* AddCardViewController.xib in Resources */,
-				84094B782C1EC7D500CAD463 /* DoublePaymentTableViewCell.xib in Resources */,
-				840E67712C10701100581EAF /* CardSelectionViewController.xib in Resources */,
-				840E67872C107F0600581EAF /* EasyPayAssets.xcassets in Resources */,
-				840E67932C10AB3C00581EAF /* Inter-Regular.ttf in Resources */,
-				840E67952C10AB3C00581EAF /* Inter-SemiBold.ttf in Resources */,
-				847AE3382C1C32A400B44C1E /* SingleHintErrorTableViewCell.xib in Resources */,
-				840E678B2C108F4600581EAF /* ManageCardCollectionViewCell.xib in Resources */,
+				84CDC7B62C2C9B35005C5E68 /* CardSelectionViewController.xib in Resources */,
+				84CDC7B52C2C9B35005C5E68 /* Inter-SemiBold.ttf in Resources */,
+				84CDC7B72C2C9B35005C5E68 /* ManageCardCollectionViewCell.xib in Resources */,
+				84CDC7AB2C2C9B35005C5E68 /* Inter-Regular.ttf in Resources */,
+				84CDC7B02C2C9B35005C5E68 /* DoublePaymentTableViewCell.xib in Resources */,
+				84CDC7B32C2C9B35005C5E68 /* AddCardViewController.xib in Resources */,
+				84CDC7AC2C2C9B35005C5E68 /* SingleHintErrorTableViewCell.xib in Resources */,
+				84CDC7AF2C2C9B35005C5E68 /* AddCardSectionHeaderTableViewCell.xib in Resources */,
+				84CDC7AE2C2C9B35005C5E68 /* SinglePaymentTableViewCell.xib in Resources */,
+				84CDC7AD2C2C9B35005C5E68 /* PayActionsTableViewCell.xib in Resources */,
+				84CDC7B12C2C9B35005C5E68 /* AddCardHeaderTableViewCell.xib in Resources */,
+				84CDC7AA2C2C9B35005C5E68 /* EasyPayAssets.xcassets in Resources */,
+				84CDC7B22C2C9B35005C5E68 /* DoubleHintErrorTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3092,9 +3082,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				840E67882C107F0600581EAF /* EasyPayAssets.xcassets in Resources */,
-				840E67942C10AB3C00581EAF /* Inter-Regular.ttf in Resources */,
-				840E67962C10AB3C00581EAF /* Inter-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

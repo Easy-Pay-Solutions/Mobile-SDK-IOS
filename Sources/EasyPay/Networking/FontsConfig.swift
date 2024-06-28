@@ -6,7 +6,7 @@ import Sentry
 public final class FontsConfig {
     static public func loadFonts() {
         let fontNames = ["Inter-Regular", "Inter-SemiBold"]
-        if let bundle = Bundle(identifier: Theme.bundleId) {
+        if let bundle = Theme.moduleBundle() {
             for fontName in fontNames {
                 registerFont(bundle: bundle, fontName: fontName, fontExtension: "ttf")
             }

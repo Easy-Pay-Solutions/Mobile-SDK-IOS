@@ -31,12 +31,13 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '13.0'
   s.swift_version = '5.9'
 
-  s.source_files = 'Sources/**/*'
+  s.source_files = 'Sources/**/*.swift'
   
+  s.resources = 'Sources/**/*.xib', 'Sources/EasyPay/Resources/*.ttf', 'Sources/EasyPay/Resources/EasyPayAssets.xcassets'
+
   s.resource_bundles = {
     'EasyPay' => [
         'Resources/EasyPayAssets.xcassets',
-        'Resources/*.xib',
         'Resources/Fonts/*.ttf',
         ]
   }

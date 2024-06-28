@@ -53,7 +53,8 @@ public class CardSelectionViewController: BaseViewController {
         }
 
         self.viewModel = viewModel
-        super.init(nibName: vcName, bundle: Bundle(identifier: Theme.bundleId))
+        super.init(nibName: vcName, bundle: Theme.moduleBundle())
+
         self.modalPresentationStyle = .custom
         self.transitioningDelegate = self
     }
@@ -61,7 +62,7 @@ public class CardSelectionViewController: BaseViewController {
     public init(selectionDelegate: AnyObject, preselectedCardId: Int?, paymentDetails: AddAnnualConsentWidgetModel) {
         self.viewModel = CardSelectionViewModel(state: .selection, amount: "", preselectedCardId: preselectedCardId, paymentDetails: paymentDetails)
         self.selectionDelegate = selectionDelegate as? any CardSelectiontDelegate
-        super.init(nibName: vcName, bundle: Bundle(identifier: Theme.bundleId))
+        super.init(nibName: vcName, bundle: Theme.moduleBundle())
         self.modalPresentationStyle = .custom
         self.transitioningDelegate = self
     }
@@ -285,8 +286,7 @@ public class CardSelectionViewController: BaseViewController {
 extension CardSelectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     private func configureCollectionView() {
-        let bundleId = Bundle(identifier: Theme.bundleId)
-        let nib = UINib(nibName: ManageCardCollectionViewCell.reuseId, bundle: bundleId)
+        let nib = UINib(nibName: ManageCardCollectionViewCell.reuseId, bundle: Theme.moduleBundle())
         collectionView.register(nib, forCellWithReuseIdentifier: ManageCardCollectionViewCell.reuseId)
     }
     
