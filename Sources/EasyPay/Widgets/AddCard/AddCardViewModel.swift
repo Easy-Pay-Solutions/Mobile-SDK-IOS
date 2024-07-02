@@ -20,8 +20,8 @@ public class AddCardViewModel {
     var zip: String?
     var shouldSaveCard = false
     
-    var saveCardErrorShown = false
-    var payCardErrorShown = false
+    private(set) var mainErrorMessage: String?
+    var mainErrorShown: Bool { mainErrorMessage != nil }
 
     let cardHolderMaxChar = 75
     lazy var cardHolderMaxCharMessage = replaceMaxChar(withLimit: cardHolderMaxChar)
@@ -29,9 +29,11 @@ public class AddCardViewModel {
     var cardholerErrorShown = false
     
     let cardNumberMaxChar = 19
+    private let cardNumberMinChar = 16
+
     var cardNumberErrorShown = false
-    let cardRangeLength = 15...16
-    
+    let cardRangeLength = 13...16
+
     var monthYearErrorShown = false
     var cvcErrorShown = false
     
@@ -81,7 +83,7 @@ public class AddCardViewModel {
     }
     
     func isCardNumberCorrect() -> Bool {
-        18...19 ~= cardNumber?.trimmingCharacters(in: .whitespaces).count ?? 0
+        cardNumberMinChar...cardNumberMaxChar ~= cardNumber?.trimmingCharacters(in: .whitespaces).count ?? 0
     }
     
     func applyMaskOnCard(cardNumber: String?) -> String {
@@ -360,5 +362,15 @@ public class AddCardViewModel {
                 }
             }
         }
+    }
+
+    // MARK: - Error handling
+
+    func handleError(with errorCode: Int? = nil, defaultErrorMessage: String) {
+        mainErrorMessage = ErrorMapper.mapError(code: errorCode) ?? defaultErrorMessage
+    }
+
+    func clearMainError() {
+        mainErrorMessage = nil
     }
 }

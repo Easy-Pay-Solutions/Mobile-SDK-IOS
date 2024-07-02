@@ -38,4 +38,8 @@ public struct Localization {
     static let invalidFormat = "Invalid format."
     static let cardExpired = "Card expired."
     static let invalidCvc = "Invalid CVC number."
+
+    // Custom API errors
+
+    static let cannotValidateCardInfo = "The credit card data you entered is invalid. Please try again."
 }
