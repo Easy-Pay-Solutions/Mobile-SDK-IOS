@@ -68,15 +68,17 @@ extension XCUIApplication {
 
     // MARK: - Example App operations
 
-    func openPaymentFlow(with amount: String) {
+    func openPaymentFlow(with amount: String, customerRefId: String = "iOS_E2E_TESTS_CUSTOMER_REF_ID") {
         openFlow(with: "paymentFlowButton")
         typeText(into: "amountToChargeTextField", text: amount)
-        clickOnPayButton()
+        typeText(into: "customerRefIdTextField", text: customerRefId)
+        clickOnWidgetParametersActionButton()
     }
 
-    func openManagementFlow() {
+    func openManagementFlow(with customerRefId: String = "iOS_E2E_TESTS_CUSTOMER_REF_ID") {
         openFlow(with: "selectionFlowButton")
-        sleep(1)    // wait for cards to be loaded
+        typeText(into: "customerRefIdTextField", text: customerRefId)
+        clickOnWidgetParametersActionButton()
     }
 
     func typeText(into textFieldAccessibilityId: String, text: String) {
@@ -85,9 +87,9 @@ extension XCUIApplication {
         textField.typeText(text)
     }
 
-    func clickOnPayButton() {
-        let payButton = buttons["payButton"]
-        payButton.tap()
+    func clickOnWidgetParametersActionButton() {
+        let actionsButton = buttons["widgetParametersActionButton"]
+        actionsButton.tap()
         sleep(2)    // wait for cards to be loaded
     }
 

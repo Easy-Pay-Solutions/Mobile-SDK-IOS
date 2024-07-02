@@ -25,7 +25,7 @@ public class CardSelectionViewModel {
     
     func downloadAnnualConsents(completion: @escaping (Result<ListingConsentAnnualResponse, Error>) -> Void) {
         let queryHelper = AnnualQueryHelper(merchantId: merchantId,
-                                            customerReferenceId: nil,
+                                            customerReferenceId: paymentDetails.customerReferenceId,
                                             endDate: nil)
         let request = ConsentAnnualListingRequest(consentAnnualListingRequest: ConsentAnnualListingRequestModel(query: queryHelper))
         EasyPay.shared.apiClient.listAnnualConsents(request: request) { result in
@@ -94,17 +94,32 @@ public class CardSelectionViewModel {
             }
         }
     }
-    
-    private func convertDecimalFormatting(_ string: String?) -> String {
-        guard let string = string else { return "0.0" }
-        return string.replacingOccurrences(of: ",", with: ".")
+
+    func validate() -> Bool {
+        switch state {
+        case .selection:
+            return isValidCustomerRefId()
+        case .payment:
+            return isValidCurrency() && isValidCustomerRefId()
+        }
     }
-    
-    func isValidCurrency(_ currency: String) -> Bool {
-        if let value = Double(currency) {
+
+    // MARK: - Helpers
+
+    private func isValidCurrency() -> Bool {
+        if let value = Double(amount) {
             return value > 0
         } else {
             return false
         }
+    }
+
+    private func isValidCustomerRefId() -> Bool {
+        return !paymentDetails.customerReferenceId.isEmpty
+    }
+
+    private func convertDecimalFormatting(_ string: String?) -> String {
+        guard let string = string else { return "0.0" }
+        return string.replacingOccurrences(of: ",", with: ".")
     }
 }

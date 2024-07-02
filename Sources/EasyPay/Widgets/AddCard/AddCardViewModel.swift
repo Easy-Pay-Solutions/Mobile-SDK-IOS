@@ -275,7 +275,7 @@ public class AddCardViewModel {
                 cvv: StringUtils.trimmingEmptyOrWhitespace(cvc) ?? ""),
             consentAnnualCreate: CreateConsentAnnual(
                 merchID: Int(model.merchantId),
-                customerRefID: StringUtils.trimmingEmptyOrWhitespace(model.customerReferenceId),
+                customerRefID: StringUtils.trimmingEmptyOrWhitespace(model.customerReferenceId) ?? "",
                 serviceDescrip: StringUtils.trimmingEmptyOrWhitespace(model.serviceDescription),
                 rpguid: StringUtils.trimmingEmptyOrWhitespace(model.rpguid),
                 startDate: convertDate(model.startDate ?? Date()),

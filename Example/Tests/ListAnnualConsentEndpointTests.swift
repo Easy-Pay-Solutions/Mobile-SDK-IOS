@@ -14,31 +14,18 @@ class ListAnnualConsentEndpointTests: XCTestCase {
     let dateFormatter = DateFormatter()
     
     lazy var queryHelper = AnnualQueryHelper(merchantId: "1",
-                                             customerReferenceId: nil,
+                                             customerReferenceId: "12456",
                                              endDate: nil)
     lazy var queryHelperWithEndDate = AnnualQueryHelper(merchantId: "1",
-                                                        customerReferenceId: nil,
+                                                        customerReferenceId: "12456",
                                                         endDate: createDateInFuture())
-    lazy var queryHelperWithEndDateAndCustomerReferenceId = AnnualQueryHelper(merchantId: "1",
-                                                                              customerReferenceId: "12456",
-                                                                              endDate: createDateInFuture())
-    lazy var queryHelperWithCustomerReferenceId = AnnualQueryHelper(merchantId: "1",
-                                                                              customerReferenceId: "12456",
-                                                                              endDate: nil)
     lazy var faultyQueryHelper = AnnualQueryHelper(merchantId: "JKHDKJDHJKD",
-                                                   customerReferenceId: nil,
+                                                   customerReferenceId: "",
                                                    endDate: nil)
-    lazy var request = ConsentAnnualListingRequest(consentAnnualListingRequest:
-                                                    ConsentAnnualListingRequestModel(query: queryHelper))
-    lazy var requestWithEndDate = ConsentAnnualListingRequest(consentAnnualListingRequest:
-                                                                ConsentAnnualListingRequestModel(query: queryHelperWithEndDate))
-    lazy var requestWithEndDateAndCustomerReferenceId = ConsentAnnualListingRequest(consentAnnualListingRequest:
-                                                                                        ConsentAnnualListingRequestModel(query: queryHelperWithEndDateAndCustomerReferenceId))
-    lazy var requestWithCustomerReferenceId = ConsentAnnualListingRequest(consentAnnualListingRequest:
-                                                                            ConsentAnnualListingRequestModel(query: queryHelperWithCustomerReferenceId))
-    
-    lazy var faultyRequest = ConsentAnnualListingRequest(consentAnnualListingRequest:
-                                                            ConsentAnnualListingRequestModel(query: faultyQueryHelper))
+    lazy var request = ConsentAnnualListingRequest(consentAnnualListingRequest: ConsentAnnualListingRequestModel(query: queryHelper))
+    lazy var requestWithEndDate = ConsentAnnualListingRequest(consentAnnualListingRequest: ConsentAnnualListingRequestModel(query: queryHelperWithEndDate))
+
+    lazy var faultyRequest = ConsentAnnualListingRequest(consentAnnualListingRequest: ConsentAnnualListingRequestModel(query: faultyQueryHelper))
     
     let successExpectation = XCTestExpectation(description: "Request was successful")
     let failExpectation = XCTestExpectation(description: "Request was not successful")
@@ -59,32 +46,6 @@ class ListAnnualConsentEndpointTests: XCTestCase {
     func testSuccessWithEndDateListAnnualConsent() {
         //apiKey and hmacToken are required for this test
         EasyPay.shared.apiClient.listAnnualConsents(request: requestWithEndDate) { result in
-            switch result {
-            case .success(_):
-                self.successExpectation.fulfill()
-            case .failure(_):
-                break
-            }
-        }
-        wait(for: [successExpectation], timeout: 15.0)
-    }
-    
-    func testSuccessWithCustomerReferenceIdListAnnualConsent() {
-        //apiKey and hmacToken are required for this test
-        EasyPay.shared.apiClient.listAnnualConsents(request: requestWithCustomerReferenceId) { result in
-            switch result {
-            case .success(_):
-                self.successExpectation.fulfill()
-            case .failure(_):
-                break
-            }
-        }
-        wait(for: [successExpectation], timeout: 15.0)
-    }
-    
-    func testSuccessWithEndDateAndCustomerReferenceIdListAnnualConsent() {
-        //apiKey and hmacToken are required for this test
-        EasyPay.shared.apiClient.listAnnualConsents(request: requestWithEndDateAndCustomerReferenceId) { result in
             switch result {
             case .success(_):
                 self.successExpectation.fulfill()
