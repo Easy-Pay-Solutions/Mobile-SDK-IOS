@@ -97,7 +97,7 @@ public struct Theme {
         static let creditCardError: UIImage? = UIImage(named: "creditCardError", in: moduleBundle(), with: nil)
         static let xCircleFilled: UIImage? = UIImage(named: "xCircleFilled", in: moduleBundle(), with: nil)
         static let checkCircleFilled: UIImage? = UIImage(named: "checkCircleFilled", in: moduleBundle(), with: nil)
-        static let check: UIImage? = UIImage(named: "check", in: moduleBundle(), with: nil)
+        static let check: UIImage? = UIImage(named: "Check", in: moduleBundle(), with: nil)
         static let eyeIconError: UIImage? = UIImage(named: "eyeIconError", in: moduleBundle(), with: nil)
         static let eyeIcon: UIImage? = UIImage(named: "eyeIcon", in: moduleBundle(), with: nil)
         static let eyeIconCrossed: UIImage? = UIImage(named: "eyeIconCrossed", in: moduleBundle(), with: nil)

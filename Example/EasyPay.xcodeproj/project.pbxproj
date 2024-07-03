@@ -913,7 +913,7 @@
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = "com.cocoapods.demo.EasyPay-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Bitrise iOS ad-hoc - (com.cocoapods.demo.EasyPay-Example)";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "EasyPay-AppCenter";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -949,7 +949,7 @@
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = "com.cocoapods.demo.EasyPay-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Bitrise iOS ad-hoc - (com.cocoapods.demo.EasyPay-Example)";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "EasyPay-AppCenter";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
