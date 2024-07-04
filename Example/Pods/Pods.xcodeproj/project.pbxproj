@@ -180,6 +180,7 @@
 		3F1D561D7916F3780208E4D9E290BF92 /* SentryNetworkTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 31ACF29B4D81361EE5B195007B69464E /* SentryNetworkTracker.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		3F7C397F2C255FA300EDE67C /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7C397E2C255FA300EDE67C /* UITextField+Extensions.swift */; };
 		3F7C39802C255FA300EDE67C /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7C397E2C255FA300EDE67C /* UITextField+Extensions.swift */; };
+		3FDB546B2C3411A700D3EFAB /* ErrorMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDB546A2C3411A700D3EFAB /* ErrorMapper.swift */; };
 		40133F45765505EA5129C2D70270DEAD /* SentryNSDataUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A64FA614AE9DC1151F3A3032C533C6F8 /* SentryNSDataUtils.m */; };
 		40E5C10AFE72A8344575E26651478504 /* SentrySession+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 90EDCB93AD44C3A67A552C07C223E275 /* SentrySession+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		41D744714E54CA4485FA392AD1C65715 /* SentryWatchdogTerminationTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C287BFD457FC98D3BAA789101F4D79 /* SentryWatchdogTerminationTracker.m */; };
@@ -925,6 +926,7 @@
 		3F7C397E2C255FA300EDE67C /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		3F8FBA05E602829930ABFDC5568542B5 /* SentryEnvelope.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryEnvelope.h; path = Sources/Sentry/include/HybridPublic/SentryEnvelope.h; sourceTree = "<group>"; };
 		3FD039687D3D92DE7AC2F93FBEE2DB99 /* ProcessPaymentAnnualRequestModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ProcessPaymentAnnualRequestModel.swift; sourceTree = "<group>"; };
+		3FDB546A2C3411A700D3EFAB /* ErrorMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMapper.swift; sourceTree = "<group>"; };
 		400B084EDF5ADEE747209CE9A82B0B3A /* SentrySerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentrySerialization.h; path = Sources/Sentry/include/SentrySerialization.h; sourceTree = "<group>"; };
 		40614AEA92BF58FC1F396D87B2CF2CE1 /* SentrySession.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SentrySession.m; path = Sources/Sentry/SentrySession.m; sourceTree = "<group>"; };
 		4067D71DE8988F09845E3174BC126846 /* NSLocale+Sentry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLocale+Sentry.h"; path = "Sources/Sentry/include/NSLocale+Sentry.h"; sourceTree = "<group>"; };
@@ -2331,6 +2333,7 @@
 				840E67A32C12EC6400581EAF /* Localization.swift */,
 				840E67972C119C7800581EAF /* BaseViewController.swift */,
 				84175FDB2C198B3A00652B92 /* UIValidation.swift */,
+				3FDB546A2C3411A700D3EFAB /* ErrorMapper.swift */,
 			);
 			name = Widgets;
 			path = Sources/EasyPay/Widgets;
@@ -3448,6 +3451,7 @@
 				DA3A3FE7F637B247C2FA2DAB875CF164 /* EncryptionUtils.swift in Sources */,
 				840E677B2C10701100581EAF /* PresentationController.swift in Sources */,
 				8825E7972E8A1752911030CBAA7FD73E /* Key.swift in Sources */,
+				3FDB546B2C3411A700D3EFAB /* ErrorMapper.swift in Sources */,
 				0E476F466FF403723C742ABF1473D57A /* ListingConsentAnnualResponse.swift in Sources */,
 				84175FDF2C198B9600652B92 /* AddAnnualConsentWidgetModel.swift in Sources */,
 				E0A5BCF5FF555C5D6E6DE443D1624679 /* Message.swift in Sources */,

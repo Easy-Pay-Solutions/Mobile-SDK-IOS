@@ -16,6 +16,9 @@ final class SelectionWidgetUITests: XCTestCase {
 
     // MARK: - Tests
 
+    // NOTE: for UI tests to work the keyboard of simulator must be on.
+    // Keyboard shortcut COMMAND + SHIFT + K while simulator has focus
+
     func testSuccessDeleteCard() throws {
         app.openManagementFlow()
         app.selectFirstSavedCard()

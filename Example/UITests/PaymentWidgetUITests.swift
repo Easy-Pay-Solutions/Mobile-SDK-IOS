@@ -16,6 +16,9 @@ final class ManagePaymentsUITests: XCTestCase {
 
     // MARK: - Tests
 
+    // NOTE: for UI tests to work the keyboard of simulator must be on.
+    // Keyboard shortcut COMMAND + SHIFT + K while simulator has focus
+
     func testSuccessDeleteCard() throws {
         app.openPaymentFlow(with: "100")
         app.selectFirstSavedCard()
@@ -57,7 +60,7 @@ final class ManagePaymentsUITests: XCTestCase {
         // Disappears once Success is returned
         waitToDisappear(actionButton)
 
-        app.clickOnPayButton()
+        app.clickOnWidgetParametersActionButton()
         app.selectFirstSavedCard()
 
         let nameLabel = app.staticTexts[cardHolderName]

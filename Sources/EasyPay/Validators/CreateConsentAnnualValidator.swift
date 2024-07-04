@@ -154,8 +154,8 @@ public class CreateConsentAnnualValidator: Validator {
         return ValidatorUtils.checkMaxLimit(consentAnnual.consentAnnualCreate.serviceDescrip ?? "", maxLimit: serviceDescriptionMaxLength)
     }
     
-    var purchaseItemsClientRefIdLength: Bool {
-        return ValidatorUtils.checkMaxLimit(consentAnnual.consentAnnualCreate.customerRefID ?? "", maxLimit: clientRefIdMaxLength)
+    var purchaseItemsCustomerRefIdLength: Bool {
+        return ValidatorUtils.checkMaxLimit(consentAnnual.consentAnnualCreate.customerRefID, maxLimit: clientRefIdMaxLength)
     }
     
     var purchaseItemsRpguidLength: Bool {
@@ -210,6 +210,9 @@ public class CreateConsentAnnualValidator: Validator {
         }
         if StringUtils.isNilOrEmpty(consentAnnual.consentAnnualCreate.limitPerCharge) {
             return (CreateConsentAnnualValidationError.limitPerChargeIsRequired, false)
+        }
+        if StringUtils.isNilOrEmpty(consentAnnual.consentAnnualCreate.customerRefID) {
+            return (CreateConsentAnnualValidationError.customerReferenceIdIsRequired, false)
         }
         return (nil, true)
     }
@@ -325,10 +328,8 @@ public class CreateConsentAnnualValidator: Validator {
                 return (CreateConsentAnnualValidationError.invalidCharactersServiceDescription, false)
             }
         }
-        if let clientReferenceId = consentAnnual.consentAnnualCreate.customerRefID, !StringUtils.isNilOrEmpty(clientReferenceId) {
-            if !ValidatorUtils.isValidClientRefIdOrRpguid(clientReferenceId) {
-                return (CreateConsentAnnualValidationError.invalidCharactersCustomerRefId, false)
-            }
+        if !ValidatorUtils.isValidClientRefIdOrRpguid(consentAnnual.consentAnnualCreate.customerRefID) {
+            return (CreateConsentAnnualValidationError.invalidCharactersCustomerRefId, false)
         }
         if let rpguid = consentAnnual.consentAnnualCreate.rpguid, !StringUtils.isNilOrEmpty(rpguid) {
             if !ValidatorUtils.isValidClientRefIdOrRpguid(rpguid) {
@@ -431,7 +432,7 @@ public class CreateConsentAnnualValidator: Validator {
         if !purchaseItemsServiceDescriptionLength {
             return (CreateConsentAnnualValidationError.invalidServiceDescriptionLength, false)
         }
-        if !purchaseItemsClientRefIdLength {
+        if !purchaseItemsCustomerRefIdLength {
             return (CreateConsentAnnualValidationError.invalidCustomerRefIdLength, false)
         }
         if !purchaseItemsRpguidLength {

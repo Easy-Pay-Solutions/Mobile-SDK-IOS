@@ -30,13 +30,13 @@ class ViewController: BaseViewController {
     }
     
     @IBAction private func managePaymentsWidgetButtonTapped(_ sender: UIButton) {
-        let slideVC = AmountWidgetViewController()
-        self.present(slideVC, animated: true, completion: nil)
+        let slideVC = WidgetParametersViewController(state: .payment)
+        self.present(slideVC!, animated: true, completion: nil)
     }
     
     @IBAction private func managePaymentsSelectionWidgetButtonTapped(_ sender: UIButton) {
-        let slideVC = CardSelectionViewController(selectionDelegate: self, preselectedCardId: nil, paymentDetails: AddAnnualConsentWidgetModel(merchantId: "1", limitPerCharge: "1000.0", limitLifetime: "10000.0"))
-        self.present(slideVC, animated: true, completion: nil)
+        let slideVC = WidgetParametersViewController(state: .selection)
+        self.present(slideVC!, animated: true, completion: nil)
     }
     
     private func preparePrefilledCreditCardSaleViewModel() -> CrediCardSaleManualViewModel {
@@ -80,22 +80,4 @@ extension ViewController: UIViewControllerTransitioningDelegate {
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
         PresentationController(presentedViewController: presented, presenting: presenting)
     }
-}
-
-extension ViewController: CardSelectiontDelegate, CardPaymentDelegate {
-    func didSaveCard(consentId: Int?, success: Bool) {}
-    func didPayWithCard(consentId: Int?, success: Bool) {
-        if success {
-            let message = consentId != nil
-            ? "Payment successful with consent ID \(String(describing: consentId))"
-            : "Payment was successful"
-            self.showAlert(title: "Payment successful",
-                           accessibilityIdentifier: "paymentSuccessfulAlert",
-                           message: message,
-                           actionName: "OK",
-                           handler: nil)
-        }
-    }
-    func didDeleteCard(consentId: Int, success: Bool) {}
-    func didSelectCard(consentId: String) {}
 }
