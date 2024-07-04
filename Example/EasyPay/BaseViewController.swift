@@ -2,12 +2,16 @@
 import UIKit
 
 class BaseViewController: UIViewController {
-    func showAlert (title: String = NSLocalizedString("app_name", comment: ""),
+    func showAlert (title: String = "EasyPay",
+                    accessibilityIdentifier: String? = nil,
                     message: String,
-                    actionName: String = NSLocalizedString("ok", comment: ""),
+                    actionName: String = "Ok",
                     handler: ((UIAlertAction) -> Swift.Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: actionName, style: .default, handler: handler)
+        if let accessibilityIdentifier {
+            alert.view.accessibilityIdentifier = accessibilityIdentifier
+        }
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
     }

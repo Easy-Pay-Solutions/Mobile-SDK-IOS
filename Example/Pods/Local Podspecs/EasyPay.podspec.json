@@ -1,22 +1,36 @@
 {
   "name": "EasyPay",
-  "version": "0.1.0",
-  "summary": "A short description of EasyPay.",
+  "version": "0.9.72",
+  "summary": "Mobile iOS SDK for Easy Pay",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/Dominika Kokowicz/EasyPay",
+  "homepage": "https://github.com/Easy-Pay-Solutions/Mobile-SDK-IOS",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "Dominika Kokowicz": "dkokowicz@freeportmetrics.com"
+    "Easy Pay Solutions": "ndraper@easypaysolutions.com"
   },
   "source": {
-    "git": "https://github.com/Dominika Kokowicz/EasyPay.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/Easy-Pay-Solutions/Mobile-SDK-IOS.git",
+    "tag": "0.9.72"
   },
   "platforms": {
-    "ios": "10.0"
+    "ios": "13.0"
   },
-  "source_files": "EasyPay/Classes/**/*"
+  "swift_versions": "5.9",
+  "source_files": "Sources/**/*",
+  "resource_bundles": {
+    "EasyPay": [
+      "Resources/EasyPayAssets.xcassets",
+      "Resources/*.xib",
+      "Resources/Fonts/*.ttf"
+    ]
+  },
+  "dependencies": {
+    "Sentry": [
+      "~> 8.25.2"
+    ]
+  },
+  "swift_version": "5.9"
 }

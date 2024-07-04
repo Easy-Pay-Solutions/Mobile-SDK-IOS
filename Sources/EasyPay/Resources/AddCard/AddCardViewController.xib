@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddCardViewController" customModule="EasyPay">
+            <connections>
+                <outlet property="loadingIndicator" destination="EfL-4e-bWD" id="e4l-dz-tNV"/>
+                <outlet property="tableView" destination="OMP-sS-217" id="gYe-Wr-XY4"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="OMP-sS-217">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <color key="backgroundColor" name="whiteBackground"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="CC0-Hn-qv4"/>
+                        <outlet property="delegate" destination="-1" id="gIR-jp-Kqv"/>
+                    </connections>
+                </tableView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="EfL-4e-bWD">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <color key="color" name="technologyBlue1"/>
+                </activityIndicatorView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="whiteBackground"/>
+            <constraints>
+                <constraint firstItem="EfL-4e-bWD" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="6Fv-SY-AzO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OMP-sS-217" secondAttribute="trailing" id="9ss-Mn-1cn"/>
+                <constraint firstItem="OMP-sS-217" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="FWs-px-X8R"/>
+                <constraint firstItem="EfL-4e-bWD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="JH2-xF-f0I"/>
+                <constraint firstItem="OMP-sS-217" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="QaE-WL-stf"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="OMP-sS-217" secondAttribute="bottom" id="Qbw-fH-aVY"/>
+                <constraint firstAttribute="trailing" secondItem="EfL-4e-bWD" secondAttribute="trailing" id="gby-VS-YwJ"/>
+                <constraint firstAttribute="bottom" secondItem="EfL-4e-bWD" secondAttribute="bottom" id="zVE-iG-cG3"/>
+            </constraints>
+            <point key="canvasLocation" x="39" y="-11"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="technologyBlue1">
+            <color red="0.090196078431372548" green="0.32156862745098042" blue="0.75294117647058822" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="whiteBackground">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

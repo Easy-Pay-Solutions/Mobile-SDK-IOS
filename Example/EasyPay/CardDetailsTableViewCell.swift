@@ -27,7 +27,7 @@ class CardDetailsTableViewCell: UITableViewCell {
         }
         
         if let accountNumber = consentAnnual.accountNumber {
-            cardNumber.text = "**** **** **** " + accountNumber
+            cardNumber.text = "**** " + accountNumber
         } else {
             cardNumber.text = nil
         }
@@ -36,13 +36,10 @@ class CardDetailsTableViewCell: UITableViewCell {
     }
     
     @IBAction private func deleteButtonTapped(_ sender: UIButton) {
-        print(sender.tag, "delete")
         delegate?.deleteConsent(at: sender.tag)
     }
     
     @IBAction private func chargeButtonTapped(_ sender: UIButton) {
-        print(sender.tag, "charge")
         delegate?.chargeConsent(at: sender.tag)
     }
-    
 }

@@ -12,7 +12,7 @@ final class EncryptionUtils {
     private let hmacSecret: String
     private let userDevice: String
     
-    init(apiKey: String, hmacSecret: String) {
+    public init(apiKey: String, hmacSecret: String) {
         self.apiKey = apiKey
         self.hmacSecret = hmacSecret
         self.userDevice = UIDevice.current.identifierForVendor?.uuidString.uppercased() ?? ""

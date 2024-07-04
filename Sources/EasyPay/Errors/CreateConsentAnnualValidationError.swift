@@ -75,6 +75,7 @@ public enum CreateConsentAnnualValidationError: Error {
     case invalidCharactersRpguid
     
     case merchantIdIsRequired
+    case customerReferenceIdIsRequired
     case creditCardNumberIsRequired
     case cvvIsRequired
     case expMonthIsRequired
@@ -211,6 +212,8 @@ extension CreateConsentAnnualValidationError: LocalizedError {
             return NSLocalizedString("limitPerLifetimeShouldBeGreaterThanZero", comment: "")
         case .merchantIdIsRequired:
             return NSLocalizedString("merchantIdIsRequired", comment: "")
+        case .customerReferenceIdIsRequired:
+            return NSLocalizedString("customerReferenceIdIsRequired", comment: "")
         case .creditCardNumberIsRequired:
             return NSLocalizedString("creditCardNumberIsRequired", comment: "")
         case .cvvIsRequired:

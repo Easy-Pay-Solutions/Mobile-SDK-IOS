@@ -2,7 +2,7 @@
 import UIKit
 import EasyPay
 
-class ViewController: UIViewController {
+class ViewController: BaseViewController {
     let verManager = VersionManager()
     
     override func viewDidLoad() {
@@ -29,6 +29,16 @@ class ViewController: UIViewController {
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     
+    @IBAction private func managePaymentsWidgetButtonTapped(_ sender: UIButton) {
+        let slideVC = WidgetParametersViewController(state: .payment)
+        self.present(slideVC!, animated: true, completion: nil)
+    }
+    
+    @IBAction private func managePaymentsSelectionWidgetButtonTapped(_ sender: UIButton) {
+        let slideVC = WidgetParametersViewController(state: .selection)
+        self.present(slideVC!, animated: true, completion: nil)
+    }
+    
     private func preparePrefilledCreditCardSaleViewModel() -> CrediCardSaleManualViewModel {
         return CrediCardSaleManualViewModel(
             merchantId: "1",
@@ -39,7 +49,7 @@ class ViewController: UIViewController {
             accountHolderLastName: "Surname",
             accountHolderCompany: "Another company",
             accountHolderPhone: "8775558472",
-            accountHolderEmail: "h4_sam.usevich@gmail.com",
+            accountHolderEmail: "someEmail@gmail.com",
             accountHolderAddress1: "123 Fake St.",
             accountHolderAddress2: "",
             accountHolderCity: "Portland",
@@ -50,7 +60,7 @@ class ViewController: UIViewController {
             endCustomerLastName: "Some surname",
             endCustomerCompany: "",
             endCustomerPhone: "8775558472",
-            endCustomerEmail: "h4_sam.usevicha@gmail.com",
+            endCustomerEmail: "someEmail@gmail.com",
             endCustomerAddress1: "123 Fake St.",
             endCustomerAddress2: "",
             endCustomerCity: "Portland",
@@ -63,5 +73,11 @@ class ViewController: UIViewController {
             serviceDescription: "FROM API TESTER",
             clientRefId: "12456",
             rpguid: "3d3424a6-c5f3-4c28")
+    }
+}
+
+extension ViewController: UIViewControllerTransitioningDelegate {
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        PresentationController(presentedViewController: presented, presenting: presenting)
     }
 }

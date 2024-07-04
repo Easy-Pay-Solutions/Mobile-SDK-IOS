@@ -5,7 +5,7 @@ public class ValidatorUtils {
     private enum RegexPattern: String {
         case firstAndLastName = "^[a-zA-Z0-9'\\s\\-.,&?/]*$"
         case company = "^[a-zA-Z0-9\\-.,#_&/\\s]+$"
-        case address = "^[a-zA-Z0-9\\-.,#_&'/\\s]+$"
+        case address = "^[a-zA-Z0-9\\-.,#_'/\\s]+$"
         case city = "^[a-zA-Z .]+$"
         case zipCode = "^[a-zA-Z0-9- ]*$"
         case stateOrCountry = #"^[a-zA-Z\s]+$"#
@@ -35,7 +35,7 @@ public class ValidatorUtils {
         return checkRegex(text, regex: RegexPattern.city.rawValue)
     }
     
-    class func isValidZipCode(_ text: String) -> Bool {
+    public class func isValidZipCode(_ text: String) -> Bool {
         return checkRegex(text, regex: RegexPattern.zipCode.rawValue)
     }
     

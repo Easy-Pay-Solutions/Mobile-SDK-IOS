@@ -1,0 +1,45 @@
+
+import Foundation
+
+public struct Localization {
+    static let selectPaymentMethod = "Select payment method"
+    static let yourCards = "Your cards"
+    static let newCard = "New card"
+    static let asterixFourMask = "****"
+    static let error = "Error"
+    static let pay$ = "Pay $"
+    static let deleteThisCard = "Delete this card"
+    static let selectedCardDeleted = "The selected credit card has been deleted."
+    static let errorDeletingCard = "We are unable to delete the selected card."
+    static let deleteCardMessgae = "Are you sure you want to delete the selected credit card? If you confirm, it will be permanently deleted. Don't worry, you can always add a new one later."
+    static let cancel = "Cancel"
+    static let delete = "Delete"
+    static let unableToProcessPaymentError = "We are unable to process your payment. Please contact your financial institution or use another card."
+    static let easyPayApiError = "Oops, we're experiencing some technical difficulties at the moment. Please try again later."
+    static let zip = "ZIP"
+    static let address = "Address"
+    static let billingAddress = "Billing address"
+    static let cvc = "CVC"
+    static let mmyy = "MM/YY"
+    static let cardNumber = "Card number"
+    static let cardHolderName = "Card holder name"
+    static let cardInformation = "Card information"
+    static let cardHolderErrorMessage = "Invalid card holder name. Please ensure your input includes only the following valid characters: space A-z 0-9 ' . & , ? / –"
+    static let invalidCardNumber = "Invalid card number."
+    static let invalidZipErrorMessage = "Invalid ZIP code. Please ensure your input includes only the following valid characters: space A-z 0-9 –"
+    static let templateMaxCharMessage = "You've reached the {charLimit} characters limit."
+    static let invalidAddressErrorMessage = "Invalid address. Please ensure your input includes only the following valid characters: space A-z 0-9 ' . # _  , / –"
+    static let cardWasSaved = "The card was saved."
+    static let saveCard = "Save card"
+    static let completeAllFieldsToSave = "Complete all fields to save the card"
+    static let completeAllFieldsToPay = "Complete all fields to pay"
+    static let unableToSaveCardDetailsError = "We are unable to save your card details. Please contact your financial institution or use another card."
+    static let technicalDifficultiesError = "Oops, we're experiencing some technical difficulties at the moment. Please try again later."
+    static let invalidFormat = "Invalid format."
+    static let cardExpired = "Card expired."
+    static let invalidCvc = "Invalid CVC number."
+
+    // Custom API errors
+
+    static let cannotValidateCardInfo = "The credit card data you entered is invalid. Please try again."
+}

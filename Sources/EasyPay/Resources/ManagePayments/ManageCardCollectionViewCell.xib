@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Inter-SemiBold.ttf">
+            <string>Inter-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ManageCardCollectionViewCell" id="gTV-IL-0wX" customClass="ManageCardCollectionViewCell" customModule="EasyPay">
+            <rect key="frame" x="0.0" y="0.0" width="124" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="124" height="100"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JB6-4n-hnm">
+                        <rect key="frame" x="0.0" y="0.0" width="124" height="100"/>
+                        <subviews>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blueCheckIcon" translatesAutoresizingMaskIntoConstraints="NO" id="9OI-cL-rcQ">
+                                <rect key="frame" x="84" y="20" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="JpL-Oi-qsM"/>
+                                    <constraint firstAttribute="height" constant="24" id="Lqi-nn-mVV"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRT-wo-nH3">
+                                <rect key="frame" x="0.0" y="0.0" width="124" height="100"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="selectButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="V2A-kE-1a9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="whiteBackground"/>
+                        <constraints>
+                            <constraint firstItem="9OI-cL-rcQ" firstAttribute="top" secondItem="JB6-4n-hnm" secondAttribute="top" constant="20" id="7vK-hx-boQ"/>
+                            <constraint firstAttribute="trailing" secondItem="xRT-wo-nH3" secondAttribute="trailing" id="C97-0Q-vrJ"/>
+                            <constraint firstAttribute="trailing" secondItem="9OI-cL-rcQ" secondAttribute="trailing" constant="16" id="R29-g2-kdd"/>
+                            <constraint firstItem="xRT-wo-nH3" firstAttribute="leading" secondItem="JB6-4n-hnm" secondAttribute="leading" id="rOM-Pl-Efv"/>
+                            <constraint firstItem="xRT-wo-nH3" firstAttribute="top" secondItem="JB6-4n-hnm" secondAttribute="top" id="tzI-p4-8fq"/>
+                            <constraint firstAttribute="bottom" secondItem="xRT-wo-nH3" secondAttribute="bottom" id="zKa-kP-yEL"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XO0-hp-cn5">
+                        <rect key="frame" x="16" y="67" width="92" height="17"/>
+                        <fontDescription key="fontDescription" name="Inter-SemiBold" family="Inter" pointSize="14"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plusIcon" translatesAutoresizingMaskIntoConstraints="NO" id="7rf-iy-OMJ">
+                        <rect key="frame" x="20" y="20" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="561-hb-fin">
+                                <variation key="heightClass=regular-widthClass=regular" constant="24"/>
+                            </constraint>
+                            <constraint firstAttribute="width" constant="24" id="F0w-Lu-iib">
+                                <variation key="heightClass=regular-widthClass=regular" constant="24"/>
+                            </constraint>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" name="whiteBackground"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="XO0-hp-cn5" secondAttribute="trailing" constant="16" id="2Cy-SP-0NT"/>
+                <constraint firstAttribute="bottom" secondItem="XO0-hp-cn5" secondAttribute="bottom" constant="16" id="96R-zG-CPb"/>
+                <constraint firstItem="JB6-4n-hnm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Dcv-Or-RyD"/>
+                <constraint firstItem="XO0-hp-cn5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="PaV-ar-BOg"/>
+                <constraint firstItem="JB6-4n-hnm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="WVo-ov-dUu"/>
+                <constraint firstItem="XO0-hp-cn5" firstAttribute="top" relation="greaterThanOrEqual" secondItem="7rf-iy-OMJ" secondAttribute="bottom" constant="8" id="YjK-tp-6tF"/>
+                <constraint firstAttribute="bottom" secondItem="JB6-4n-hnm" secondAttribute="bottom" id="Ze6-6X-wZO"/>
+                <constraint firstAttribute="trailing" secondItem="7rf-iy-OMJ" secondAttribute="trailing" constant="80" id="gAs-Rk-YGs"/>
+                <constraint firstItem="7rf-iy-OMJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="hjt-Hg-uts"/>
+                <constraint firstAttribute="trailing" secondItem="JB6-4n-hnm" secondAttribute="trailing" id="l0J-jV-Ikr"/>
+                <constraint firstItem="7rf-iy-OMJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="od1-Td-oP5"/>
+            </constraints>
+            <size key="customSize" width="394" height="247"/>
+            <connections>
+                <outlet property="cardBackground" destination="JB6-4n-hnm" id="Nve-aE-Wm9"/>
+                <outlet property="cardImage" destination="7rf-iy-OMJ" id="E7g-l9-P8b"/>
+                <outlet property="cardLabel" destination="XO0-hp-cn5" id="sRi-HU-Reh"/>
+                <outlet property="selectedImage" destination="9OI-cL-rcQ" id="y5o-zh-Kjc"/>
+            </connections>
+            <point key="canvasLocation" x="215.26717557251908" y="57.74647887323944"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="blueCheckIcon" width="24" height="24"/>
+        <image name="plusIcon" width="32" height="32"/>
+        <namedColor name="whiteBackground">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

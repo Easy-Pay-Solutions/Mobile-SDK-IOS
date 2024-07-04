@@ -61,6 +61,17 @@
                ReferencedContainer = "container:EasyPay.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3F7C39682C1B103500EDE67C"
+               BuildableName = "EasyPay_UITests.xctest"
+               BlueprintName = "EasyPay_UITests"
+               ReferencedContainer = "container:EasyPay.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

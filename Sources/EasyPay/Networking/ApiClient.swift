@@ -12,9 +12,9 @@ public final class ApiClient {
     private let certificateString = "https://easypaysoftware.com/mobile.easypay5.com.cer"
     private let baseURL = URL(string: "https://easypay5.com/APIcardProcMobile")
     private let session: URLSession
-    private let encryptionUtils: EncryptionUtils
     private let versionManager = VersionManager()
     private var configuration: Config
+    private let encryptionUtils: EncryptionUtils
     private(set) public var certificateStatus: CertificateStatus? = .loading
     
     init(configuration: Config) {
