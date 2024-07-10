@@ -16,8 +16,8 @@ public class AnnualQueryHelper {
     public func configureQuery() -> String {
         var queryString = ""
         
-        queryString += "(F LIKE '%\(customerReferenceId)%')&&"
-        
+        queryString += "(F='\(customerReferenceId)')&&"
+
         if let endDate {
             let date = formatDate(endDate)
             queryString += "(C>='\(date)')&&"
