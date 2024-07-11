@@ -10,7 +10,7 @@ Easy Pay library offers an access to the Easy Pay API for seamless integration w
 
 1. Setup with Swift Package Manager 
 ```
-.package(url: "https://github.com/Easy-Pay-Solutions/Mobile-SDK-IOS.git", from: "1.0.0")
+.package(url: "https://github.com/Easy-Pay-Solutions/Mobile-SDK-IOS.git", from: "1.0.1")
 ```
 2. Setup with Cocoapods
 ```
