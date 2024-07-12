@@ -178,6 +178,7 @@
 		3F136122D5E7776844F84C1C190DD568 /* SentryCrashCPU_x86_64.c in Sources */ = {isa = PBXBuildFile; fileRef = A14CF0E1DDE54C71F5F08EC7EDF7E9A1 /* SentryCrashCPU_x86_64.c */; };
 		3F1B76D9EA50C9DA855F37830F3A4B30 /* DistributionMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24E852BA6B18EADDC25126FC63DDBCD /* DistributionMetric.swift */; };
 		3F1D561D7916F3780208E4D9E290BF92 /* SentryNetworkTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 31ACF29B4D81361EE5B195007B69464E /* SentryNetworkTracker.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3F4CCECF2C416269005B90C6 /* PaymentCompletionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4CCECE2C416269005B90C6 /* PaymentCompletionData.swift */; };
 		3F7C397F2C255FA300EDE67C /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7C397E2C255FA300EDE67C /* UITextField+Extensions.swift */; };
 		3F7C39802C255FA300EDE67C /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7C397E2C255FA300EDE67C /* UITextField+Extensions.swift */; };
 		3FDB546B2C3411A700D3EFAB /* ErrorMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDB546A2C3411A700D3EFAB /* ErrorMapper.swift */; };
@@ -923,6 +924,7 @@
 		3E7EF478F8C1A763F4363EF2E995C8F2 /* SentryStackFrame.hpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.h; name = SentryStackFrame.hpp; path = Sources/Sentry/include/SentryStackFrame.hpp; sourceTree = "<group>"; };
 		3E8348CCA6BA2B33439DF78C40E2A93B /* SentryTracerConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryTracerConfiguration.h; path = Sources/Sentry/include/SentryTracerConfiguration.h; sourceTree = "<group>"; };
 		3ED407A9BCFE2DF4933A46ED639DFB47 /* SentryStacktrace.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryStacktrace.h; path = Sources/Sentry/Public/SentryStacktrace.h; sourceTree = "<group>"; };
+		3F4CCECE2C416269005B90C6 /* PaymentCompletionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCompletionData.swift; sourceTree = "<group>"; };
 		3F7C397E2C255FA300EDE67C /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		3F8FBA05E602829930ABFDC5568542B5 /* SentryEnvelope.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryEnvelope.h; path = Sources/Sentry/include/HybridPublic/SentryEnvelope.h; sourceTree = "<group>"; };
 		3FD039687D3D92DE7AC2F93FBEE2DB99 /* ProcessPaymentAnnualRequestModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ProcessPaymentAnnualRequestModel.swift; sourceTree = "<group>"; };
@@ -2334,6 +2336,7 @@
 				840E67972C119C7800581EAF /* BaseViewController.swift */,
 				84175FDB2C198B3A00652B92 /* UIValidation.swift */,
 				3FDB546A2C3411A700D3EFAB /* ErrorMapper.swift */,
+				3F4CCECE2C416269005B90C6 /* PaymentCompletionData.swift */,
 			);
 			name = Widgets;
 			path = Sources/EasyPay/Widgets;
@@ -3409,6 +3412,7 @@
 				DF580EE472452B72FD13CD6239F3AD53 /* CancelConsentAnnualManualRequestModel.swift in Sources */,
 				84175FA82C1982C500652B92 /* AddCardViewController.swift in Sources */,
 				D9E81B527CBC5664AEFFB2F6934881D4 /* CancelConsentAnnualRequest.swift in Sources */,
+				3F4CCECF2C416269005B90C6 /* PaymentCompletionData.swift in Sources */,
 				F60B28B8D4FB298A5A69B53D3056802B /* CancelConsentAnnualResponse.swift in Sources */,
 				02FA6E909476FAA99D05D5A9CF4E3F32 /* CancelConsentAnnualResponseModel.swift in Sources */,
 				A8156B8B874F0FEC87007DAF87182132 /* CardSaleManualRequest.swift in Sources */,

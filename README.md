@@ -75,7 +75,7 @@ Payment details parameter is used for passing additional payment details not vis
 If you would like to receive callbacks conform to CardPaymentDelegate with following methods:
 
 ```
-func didPayWithCard(consentId: Int?, success: Bool) {}
+func didPayWithCard(consentId: Int?, paymentData: PaymentData?, success: Bool) {}
 ```
 ```
 func didDeleteCard(consentId: Int, success: Bool) {}

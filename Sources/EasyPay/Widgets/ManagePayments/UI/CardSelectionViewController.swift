@@ -13,7 +13,7 @@ public protocol CardSelectiontDelegate: AnyObject {
 }
 
 public protocol CardPaymentDelegate: AnyObject {
-    func didPayWithCard(consentId: Int?, success: Bool)
+    func didPayWithCard(consentId: Int?, paymentData: PaymentData?, success: Bool)
     func didDeleteCard(consentId: Int, success: Bool)
 }
 
@@ -244,15 +244,16 @@ public class CardSelectionViewController: BaseViewController {
         chargeConsentAnnual()
     }
 
-    private func paymentSuccesRespondeHandler(response: ProcessPaymentAnnualResponse, selectedCard: Int) {
+    private func paymentSuccesResponseHandler(response: ProcessPaymentAnnualResponse, selectedCard: Int) {
         if response.data.errorMessage != "" && response.data.errorCode != 0 {
             showPayButtonError(true)
-            notifyPayDelegate(success: false, selectedCard: selectedCard)
+            notifyPayDelegateAboutFailedPayment(consentId: selectedCard)
         } else if response.data.functionOk == true && response.data.txApproved == false {
             showPayButtonError(true, declineError: true)
-            notifyPayDelegate(success: false, selectedCard: selectedCard)
+            notifyPayDelegateAboutFailedPayment(consentId: selectedCard)
         } else {
-            notifyPayDelegate(success: true, selectedCard: selectedCard)
+            let paymentData = response.data.toPaymentData()
+            notifyPayDelegateAboutSuccessfulPayment(consentId: selectedCard, paymentData: paymentData)
             closeWidget()
         }
     }
@@ -266,17 +267,25 @@ public class CardSelectionViewController: BaseViewController {
             switch result {
             case .success(let response):
                 s.showLoading(false)
-                s.paymentSuccesRespondeHandler(response: response, selectedCard: selectedCard)
+                s.paymentSuccesResponseHandler(response: response, selectedCard: selectedCard)
             case .failure(_):
                 s.showLoading(false)
-                s.notifyPayDelegate(success: false, selectedCard: selectedCard)
+                s.notifyPayDelegateAboutFailedPayment(consentId: selectedCard)
                 s.showPayButtonError(true)
             }
         }
     }
 
-    private func notifyPayDelegate(success: Bool, selectedCard: Int) {
-        paymentDelegate?.didPayWithCard(consentId: selectedCard, success: success)
+    private func notifyPayDelegateAboutSuccessfulPayment(consentId: Int, paymentData: PaymentData) {
+        paymentDelegate?.didPayWithCard(consentId: consentId, 
+                                        paymentData: paymentData,
+                                        success: true)
+    }
+
+    private func notifyPayDelegateAboutFailedPayment(consentId: Int) {
+        paymentDelegate?.didPayWithCard(consentId: consentId, 
+                                        paymentData: nil,
+                                        success: false)
     }
 }
 
@@ -417,8 +426,10 @@ extension CardSelectionViewController: SavingCardDelegate, PayingSavingCardDeleg
         }
     }
 
-    public func didPayWithCard(consentId: Int?, success: Bool) {
-        paymentDelegate?.didPayWithCard(consentId: consentId, success: success)
+    public func didPayWithCard(consentId: Int?, paymentData: PaymentData?, success: Bool) {
+        paymentDelegate?.didPayWithCard(consentId: consentId,
+                                        paymentData: paymentData,
+                                        success: success)
     }
 
     public func didSaveCard(consentId: Int?, success: Bool) {
