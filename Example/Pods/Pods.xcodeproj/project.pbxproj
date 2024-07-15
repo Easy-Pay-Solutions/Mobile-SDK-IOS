@@ -179,6 +179,8 @@
 		3F1B76D9EA50C9DA855F37830F3A4B30 /* DistributionMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24E852BA6B18EADDC25126FC63DDBCD /* DistributionMetric.swift */; };
 		3F1D561D7916F3780208E4D9E290BF92 /* SentryNetworkTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 31ACF29B4D81361EE5B195007B69464E /* SentryNetworkTracker.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		3F4CCECF2C416269005B90C6 /* PaymentCompletionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4CCECE2C416269005B90C6 /* PaymentCompletionData.swift */; };
+		3F4CCED12C451608005B90C6 /* ConsentAnnualListingValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4CCED02C451608005B90C6 /* ConsentAnnualListingValidator.swift */; };
+		3F4CCED32C451694005B90C6 /* ConsentAnnualListingValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4CCED22C451694005B90C6 /* ConsentAnnualListingValidationError.swift */; };
 		3F7C397F2C255FA300EDE67C /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7C397E2C255FA300EDE67C /* UITextField+Extensions.swift */; };
 		3F7C39802C255FA300EDE67C /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7C397E2C255FA300EDE67C /* UITextField+Extensions.swift */; };
 		3FDB546B2C3411A700D3EFAB /* ErrorMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDB546A2C3411A700D3EFAB /* ErrorMapper.swift */; };
@@ -925,6 +927,8 @@
 		3E8348CCA6BA2B33439DF78C40E2A93B /* SentryTracerConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryTracerConfiguration.h; path = Sources/Sentry/include/SentryTracerConfiguration.h; sourceTree = "<group>"; };
 		3ED407A9BCFE2DF4933A46ED639DFB47 /* SentryStacktrace.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryStacktrace.h; path = Sources/Sentry/Public/SentryStacktrace.h; sourceTree = "<group>"; };
 		3F4CCECE2C416269005B90C6 /* PaymentCompletionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCompletionData.swift; sourceTree = "<group>"; };
+		3F4CCED02C451608005B90C6 /* ConsentAnnualListingValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentAnnualListingValidator.swift; sourceTree = "<group>"; };
+		3F4CCED22C451694005B90C6 /* ConsentAnnualListingValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentAnnualListingValidationError.swift; sourceTree = "<group>"; };
 		3F7C397E2C255FA300EDE67C /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		3F8FBA05E602829930ABFDC5568542B5 /* SentryEnvelope.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryEnvelope.h; path = Sources/Sentry/include/HybridPublic/SentryEnvelope.h; sourceTree = "<group>"; };
 		3FD039687D3D92DE7AC2F93FBEE2DB99 /* ProcessPaymentAnnualRequestModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ProcessPaymentAnnualRequestModel.swift; sourceTree = "<group>"; };
@@ -2478,6 +2482,7 @@
 			children = (
 				57C6F2ECEAF8E53D961AC1D0C9E19C4C /* CreateConsentAnnualValidationError.swift */,
 				E34A9AB69E408999F8625FBB1395C7C2 /* CreditCardInfoValidationError.swift */,
+				3F4CCED22C451694005B90C6 /* ConsentAnnualListingValidationError.swift */,
 			);
 			name = Errors;
 			path = Sources/EasyPay/Errors;
@@ -2555,6 +2560,7 @@
 			children = (
 				15960D47C90A0A6B82581D7B07613DDB /* CardSaleManualValidator.swift */,
 				3D6B9D5501E2F09E321352C47BE03F45 /* CreateConsentAnnualValidator.swift */,
+				3F4CCED02C451608005B90C6 /* ConsentAnnualListingValidator.swift */,
 				544448D985B73AA267A03A5C6AB06C6A /* Validator.swift */,
 				6348BD53DA7F8BCCCD8C5FF7CBDADF5F /* ValidatorFactory.swift */,
 			);
@@ -3478,10 +3484,12 @@
 				840E67412C1052A700581EAF /* UIView+Extensions.swift in Sources */,
 				84175FAB2C1984AD00652B92 /* AddCardViewModel.swift in Sources */,
 				AF0829D024CB5CCC778FBDDC6F19FAB1 /* Validator.swift in Sources */,
+				3F4CCED32C451694005B90C6 /* ConsentAnnualListingValidationError.swift in Sources */,
 				9A886F21DE148A02ADD5867CE33A529B /* ValidatorFactory.swift in Sources */,
 				A97416308D0A51F79792CF515CDE8748 /* ValidatorUtils.swift in Sources */,
 				A5E1C4611136602432BF3220B12A5704 /* Version.swift in Sources */,
 				92F08687F413E2F2C22FC5F79F1FA79F /* X509Certificate.swift in Sources */,
+				3F4CCED12C451608005B90C6 /* ConsentAnnualListingValidator.swift in Sources */,
 				840E67772C10701100581EAF /* CardSelectionViewController.swift in Sources */,
 				840E679B2C11DA7500581EAF /* ThemeError.swift in Sources */,
 			);

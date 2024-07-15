@@ -44,9 +44,16 @@ public class CardSelectionViewController: BaseViewController {
 
     private let vcName = "CardSelectionViewController"
 
-    public init?(amount: String, paymentDelegate: AnyObject, preselectedCardId: Int?, paymentDetails: AddAnnualConsentWidgetModel) {
-        let viewModel = CardSelectionViewModel(state: .payment, amount: amount, preselectedCardId: preselectedCardId, paymentDetails: paymentDetails)
-        guard viewModel.validate() else { return nil }
+    public init(amount: String,
+                paymentDelegate: AnyObject,
+                preselectedCardId: Int?,
+                paymentDetails: AddAnnualConsentWidgetModel) throws {
+        let viewModel = CardSelectionViewModel(state: .payment, 
+                                               amount: amount,
+                                               preselectedCardId:
+                                                preselectedCardId,
+                                               paymentDetails: paymentDetails)
+        if let error = viewModel.validate() { throw error }
         self.paymentDelegate = paymentDelegate as? any CardPaymentDelegate
         self.viewModel = viewModel
         super.init(nibName: vcName, bundle: Theme.moduleBundle())
@@ -54,9 +61,14 @@ public class CardSelectionViewController: BaseViewController {
         self.transitioningDelegate = self
     }
 
-    public init?(selectionDelegate: AnyObject, preselectedCardId: Int?, paymentDetails: AddAnnualConsentWidgetModel) {
-        let viewModel = CardSelectionViewModel(state: .selection, amount: "", preselectedCardId: preselectedCardId, paymentDetails: paymentDetails)
-        guard viewModel.validate() else { return nil }
+    public init(selectionDelegate: AnyObject, 
+                preselectedCardId: Int?,
+                paymentDetails: AddAnnualConsentWidgetModel) throws {
+        let viewModel = CardSelectionViewModel(state: .selection, 
+                                               amount: "", 
+                                               preselectedCardId: preselectedCardId,
+                                               paymentDetails: paymentDetails)
+        if let error = viewModel.validate() { throw error }
         self.selectionDelegate = selectionDelegate as? any CardSelectiontDelegate
         self.viewModel = viewModel
         super.init(nibName: vcName, bundle: Theme.moduleBundle())
@@ -277,13 +289,13 @@ public class CardSelectionViewController: BaseViewController {
     }
 
     private func notifyPayDelegateAboutSuccessfulPayment(consentId: Int, paymentData: PaymentData) {
-        paymentDelegate?.didPayWithCard(consentId: consentId, 
+        paymentDelegate?.didPayWithCard(consentId: consentId,
                                         paymentData: paymentData,
                                         success: true)
     }
 
     private func notifyPayDelegateAboutFailedPayment(consentId: Int) {
-        paymentDelegate?.didPayWithCard(consentId: consentId, 
+        paymentDelegate?.didPayWithCard(consentId: consentId,
                                         paymentData: nil,
                                         success: false)
     }

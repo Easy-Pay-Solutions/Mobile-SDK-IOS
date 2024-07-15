@@ -43,12 +43,12 @@ EasyPay's prebuilt payment UI components that allows you to collect credit card 
 For managing saved cards without paying following initializer should be used:
 
 ```
- CardSelectionViewController(selectionDelegate: AnyObject, preselectedCardId: Int?, paymentDetails: AddAnnualConsentWidgetModel)
+ CardSelectionViewController(selectionDelegate: AnyObject, preselectedCardId: Int?, paymentDetails: AddAnnualConsentWidgetModel) throws
 ```
 PreselectedCardId is optional parameter that allows to mark a card as selected by passing the consentId of this card. If nil or incorrect consentId is passed the selection will be ignored. 
 
 Payment details parameter is used for passing additional payment details not visible for the end user.
-```customerReferenceId``` is required parameter for payment details and cannot be empty.
+Either ```customerReferenceId``` or ```rpguid``` must be provided to get the list of consents of a specific customer. In case of of incorrect initialization data ```CardSelectionViewControllerInitError``` will be thrown.
 
 If you would like to receive callbacks conform to CardSelectiontDelegate with following methods:
 ```
@@ -63,14 +63,14 @@ func didSaveCard(consentId: Int?, success: Bool) {}
 ### Managing cards and payment
 For managing saved cards and paying following initializer should be used:
 ```
-CardSelectionViewController(amount: String, paymentDelegate: AnyObject, preselectedCardId: Int?, paymentDetails: AddAnnualConsentWidgetModel)
+CardSelectionViewController(amount: String, paymentDelegate: AnyObject, preselectedCardId: Int?, paymentDetails: AddAnnualConsentWidgetModel) throws
 ```
 Amount should be higher than 0 and it is required parameter.
 
 PreselectedCardId is optional parameter that allows to mark a card as selected by passing the consentId of this card. If nil or incorrect consentId is passed the selection will be ignored. 
 
 Payment details parameter is used for passing additional payment details not visible for the end user.
-```customerReferenceId``` is required parameter for payment details and cannot be empty.
+Either ```customerReferenceId``` or ```rpguid``` must be provided to get the list of consents of a specific customer. In case of of incorrect initialization data ```CardSelectionViewControllerInitError``` will be thrown.
 
 If you would like to receive callbacks conform to CardPaymentDelegate with following methods:
 
@@ -126,8 +126,10 @@ EasyPay.apiClient.listAnnualConsents(request: ConsentAnnualListingRequest,
 * ListAnnualConsents
     * AnnualQueryHelper
         * merchantId: String
-        * customerReferenceId: String
+        * customerReferenceId: String?
+        * rpguid: String?
         * endDate: Date?
+Either customerReferenceId or rpguid must be provided to get the list of consents of a specific customer.
 
 #### Data Classes (Response)
 

@@ -6,6 +6,7 @@ class WidgetParametersViewController: BaseViewController {
     @IBOutlet private weak var amountLabel: UILabel!
     @IBOutlet private weak var amountTextField: UITextField!
     @IBOutlet private weak var customerRefIdTextField: UITextField!
+    @IBOutlet private weak var rpguidTextField: UITextField!
     @IBOutlet private weak var actionButton: UIButton!
 
     private let state: ManageCardState
@@ -28,40 +29,50 @@ class WidgetParametersViewController: BaseViewController {
     // MARK: - IBActions
 
     @IBAction private func managePaymentsWidgetButtonTapped(_ sender: UIButton) {
-        let alert = createErrorAlert()
-        let slideVC = createWidget() ?? alert
-        self.present(slideVC, animated: true, completion: nil)
+        var vc: UIViewController
+        do {
+            vc = try createWidget()
+        } catch {
+            if let error = error as? CardSelectionViewControllerInitError {
+                vc = createErrorAlert(error: error)
+            } else {
+                vc = createErrorAlert(error: error.localizedDescription)
+            }
+        }
+        present(vc, animated: true, completion: nil)
     }
 
     // MARK: - Widgets creation
 
-    private func createWidget() -> UIViewController? {
+    private func createWidget() throws -> UIViewController {
         switch state {
         case .selection:
-            return createSelectionWidget()
+            return try createSelectionWidget()
         case .payment:
-            return createPaymentWidget()
+            return try createPaymentWidget()
         }
     }
 
-    private func createSelectionWidget() -> UIViewController? {
-        return CardSelectionViewController(selectionDelegate: self,
-                                           preselectedCardId: 3374,
-                                           paymentDetails: getWidgetViewModel())
+    private func createSelectionWidget() throws -> UIViewController {
+        return try CardSelectionViewController(selectionDelegate: self,
+                                               preselectedCardId: 3374,
+                                               paymentDetails: getWidgetViewModel())
     }
 
-    private func createPaymentWidget() -> UIViewController? {
+    private func createPaymentWidget() throws -> UIViewController {
         let amount = convertDecimalFormatting(amountTextField.text)
-        return CardSelectionViewController(amount: amount,
+        return try CardSelectionViewController(amount: amount,
                                            paymentDelegate: self,
                                            preselectedCardId: 3374,
                                            paymentDetails: getWidgetViewModel())
     }
 
     private func getWidgetViewModel() -> AddAnnualConsentWidgetModel {
-        let customerRefId = customerRefIdTextField.text ?? ""
+        let customerRefId = customerRefIdTextField.text
+        let rpguid = rpguidTextField.text
         return AddAnnualConsentWidgetModel(merchantId: "1",
                                            customerReferenceId: customerRefId,
+                                           rpguid: rpguid,
                                            limitPerCharge: "1000.0",
                                            limitLifetime: "10000.0")
     }
@@ -89,9 +100,13 @@ class WidgetParametersViewController: BaseViewController {
 
     // MARK: - Helpers
 
-    private func createErrorAlert() -> UIAlertController {
-        let alert = UIAlertController(title: "Parameters are invalid",
-                                      message: "Please provide all parameters properly",
+    private func createErrorAlert(error: CardSelectionViewControllerInitError) -> UIAlertController {
+        return createErrorAlert(error: error.localizedDescription)
+    }
+
+    private func createErrorAlert(error: String) -> UIAlertController {
+        let alert = UIAlertController(title: "Initialization error",
+                                      message: error,
                                       preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: {_ in })
         alert.addAction(action)
@@ -106,6 +121,7 @@ class WidgetParametersViewController: BaseViewController {
     @objc private func hideKeyboard() {
         amountTextField.endEditing(true)
         customerRefIdTextField.endEditing(true)
+        rpguidTextField.endEditing(true)
     }
 
     private func addGestureForController() {
@@ -153,7 +169,7 @@ extension WidgetParametersViewController: CardSelectiontDelegate, CardPaymentDel
         let message = consentId != nil
         ? "Payment failed with consent ID: \(String(describing: consentId))"
         : "Payment failed"
-        showAlert(title: "Failure", 
+        showAlert(title: "Failure",
                   accessibilityIdentifier: "paymentFailedAlert",
                   message: message)
     }
