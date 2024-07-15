@@ -50,7 +50,7 @@ PreselectedCardId is optional parameter that allows to mark a card as selected b
 Payment details parameter is used for passing additional payment details not visible for the end user.
 Either ```customerReferenceId``` or ```rpguid``` must be provided to get the list of consents of a specific customer. In case of of incorrect initialization data ```CardSelectionViewControllerInitError``` will be thrown.
 
-If you would like to receive callbacks conform to CardSelectiontDelegate with following methods:
+If you would like to receive callbacks conform to CardSelectionDelegate with following methods:
 ```
 func didSelectCard(consentId: String) {}
 ```

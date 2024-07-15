@@ -6,7 +6,7 @@ public enum ManageCardState {
     case payment
 }
 
-public protocol CardSelectiontDelegate: AnyObject {
+public protocol CardSelectionDelegate: AnyObject {
     func didSelectCard(consentId: String)
     func didDeleteCard(consentId: Int, success: Bool)
     func didSaveCard(consentId: Int?, success: Bool)
@@ -39,7 +39,7 @@ public class CardSelectionViewController: BaseViewController {
     @IBOutlet private weak var payButton: UIButton!
     private var viewModel: CardSelectionViewModel
 
-    public weak var selectionDelegate: CardSelectiontDelegate?
+    public weak var selectionDelegate: CardSelectionDelegate?
     public weak var paymentDelegate: CardPaymentDelegate?
 
     private let vcName = "CardSelectionViewController"
@@ -69,7 +69,7 @@ public class CardSelectionViewController: BaseViewController {
                                                preselectedCardId: preselectedCardId,
                                                paymentDetails: paymentDetails)
         if let error = viewModel.validate() { throw error }
-        self.selectionDelegate = selectionDelegate as? any CardSelectiontDelegate
+        self.selectionDelegate = selectionDelegate as? any CardSelectionDelegate
         self.viewModel = viewModel
         super.init(nibName: vcName, bundle: Theme.moduleBundle())
         self.modalPresentationStyle = .custom

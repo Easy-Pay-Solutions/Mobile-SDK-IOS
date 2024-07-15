@@ -131,7 +131,7 @@ class WidgetParametersViewController: BaseViewController {
     }
 }
 
-extension WidgetParametersViewController: CardSelectiontDelegate, CardPaymentDelegate {
+extension WidgetParametersViewController: CardSelectionDelegate, CardPaymentDelegate {
     func didSaveCard(consentId: Int?, success: Bool) {}
     func didPayWithCard(consentId: Int?, paymentData: PaymentData?, success: Bool) {
         if success {
