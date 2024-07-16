@@ -163,7 +163,7 @@ class AddAnnualConsentViewModel {
                 cvv: StringUtils.trimmingEmptyOrWhitespace(cvv) ?? ""),
             consentAnnualCreate: CreateConsentAnnual(
                 merchID: Int(merchantId ?? ""),
-                customerRefID: StringUtils.trimmingEmptyOrWhitespace(customerReferenceId) ?? "",
+                customerRefID: StringUtils.trimmingEmptyOrWhitespace(customerReferenceId),
                 serviceDescrip: StringUtils.trimmingEmptyOrWhitespace(serviceDescription),
                 rpguid: StringUtils.trimmingEmptyOrWhitespace(rpguid),
                 startDate: convertDate(startDate),

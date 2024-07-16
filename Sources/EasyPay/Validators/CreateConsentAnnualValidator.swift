@@ -3,109 +3,109 @@ import Foundation
 
 public class CreateConsentAnnualValidator: Validator {
     var consentAnnual: CreateConsentAnnualManualRequestModel
-    
+
     init(dataToValidate: CreateConsentAnnualManualRequestModel) {
         self.consentAnnual = dataToValidate
     }
-    
+
     override func validate(_ request: BaseRequest) -> (Error?, Bool) {
         return checkFieldsCharactersAndLength()
     }
-    
+
     private let expirationMonthMaxLength = 2
     private let expirationYearMaxLength = 4
     private let cvvMaxLength = 4
-    
+
     private let accountHolderFirstNameMaxLength = 75
     private let accountHolderLastNameMaxLength = 75
     private let accountHolderCompanyMaxLength = 100
     private let accountHolderPhoneMaxLength = 16
     private let accountHolderEmailMaxLength = 150
-    
+
     private let accountHolderBillingAddress1MaxLength = 100
     private let accountHolderBillingAddress2MaxLength = 100
     private let accountHolderBillingCityMaxLength = 75
     private let accountHolderBillingStateMaxLength = 75
     private let accountHolderBillingZipMaxLength  = 20
     private let accountHolderBillingCountryMaxLength = 75
-    
+
     private let endCustomerFirstNameMaxLength = 75
     private let endCustomerLastNameMaxLength = 75
     private let endCustomerCompanyMaxLength = 100
     private let endCustomerPhoneMaxLength = 16
     private let endCustomerEmailMaxLength = 150
-    
+
     private let endCustomerBillingAddress1MaxLength = 100
     private let endCustomerBillingAddress2MaxLength = 100
     private let endCustomerBillingCityMaxLength = 75
     private let endCustomerBillingStateMaxLength = 75
     private let endCustomerBillingZipMaxLength = 20
     private let endCustomerBillingCountryMaxLength = 75
-    
+
     private let clientRefIdMaxLength = 75
     private let serviceDescriptionMaxLength = 200
     private let rpguidMaxLength = 75
-    
+
     var isEndCustomerEmpty: Bool {
         return consentAnnual.endCustomer == nil
     }
-    
+
     var checkExpMonthLength: Bool {
         return ValidatorUtils.checkMaxLimit(String(consentAnnual.creditCardInfo.expirationMonth ?? 0), maxLimit: expirationMonthMaxLength)
     }
-    
+
     var checkExpYearLength: Bool {
         return ValidatorUtils.checkMaxLimit(String(consentAnnual.creditCardInfo.expirationYear ?? 0), maxLimit: expirationYearMaxLength)
     }
-    
+
     var checkCvvLength: Bool {
         return ValidatorUtils.checkMaxLimit(consentAnnual.creditCardInfo.cvv, maxLimit: cvvMaxLength)
     }
-    
+
     var accountHolderFirstNameLength: Bool {
         return ValidatorUtils.checkMaxLimit(consentAnnual.accountHolder.firstName, maxLimit: accountHolderFirstNameMaxLength)
     }
-    
+
     var accountHolderLastNameLength: Bool {
         return ValidatorUtils.checkMaxLimit(consentAnnual.accountHolder.lastName, maxLimit: accountHolderLastNameMaxLength)
     }
-    
+
     var accountHolderCompanyLength: Bool {
         return ValidatorUtils.checkMaxLimit(consentAnnual.accountHolder.company ?? "", maxLimit: accountHolderCompanyMaxLength)
     }
-    
+
     var accountHolderPhoneLength: Bool {
         return ValidatorUtils.checkMaxLimit(consentAnnual.accountHolder.phone ?? "", maxLimit: accountHolderPhoneMaxLength)
     }
-    
+
     var accountHolderEmailLength: Bool {
         return ValidatorUtils.checkMaxLimit(consentAnnual.accountHolder.email ?? "", maxLimit: accountHolderEmailMaxLength)
     }
-    
+
     var accountHolderBillingAddress1Length: Bool {
         return ValidatorUtils.checkMaxLimit(consentAnnual.accountHolder.billingAddress.address1, maxLimit: accountHolderBillingAddress1MaxLength)
     }
-    
+
     var accountHolderBillingAddress2Length: Bool {
         return ValidatorUtils.checkMaxLimit(consentAnnual.accountHolder.billingAddress.address2 ?? "", maxLimit: accountHolderBillingAddress2MaxLength)
     }
-    
+
     var accountHolderBillingCityLength: Bool {
         return ValidatorUtils.checkMaxLimit(consentAnnual.accountHolder.billingAddress.city ?? "", maxLimit: accountHolderBillingCityMaxLength)
     }
-    
+
     var accountHolderBillingStateLength: Bool {
         return ValidatorUtils.checkMaxLimit(consentAnnual.accountHolder.billingAddress.state ?? "", maxLimit: accountHolderBillingStateMaxLength)
     }
-    
+
     var accountHolderBillingZipLength: Bool {
         return ValidatorUtils.checkMaxLimit(consentAnnual.accountHolder.billingAddress.zip, maxLimit: accountHolderBillingZipMaxLength)
     }
-    
+
     var accountHolderBillingCountryLength: Bool {
         return ValidatorUtils.checkMaxLimit(consentAnnual.accountHolder.billingAddress.country ?? "", maxLimit: accountHolderBillingCountryMaxLength)
     }
-    
+
     var endCustomerFirstNameLength: Bool {
         return ValidatorUtils.checkMaxLimit(consentAnnual.endCustomer?.firstName ?? "", maxLimit: endCustomerFirstNameMaxLength)
     }
@@ -149,37 +149,37 @@ public class CreateConsentAnnualValidator: Validator {
     var endCustomerBillingCountryLength: Bool {
         return ValidatorUtils.checkMaxLimit(consentAnnual.endCustomer?.billingAddress?.country ?? "", maxLimit: endCustomerBillingCountryMaxLength)
     }
-    
+
     var purchaseItemsServiceDescriptionLength: Bool {
         return ValidatorUtils.checkMaxLimit(consentAnnual.consentAnnualCreate.serviceDescrip ?? "", maxLimit: serviceDescriptionMaxLength)
     }
-    
+
     var purchaseItemsCustomerRefIdLength: Bool {
-        return ValidatorUtils.checkMaxLimit(consentAnnual.consentAnnualCreate.customerRefID, maxLimit: clientRefIdMaxLength)
+        return ValidatorUtils.checkMaxLimit(consentAnnual.consentAnnualCreate.customerRefID ?? "", maxLimit: clientRefIdMaxLength)
     }
-    
+
     var purchaseItemsRpguidLength: Bool {
         return ValidatorUtils.checkMaxLimit(consentAnnual.consentAnnualCreate.rpguid ?? "", maxLimit: rpguidMaxLength)
     }
-    
-    public func checkFieldsCharactersAndLength () -> (Error?, Bool) {
+
+    public func checkFieldsCharactersAndLength() -> (Error?, Bool) {
         let checkRequiredFieldsValidation = checkRequiredFieldsValidation()
         let checkFieldsValidationResult = checkFieldsValidation()
-        
+
         if checkRequiredFieldsValidation.0 != nil {
             return checkRequiredFieldsValidation
         }
-        
+
         if checkFieldsValidationResult.0 != nil {
             return checkFieldsValidationResult
         }
-        
+
         if checkFieldsValidationResult.0 == nil {
             return checkMaxLength()
         }
         return (nil, true)
     }
-    
+
     private func checkRequiredFieldsValidation() -> (Error?, Bool) {
         if consentAnnual.consentAnnualCreate.merchID == nil {
             return (CreateConsentAnnualValidationError.merchantIdIsRequired, false)
@@ -211,12 +211,15 @@ public class CreateConsentAnnualValidator: Validator {
         if StringUtils.isNilOrEmpty(consentAnnual.consentAnnualCreate.limitPerCharge) {
             return (CreateConsentAnnualValidationError.limitPerChargeIsRequired, false)
         }
-        if StringUtils.isNilOrEmpty(consentAnnual.consentAnnualCreate.customerRefID) {
-            return (CreateConsentAnnualValidationError.customerReferenceIdIsRequired, false)
+
+        // RPGUID or CustomerRefId is required
+        if StringUtils.isNilOrEmpty(consentAnnual.consentAnnualCreate.rpguid) && StringUtils.isNilOrEmpty(consentAnnual.consentAnnualCreate.customerRefID) {
+            return (CreateConsentAnnualValidationError.eitherCustomerRefIdOrRpguidIsRequired, false)
         }
+
         return (nil, true)
     }
-    
+
     private func checkFieldsValidation() -> (Error?, Bool) {
         if !ValidatorUtils.isValidFirstAndLastName(consentAnnual.accountHolder.firstName) {
             return (CreateConsentAnnualValidationError.invalidCharactersAccountHolderFirstName, false)
@@ -265,7 +268,7 @@ public class CreateConsentAnnualValidator: Validator {
         if !ValidatorUtils.isValidZipCode(consentAnnual.accountHolder.billingAddress.zip) {
             return (CreateConsentAnnualValidationError.invalidCharactersAccountHolderZip, false)
         }
-        
+
         if let endCustomer = consentAnnual.endCustomer {
             if let endCustomerFirstName = endCustomer.firstName, !StringUtils.isNilOrEmpty(endCustomerFirstName) {
                 if !ValidatorUtils.isValidFirstAndLastName(endCustomerFirstName) {
@@ -328,27 +331,29 @@ public class CreateConsentAnnualValidator: Validator {
                 return (CreateConsentAnnualValidationError.invalidCharactersServiceDescription, false)
             }
         }
-        if !ValidatorUtils.isValidClientRefIdOrRpguid(consentAnnual.consentAnnualCreate.customerRefID) {
-            return (CreateConsentAnnualValidationError.invalidCharactersCustomerRefId, false)
+        if let customerRefId = consentAnnual.consentAnnualCreate.customerRefID, !StringUtils.isNilOrEmpty(customerRefId) {
+            if !ValidatorUtils.isValidClientRefIdOrRpguid(customerRefId) {
+                return (CreateConsentAnnualValidationError.invalidCharactersCustomerRefId, false)
+            }
         }
         if let rpguid = consentAnnual.consentAnnualCreate.rpguid, !StringUtils.isNilOrEmpty(rpguid) {
             if !ValidatorUtils.isValidClientRefIdOrRpguid(rpguid) {
                 return (CreateConsentAnnualValidationError.invalidCharactersRpguid, false)
             }
         }
-        
+
         let limitPerCharge = Double(consentAnnual.consentAnnualCreate.limitPerCharge) ?? 0
         if limitPerCharge <= 0 {
             return (CreateConsentAnnualValidationError.limitPerChargeShouldBeGreaterThanZero, false)
         }
-        
+
         let limitPerLifetime = Double(consentAnnual.consentAnnualCreate.limitLifeTime) ?? 0
         if limitPerLifetime <= 0 {
             return (CreateConsentAnnualValidationError.limitPerLifetimeShouldBeGreaterThanZero, false)
         }
         return (nil, true)
     }
-    
+
     private func checkMaxLength() -> (Error?, Bool) {
         if !checkExpMonthLength {
             return (CreateConsentAnnualValidationError.invalidExpirationMonthLength, false)
@@ -392,7 +397,7 @@ public class CreateConsentAnnualValidator: Validator {
         if !accountHolderBillingCountryLength {
             return (CreateConsentAnnualValidationError.invalidAccountHolderBillingCountryLength, false)
         }
-        
+
         if !isEndCustomerEmpty {
             if !endCustomerFirstNameLength {
                 return (CreateConsentAnnualValidationError.invalidEndCustomerFirstNameLength, false)
@@ -428,7 +433,7 @@ public class CreateConsentAnnualValidator: Validator {
                 return (CreateConsentAnnualValidationError.invalidEndCustomerBillingCountryLength, false)
             }
         }
-        
+
         if !purchaseItemsServiceDescriptionLength {
             return (CreateConsentAnnualValidationError.invalidServiceDescriptionLength, false)
         }

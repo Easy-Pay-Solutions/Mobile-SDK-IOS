@@ -122,7 +122,7 @@ public struct CreateConsentAnnualManualRequestModel: Codable {
             "EndCustomer": endCustomerConverted,
             "ConsentCreator": [
                 "MerchID": consentAnnualCreate.merchID as Any,
-                "CustomerRefID": consentAnnualCreate.customerRefID,
+                "CustomerRefID": consentAnnualCreate.customerRefID as Any,
                 "ServiceDescrip": consentAnnualCreate.serviceDescrip as Any,
                 "RPGUID": consentAnnualCreate.rpguid as Any,
                 "StartDate": consentAnnualCreate.startDate,

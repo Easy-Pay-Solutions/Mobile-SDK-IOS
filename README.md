@@ -82,7 +82,9 @@ EasyPay.apiClient.listAnnualConsents(request: ConsentAnnualListingRequest,
     * AnnualQueryHelper
         * merchantId: String
         * customerReferenceId: String?
+        * rpguid: String?
         * endDate: Date?
+Either customerReferenceId or rpguid must be provided to get the list of consents of a specific customer.
 
 #### Data Classes (Response)
 

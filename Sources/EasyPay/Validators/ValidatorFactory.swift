@@ -9,6 +9,9 @@ class ValidatorFactory {
         if let createAnnualRequestManualRequest = request as? CreateConsentAnnualRequest {
             return CreateConsentAnnualValidator(dataToValidate: createAnnualRequestManualRequest.createConsentAnnualRequest)
         }
+        if let consentAnnualListingRequest = request as? ConsentAnnualListingRequest {
+            return ConsentAnnualListingValidator(dataToValidate: consentAnnualListingRequest.consentAnnualListingRequest)
+        }
         return Validator()
     }
 }
