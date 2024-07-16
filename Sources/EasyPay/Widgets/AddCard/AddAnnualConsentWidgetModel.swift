@@ -21,7 +21,7 @@ public struct AddAnnualConsentWidgetModel {
                 endCustomerState: String? = nil,
                 endCustomerZip: String? = nil,
                 endCustomerCountry: String? = nil,
-                customerReferenceId: String,
+                customerReferenceId: String? = nil,
                 serviceDescription: String? = nil,
                 rpguid: String? = nil,
                 startDate: Date? = nil,
@@ -78,7 +78,7 @@ public struct AddAnnualConsentWidgetModel {
     public let endCustomerZip: String?
     public let endCustomerCountry: String?
     
-    public let customerReferenceId: String
+    public let customerReferenceId: String?
     public let serviceDescription: String?
     public let rpguid: String?
     public let startDate: Date?

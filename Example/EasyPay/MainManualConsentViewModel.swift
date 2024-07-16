@@ -13,7 +13,8 @@ class MainManualConsentViewModel {
     
     func downloadAnnualConsents(_ completion: @escaping (Result<ListingConsentAnnualResponse, Error>) -> Void) {
         let queryHelper = AnnualQueryHelper(merchantId: "1",
-                                            customerReferenceId: "123456",
+                                            customerReferenceId: "12456",
+                                            rpguid: "3d3424a6-c5f3-4c28",
                                             endDate: nil)
         let request = ConsentAnnualListingRequest(consentAnnualListingRequest: ConsentAnnualListingRequestModel(query: queryHelper))
         EasyPay.shared.apiClient.listAnnualConsents(request: request) { result in

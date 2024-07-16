@@ -21,6 +21,7 @@
                 <outlet property="amountLabel" destination="FpO-Y1-1Lw" id="Wd2-YN-JuS"/>
                 <outlet property="amountTextField" destination="kPp-qe-5M8" id="95C-24-jxq"/>
                 <outlet property="customerRefIdTextField" destination="VQk-qg-Jrq" id="FTL-vZ-O7U"/>
+                <outlet property="rpguidTextField" destination="Vds-rp-T9j" id="5sL-L8-Tk0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -29,68 +30,80 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FpO-Y1-1Lw">
-                    <rect key="frame" x="20" y="230.66666666666666" width="353" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount to charge" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kPp-qe-5M8">
-                    <rect key="frame" x="20" y="259.66666666666669" width="353" height="48"/>
-                    <color key="backgroundColor" name="inputBackground"/>
-                    <accessibility key="accessibilityConfiguration" identifier="amountToChargeTextField"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="48" id="B1l-v4-1BT"/>
-                    </constraints>
-                    <color key="textColor" name="textPrimary"/>
-                    <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customer Reference ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YEh-qz-4dc">
-                    <rect key="frame" x="20" y="323.66666666666669" width="353" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VQk-qg-Jrq">
-                    <rect key="frame" x="20" y="352.66666666666669" width="353" height="48"/>
-                    <color key="backgroundColor" name="inputBackground"/>
-                    <accessibility key="accessibilityConfiguration" identifier="customerRefIdTextField"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="48" id="5i6-yv-eoX"/>
-                    </constraints>
-                    <color key="textColor" name="textPrimary"/>
-                    <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Uo-jD-ecU">
-                    <rect key="frame" x="170.66666666666666" y="408.66666666666669" width="51.666666666666657" height="35"/>
-                    <accessibility key="accessibilityConfiguration" identifier="widgetParametersActionButton"/>
-                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" title="Manage Payments Widget Demo (Selection)"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Pay"/>
-                    <connections>
-                        <action selector="managePaymentsWidgetButtonTapped:" destination="-1" eventType="touchUpInside" id="tLS-DE-Zg2"/>
-                    </connections>
-                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pqg-Ev-oQJ">
+                    <rect key="frame" x="20" y="295" width="353" height="287.33333333333326"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FpO-Y1-1Lw">
+                            <rect key="frame" x="0.0" y="0.0" width="353" height="20.333333333333332"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount to charge" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kPp-qe-5M8">
+                            <rect key="frame" x="0.0" y="28.333333333333314" width="353" height="48"/>
+                            <color key="backgroundColor" name="inputBackground"/>
+                            <accessibility key="accessibilityConfiguration" identifier="amountToChargeTextField"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="B1l-v4-1BT"/>
+                            </constraints>
+                            <color key="textColor" name="textPrimary"/>
+                            <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Customer Reference ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YEh-qz-4dc">
+                            <rect key="frame" x="0.0" y="84.333333333333314" width="353" height="20.333333333333329"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VQk-qg-Jrq">
+                            <rect key="frame" x="0.0" y="112.66666666666669" width="353" height="48"/>
+                            <color key="backgroundColor" name="inputBackground"/>
+                            <accessibility key="accessibilityConfiguration" identifier="customerRefIdTextField"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="5i6-yv-eoX"/>
+                            </constraints>
+                            <color key="textColor" name="textPrimary"/>
+                            <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="RPGUID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aa8-ro-xdL">
+                            <rect key="frame" x="0.0" y="168.66666666666669" width="353" height="20.333333333333343"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="RPGUID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vds-rp-T9j">
+                            <rect key="frame" x="0.0" y="197" width="353" height="48"/>
+                            <color key="backgroundColor" name="inputBackground"/>
+                            <accessibility key="accessibilityConfiguration" identifier="rpguidTextField"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="uVA-qP-gPT"/>
+                            </constraints>
+                            <color key="textColor" name="textPrimary"/>
+                            <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Uo-jD-ecU">
+                            <rect key="frame" x="0.0" y="253.00000000000003" width="353" height="34.333333333333343"/>
+                            <accessibility key="accessibilityConfiguration" identifier="widgetParametersActionButton"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Manage Payments Widget Demo (Selection)"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Pay"/>
+                            <connections>
+                                <action selector="managePaymentsWidgetButtonTapped:" destination="-1" eventType="touchUpInside" id="tLS-DE-Zg2"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="3ca-ft-bTC"/>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="VQk-qg-Jrq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="1yY-3h-leK"/>
-                <constraint firstItem="4Uo-jD-ecU" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3hX-j0-qtY"/>
-                <constraint firstItem="4Uo-jD-ecU" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="49j-Ln-oAv"/>
-                <constraint firstItem="YEh-qz-4dc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Bm1-hL-RsJ"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VQk-qg-Jrq" secondAttribute="trailing" constant="20" id="EBT-Wd-T2b"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YEh-qz-4dc" secondAttribute="trailing" constant="20" id="IaQ-Wn-Uk0"/>
-                <constraint firstItem="4Uo-jD-ecU" firstAttribute="top" secondItem="kPp-qe-5M8" secondAttribute="bottom" constant="101" id="KAI-RV-N02"/>
-                <constraint firstItem="kPp-qe-5M8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="LuG-Uh-eCp"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kPp-qe-5M8" secondAttribute="trailing" constant="20" id="Lyj-o6-Xug"/>
-                <constraint firstItem="VQk-qg-Jrq" firstAttribute="top" secondItem="YEh-qz-4dc" secondAttribute="bottom" constant="8" id="NbH-6d-gdB"/>
-                <constraint firstItem="FpO-Y1-1Lw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Rbs-t2-Hml"/>
-                <constraint firstItem="4Uo-jD-ecU" firstAttribute="top" secondItem="VQk-qg-Jrq" secondAttribute="bottom" constant="8" id="V21-xl-U9o"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FpO-Y1-1Lw" secondAttribute="trailing" constant="20" id="ZDJ-uI-7Jw"/>
-                <constraint firstItem="kPp-qe-5M8" firstAttribute="top" secondItem="FpO-Y1-1Lw" secondAttribute="bottom" constant="8" id="lOM-jh-RpJ"/>
+                <constraint firstItem="pqg-Ev-oQJ" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="2pZ-iV-T8L"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pqg-Ev-oQJ" secondAttribute="trailing" constant="20" id="Vrj-kN-nHo"/>
+                <constraint firstItem="pqg-Ev-oQJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="ynA-Tq-8OO"/>
             </constraints>
             <point key="canvasLocation" x="131" y="-11"/>
         </view>

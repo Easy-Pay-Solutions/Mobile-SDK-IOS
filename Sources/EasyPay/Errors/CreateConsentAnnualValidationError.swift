@@ -5,37 +5,37 @@ public enum CreateConsentAnnualValidationError: Error {
     case invalidExpirationMonthLength
     case invalidExpirationYearLength
     case invalidCvvLength
-    
+
     case invalidAccountHolderFirstNameLength
     case invalidAccountHolderLastNameLength
     case invalidAccountHolderCompanyLength
     case invalidAccountHolderPhoneLength
     case invalidAccountHolderEmailLength
-    
+
     case invalidAccountHolderBillingAddress1Length
     case invalidAccountHolderBillingAddress2Length
     case invalidAccountHolderBillingCityLength
     case invalidAccountHolderBillingStateLength
     case invalidAccountHolderBillingZipLength
     case invalidAccountHolderBillingCountryLength
-    
+
     case invalidEndCustomerFirstNameLength
     case invalidEndCustomerLastNameLength
     case invalidEndCustomerCompanyLength
     case invalidEndCustomerPhoneLength
     case invalidEndCustomerEmailLength
-    
+
     case invalidEndCustomerBillingAddress1Length
     case invalidEndCustomerBillingAddress2Length
     case invalidEndCustomerBillingCityLength
     case invalidEndCustomerBillingStateLength
     case invalidEndCustomerBillingZipLength
     case invalidEndCustomerBillingCountryLength
-    
+
     case invalidServiceDescriptionLength
     case invalidCustomerRefIdLength
     case invalidRpguidLength
-    
+
     case invalidCharactersCreditCardNumber
     case invalidCharactersAccountHolderFirstName
     case invalidCharactersAccountHolderLastName
@@ -59,23 +59,22 @@ public enum CreateConsentAnnualValidationError: Error {
     case invalidCharactersEndCustomerUrl
     case invalidCharactersEndCustomerPhone
     case invalidCharactersEndCustomerEmail
-    
+
     case invalidCharactersEndCustomerAddress1
     case invalidCharactersEndCustomerAddress2
     case invalidCharactersEndCustomerCity
     case invalidCharactersEndCustomerState
     case invalidCharactersEndCustomerZip
     case invalidCharactersEndCustomerCountry
-    
+
     case limitPerChargeShouldBeGreaterThanZero
     case limitPerLifetimeShouldBeGreaterThanZero
-    
+
     case invalidCharactersServiceDescription
     case invalidCharactersCustomerRefId
     case invalidCharactersRpguid
-    
+
     case merchantIdIsRequired
-    case customerReferenceIdIsRequired
     case creditCardNumberIsRequired
     case cvvIsRequired
     case expMonthIsRequired
@@ -85,6 +84,8 @@ public enum CreateConsentAnnualValidationError: Error {
     case limitLifeTimeIsRequired
     case startDateIsRequired
     case limitPerChargeIsRequired
+
+    case eitherCustomerRefIdOrRpguidIsRequired
 }
 
 extension CreateConsentAnnualValidationError: LocalizedError {
@@ -212,8 +213,6 @@ extension CreateConsentAnnualValidationError: LocalizedError {
             return NSLocalizedString("limitPerLifetimeShouldBeGreaterThanZero", comment: "")
         case .merchantIdIsRequired:
             return NSLocalizedString("merchantIdIsRequired", comment: "")
-        case .customerReferenceIdIsRequired:
-            return NSLocalizedString("customerReferenceIdIsRequired", comment: "")
         case .creditCardNumberIsRequired:
             return NSLocalizedString("creditCardNumberIsRequired", comment: "")
         case .cvvIsRequired:
@@ -232,6 +231,8 @@ extension CreateConsentAnnualValidationError: LocalizedError {
             return NSLocalizedString("startDateIsRequired", comment: "")
         case .limitPerChargeIsRequired:
             return NSLocalizedString("limitPerChargeIsRequired", comment: "")
+        case .eitherCustomerRefIdOrRpguidIsRequired:
+            return NSLocalizedString("eitherCustomerRefIdOrRpguidIsRequired", comment: "")
         }
     }
 }
