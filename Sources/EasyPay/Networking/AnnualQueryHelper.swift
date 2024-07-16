@@ -20,11 +20,11 @@ public class AnnualQueryHelper {
     public func configureQuery() -> String {
         var queryString = ""
 
-        if let customerReferenceId {
+        if let customerReferenceId, !StringUtils.isNilOrEmpty(customerReferenceId) {
             queryString += "(F='\(customerReferenceId)')&&"
         }
 
-        if let rpguid {
+        if let rpguid, !StringUtils.isNilOrEmpty(rpguid) {
             queryString += "(J='\(rpguid)')&&"
         }
 
