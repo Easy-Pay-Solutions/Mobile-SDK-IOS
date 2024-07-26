@@ -232,16 +232,14 @@ public class CardSelectionViewController: BaseViewController {
         : paymentDelegate?.didDeleteCard(consentId: selectedCard, success: success)
     }
 
-    private func showPayButtonError(_ yes: Bool, declineError: Bool = false) {
+    private func showPayButtonError(_ yes: Bool, declineError: Bool = false, errorMessage: String) {
         payButton.backgroundColor = yes
         ? Theme.Color.errorRedContainer
         : Theme.Color.confirmationGreen
         let titleColor = yes
         ? Theme.Color.errorRed
         : UIColor.white
-        errorLabel.text = declineError
-        ? Localization.unableToProcessPaymentError
-        : Localization.easyPayApiError
+        errorLabel.text = errorMessage
         errorLabel.isHidden = !yes
         payButton.isEnabled = !yes
         payButton.setTitleColor(titleColor, for: .normal)
@@ -251,6 +249,24 @@ public class CardSelectionViewController: BaseViewController {
             presentationController.updatePresentedViewHeight(calculateIncreasedHeight())
         }
     }
+     
+    func formatErrorMessage(with errorCode: Int? = nil, defaultErrorMessage: String) -> String {
+        var message = ""
+        if (errorCode != nil) {
+            let eCode = String(errorCode ?? 0)
+            if (defaultErrorMessage.contains(eCode)) {
+                message = defaultErrorMessage
+            }
+            else {
+                message = "Error Code: " + eCode + ". " + defaultErrorMessage
+            }
+        }
+        else {
+            message = defaultErrorMessage
+        }
+        return message
+    }
+
 
     @IBAction private func payButtonTapped(_ sender: UIButton) {
         chargeConsentAnnual()
@@ -258,10 +274,12 @@ public class CardSelectionViewController: BaseViewController {
 
     private func paymentSuccesResponseHandler(response: ProcessPaymentAnnualResponse, selectedCard: Int) {
         if response.data.errorMessage != "" && response.data.errorCode != 0 {
-            showPayButtonError(true)
+            let errorMsg = formatErrorMessage(with: response.data.errorCode, defaultErrorMessage: response.data.errorMessage!)
+            showPayButtonError(true, errorMessage: errorMsg)
             notifyPayDelegateAboutFailedPayment(consentId: selectedCard)
         } else if response.data.functionOk == true && response.data.txApproved == false {
-            showPayButtonError(true, declineError: true)
+            let errorMsg = formatErrorMessage( defaultErrorMessage: "The transaction has declined: " + (response.data.responseMessage ?? ""))
+            showPayButtonError(true, declineError: true, errorMessage: errorMsg)
             notifyPayDelegateAboutFailedPayment(consentId: selectedCard)
         } else {
             let paymentData = response.data.toPaymentData()
@@ -280,10 +298,10 @@ public class CardSelectionViewController: BaseViewController {
             case .success(let response):
                 s.showLoading(false)
                 s.paymentSuccesResponseHandler(response: response, selectedCard: selectedCard)
-            case .failure(_):
+            case .failure(let error):
                 s.showLoading(false)
                 s.notifyPayDelegateAboutFailedPayment(consentId: selectedCard)
-                s.showPayButtonError(true)
+                s.showPayButtonError(true, errorMessage: error.localizedDescription)
             }
         }
     }
@@ -335,7 +353,7 @@ extension CardSelectionViewController: UICollectionViewDelegate, UICollectionVie
     }
 
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        showPayButtonError(false)
+        showPayButtonError(false, errorMessage: "")
 
         if indexPath.row == 0 {
             viewModel.selectedIndex = -1
