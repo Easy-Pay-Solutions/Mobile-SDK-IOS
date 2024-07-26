@@ -418,9 +418,9 @@ extension AddCardViewController: PayActionsDelegate, CloseButtonDelegate, Single
             case .success(let success):
                 s.paymentSuccesResponseHandler(response: success, selectedCard: consentId)
                 s.updateTableView()
-            case .failure(_):
+            case .failure(let error):
                 s.notifyPayingSavingDelegateAboutFailedPayment(consentId: consentId)
-                s.viewModel.handleError(defaultErrorMessage: Localization.technicalDifficultiesError)
+                s.viewModel.handleError(defaultErrorMessage: error.localizedDescription)
                 s.showErrorPaySaveButton(true)
                 s.updateTableView()
             }
@@ -437,16 +437,15 @@ extension AddCardViewController: PayActionsDelegate, CloseButtonDelegate, Single
                 let consentId = success.data.consentId
                 if success.data.errorMessage != "" && success.data.errorCode != 0 {
                     s.payingSavingDelegate?.didSaveCard(consentId: nil, success: false)
-                    s.viewModel.handleError(with: success.data.errorCode,
-                                            defaultErrorMessage: Localization.unableToSaveCardDetailsError)
+                    s.viewModel.handleError(with: success.data.errorCode, defaultErrorMessage: success.data.errorMessage)
                     s.showErrorPaySaveButton(true)
                 } else {
                     s.payAfterSaving(consentId: consentId)
                     s.payingSavingDelegate?.didSaveCard(consentId: success.data.consentId, success: true)
                 }
                 s.updateTableView()
-            case .failure(_):
-                s.viewModel.handleError(defaultErrorMessage: Localization.technicalDifficultiesError)
+            case .failure(let error):
+                s.viewModel.handleError(defaultErrorMessage: error.localizedDescription)
                 s.showErrorPaySaveButton(true)
                 s.payingSavingDelegate?.didSaveCard(consentId: nil, success: false)
                 s.updateTableView()
@@ -463,9 +462,9 @@ extension AddCardViewController: PayActionsDelegate, CloseButtonDelegate, Single
             case .success(let success):
                 s.paymentOnlyRespondeHandler(response: success)
                 s.updateTableView()
-            case .failure(_):
+            case .failure(let error):
                 s.notifyPayingSavingDelegateAboutFailedPayment()
-                s.viewModel.handleError(defaultErrorMessage: Localization.technicalDifficultiesError)
+                s.viewModel.handleError(defaultErrorMessage: error.localizedDescription)
                 s.showErrorPaySaveButton(true)
                 s.updateTableView()
             }
@@ -481,8 +480,8 @@ extension AddCardViewController: PayActionsDelegate, CloseButtonDelegate, Single
             case .success(let success):
                 s.saveOnlyResponseHandler(response: success)
                 s.updateTableView()
-            case .failure(_):
-                s.viewModel.handleError(defaultErrorMessage: Localization.unableToSaveCardDetailsError)
+            case .failure(let error):
+                s.viewModel.handleError(defaultErrorMessage: error.localizedDescription)
                 s.showErrorPaySaveButton(true)
                 s.updateTableView()
                 s.savingDelegate?.didOnlySaveCard(consentId: nil, success: false)
@@ -492,11 +491,11 @@ extension AddCardViewController: PayActionsDelegate, CloseButtonDelegate, Single
 
     private func paymentSuccesResponseHandler(response: ProcessPaymentAnnualResponse, selectedCard: Int) {
         if response.data.errorMessage != "" && response.data.errorCode != 0 {
-            viewModel.handleError(with: response.data.errorCode, defaultErrorMessage: Localization.technicalDifficultiesError)
+            viewModel.handleError(with: response.data.errorCode, defaultErrorMessage: response.data.errorMessage!)
             showErrorPaySaveButton(true)
             notifyPayingSavingDelegateAboutFailedPayment(consentId: selectedCard)
         } else if response.data.functionOk == true && response.data.txApproved == false {
-            viewModel.handleError(defaultErrorMessage: Localization.unableToProcessPaymentError)
+            viewModel.handleError(defaultErrorMessage: "The card was declined. " + (response.data.responseMessage ?? ""))
             showErrorPaySaveButton(true)
             notifyPayingSavingDelegateAboutFailedPayment(consentId: selectedCard)
         } else {
@@ -509,11 +508,11 @@ extension AddCardViewController: PayActionsDelegate, CloseButtonDelegate, Single
 
     private func paymentOnlyRespondeHandler(response: CreditCardSaleResponse) {
         if response.data.errorMessage != "" && response.data.errorCode != 0 {
-            viewModel.handleError(with: response.data.errorCode, defaultErrorMessage: Localization.technicalDifficultiesError)
+            viewModel.handleError(with: response.data.errorCode, defaultErrorMessage: response.data.errorMessage)
             showErrorPaySaveButton(true)
             notifyPayingSavingDelegateAboutFailedPayment()
         } else if response.data.functionOk == true && response.data.txApproved == false {
-            viewModel.handleError(defaultErrorMessage: Localization.unableToProcessPaymentError)
+            viewModel.handleError( defaultErrorMessage: "Transaction was declined. " + response.data.responseMessage)
             showErrorPaySaveButton(true)
             notifyPayingSavingDelegateAboutFailedPayment()
         } else {
@@ -526,7 +525,7 @@ extension AddCardViewController: PayActionsDelegate, CloseButtonDelegate, Single
 
     private func saveOnlyResponseHandler(response: CreateConsentAnnualResponse) {
         if response.data.errorMessage != "" && response.data.errorCode != 0 {
-            viewModel.handleError(with: response.data.errorCode, defaultErrorMessage: Localization.unableToSaveCardDetailsError)
+            viewModel.handleError(with: response.data.errorCode, defaultErrorMessage: response.data.errorMessage)
             showErrorPaySaveButton(true)
             savingDelegate?.didOnlySaveCard(consentId: nil, success: false)
         } else {
@@ -570,12 +569,15 @@ extension AddCardViewController {
         cell.showCompleteHint(!yes)
     }
 
+    
     private func showErrorPaySaveButton(_ yes: Bool) {
         guard let cell = tableView.cellForRow(at: IndexPath(row: AddCardTableRow.payButton.rawValue, section: 0)) as? PayActionsTableViewCell else { return }
         UIView.animate(withDuration: 0.3) { [weak self] in
             cell.applyError(yes, text: self?.viewModel.mainErrorMessage)
         }
     }
+     
+   
 
     private func showHint(field: AddCardTableRow) {
         guard let cell = tableView.cellForRow(at: IndexPath(row: field.rawValue, section: 0)) as? SingleHintErrorTableViewCell else { return }
