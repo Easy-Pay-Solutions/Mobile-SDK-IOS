@@ -366,8 +366,20 @@ public class AddCardViewModel {
 
     // MARK: - Error handling
 
-    func handleError(with errorCode: Int? = nil, defaultErrorMessage: String) {
-        mainErrorMessage = ErrorMapper.mapError(code: errorCode) ?? defaultErrorMessage
+  func handleError(with errorCode: Int? = nil, defaultErrorMessage: String) {
+        if (errorCode != nil) {
+            let eCode = String(errorCode ?? 0)
+            if (defaultErrorMessage.contains(eCode)) {
+                mainErrorMessage = defaultErrorMessage
+            }
+            else {
+                mainErrorMessage = "Error Code: " + eCode + ". " + defaultErrorMessage
+            }
+        }
+        else {
+            mainErrorMessage = defaultErrorMessage
+        }
+        
     }
 
     func clearMainError() {
