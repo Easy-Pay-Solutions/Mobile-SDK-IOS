@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'EasyPay'
-  s.version          = '1.0.3'
+  s.version          = '1.0.4'
   s.summary          = 'Mobile iOS SDK for Easy Pay'
 
 # This description is used to generate tags and improve search results.
@@ -45,5 +45,7 @@ TODO: Add long description of the pod here.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  s.dependency 'Sentry', '~> 8.25.2'
+  s.dependency 'Sentry', '~> 8.35.0'
+  s.dependency 'IOSSecuritySuite', '1.9.11'
+  # using pre-2.0.0 to avoid new EULA (see more: https://github.com/jeroentrappers/flutter_jailbreak_detection/issues/61)
 end

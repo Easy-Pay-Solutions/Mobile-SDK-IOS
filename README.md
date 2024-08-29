@@ -10,7 +10,7 @@ Easy Pay library offers an access to the Easy Pay API for seamless integration w
 
 1. Setup with Swift Package Manager 
 ```
-.package(url: "https://github.com/Easy-Pay-Solutions/Mobile-SDK-IOS.git", from: "1.0.2")
+.package(url: "https://github.com/Easy-Pay-Solutions/Mobile-SDK-IOS.git", from: "1.0.4")
 ```
 2. Setup with Cocoapods
 ```
@@ -25,17 +25,30 @@ pod 'EasyPay'
 
 1. Prerequisites - obtained from Easy Pay HMAC secret and API key and optionally Sentry key
 
-2. Configure Easy Pay class for example in your Payment Module or in AppDelegate (didFinishLaunchingWithOptions)
+2. Configure Easy Pay class for example in your Payment Module or in AppDelegate (didFinishLaunchingWithOptions). Set isProduction = true to enable jailbroken device detection
 
 ```
 EasyPay.shared.configureSecrets(apiKey: "YOURAPIKEY",
                                 hmacSecret: "YOURHMACSECRET",
-                                sentryKey: "YOURSENTRYKEY")
+                                sentryKey: "YOURSENTRYKEY", 
+                                isProduction: Bool)
  ```
 3. Please keep in mind that during the Easy Pay initialization, the process of downloading the certificate is starting. Proceeding with any call before downloading has finished will result in an error (RsaCertificateError.failedToLoadCertificateData). You can check the status of downloading by accessing the following enum:
 ```
 EasyPay.shared.certificateStatus
 ```
+4. To enable jailbreak detection please set isProduction: true when initializing the library and add the following URL schemes to main Info.plist
+```
+<key>LSApplicationQueriesSchemes</key>
+<array>
+    <string>undecimus</string>
+    <string>sileo</string>
+    <string>zbra</string>
+    <string>filza</string>
+    <string>activator</string>
+</array>
+```
+
 ## Widgets
 EasyPay's prebuilt payment UI components that allows you to collect credit card information in a secure way and process payments.
 

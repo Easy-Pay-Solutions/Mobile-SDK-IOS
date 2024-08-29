@@ -1,6 +1,7 @@
 
 import Foundation
 import Sentry
+import IOSSecuritySuite
 
 public final class EasyPay {
     private var mApiClient: ApiClient
@@ -20,7 +21,13 @@ public final class EasyPay {
         self.encryptionUtils = nil
     }
     
-    public func configureSecrets(apiKey: String, hmacSecret: String, sentryKey: String?) {
+    public func configureSecrets(apiKey: String,
+                                   hmacSecret: String,
+                                   sentryKey: String?,
+                                   isProduction: Bool = true) {
+          if isProduction && IOSSecuritySuite.amIJailbroken() {
+              fatalError("Jailbroken device detected")
+          }
         self.config = Config(apiKey: apiKey, hmacToken: hmacSecret, sentryKey: sentryKey)
         self.mApiClient = ApiClient(configuration: config)
         mApiClient.downloadManuallyCertificate { result in

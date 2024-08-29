@@ -15,14 +15,18 @@ let package = Package(
             targets: ["EasyPay"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/getsentry/sentry-cocoa", from: "8.25.2")
+        .package(url: "https://github.com/getsentry/sentry-cocoa", from: "8.35.0"),
+        .package(url: "https://github.com/securing/IOSSecuritySuite.git", exact: "1.9.11")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "EasyPay",
-            dependencies: [.product(name: "Sentry", package: "sentry-cocoa")],
+            dependencies: [
+                .product(name: "Sentry", package: "sentry-cocoa"),
+                .product(name: "IOSSecuritySuite", package: "IOSSecuritySuite")
+            ],
             resources: [
                 .process("Resources")
             ]
