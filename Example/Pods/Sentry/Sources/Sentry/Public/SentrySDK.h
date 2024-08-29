@@ -5,6 +5,7 @@
 @class SentryOptions, SentryEvent, SentryBreadcrumb, SentryScope, SentryUser, SentryId,
     SentryUserFeedback, SentryTransactionContext;
 @class SentryMetricsAPI;
+@class UIView;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -307,6 +308,19 @@ SENTRY_NO_INIT
 + (void)reportFullyDisplayed;
 
 /**
+ * Pauses sending detected app hangs to Sentry.
+ *
+ * @discussion This method doesn't close the detection of app hangs. Instead, the app hang detection
+ * will ignore detected app hangs until you call @c resumeAppHangTracking.
+ */
++ (void)pauseAppHangTracking;
+
+/**
+ * Resumes sending detected app hangs to Sentry.
+ */
++ (void)resumeAppHangTracking;
+
+/**
  * Waits synchronously for the SDK to flush out all queued and cached items for up to the specified
  * timeout in seconds. If there is no internet connection, the function returns immediately. The SDK
  * doesn't dispose the client or the hub.
@@ -319,6 +333,25 @@ SENTRY_NO_INIT
  * @c SentryOptions.shutdownTimeInterval .
  */
 + (void)close;
+
+#if SENTRY_TARGET_REPLAY_SUPPORTED
+
+/**
+ * @warning This is an experimental feature and may still have bugs.
+ *
+ * Marks this view to be redacted during replays.
+ */
++ (void)replayRedactView:(UIView *)view;
+
+/**
+ * @warning This is an experimental feature and may still have bugs.
+ *
+ * Marks this view to be ignored during redact step
+ * of session replay. All its content will be visible in the replay.
+ */
++ (void)replayIgnoreView:(UIView *)view;
+
+#endif
 
 @end
 

@@ -163,6 +163,12 @@ SentryNetworkTracker ()
         return;
     }
 
+    // Register request start date in the sessionTask to use for breadcrumb
+    if (self.isNetworkBreadcrumbEnabled) {
+        objc_setAssociatedObject(sessionTask, &SENTRY_NETWORK_REQUEST_START_DATE, [NSDate date],
+            OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+
     @synchronized(self) {
         if (!self.isNetworkTrackingEnabled) {
             [self addTraceWithoutTransactionToTask:sessionTask];
@@ -228,10 +234,14 @@ SentryNetworkTracker ()
 - (void)addTraceWithoutTransactionToTask:(NSURLSessionTask *)sessionTask
 {
     SentryPropagationContext *propagationContext = SentrySDK.currentHub.scope.propagationContext;
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     SentryTraceContext *traceContext =
         [[SentryTraceContext alloc] initWithTraceId:propagationContext.traceId
                                             options:SentrySDK.currentHub.client.options
-                                        userSegment:SentrySDK.currentHub.scope.userObject.segment];
+                                        userSegment:SentrySDK.currentHub.scope.userObject.segment
+                                           replayId:SentrySDK.currentHub.scope.replayId];
+#pragma clang diagnostic pop
 
     [self addBaggageHeader:[traceContext toBaggage]
                traceHeader:[propagationContext traceHeader]
@@ -250,8 +260,8 @@ SentryNetworkTracker ()
     NSString *baggageHeader = @"";
 
     if (baggage != nil) {
-        NSDictionary *originalBaggage = [SentrySerialization
-            decodeBaggage:sessionTask.currentRequest.allHTTPHeaderFields[SENTRY_BAGGAGE_HEADER]];
+        NSDictionary *originalBaggage = [SentryBaggageSerialization
+            decode:sessionTask.currentRequest.allHTTPHeaderFields[SENTRY_BAGGAGE_HEADER]];
 
         if (originalBaggage[@"sentry-trace_id"] == nil) {
             baggageHeader = [baggage toHTTPHeaderWithOriginalBaggage:originalBaggage];
@@ -452,7 +462,8 @@ SentryNetworkTracker ()
     context[@"response"] = response;
 
     if (self.isGraphQLOperationTrackingEnabled) {
-        context[@"graphql_operation_name"] = [sessionTask getGraphQLOperationName];
+        context[@"graphql_operation_name"] =
+            [URLSessionTaskHelper getGraphQLOperationNameFrom:sessionTask];
     }
 
     event.context = context;
@@ -483,6 +494,8 @@ SentryNetworkTracker ()
         [hasBreadcrumb boolValue]) {
         return;
     }
+    NSDate *requestStart
+        = objc_getAssociatedObject(sessionTask, &SENTRY_NETWORK_REQUEST_START_DATE);
 
     SentryLevel breadcrumbLevel = sessionTask.error != nil ? kSentryLevelError : kSentryLevelInfo;
     SentryBreadcrumb *breadcrumb = [[SentryBreadcrumb alloc] initWithLevel:breadcrumbLevel
@@ -494,6 +507,7 @@ SentryNetworkTracker ()
     NSMutableDictionary<NSString *, id> *breadcrumbData = [NSMutableDictionary new];
     breadcrumbData[@"url"] = urlComponents.sanitizedUrl;
     breadcrumbData[@"method"] = sessionTask.currentRequest.HTTPMethod;
+    breadcrumbData[@"request_start"] = requestStart;
     breadcrumbData[@"request_body_size"] =
         [NSNumber numberWithLongLong:sessionTask.countOfBytesSent];
     breadcrumbData[@"response_body_size"] =
@@ -506,7 +520,8 @@ SentryNetworkTracker ()
             [NSHTTPURLResponse localizedStringForStatusCode:responseStatusCode];
 
         if (self.isGraphQLOperationTrackingEnabled) {
-            breadcrumbData[@"graphql_operation_name"] = [sessionTask getGraphQLOperationName];
+            breadcrumbData[@"graphql_operation_name"] =
+                [URLSessionTaskHelper getGraphQLOperationNameFrom:sessionTask];
         }
     }
 
