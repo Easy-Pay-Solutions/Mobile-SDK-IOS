@@ -132,7 +132,17 @@ class WidgetParametersViewController: BaseViewController {
 }
 
 extension WidgetParametersViewController: CardSelectionDelegate, CardPaymentDelegate {
-    func didSaveCard(consentId: Int?, success: Bool) {}
+    func didSaveCard(consentId: Int?, 
+                     expMonth: Int?,
+                     expYear: Int?,
+                     last4digits: String?,
+                     success: Bool) {
+        if success {
+            print("Last four digits \(last4digits!)")
+            print("Expiration \(expMonth!)/\(expYear!)")
+        }
+    }
+    
     func didPayWithCard(consentId: Int?, paymentData: PaymentData?, success: Bool) {
         if success {
             if let presentedVC = self.presentedViewController {
@@ -153,7 +163,9 @@ extension WidgetParametersViewController: CardSelectionDelegate, CardPaymentDele
         }
     }
 
-    func didDeleteCard(consentId: Int, success: Bool) {}
+    func didDeleteCard(consentId: Int, success: Bool) {
+        print("Deleted consent id: \(consentId)")
+    }
     func didSelectCard(consentId: String) {}
 
     private func showSuccessAlert(consentId: Int?, paymentData: PaymentData?) {

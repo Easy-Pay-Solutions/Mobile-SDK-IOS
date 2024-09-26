@@ -71,7 +71,11 @@ func didSelectCard(consentId: String) {}
 func didDeleteCard(consentId: Int, success: Bool) {}
 ```
 ```
-func didSaveCard(consentId: Int?, success: Bool) {}
+func didSaveCard(consentId: Int?, 
+                 expMonth: Int?,
+                 expYear: Int?,
+                 last4digits: String?,
+                 success: Bool)  {}
 ```
 ### Managing cards and payment
 For managing saved cards and paying following initializer should be used:

@@ -8,14 +8,14 @@ public enum VersionType {
 }
 
 public class VersionManager {
-    let currentVersion = "1.0.4"
+    let currentVersion = "1.0.5"
     private let minVersion = "1.0.0"
     
     public init() {}
 
     public func checkVersionType() -> VersionType {
         //TODO: Fetch from server
-        let appVersion = "1.0.4"
+        let appVersion = "1.0.5"
         
         if currentVersion == appVersion {
             return .actual

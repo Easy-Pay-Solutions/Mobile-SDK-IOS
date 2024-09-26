@@ -9,7 +9,10 @@ public enum ManageCardState {
 public protocol CardSelectionDelegate: AnyObject {
     func didSelectCard(consentId: String)
     func didDeleteCard(consentId: Int, success: Bool)
-    func didSaveCard(consentId: Int?, success: Bool)
+    func didSaveCard(consentId: Int?,
+                     expMonth: Int?,
+                     expYear: Int?,
+                     last4digits: String?,  success: Bool)
 }
 
 public protocol CardPaymentDelegate: AnyObject {
@@ -441,8 +444,16 @@ extension CardSelectionViewController: SavingCardDelegate, PayingSavingCardDeleg
         }
     }
 
-    public func didOnlySaveCard(consentId: Int?, success: Bool) {
-        selectionDelegate?.didSaveCard(consentId: consentId, success: success)
+    public func didOnlySaveCard(consentId: Int?,
+                                expMonth: Int?,
+                                expYear: Int?,
+                                last4digits: String?,
+                                success: Bool) {
+        selectionDelegate?.didSaveCard(consentId: consentId, 
+                                       expMonth: expMonth,
+                                       expYear: expYear,
+                                       last4digits: last4digits,
+                                       success: success)
         if success {
             reloadConsents()
             self.showToast(message: Localization.cardWasSaved,
@@ -456,17 +467,27 @@ extension CardSelectionViewController: SavingCardDelegate, PayingSavingCardDeleg
         }
     }
 
-    public func didPayWithCard(consentId: Int?, paymentData: PaymentData?, success: Bool) {
+    public func didPayWithCard(consentId: Int?, 
+                               paymentData: PaymentData?,
+                               success: Bool) {
         paymentDelegate?.didPayWithCard(consentId: consentId,
                                         paymentData: paymentData,
                                         success: success)
     }
 
-    public func didSaveCard(consentId: Int?, success: Bool) {
+    public func didSaveCard(consentId: Int?,
+                            expMonth: Int?,
+                            expYear: Int?,
+                            last4digits: String?,
+                            success: Bool) {
         if success {
             reloadConsents()
         }
-        selectionDelegate?.didSaveCard(consentId: consentId, success: success)
+        selectionDelegate?.didSaveCard(consentId: consentId,  
+                                       expMonth: expMonth,
+                                       expYear: expYear,
+                                       last4digits: last4digits,
+                                       success: success)
     }
 }
 

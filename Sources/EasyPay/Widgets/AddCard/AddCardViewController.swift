@@ -7,12 +7,22 @@ public enum AddCardState {
 }
 
 public protocol SavingCardDelegate: AnyObject {
-    func didOnlySaveCard(consentId: Int?, success: Bool)
+    func didOnlySaveCard(consentId: Int?, 
+                         expMonth: Int?,
+                         expYear: Int?,
+                         last4digits: String?,
+                         success: Bool)
 }
 
 public protocol PayingSavingCardDelegate: AnyObject {
-    func didSaveCard(consentId: Int?, success: Bool)
-    func didPayWithCard(consentId: Int?, paymentData: PaymentData?, success: Bool)
+    func didSaveCard(consentId: Int?, 
+                     expMonth: Int?,
+                     expYear: Int?,
+                     last4digits: String?,
+                     success: Bool)
+    func didPayWithCard(consentId: Int?, 
+                        paymentData: PaymentData?,
+                        success: Bool)
 }
 
 public class AddCardViewController: BaseViewController {
@@ -436,18 +446,30 @@ extension AddCardViewController: PayActionsDelegate, CloseButtonDelegate, Single
             case .success(let success):
                 let consentId = success.data.consentId
                 if success.data.errorMessage != "" && success.data.errorCode != 0 {
-                    s.payingSavingDelegate?.didSaveCard(consentId: nil, success: false)
+                    s.payingSavingDelegate?.didSaveCard(consentId: nil, 
+                                                        expMonth: nil,
+                                                        expYear: nil,
+                                                        last4digits: nil,
+                                                        success: false)
                     s.viewModel.handleError(with: success.data.errorCode, defaultErrorMessage: success.data.errorMessage)
                     s.showErrorPaySaveButton(true)
                 } else {
                     s.payAfterSaving(consentId: consentId)
-                    s.payingSavingDelegate?.didSaveCard(consentId: success.data.consentId, success: true)
+                    s.payingSavingDelegate?.didSaveCard(consentId: success.data.consentId, 
+                                                        expMonth: s.viewModel.expirationMonth(),
+                                                        expYear: s.viewModel.expirationYear(),
+                                                        last4digits: s.viewModel.last4digits(),
+                                                        success: true)
                 }
                 s.updateTableView()
             case .failure(let error):
                 s.viewModel.handleError(defaultErrorMessage: error.localizedDescription)
                 s.showErrorPaySaveButton(true)
-                s.payingSavingDelegate?.didSaveCard(consentId: nil, success: false)
+                s.payingSavingDelegate?.didSaveCard(consentId: nil,
+                                                    expMonth: nil,
+                                                    expYear: nil,
+                                                    last4digits: nil, 
+                                                    success: false)
                 s.updateTableView()
             }
         }
@@ -484,7 +506,11 @@ extension AddCardViewController: PayActionsDelegate, CloseButtonDelegate, Single
                 s.viewModel.handleError(defaultErrorMessage: error.localizedDescription)
                 s.showErrorPaySaveButton(true)
                 s.updateTableView()
-                s.savingDelegate?.didOnlySaveCard(consentId: nil, success: false)
+                s.savingDelegate?.didOnlySaveCard(consentId: nil, 
+                                                  expMonth: nil,
+                                                  expYear: nil,
+                                                  last4digits: nil,
+                                                  success: false)
             }
         }
     }
@@ -525,12 +551,21 @@ extension AddCardViewController: PayActionsDelegate, CloseButtonDelegate, Single
 
     private func saveOnlyResponseHandler(response: CreateConsentAnnualResponse) {
         if response.data.errorMessage != "" && response.data.errorCode != 0 {
-            viewModel.handleError(with: response.data.errorCode, defaultErrorMessage: response.data.errorMessage)
+            viewModel.handleError(with: response.data.errorCode, 
+                                  defaultErrorMessage: response.data.errorMessage)
             showErrorPaySaveButton(true)
-            savingDelegate?.didOnlySaveCard(consentId: nil, success: false)
+            savingDelegate?.didOnlySaveCard(consentId: nil, 
+                                            expMonth: nil,
+                                            expYear: nil,
+                                            last4digits: nil,
+                                            success: false)
         } else {
             close()
-            savingDelegate?.didOnlySaveCard(consentId: response.data.consentId, success: true)
+            savingDelegate?.didOnlySaveCard(consentId: response.data.consentId,
+                                            expMonth: viewModel.expirationMonth(),
+                                            expYear: viewModel.expirationYear(),
+                                            last4digits: viewModel.last4digits(),
+                                            success: true)
         }
     }
 

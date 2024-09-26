@@ -132,7 +132,7 @@ public class AddCardViewModel {
         let pattern = "^[0-9]{2}/[0-9]{2}$"
         let regex = try! NSRegularExpression(pattern: pattern)
         let range = NSRange(location: 0, length: input.utf16.count)
-        if let match = regex.firstMatch(in: input, options: [], range: range) {
+        if let _ = regex.firstMatch(in: input, options: [], range: range) {
             let monthString = input.prefix(2)
             if let month = Int(monthString), month >= 1 && month <= 12 && input.count == 5 {
                 return true
@@ -161,6 +161,21 @@ public class AddCardViewModel {
         }
         return month >= 1 && month <= 12
     }
+    //MARK: - Part of response
+    
+    func expirationMonth() -> Int {
+        return Int(firstTwoCharacters(of: monthYear ?? "") ?? "") ?? 0
+    }
+    
+    func expirationYear() -> Int {
+        return Int(lastTwoCharacters(of: monthYear ?? "") ?? "") ?? 0
+    }
+    
+    func last4digits() -> String {
+        return cardNumber?.suffix(4).description ?? ""
+    }
+    
+    //MARK: - Private
     
     private func firstTwoCharacters(of string: String) -> String? {
         guard string.count >= 2 else { return nil }
@@ -272,8 +287,8 @@ public class AddCardViewModel {
         let data = CreateConsentAnnualManualRequestModel(
             creditCardInfo: CreditCardInfo(
                 accountNumber: EasyPay.shared.encryptCardData(cardNumber: cardNumber ?? "") ?? "",
-                expirationMonth: Int(firstTwoCharacters(of: monthYear ?? "") ?? "") ?? 0,
-                expirationYear: Int(lastTwoCharacters(of: monthYear ?? "") ?? "") ?? 0,
+                expirationMonth: expirationMonth(),
+                expirationYear: expirationYear(),
                 cvv: StringUtils.trimmingEmptyOrWhitespace(cvc) ?? ""),
             consentAnnualCreate: CreateConsentAnnual(
                 merchID: Int(model.merchantId),
@@ -322,8 +337,8 @@ public class AddCardViewModel {
         let data = TransactionRequest(
             creditCardInfo: CreditCardInfo(
                 accountNumber: EasyPay.shared.encryptCardData(cardNumber: cardNumber ?? "") ?? "",
-                expirationMonth: Int(firstTwoCharacters(of: monthYear ?? "") ?? "") ?? 0,
-                expirationYear: Int(lastTwoCharacters(of: monthYear ?? "") ?? "") ?? 0,
+                expirationMonth: expirationMonth(),
+                expirationYear: expirationYear(),
                 cvv: StringUtils.trimmingEmptyOrWhitespace(cvc) ?? ""),
             accountHolder: AccountHolder(
                 firstName: StringUtils.trimmingEmptyOrWhitespace(cardholerName) ?? "",
