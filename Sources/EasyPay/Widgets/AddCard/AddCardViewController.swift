@@ -73,7 +73,10 @@ public class AddCardViewController: BaseViewController {
         self.navigationController?.isNavigationBarHidden = true
     }
 
-    public init(state: AddCardState, amount: String, delegate: AnyObject, paymentDetails: AddAnnualConsentWidgetModel) {
+    public init(state: AddCardState, 
+                amount: String,
+                delegate: AnyObject,
+                paymentDetails: AddAnnualConsentWidgetModel) {
         self.viewModel = AddCardViewModel(state: state,
                                           amount: amount,
                                           paymentDetails: paymentDetails)
@@ -224,6 +227,7 @@ extension AddCardViewController: UITableViewDelegate, UITableViewDataSource {
                        maxCharLimit: viewModel.cardHolderMaxChar)
         cell.delegate = self
         cell.textField.text = viewModel.cardholerName
+        cell.normalizeUI()
         return cell
     }
 
@@ -286,6 +290,7 @@ extension AddCardViewController: UITableViewDelegate, UITableViewDataSource {
                        maxCharLimit: viewModel.addressMaxChar)
         cell.textField.text = viewModel.address
         cell.delegate = self
+        cell.normalizeUI()
         return cell
     }
 
@@ -303,6 +308,7 @@ extension AddCardViewController: UITableViewDelegate, UITableViewDataSource {
                        maxCharLimit: viewModel.zipMaxChar)
         cell.textField.text = viewModel.zip
         cell.delegate = self
+        cell.normalizeUI()
         return cell
     }
 

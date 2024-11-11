@@ -39,6 +39,11 @@ class SinglePaymentTableViewCell: UITableViewCell, UITextFieldDelegate {
         self.isNumbersOnlyAllowed = isNumbersOnlyAllowed
     }
     
+    func normalizeUI() {
+        showOnlyPlaceholder(StringUtils.isNilOrEmpty(textField.text),
+                            animated: false)
+    }
+    
     func setErrorState() {
         isErrorState = true
         leftIcon.image = Theme.Image.creditCardError
@@ -59,7 +64,9 @@ class SinglePaymentTableViewCell: UITableViewCell, UITextFieldDelegate {
         textField.textColor = Theme.Color.textPrimary
     }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField,
+                   shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool {
         let currentText = textField.text ?? ""
         
         if isNumbersOnlyAllowed {
@@ -104,12 +111,26 @@ class SinglePaymentTableViewCell: UITableViewCell, UITextFieldDelegate {
         textField.becomeFirstResponder()
     }
 
-    private func showOnlyPlaceholder(_ yes: Bool) {
-        animatePlaceholder(show: yes)
+    private func showOnlyPlaceholder(_ yes: Bool,
+                                     animated: Bool = true) {
+        animatePlaceholder(show: yes,
+                           animated: animated)
     }
 
-    private func animatePlaceholder(show: Bool) {
-        UIView.animate(withDuration: 0.3, animations: {
+    private func animatePlaceholder(show: Bool,
+                                    animated: Bool) {
+        if !animated {
+            self.setTitleLabelToPlaceholder(show)
+           
+            
+            self.textField.isHidden = show
+            self.clickPlaceholderButton.isEnabled = show
+            self.textFieldStackView.setNeedsLayout()
+            self.textFieldStackView.layoutIfNeeded()
+        }
+        
+        UIView.animate(withDuration: 0.3,
+                       animations: {
             self.setTitleLabelToPlaceholder(show)
             self.textField.alpha = 0.0
         }) { _ in

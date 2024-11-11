@@ -2,10 +2,13 @@
 import Foundation
 
 public class AddCardViewModel {
-    public init(state: AddCardState, amount: String, paymentDetails: AddAnnualConsentWidgetModel) {
+    public init(state: AddCardState, 
+                amount: String,
+                paymentDetails: AddAnnualConsentWidgetModel) {
         self.state = state
         self.amount = amount
         self.paymentDetails = paymentDetails
+        prefillData()
     }
     
     let state: AddCardState
@@ -49,6 +52,28 @@ public class AddCardViewModel {
     lazy var addressMaxCharMessage = replaceMaxChar(withLimit: addressMaxChar)
     var addressHintShown = false
     var addressErrorShown = false
+    
+    private func prefillData() {
+        var fullname = StringUtils.isNilOrEmpty(paymentDetails.endCustomerFirstName)
+        ? ""
+        : paymentDetails.endCustomerFirstName!
+        if !StringUtils.isNilOrEmpty(paymentDetails.endCustomerLastName) {
+            fullname = fullname.isEmpty
+            ? paymentDetails.endCustomerLastName!
+            : fullname + " " + paymentDetails.endCustomerLastName!
+        }
+        
+        cardholerName = fullname
+        zip = paymentDetails.endCustomerZip
+        address = [paymentDetails.endCustomerAddress1,
+                   paymentDetails.endCustomerAddress2,
+                   paymentDetails.endCustomerCity,
+                   paymentDetails.endCustomerState,
+                   paymentDetails.endCustomerCountry]
+            .compactMap({ $0 })
+            .filter({ !$0.isEmpty })
+            .joined(separator: " ")
+    }
     
     func canEnableButton() -> Bool {
         return isCardNumberCorrect() &&

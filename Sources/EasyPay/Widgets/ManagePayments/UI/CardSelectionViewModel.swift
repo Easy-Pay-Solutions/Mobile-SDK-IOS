@@ -15,7 +15,10 @@ public class CardSelectionViewModel {
         return preselectedCardId != nil && findPreselectedCardIndex() != nil
     }
 
-    public init(state: ManageCardState, amount: String, preselectedCardId: Int?, paymentDetails: AddAnnualConsentWidgetModel) {
+    public init(state: ManageCardState, 
+                amount: String,
+                preselectedCardId: Int?,
+                paymentDetails: AddAnnualConsentWidgetModel) {
         self.state = state
         self.merchantId = paymentDetails.merchantId
         self.amount = amount

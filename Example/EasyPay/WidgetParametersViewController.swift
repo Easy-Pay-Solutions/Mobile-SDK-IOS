@@ -71,6 +71,13 @@ class WidgetParametersViewController: BaseViewController {
         let customerRefId = customerRefIdTextField.text
         let rpguid = rpguidTextField.text
         return AddAnnualConsentWidgetModel(merchantId: "1",
+                                           endCustomerFirstName: "Fname",
+                                           endCustomerLastName: "Lname",
+                                           endCustomerAddress1: "a1",
+                                           endCustomerAddress2: "",
+                                           endCustomerCity: "Newark",
+                                           endCustomerState: "AZ",
+                                           endCustomerZip: "90210",
                                            customerReferenceId: customerRefId,
                                            rpguid: rpguid,
                                            limitPerCharge: "1000.0",
