@@ -98,6 +98,28 @@ func didPayWithCard(consentId: Int?, paymentData: PaymentData?, success: Bool) {
 func didDeleteCard(consentId: Int, success: Bool) {}
 ```
 
+### iPhone Screenshots
+
+#### Save Card 
+<img src="https://easypayconfig.com/SDKImages/iOS/Store.png" alt="store-iphone" width=20% height=20%>
+<img src="https://easypayconfig.com/SDKImages/iOS/StoreDark.png" alt="store-iphone-dark" width=20% height=20%>
+<img src="https://easypayconfig.com/SDKImages/iOS/Store_iPad.png" alt="store-ipad" width=25% height=25%>
+<img src="https://easypayconfig.com/SDKImages/iOS/Store_iPadDark.png" alt="store-ipad-dark" width=25% height=25%>
+
+#### Manage Cards
+
+<img src="https://easypayconfig.com/SDKImages/iOS/Manage.png" alt="manage-iphone" width=20% height=20%>
+<img src="https://easypayconfig.com/SDKImages/iOS/ManageDark.png" alt="manage-iphone-dark" width=20% height=20%>
+<img src="https://easypayconfig.com/SDKImages/iOS/Manage_iPad.png" alt="manage-ipad" width=25% height=25%>
+<img src="https://easypayconfig.com/SDKImages/iOS/Manage_iPadDark.png" alt="manage-ipad-dark" width=25% height=25%>
+
+#### Store and Pay
+
+<img src="https://easypayconfig.com/SDKImages/iOS/StoreAndPay.png" alt="store-pay-iphone" width=20% height=20%>
+<img src="https://easypayconfig.com/SDKImages/iOS/StoreAndPayDark.png" alt="store-pay-iphone-dark" width=20% height=20%>
+<img src="https://easypayconfig.com/SDKImages/iOS/StorePay_iPad.png" alt="store-pay-ipad" width=25% height=25%>
+<img src="https://easypayconfig.com/SDKImages/iOS/StorePay_iPadDark.png" alt="store-pay-ipad-dark" width=25% height=25%>
+
 ## Public methods in EasyPay class
 
 ```
