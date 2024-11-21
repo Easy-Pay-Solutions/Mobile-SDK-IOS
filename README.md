@@ -98,7 +98,7 @@ func didPayWithCard(consentId: Int?, paymentData: PaymentData?, success: Bool) {
 func didDeleteCard(consentId: Int, success: Bool) {}
 ```
 
-### iPhone Screenshots
+### Screenshots
 
 #### Save Card 
 <img src="https://easypayconfig.com/SDKImages/iOS/Store.png" alt="store-iphone" width=20% height=20%>
