@@ -2,7 +2,7 @@
 import UIKit
 
 public struct Theme {
-    static let bundleId = "org.cocoapods.EasyPay"
+    private static let bundleId = "org.cocoapods.EasyPay"
     
     static func moduleBundle() -> Bundle? {
 #if SWIFT_PACKAGE

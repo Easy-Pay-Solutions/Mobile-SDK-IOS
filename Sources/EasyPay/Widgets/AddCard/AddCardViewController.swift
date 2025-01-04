@@ -85,7 +85,7 @@ public class AddCardViewController: BaseViewController {
         } else {
             self.payingSavingDelegate = delegate as? any PayingSavingCardDelegate
         }
-        super.init(nibName: vcName, bundle: Bundle(identifier: Theme.bundleId))
+        super.init(nibName: vcName, bundle: Theme.moduleBundle())
     }
 
     required init?(coder: NSCoder) {
@@ -104,8 +104,7 @@ public class AddCardViewController: BaseViewController {
         ]
 
         cellReuseIds.forEach { reuseId in
-            let bundleId = Bundle(identifier: Theme.bundleId)
-            let nib = UINib(nibName: reuseId, bundle: bundleId)
+            let nib = UINib(nibName: reuseId, bundle: Theme.moduleBundle())
             tableView.register(nib, forCellReuseIdentifier: reuseId)
         }
     }
