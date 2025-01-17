@@ -9,7 +9,7 @@ public enum CertificateStatus {
 }
 
 public final class ApiClient {
-    private let certificateString = "https://easypaysoftware.com/mobile.easypay5.com.cer"
+    private let certificateString = "https://easypay1.com/deploy/mobile/mobile.easypay5.com.cer"
     private let baseURL = URL(string: "https://easypay5.com/APIcardProcMobile")
     private let session: URLSession
     private let versionManager = VersionManager()
